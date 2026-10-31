@@ -15,6 +15,11 @@ char save_slot;
 
 //EWRAM_BSS int ui_y;
 EWRAM_BSS u32 oldinput;
+#if PERF_COUNTER
+u32 perf_cycles;
+u32 perf_jrcount;	//jr_wrapcheck executions
+u32 perf_jrcount_latched;
+#endif
 EWRAM_BSS u8 *textstart;//points to first GB rom (initialized by boot.s)
 EWRAM_BSS u8 *ewram_start;//points to first NES rom (initialized by boot.s)
 EWRAM_BSS int roms;//total number of roms
@@ -192,6 +197,10 @@ int enable_ram()
 void C_entry()
 {
 	int i,j;
+	#if PERF_COUNTER
+	*(vu32*)0x400010C=0x00840000;	//TM3: enable, count-up from TM2
+	*(vu32*)0x4000108=0x00800000;	//TM2: enable, 1 cycle per tick
+	#endif
 	#if RTCSUPPORT
 	vu16 *timeregs=(u16*)0x080000c8;
 	#endif

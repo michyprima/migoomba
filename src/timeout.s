@@ -321,6 +321,21 @@ toLineZero_modify2:
 	ldr_ r0,frame
 	add r0,r0,#1
 	str_ r0,frame
+#if PERF_COUNTER
+	ldr r1,=0x4000108
+0:	ldrh r2,[r1,#4]		@TM3 high, TM2 low, TM3 again in case TM2 overflowed in between
+	ldrh r0,[r1]
+	ldrh addy,[r1,#4]
+	cmp r2,addy
+	bne 0b
+	orr r0,r0,r2,lsl#16
+	ldr r1,=perf_cycles
+	str r0,[r1]
+	ldr r1,=perf_jrcount
+	ldr r0,[r1]
+	ldr r1,=perf_jrcount_latched
+	str r0,[r1]
+#endif
 	ldr_ pc,scanlinehook
 #endif
 

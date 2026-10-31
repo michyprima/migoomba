@@ -22,6 +22,9 @@
 	eor r1,gb_pc,#0x06000000	@the copy of bank 0 at 0x0600FE00 (bank_1 in cache.c)
 	cmp r1,#0xFE00
 	bllo jr_wrap
+#if PERF_COUNTER
+	bl perf_count_jr
+#endif
 	.endm		@r1=?
 
 	.macro encodePC_afterpush16		@push16 already does "adr r2,memmap_tbl"

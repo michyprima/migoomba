@@ -281,6 +281,15 @@ jr_wrap:	@re-encode gb_pc after a JR wrapped below $0000 (e.g. into HRAM), keeps
 	str_ r2,lastbank
 	add gb_pc,gb_pc,r2
 	bx lr
+#if PERF_COUNTER
+perf_count_jr:
+	ldr r2,=perf_jrcount
+	ldr r1,[r2]
+	add r1,r1,#1
+	str r1,[r2]
+	bx lr
+	.ltorg
+#endif
 @----------------------------------------------------------------------------
 _19:@	ADD HL,DE
 @----------------------------------------------------------------------------
