@@ -35,6 +35,8 @@
 #define LCD_HACKS_ACCURATE 1
 #define LCD_HACKS_ACCURATE_DIV 1
 #define JOYSTICK_READ_HACKS 0
+#define PERF_PROFILE 0	//debug: TM1 IRQ samples the interrupted PC into perf_samples (ring buffer)
+#define PERF_PROFILE_PERIOD 4099	//GBA cycles between samples
 #define PERF_COUNTER 0	//debug: TM2+TM3 count GBA cycles, latched into perf_cycles every GB frame
 //#define EZFLASH_OMEGA_BUILD
 #define EZFLASH_DE_BUILD 0

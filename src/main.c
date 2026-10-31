@@ -15,6 +15,10 @@ char save_slot;
 
 //EWRAM_BSS int ui_y;
 EWRAM_BSS u32 oldinput;
+#if PERF_PROFILE
+EWRAM_BSS u32 perf_samples[4096];
+u32 perf_sample_count;
+#endif
 #if PERF_COUNTER
 u32 perf_cycles;
 u32 perf_jrcount;	//jr_wrapcheck executions
@@ -197,6 +201,9 @@ int enable_ram()
 void C_entry()
 {
 	int i,j;
+	#if PERF_PROFILE
+	*(vu32*)0x4000104=(0x10000-PERF_PROFILE_PERIOD)|0x00C00000;	//TM1: enable, IRQ
+	#endif
 	#if PERF_COUNTER
 	*(vu32*)0x400010C=0x00840000;	//TM3: enable, count-up from TM2
 	*(vu32*)0x4000108=0x00800000;	//TM2: enable, 1 cycle per tick

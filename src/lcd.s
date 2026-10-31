@@ -244,7 +244,11 @@ GFX_init_irq:
 	strh r0,[r2,#2]		@stop pending interrupts
 @	ldr r0,=0x1081
 @	strh r0,[r2]		;key,vblank,serial interrupt enable
+#if PERF_PROFILE
+	ldr r0,=0x1095		@+timer 1 (profiler)
+#else
 	ldr r0,=0x1085
+#endif
 	strh r0,[r2]		@key,vcount,vblank,serial interrupt enable
 	mov r0,#1
 	strh r0,[r2,#8]		@master irq enable
@@ -1544,6 +1548,25 @@ irqhandler:	@r0-r3,r12 are safe to use
 	ldrh r0,[r3,#-8]
 	orr r0,r0,r1
 	strh r0,[r3,#-8]
+#if PERF_PROFILE
+	tst r1,#0x10		@timer 1: record interrupted PC (BIOS saved lr_irq at sp+20)
+	beq 0f
+	mov r0,#0x10
+	strh r0,[r2,#2]		@IF clear
+	ldr r0,[sp,#20]
+	sub r0,r0,#4
+	ldr r12,=perf_sample_count
+	ldr r3,[r12]
+	add r3,r3,#1
+	str r3,[r12]
+	sub r3,r3,#1
+	mov r3,r3,lsl#20		@count&4095, scaled to a word offset below
+	ldr r12,=perf_samples
+	str r0,[r12,r3,lsr#18]
+	bics r1,r1,#0x10
+	bxeq lr
+0:
+#endif
 
 		@---this CAN'T be interrupted
 		ands r0,r1,#0x80
