@@ -18,6 +18,8 @@
  *                       user SP, while stepping; resets
  *   trace ADDR MAXFRAMES  step until the executing PC == ADDR; print the last 64 instructions
  *                       before it (pc, cpsr, r0-r3, r9, sp, lr), then "hit" or "timeout"
+ *   watch ADDR LEN MAXFRAMES  step until one of LEN (<=256) bytes at ADDR changes; print the PC that
+ *                       changed it and r0-r15 before it ran, then "hit" or "timeout"
  *   regs                r0-r15 and cpsr
  *   quit
  */
@@ -263,6 +265,39 @@ int main(int argc, char** argv) {
 				uint32_t* e = tr[i % TRACE_LEN];
 				printf("pc=%08x cpsr=%08x r0=%08x r1=%08x r2=%08x r3=%08x r9=%08x sp=%08x lr=%08x\n",
 				       e[0], e[1], e[2], e[3], e[4], e[5], e[6], e[7], e[8]);
+			}
+			printf(hit ? "hit\n" : "timeout\n");
+		} else if (!strcmp(cmd, "watch") && n >= 3) {
+			/* watch ADDR LEN MAXFRAMES: step until any of LEN bytes at ADDR changes, then print the
+			 * PC of the instruction that changed it and the registers before it ran */
+			unsigned long len = 0, maxf = 0;
+			sscanf(line, "%*s %*lx %lu %lu", &len, &maxf);
+			if (len > 256) {
+				len = 256;
+			}
+			uint8_t before[256];
+			for (unsigned long i = 0; i < len; ++i) {
+				before[i] = core->rawRead8(core, a + i, -1);
+			}
+			uint32_t end = core->frameCounter(core) + maxf;
+			int hit = 0;
+			while (!hit && core->frameCounter(core) < end) {
+				uint32_t pc = _ARMPCAddress(gba->cpu);
+				uint32_t r[16];
+				memcpy(r, gba->cpu->gprs, sizeof(r));
+				stepOne(core, gba);
+				for (unsigned long i = 0; i < len; ++i) {
+					uint8_t v = core->rawRead8(core, a + i, -1);
+					if (v != before[i]) {
+						printf("pc=%08x offset=%lu %02x->%02x", pc, i, before[i], v);
+						for (int k = 0; k < 16; ++k) {
+							printf(" r%d=%08x", k, r[k]);
+						}
+						printf("\n");
+						hit = 1;
+						break;
+					}
+				}
 			}
 			printf(hit ? "hit\n" : "timeout\n");
 		} else if (!strcmp(cmd, "regs")) {
