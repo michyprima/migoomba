@@ -5,7 +5,7 @@ Results include exact GBA cycle counts, so the same run serves as a regression a
 
 ## Setup
 
-    tools/gbtest/build.sh        # clones mGBA 0.10.3, builds a static GBA-only libmgba and build/gbaharness
+    tools/gbtest/build.sh        # clones mGBA 0.10.3, builds a static libmgba, build/gbaharness and build/gbref
     tools/gbtest/fetch_roms.sh   # downloads c-sp/game-boy-test-roms v7.0 into roms/
 
 Requires git, cmake, a C compiler, Python 3 and devkitARM (for `arm-none-eabi-nm`/`objdump`).
@@ -41,6 +41,31 @@ Noise floor: moving code around without changing what runs (e.g. a few unreachab
 busy cycles per GB frame by about 0.1% on Polished Crystal and about 0.2% over test ROMs with at least
 300 GB frames (the default); short tests can move by tens of percent. Treat smaller differences as noise.
 Game checkpoints stop on exact GB frames, so their screenshots can be compared between builds.
+
+## Real games
+
+    python3 tools/gbtest/gametests.py --emu jagoombacolor.gba --elf jagoombacolor.elf --out tools/gbtest/out/games \
+        [--filter REGEX] [--record]
+
+Commercial ROMs are never committed. Put them, under any file name, in `tools/gbtest/games/` (gitignored;
+`--games DIR` for another folder). Each ROM is identified by its SHA-1 and looked up in `games.json`, which is
+committed and holds, per game, the title, input script, the model Goomba chose, Goomba's busy cycles per GB
+frame and, per checkpoint, hashes of Goomba's and the reference's GB screen. No images are stored.
+
+Every game runs the same input script (`start-a`: wait for the intro, alternate Start and A for 20 s, then
+leave it alone; screenshots at seven GB frames up to 2400) in two emulators:
+
+- **Goomba**: each checkpoint screen must hash to the recorded one. A difference is `CHANGED` (a regression,
+  or an intended change: inspect the shots in `--out`, then accept with `--record`). `HANG` means GB frames
+  stopped advancing. Runs are deterministic.
+- **Reference**: `build/gbref`, mGBA's own GB core, on the model Goomba picked (CGB, SGB or DMG). The `ref`
+  column counts checkpoints where Goomba's screen equals the reference up to recolouring. Input timing can
+  differ by a frame between the two, so this is informational: a lead to look at, not a failure. SGB games
+  differ wherever Goomba's SGB palettes or packet timing do.
+
+`--record` stores the current results for the games run (all, or those matching `--filter`). Unknown ROMs
+show as `NEW`; games in the database whose ROM is missing are listed. Exit status is 0 only if every game is
+`PASS`. `busy/fr` above 280,896 means the game runs slower than real time on a GBA.
 
 ## Battery saves
 

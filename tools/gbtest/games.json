@@ -1,0 +1,1534 @@
+{
+ "games": {
+  "a348aeac500d0d8fdaf90f5277631a026504ff44": {
+   "title": "Alone in the Dark - The New Nightmare (USA)",
+   "file": "Alone in the Dark - The New Nightmare (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 249621,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "9a9db359acd63b23a577822bd34c54164dfe8d55",
+     "reference": "9a9db359acd63b23a577822bd34c54164dfe8d55",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "2f6b69c70ec6a7a3aa2f90f6efc25e69a6cceee7",
+     "reference": "2f6b69c70ec6a7a3aa2f90f6efc25e69a6cceee7",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "4810b3b840fa394cac013b0cc082ba17d337b04c",
+     "reference": "989fe5dd450d8306f4ed88683124c3e6a7f37948",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "681cef8aad290382ce73b04222f959fc0b066ada",
+     "reference": "681cef8aad290382ce73b04222f959fc0b066ada",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "7959e0dbfac860ac22f9954489d8b2ecaf23470c",
+     "reference": "7959e0dbfac860ac22f9954489d8b2ecaf23470c",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "fef00c812f3a03deac0d0acc7970eb6f6db1d1bd",
+     "reference": "67f5748b3c46bde8611d096baea1b1507141eeaf",
+     "ref_diff": 22250
+    },
+    {
+     "frame": 2400,
+     "goomba": "fef00c812f3a03deac0d0acc7970eb6f6db1d1bd",
+     "reference": "67f5748b3c46bde8611d096baea1b1507141eeaf",
+     "ref_diff": 22250
+    }
+   ]
+  },
+  "918e9cc878a61d8174918c897182604f0c27b1d9": {
+   "title": "Beavis and Butt-Head (USA)",
+   "file": "Beavis and Butt-Head (USA).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 78728,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "ae8cc38c1ddd25a83a568f5a56326b980f880771",
+     "reference": "ae8cc38c1ddd25a83a568f5a56326b980f880771",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "5e0119bec605dda8fc37f7382035a61a094ccc60",
+     "reference": "5e0119bec605dda8fc37f7382035a61a094ccc60",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "fed6258c3da30c9817b55de4d88922b92fb1e65e",
+     "reference": "fed6258c3da30c9817b55de4d88922b92fb1e65e",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "0dca9dd987976f9f03dac9f07f3a3f62bdda5389",
+     "reference": "0dca9dd987976f9f03dac9f07f3a3f62bdda5389",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "cc078283a0a3cb304e5757124de4abdb5d8d4658",
+     "reference": "cc078283a0a3cb304e5757124de4abdb5d8d4658",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "a512f26bee9afb79bb2e868e07618c4145112d4d",
+     "reference": "a512f26bee9afb79bb2e868e07618c4145112d4d",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "0736beff31812b0c2efb44e6b5c7bcd14346d686",
+     "reference": "0736beff31812b0c2efb44e6b5c7bcd14346d686",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "33c28a2183f8b95cc2d8e0b6a0b005bfc230f1fc": {
+   "title": "Bionic Commando - Elite Forces (USA)",
+   "file": "Bionic Commando - Elite Forces (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 163043,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "5c68fafa405780ef5463b105d3dc413799831511",
+     "reference": "5c68fafa405780ef5463b105d3dc413799831511",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "942c145dd5306e08d258300a6700235f3f7c23f2",
+     "reference": "942c145dd5306e08d258300a6700235f3f7c23f2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "ec4293e580d5162ce2a60180cbe0db6f3ae7b2ba",
+     "reference": "1010bbd6818c2b09702e2bc5e22ca8fb8a1448b8",
+     "ref_diff": 900
+    },
+    {
+     "frame": 1200,
+     "goomba": "c01da9bb36035590fdc227c3d3505bb4d1a6cc83",
+     "reference": "2d78eb31e260b6c215a9496c53869b2a4802b76b",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "72e947255a5ec2e4cbb7ef237869d39fcf4e7022",
+     "reference": "6c569fd974d50c8abd870fbfa4ec0fe286c64eff",
+     "ref_diff": 1
+    },
+    {
+     "frame": 1800,
+     "goomba": "1ab780a76b84f7e94185c29f351e97c7dceb8382",
+     "reference": "9215f1b172958debd9e41367f8ff319847fdfb2e",
+     "ref_diff": 47
+    },
+    {
+     "frame": 2400,
+     "goomba": "1ab780a76b84f7e94185c29f351e97c7dceb8382",
+     "reference": "9215f1b172958debd9e41367f8ff319847fdfb2e",
+     "ref_diff": 47
+    }
+   ]
+  },
+  "32522dfce902d564e69348541348afc054307f65": {
+   "title": "Donkey Kong Country (USA)",
+   "file": "Donkey Kong Country (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 156191,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "53d01348ec124eb01596c8e5e311f5c5ace1c729",
+     "reference": "53d01348ec124eb01596c8e5e311f5c5ace1c729",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "2ad7109afa2f66b07a28901da41c736f27fa9563",
+     "reference": "213b9be6b429e0d04fad3b5b9c9268feaca2515c",
+     "ref_diff": 9321
+    },
+    {
+     "frame": 1200,
+     "goomba": "c81a54791039663d5022f381dcb53b29a0d77854",
+     "reference": "7e2894fdbca626b6be2d0a18918ca0516b5bef9f",
+     "ref_diff": 8185
+    },
+    {
+     "frame": 1500,
+     "goomba": "8c0987caa9c961c195ae8d4540810cd5da34e059",
+     "reference": "81d33255f601bf9cb3d0534e7f030ddd2566a41f",
+     "ref_diff": 12119
+    },
+    {
+     "frame": 1800,
+     "goomba": "bc77ccc4cd0b457325640a6b836f7b53038ebb61",
+     "reference": "c36aac9b8d0a3300521c0f0a15b19920a86b669c",
+     "ref_diff": 564
+    },
+    {
+     "frame": 2400,
+     "goomba": "d7bbfe8a557afa9948624519a0468374a0f6e739",
+     "reference": "ece2aef4a3fa62bd5ce2e3dbd4cf269a9b2643df",
+     "ref_diff": 542
+    }
+   ]
+  },
+  "4e6d8f085ca197479d59912c1d58e4f3b40c28ac": {
+   "title": "Donkey Kong Land (USA) (SGB Enhanced)",
+   "file": "Donkey Kong Land (USA) (SGB Enhanced).gb",
+   "script": "start-a",
+   "model": "SGB",
+   "busy_per_frame": 112163,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "reference": "dd80a25a6fe9af911fe2b812e9bf6a8ef240d7c1",
+     "ref_diff": 2281
+    },
+    {
+     "frame": 600,
+     "goomba": "7d5d9d132eb37dbd372224157ea00ab4cd2ff512",
+     "reference": "7dff36927997ddc3c6278578eb174bc805e8ebe0",
+     "ref_diff": 12523
+    },
+    {
+     "frame": 900,
+     "goomba": "ed604e946453d6a43329ef935fb25d1506c31550",
+     "reference": "db168612c41cd4bee7ff0024310a8331f39cd21a",
+     "ref_diff": 17289
+    },
+    {
+     "frame": 1200,
+     "goomba": "4abffbfb4e197eb8ada894e2262c9b193d7935dd",
+     "reference": "6de2371d661816b7dcedae8f6d1b16e27cd7ecc2",
+     "ref_diff": 605
+    },
+    {
+     "frame": 1500,
+     "goomba": "5ef81fe8d15c5ff081f8dac1e9b2d935a0f1336c",
+     "reference": "4abffbfb4e197eb8ada894e2262c9b193d7935dd",
+     "ref_diff": 702
+    },
+    {
+     "frame": 1800,
+     "goomba": "d38c3f466080864b3e50075dd58688116c6bc640",
+     "reference": "4abffbfb4e197eb8ada894e2262c9b193d7935dd",
+     "ref_diff": 569
+    },
+    {
+     "frame": 2400,
+     "goomba": "71512bc6aa30a9721c7cba0ac1c72de80345bb24",
+     "reference": "4abffbfb4e197eb8ada894e2262c9b193d7935dd",
+     "ref_diff": 662
+    }
+   ]
+  },
+  "581a12695ae42becaa078ac2694a11767a96dc61": {
+   "title": "Dragon Warrior III (USA)",
+   "file": "Dragon Warrior III (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 143428,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "739014f56142c78bee8060405971075649148aff",
+     "reference": "739014f56142c78bee8060405971075649148aff",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "4ca34df915a9b804620669d18b5d91cc255e0484",
+     "reference": "4ca34df915a9b804620669d18b5d91cc255e0484",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "e31c9dee9c0e15d5dff8a2994fa5ff6308a7452b",
+     "reference": "e31c9dee9c0e15d5dff8a2994fa5ff6308a7452b",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "5e1affdb0746712a88ee1363e27fbb64e6e51a37",
+     "reference": "5e1affdb0746712a88ee1363e27fbb64e6e51a37",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "a7103782f3b2be142f2574be0b15d5d4e267dca0",
+     "reference": "a7103782f3b2be142f2574be0b15d5d4e267dca0",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "faf88dbb020f97c3cd559349f179985704ed9a5b",
+     "reference": "a7103782f3b2be142f2574be0b15d5d4e267dca0",
+     "ref_diff": 23
+    }
+   ]
+  },
+  "b0bd15bace04e0a3eb89773f231ac3a532181a0a": {
+   "title": "Faceball 2000 (USA)",
+   "file": "Faceball 2000 (USA).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 151362,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "6922a094ff9c7d274cc378849f720870d2faafd0",
+     "reference": "6922a094ff9c7d274cc378849f720870d2faafd0",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "f659bb182dadf69f6c76e32bb70a97012f50d6e3",
+     "reference": "f659bb182dadf69f6c76e32bb70a97012f50d6e3",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "cee9713a854d386c8a42fff0228c9556fdd5c47f",
+     "reference": "cee9713a854d386c8a42fff0228c9556fdd5c47f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "06ff99ccd5c42bb77942fe5b5b792ca7251af1ad",
+     "reference": "06ff99ccd5c42bb77942fe5b5b792ca7251af1ad",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "0c32f582e9d36fa6c3dcd235453189f2352f850b",
+     "reference": "0c32f582e9d36fa6c3dcd235453189f2352f850b",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "0c32f582e9d36fa6c3dcd235453189f2352f850b",
+     "reference": "0c32f582e9d36fa6c3dcd235453189f2352f850b",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "7a50fdf0b8ad15556c933df0657fae0a2cd8bc92": {
+   "title": "Gradius - The Interstellar Assault (USA)",
+   "file": "Gradius - The Interstellar Assault (USA).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 112224,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "7ac4a70e53e594863722b9dbd30e17baac703f12",
+     "reference": "7ac4a70e53e594863722b9dbd30e17baac703f12",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "f04f7022773652374e647b610d51df93d498e367",
+     "reference": "f04f7022773652374e647b610d51df93d498e367",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "004d4fbe93fcaa786ae00ee820bef253f6c06124",
+     "reference": "1db5a48295a37415ed2b725ba3b6ddd5aaca2bf8",
+     "ref_diff": 625
+    },
+    {
+     "frame": 1200,
+     "goomba": "0fc700ea63dae7f1241fbec2f58f5ba071f148ce",
+     "reference": "00df00462f4f64682592c349070db0f5dbf80450",
+     "ref_diff": 400
+    },
+    {
+     "frame": 1500,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "39ce671477605304bb12c0ddbcc47cedb8b0c3ea",
+     "reference": "39ce671477605304bb12c0ddbcc47cedb8b0c3ea",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "e81eaee3d5731c01efbf0f14bcd8615c628e14d4",
+     "reference": "e81eaee3d5731c01efbf0f14bcd8615c628e14d4",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "4e6f676ec15e0e6238cb81853b5a74bbb20657a1": {
+   "title": "Harry Potter and the Sorcerer's Stone (USA)",
+   "file": "Harry Potter and the Sorcerer's Stone (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 361542,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "302baffbc80fbc68a6152b710c858aa74b927aeb",
+     "reference": "302baffbc80fbc68a6152b710c858aa74b927aeb",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "625298d19a505a2eda5ee1b1a8a19f77e6c8b215",
+     "reference": "625298d19a505a2eda5ee1b1a8a19f77e6c8b215",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "8be7d3d545fa120fb953b97546c3e864dd4d3030",
+     "reference": "8be7d3d545fa120fb953b97546c3e864dd4d3030",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "45675e0c90d697491f90b060ac8cc82b8f42b359",
+     "reference": "45675e0c90d697491f90b060ac8cc82b8f42b359",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "d1adfdc9bce071b17b8f1c19e9b21e87b9994786",
+     "reference": "cedcf549f879e9ccdcbe59a271a005b4c323114d",
+     "ref_diff": 11537
+    },
+    {
+     "frame": 1800,
+     "goomba": "7a27902eb6ca1c07eaed71ee3d20a63ce4fb7e75",
+     "reference": "ab79297e9972ed6301f13a35fc8043922febc34e",
+     "ref_diff": 5933
+    },
+    {
+     "frame": 2400,
+     "goomba": "cd89ba7560c6791b3fa956be7ffefca81c448e7f",
+     "reference": "42275e4fcecffd22938188fba09f7db3f640d805",
+     "ref_diff": 5919
+    }
+   ]
+  },
+  "8a2898ffa17e25f43793f40c88421d840d372d3c": {
+   "title": "Kirby's Dream Land 2 (USA) (SGB Enhanced)",
+   "file": "Kirby's Dream Land 2 (USA) (SGB Enhanced).gb",
+   "script": "start-a",
+   "model": "SGB",
+   "busy_per_frame": 103946,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "81f67705a1d12f204b2f23a20e7e9248b5b3b50b",
+     "reference": "b45e2e9f95d451b4b4c1af433be74388023747c1",
+     "ref_diff": 17782
+    },
+    {
+     "frame": 600,
+     "goomba": "72a2326896d1db4fdb38d072a8be66d4a3ed2660",
+     "reference": "05c79c2600fe826d24000db063a66bdf14d243e7",
+     "ref_diff": 19223
+    },
+    {
+     "frame": 900,
+     "goomba": "e659adc4e3db423812c90ed1e16387eb36f8a359",
+     "reference": "3eba984aee057b8949da69c1287bd4e4686c5481",
+     "ref_diff": 14556
+    },
+    {
+     "frame": 1200,
+     "goomba": "2e201e598d25bf462842e0bca1b6223da216cce6",
+     "reference": "7fd7f21e125bd1fa2c6f91540753bddccf078a5a",
+     "ref_diff": 8640
+    },
+    {
+     "frame": 1500,
+     "goomba": "2e201e598d25bf462842e0bca1b6223da216cce6",
+     "reference": "ca6bb512c92ba40093cc9ce63eb73b0b3411d829",
+     "ref_diff": 2560
+    },
+    {
+     "frame": 1800,
+     "goomba": "2e201e598d25bf462842e0bca1b6223da216cce6",
+     "reference": "ca6bb512c92ba40093cc9ce63eb73b0b3411d829",
+     "ref_diff": 2560
+    },
+    {
+     "frame": 2400,
+     "goomba": "2e201e598d25bf462842e0bca1b6223da216cce6",
+     "reference": "ca6bb512c92ba40093cc9ce63eb73b0b3411d829",
+     "ref_diff": 2560
+    }
+   ]
+  },
+  "1c091225688d966928cc74336dbef2e07d12a47c": {
+   "title": "Legend of Zelda, The - Link's Awakening DX (USA, Europe) (Rev 2) (SGB Enhanced) (GB Compatible)",
+   "file": "Legend of Zelda, The - Link's Awakening DX (USA, Europe) (Rev 2) (SGB Enhanced) (GB Compatible).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 112930,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "eb2089ca6efa093da3161685d0eceaaa2f481a2a",
+     "reference": "1a61042d403a81b4d0d2f1e5d3543d7d7d171411",
+     "ref_diff": 10077
+    },
+    {
+     "frame": 600,
+     "goomba": "a58e4af3d49b59e04d29a29426f052b045cabd8e",
+     "reference": "0ee9ea6217c7c5abb6200ce57633d41642d9c4a3",
+     "ref_diff": 21
+    },
+    {
+     "frame": 900,
+     "goomba": "762aa8bb3f7f225a6f02ddb2315154ae5770450e",
+     "reference": "762aa8bb3f7f225a6f02ddb2315154ae5770450e",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "2b6a6ce2200379fcb45f3adefb76c7317827b5ea",
+     "reference": "2b6a6ce2200379fcb45f3adefb76c7317827b5ea",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "4041e9c81b429e2ae19bf9c9c336811faaab4865",
+     "reference": "9df0108b41818a3e5c785f40fc87a484b6ad6f3f",
+     "ref_diff": 187
+    },
+    {
+     "frame": 1800,
+     "goomba": "b093331557ba76004fd45028a345425e7916f9d7",
+     "reference": "981c5bc72698bd10e94b674616adbd9c57b4d3be",
+     "ref_diff": 123
+    },
+    {
+     "frame": 2400,
+     "goomba": "5b0bef54f813b510a1eb7c595674175f32f5e590",
+     "reference": "486266436152e0075c8540ccac058db09dc8a847",
+     "ref_diff": 28
+    }
+   ]
+  },
+  "880374fb978b18af4aa529e2e32f7ffb4d7dd2f4": {
+   "title": "Legend of Zelda, The - Oracle of Ages (USA)",
+   "file": "Legend of Zelda, The - Oracle of Ages (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 95817,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "f1d0b8859a7e454cbe2bb8b62397bcf9c82cef4d",
+     "reference": "f1d0b8859a7e454cbe2bb8b62397bcf9c82cef4d",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "0bf8ac61893ad43c2ed2631a7298eeb8371698eb",
+     "reference": "0bf8ac61893ad43c2ed2631a7298eeb8371698eb",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "5da2218227f121f932b3892b5fdef5843f87d49a",
+     "reference": "5da2218227f121f932b3892b5fdef5843f87d49a",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "b8137069c2861b4bccfa7b526c0fa52d5911d418",
+     "reference": "b8137069c2861b4bccfa7b526c0fa52d5911d418",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "b8e7122af5e7f7d4825b7e67967c23e2c2bff1d5",
+     "reference": "b8e7122af5e7f7d4825b7e67967c23e2c2bff1d5",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "eb0b01c59cced98d45ea4e56ba69f531077cf1ee",
+     "reference": "eb0b01c59cced98d45ea4e56ba69f531077cf1ee",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "eb0b01c59cced98d45ea4e56ba69f531077cf1ee",
+     "reference": "eb0b01c59cced98d45ea4e56ba69f531077cf1ee",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "c877449ba0889fdcacf23c49b0611d0ca57283c5": {
+   "title": "Mega Man Xtreme (USA)",
+   "file": "Mega Man Xtreme (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 142337,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "df8e00dca300d2152a2447143c1e21b8def5e27a",
+     "reference": "df8e00dca300d2152a2447143c1e21b8def5e27a",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "2c4f28fb9d6c977aa0e4994280e80982b8c0080f",
+     "reference": "2c4f28fb9d6c977aa0e4994280e80982b8c0080f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "4c6ebe7c2f77f5162876c397f29704e6eb4f92ca",
+     "reference": "4c6ebe7c2f77f5162876c397f29704e6eb4f92ca",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "3452b850e38cbe6db847d2643db80a6eabb4fc45",
+     "reference": "3452b850e38cbe6db847d2643db80a6eabb4fc45",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "5eae51c42dcc49e8aa4729e3878f0aebfa7a0ee1",
+     "reference": "5eae51c42dcc49e8aa4729e3878f0aebfa7a0ee1",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "4636f3ce0b6b80be4ac034a8a935df2632449986",
+     "reference": "4636f3ce0b6b80be4ac034a8a935df2632449986",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "5eae51c42dcc49e8aa4729e3878f0aebfa7a0ee1",
+     "reference": "5eae51c42dcc49e8aa4729e3878f0aebfa7a0ee1",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "2266499cfa10351b23fefd2216308867d1f1558b": {
+   "title": "Metal Gear Solid (USA)",
+   "file": "Metal Gear Solid (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 127302,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "f11cafeda5af20587a8b3b7f9e40386980bffa41",
+     "reference": "f11cafeda5af20587a8b3b7f9e40386980bffa41",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "86558262b6a98cd0efab29c40182ce3140ce42f0",
+     "reference": "86558262b6a98cd0efab29c40182ce3140ce42f0",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "e6dd48e09b706fce1695f7ff7646787efc15185d",
+     "reference": "6cb745ea7f9ed1901e502c70f4dea725e951a620",
+     "ref_diff": 10000
+    },
+    {
+     "frame": 1200,
+     "goomba": "5e304ac15666b5ea364f0dec00771b9d93d20875",
+     "reference": "5e304ac15666b5ea364f0dec00771b9d93d20875",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "9df09e0b60d81ce244b379cbe46f63c8053eac65",
+     "reference": "9df09e0b60d81ce244b379cbe46f63c8053eac65",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "515cd5a44a8d120904d86ff2e84e26d4c89cb7b7",
+     "reference": "515cd5a44a8d120904d86ff2e84e26d4c89cb7b7",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "515cd5a44a8d120904d86ff2e84e26d4c89cb7b7",
+     "reference": "515cd5a44a8d120904d86ff2e84e26d4c89cb7b7",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "3bfda5edb7d125ee99b9235434488876dc6d8245": {
+   "title": "Mr. Driller (USA)",
+   "file": "Mr. Driller (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 252929,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "d9ddc3e4ed25e541b2eef0c099b84b504095567c",
+     "reference": "d9ddc3e4ed25e541b2eef0c099b84b504095567c",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "1d7b99b6bb87aa2d02ed5b8a763ed52f7fa0dd45",
+     "reference": "1d7b99b6bb87aa2d02ed5b8a763ed52f7fa0dd45",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "8f0ae72fec31ec1cf57119e92b5701d777f42d15",
+     "reference": "6c94ab600730e4f5e7e064454e0343c39d0e7f0e",
+     "ref_diff": 3906
+    },
+    {
+     "frame": 1200,
+     "goomba": "aec4e076135ce36519d979a91437622a1ff631b4",
+     "reference": "799619b81236b9aa0a881a65562ff323a3b2dea0",
+     "ref_diff": 91
+    },
+    {
+     "frame": 1500,
+     "goomba": "3fdb4b260c604349cf617ad19f85fcd7cc36a4d7",
+     "reference": "b3dd3a3b0e5d351244080573368b9f990247e774",
+     "ref_diff": 85
+    },
+    {
+     "frame": 1800,
+     "goomba": "bf08c28bc64d20ac7e64b54ba97e7625f5ce67fc",
+     "reference": "d6789d6cf034197a3a93bf4af0d8b65d72266c86",
+     "ref_diff": 12342
+    },
+    {
+     "frame": 2400,
+     "goomba": "ff57434c135456ae4724fbe0b05488e7120d1242",
+     "reference": "e0b263ab5a94c2cbe5d1fe2bc4e38d3d035cb03f",
+     "ref_diff": 12545
+    }
+   ]
+  },
+  "2d1e47bf3fb4a28ffb82a4fd2ae779ec99aaa87d": {
+   "title": "Perfect Dark (USA)",
+   "file": "Perfect Dark (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 464534,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "038db5384c1afa5db149f78dce08339eecc02a22",
+     "reference": "ebcfd11567ae59b7867d1770b826e2ea90a5cdf7",
+     "ref_diff": 316
+    },
+    {
+     "frame": 600,
+     "goomba": "ac75604a2e97a27e0ba6a8fe24afc07a43218dd1",
+     "reference": "ac75604a2e97a27e0ba6a8fe24afc07a43218dd1",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "a47a37c6c535c05a2b3efab0207793d48f900c78",
+     "reference": "0ef6bd91cf9508d23e7e31462fcbd88e79413d4d",
+     "ref_diff": 16744
+    },
+    {
+     "frame": 1200,
+     "goomba": "1f342e24751523ce868c13402ff264445c05f7f1",
+     "reference": "6a9045d8350db46a7f9c24f6a463b25b91001f67",
+     "ref_diff": 4130
+    },
+    {
+     "frame": 1500,
+     "goomba": "f991c7b212e89323f72e641ae1fdd2ed339ec48c",
+     "reference": "64773bc1a8b0725372002115decbc637a33e9b5c",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "4362fb455cdf0fe5dba024c8fa44c08bb6564a2d",
+     "reference": "9b90b5b0e0993ba064001886e10aaa244752b0aa",
+     "ref_diff": 16
+    },
+    {
+     "frame": 2400,
+     "goomba": "48b645de27bec546d3885d325841d3db0a338537",
+     "reference": "48b645de27bec546d3885d325841d3db0a338537",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "58243f69598f2119f42dc4b35e89f04f92bb6d72": {
+   "title": "Pinball Fantasies (USA)",
+   "file": "Pinball Fantasies (USA).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 71983,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "89ed3e1e6389ba7bf14711f3dd853181c4f20161",
+     "reference": "eb19db0955930be1098a226ea81fc0c00eb5efa5",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "dd7a6ec7f452d3dbf962fba6bf13aa663eab21b9",
+     "reference": "b4affd42e37a3ca2893ed9cea59ebab9cab4aa3f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "c561bd8aed7f27d200d802b77016acae5803e460",
+     "reference": "0b372de85f345d33d999dd9e703fe70a46d1bf24",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "593451b60f756ecb18ea2d327300cede82b378e3",
+     "reference": "61a7586becb280fcdfd98c82ec5d22b7060b185f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "593451b60f756ecb18ea2d327300cede82b378e3",
+     "reference": "61a7586becb280fcdfd98c82ec5d22b7060b185f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "6edc8fee03067017ed4610b262b2f30027223b86",
+     "reference": "294810b83370aa8dd4772f5436094d2f872b67dd",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "979b678a7f4028fdf5705decfa52bd5b86d6784a",
+     "reference": "8cad4229046a62e204dff665961b2923f5c7b338",
+     "ref_diff": 921
+    }
+   ]
+  },
+  "f2f52230b536214ef7c9924f483392993e226cfb": {
+   "title": "Pokemon Crystal Version (USA) (Rev-A)",
+   "file": "Pokemon Crystal Version (USA) (Rev-A).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 121691,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "ccfe7ad3c99ea7448e4e7207ede7d8121a92cf36",
+     "reference": "ccfe7ad3c99ea7448e4e7207ede7d8121a92cf36",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "23c46e4b654699361067a618cd2eb229251a83d9",
+     "reference": "23c46e4b654699361067a618cd2eb229251a83d9",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "a20012a2b5e3e5485219b9e1847639f192912bb6",
+     "reference": "a20012a2b5e3e5485219b9e1847639f192912bb6",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "0ce272e7badd8835f01c9749484296623af469f3",
+     "reference": "0ce272e7badd8835f01c9749484296623af469f3",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "5d8f5ebbe3a4843480ce420c4610bb4448b1725e",
+     "reference": "5d8f5ebbe3a4843480ce420c4610bb4448b1725e",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "5d8f5ebbe3a4843480ce420c4610bb4448b1725e",
+     "reference": "5d8f5ebbe3a4843480ce420c4610bb4448b1725e",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "9402014d14969432142abfde728c6f1a10ee4dac": {
+   "title": "Pokemon Pinball (USA)",
+   "file": "Pokemon Pinball (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 135691,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "7a58f782aab254878cfe1569d909ce69e1efe733",
+     "reference": "ed85a97c7105e6215a44d4c871e7af21d624fa8f",
+     "ref_diff": 123
+    },
+    {
+     "frame": 600,
+     "goomba": "6b49ab5d6cc09df5ede1df81f36ff9dd9bf7fa39",
+     "reference": "6b49ab5d6cc09df5ede1df81f36ff9dd9bf7fa39",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "322d6416fd82a3216e77efc429bd1bb2003696bd",
+     "reference": "cf55fc03f40acad0ea4a80461cb0edad24b27315",
+     "ref_diff": 501
+    },
+    {
+     "frame": 1200,
+     "goomba": "41c06028e299902dd4c790047e8c8b6fb2702384",
+     "reference": "cb6bf640f5d489bee64b56061a1e623057f6f84d",
+     "ref_diff": 150
+    },
+    {
+     "frame": 1500,
+     "goomba": "a3bf7e4ed930c88b7f2d273a7989f807ead0039a",
+     "reference": "c3999a607099c5013d132b4cf09d3d102914fbe4",
+     "ref_diff": 5961
+    },
+    {
+     "frame": 1800,
+     "goomba": "1839c7538cf6ef2eaa50119527531a0f67bfc13f",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 20303
+    },
+    {
+     "frame": 2400,
+     "goomba": "ab661b189fee995889bff680839bfc56facf0841",
+     "reference": "e6a4f4298caef6f66e9865181c5dc904277811b3",
+     "ref_diff": 20868
+    }
+   ]
+  },
+  "cc7d03262ebfaf2f06772c1a480c7d9d5f4a38e1": {
+   "title": "Pokemon Yellow Version - Special Pikachu Edition (USA) (SGB Enhanced)",
+   "file": "Pokemon Yellow Version - Special Pikachu Edition (USA) (SGB Enhanced).gb",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 160164,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "cfd31f3d89f111fe6fd2fd8f36a1fe4971aae642",
+     "reference": "cfd31f3d89f111fe6fd2fd8f36a1fe4971aae642",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "92b7cc1c74ee35a9983399d0770507f71c0590e2",
+     "reference": "92b7cc1c74ee35a9983399d0770507f71c0590e2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "5584e74fdd731d0265d04043e605c04ae462b081",
+     "reference": "5584e74fdd731d0265d04043e605c04ae462b081",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "6019ef5d6a5a6e6efa0396a2418c7a46064b366f",
+     "reference": "6019ef5d6a5a6e6efa0396a2418c7a46064b366f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "dbba5f4bb6e1f7c2d644433d29cf1affb058b4ce",
+     "reference": "dbba5f4bb6e1f7c2d644433d29cf1affb058b4ce",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "74d4a85dca31b4869e6a118ea4597bbf8255176e",
+     "reference": "dbba5f4bb6e1f7c2d644433d29cf1affb058b4ce",
+     "ref_diff": 23
+    }
+   ]
+  },
+  "488e699490598234e762ecf864c75edcb1bc6066": {
+   "title": "Road Rash (USA)",
+   "file": "Road Rash (USA).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 62801,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "c65bad9cf134782c91349a037b1c7ab7b83cda48",
+     "reference": "c65bad9cf134782c91349a037b1c7ab7b83cda48",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "8879f23468d1ed9e47f2b18a71d7d0a37946c135",
+     "reference": "1fbac62ef357364670e7b18b654377d30979a891",
+     "ref_diff": 8270
+    },
+    {
+     "frame": 1200,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "469dd7f7ba69c55e97c7b944588def52911a5b37",
+     "ref_diff": 15541
+    },
+    {
+     "frame": 1500,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "9fdd5bf95bb62c811fbc2d324ed771028b4c334f",
+     "ref_diff": 15561
+    },
+    {
+     "frame": 1800,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "76ed9ff55a2c1a92d8ccbe51d97a761b94d090d0",
+     "ref_diff": 15562
+    },
+    {
+     "frame": 2400,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "76ed9ff55a2c1a92d8ccbe51d97a761b94d090d0",
+     "ref_diff": 15562
+    }
+   ]
+  },
+  "520e48c50f6e997fcd841ca368fc9abc1dbddec1": {
+   "title": "Shantae (USA)",
+   "file": "Shantae (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 220687,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "b50c714aadb95844449fb61062fc48aceec841c3",
+     "reference": "b50c714aadb95844449fb61062fc48aceec841c3",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "1190434f7947a052e41c704cb0d9895090e0aec1",
+     "reference": "1190434f7947a052e41c704cb0d9895090e0aec1",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "82594efd10ea1f29f4e0ddf4f1442b69147bef62",
+     "reference": "82594efd10ea1f29f4e0ddf4f1442b69147bef62",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "ebac1052e9730ac4ae1e7a28700f3dafa401829e",
+     "reference": "453f5b0949b9a0291143d847088ed7cbe8d7ce67",
+     "ref_diff": 154
+    },
+    {
+     "frame": 1500,
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "reference": "f0b13d27c4776cb9ed77ec85b145c60b9bbd4695",
+     "ref_diff": 22560
+    },
+    {
+     "frame": 1800,
+     "goomba": "a4d1bd64036d2b3cb7457ff757fc33acbef65e94",
+     "reference": "689a419cc59241b9d6b2993c4a6528a9590a4b58",
+     "ref_diff": 21970
+    },
+    {
+     "frame": 2400,
+     "goomba": "c983da7f100323e89800b8dbbcaa00234f2a245d",
+     "reference": "9d17ff8c8919d3f3dce418e2f75268c89a911e42",
+     "ref_diff": 21980
+    }
+   ]
+  },
+  "c0613d654a4382f0c50fd4d389d3a6aeef4d5207": {
+   "title": "Star Wars Episode I - Racer (USA)",
+   "file": "Star Wars Episode I - Racer (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 99732,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "ce173371df091b30fbdf1365f519b85c55fcc2fc",
+     "reference": "ce173371df091b30fbdf1365f519b85c55fcc2fc",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "fec237e869c0d0d00babce712184c2d9324b14a3",
+     "reference": "174341ed82a6d7b03060968e863384106e2ef2ae",
+     "ref_diff": 165
+    },
+    {
+     "frame": 900,
+     "goomba": "938c42e0991f0077711103e97bdf320dbc6aad18",
+     "reference": "a684e2efb3a1abffbc18513a1a51927edc568e57",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "9964d5b5ea67093301184100c982ea42f69b35a0",
+     "reference": "db89882ec0659041018e6916a1bb8cb2f52e2201",
+     "ref_diff": 112
+    },
+    {
+     "frame": 1500,
+     "goomba": "759acf9cfe80fcc822992a75458e200d4bf9ddbe",
+     "reference": "b95dbc84ffcc69d76dace3c390bc91977beebad1",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "f998dbd2bd2b0124581cbc2960445838fa1d8479",
+     "reference": "178d586890da0325bcb1229c8ee1d9b95156c195",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "d544235faca7493a5b569a20bc1a5c056a06d3c2",
+     "reference": "f89c42bf3b4a74315a1b22d689f8410682fbc39c",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "254f2254e9d54e2501e3e4ebe09491e03573a6a4": {
+   "title": "Super Mario Bros. Deluxe (USA) (Rev-B)",
+   "file": "Super Mario Bros. Deluxe (USA) (Rev-B).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 103231,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "74e9c8971ad5fea2ec61f301d84e97a83b9db99d",
+     "reference": "cda844e998fa566323314bc28350da64ac5edbfe",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "bf42dbc47d4d48ff1c0c42320c28afac2b4e1f2f",
+     "reference": "bf42dbc47d4d48ff1c0c42320c28afac2b4e1f2f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "ff1174f9d99c034887809ae0da1dc7389a985169",
+     "reference": "8938bff86f517ac900597a3a0aaac4d92b4ddf6b",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "a0a5a8e9d50e58f5e92e0476a54882219792a5e5",
+     "reference": "a0a5a8e9d50e58f5e92e0476a54882219792a5e5",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "a0a5a8e9d50e58f5e92e0476a54882219792a5e5",
+     "reference": "a0a5a8e9d50e58f5e92e0476a54882219792a5e5",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "79251ea461b78c1ca17a21194d202747e7e20a21",
+     "reference": "79251ea461b78c1ca17a21194d202747e7e20a21",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "89c99c35c9815fbe9cd5379dcfea8635be581330",
+     "reference": "564cc038c71c6c2b918752de5cd915165f5f4345",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "d11d94fa3c36b9f72e925070b66bb4f16d31001e": {
+   "title": "Super Mario Land 2 - 6 Golden Coins (USA) (Rev-B)",
+   "file": "Super Mario Land 2 - 6 Golden Coins (USA) (Rev-B).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 87423,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "a784d54d5f3fa4b9373b0dcd6c3397bc7e6d460c",
+     "reference": "d35e4a6c857b3e23c02ac3bd83f84c5d0c458575",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "7428edafb3a9b823c1b9320e5f3851d50c8c5251",
+     "reference": "4f4c06955950916e5eed330b005945a40983f696",
+     "ref_diff": 505
+    },
+    {
+     "frame": 900,
+     "goomba": "d0e43f02f292000d0e46ad17d4a683a482c62b4b",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "e7131988524dacde39357b424af1b88c84600682",
+     "reference": "896ea9ed36f54919f3b1ca7b13920f063490807a",
+     "ref_diff": 833
+    },
+    {
+     "frame": 1500,
+     "goomba": "d7d67d67a89ea271c54459c80570c073e11cc1bc",
+     "reference": "00eab4cc03c6be98bb2d4570c971412f137f8ce1",
+     "ref_diff": 835
+    },
+    {
+     "frame": 1800,
+     "goomba": "16ebdb793ef12706f876f2a73e8702267481d17a",
+     "reference": "b4e3a86b7ef1be88e6f9356ef8527fa14cb94ebc",
+     "ref_diff": 839
+    },
+    {
+     "frame": 2400,
+     "goomba": "18d1f14cb7b9b23faebddda74bd0b2e49111dc2e",
+     "reference": "e3645f3613e93fbc869e787a9922e95f7fffd5be",
+     "ref_diff": 827
+    }
+   ]
+  },
+  "208b054ca63c43f32befa989c75e8de96847f4fe": {
+   "title": "Tomb Raider (USA)",
+   "file": "Tomb Raider (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 356687,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "5556e2653e8c9f1c1d28ab8a6b7b6c9036f3b06a",
+     "reference": "b6b0e3e4dc3a159694036ba68882978896ee19c8",
+     "ref_diff": 22709
+    },
+    {
+     "frame": 600,
+     "goomba": "6b59039f918b57996069927578815069f72aec2a",
+     "reference": "d0b85e21e869bb0897590f1e35f6dd76eaee12f0",
+     "ref_diff": 22494
+    },
+    {
+     "frame": 900,
+     "goomba": "1aeb8688f1fc0cee966a047bfbf78b1fab753c72",
+     "reference": "4ef72562928d7ece79665d0719912ad0eb374cd3",
+     "ref_diff": 22771
+    },
+    {
+     "frame": 1200,
+     "goomba": "72e1e0ee2c8b2b5562ccd1a240d0839bb8bb4c52",
+     "reference": "2a62b858498800b1666c2b9a17ccdbedba331b31",
+     "ref_diff": 22681
+    },
+    {
+     "frame": 1500,
+     "goomba": "d0fbcde2159720c10358bc6f67c64672f15eab88",
+     "reference": "d0fbcde2159720c10358bc6f67c64672f15eab88",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "a19e84b88366ca321d692008a2fffe96b49d1b76",
+     "reference": "8ba55d40a1cd6ed1997a1b44300d3fcc0ed953f3",
+     "ref_diff": 20002
+    },
+    {
+     "frame": 2400,
+     "goomba": "2c6e82c332899ef96501283126a8591826b4af67",
+     "reference": "2c6e82c332899ef96501283126a8591826b4af67",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "f875f5a637fb861a0845b1753b90fe053d0a5a95": {
+   "title": "Top Gear Pocket (USA)",
+   "file": "Top Gear Pocket (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 194427,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "e05a3763282e6a424df41ceb816e8d16d2b68f0f",
+     "reference": "e05a3763282e6a424df41ceb816e8d16d2b68f0f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "fdb6a7d107b8132eebe5428cac428f56e51e41e9",
+     "reference": "fdb6a7d107b8132eebe5428cac428f56e51e41e9",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "a92716a331116fcc7cc3257f2948d5de668d5b83",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "7b1417662c4540e0cf41efb5b10dbeb175324eef",
+     "reference": "7b1417662c4540e0cf41efb5b10dbeb175324eef",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "68e6fb2408d265ff68724bd233d5fdae6fb776b6",
+     "reference": "3cf5db952b8e4347741313a5bf153649b3bf7f3b",
+     "ref_diff": 1985
+    },
+    {
+     "frame": 1800,
+     "goomba": "5d1a14027d09e26a3d8a611389524804b73b0686",
+     "reference": "9cd414dbee4dd8da2613e16cc32c185ee4ac142f",
+     "ref_diff": 1960
+    },
+    {
+     "frame": 2400,
+     "goomba": "1685b081990ba432abc574474cbe01cc58f8496e",
+     "reference": "982be28074992ffb78fe0dbd2a7e35f5e18fd4af",
+     "ref_diff": 2087
+    }
+   ]
+  },
+  "4b240f6b8e3648f2cbafa2fd6ee4e5b508950122": {
+   "title": "Turok 3 - Shadow of Oblivion (USA)",
+   "file": "Turok 3 - Shadow of Oblivion (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 178236,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "8ccd07d5eed3a9d75c07b0fb60809b365c07877b",
+     "reference": "ee3f5fc272c9947567bf45a433867f2f793ee0d3",
+     "ref_diff": 231
+    },
+    {
+     "frame": 600,
+     "goomba": "6103294c2fdd5952194ffd4aa713bed1a46b8ea4",
+     "reference": "10e61df496f80fb0dda2f03db1d35408c92e1dde",
+     "ref_diff": 1203
+    },
+    {
+     "frame": 900,
+     "goomba": "f3765d145120c57ea494d44f2a093e80d5e84236",
+     "reference": "f3765d145120c57ea494d44f2a093e80d5e84236",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "294c076636d429b78233ae3fcd43311eb94b470b",
+     "reference": "61c4d6f4ae79990ed6b5d329e73d2218af6df6a7",
+     "ref_diff": 15680
+    },
+    {
+     "frame": 1500,
+     "goomba": "b3a41bcd05f74a3688d95a42ff8b8cab34ea04cb",
+     "reference": "a3a13ad0a481a18e107164005a336f8d3e0ca19b",
+     "ref_diff": 3947
+    },
+    {
+     "frame": 1800,
+     "goomba": "87d4cbfa4f26e5acb60043db4889ee4426b7fa0e",
+     "reference": "7f90bc847b448924b96219365942c266b424966e",
+     "ref_diff": 16022
+    },
+    {
+     "frame": 2400,
+     "goomba": "2b931eccdafd0b2015db8ef223c02a7d025cdbea",
+     "reference": "3c1cd04e79a76ce05fc3f00973c79e8555fd6fef",
+     "ref_diff": 16771
+    }
+   ]
+  },
+  "bb7877309834441fd03adb7fa65738e5d5b2d7ba": {
+   "title": "Wario Land 3 (USA)",
+   "file": "Wario Land 3 (USA).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 111518,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "914bbd328c3df109e40ce89e31bc180e3a4c7dd3",
+     "reference": "659ba3523e005be6d52faf0515a9c26b0c9a0252",
+     "ref_diff": 3471
+    },
+    {
+     "frame": 600,
+     "goomba": "6011dd9fd3de627142a49f44cd795cbb884e7c88",
+     "reference": "4d4774c97ee8756c7c22881242b00032b8ca9ed3",
+     "ref_diff": 6218
+    },
+    {
+     "frame": 900,
+     "goomba": "c572a01fa3420c3fb0e39aa9565162d642bed5f9",
+     "reference": "9fd663bdba5641b72bf0a8301830d77a9d2a3d92",
+     "ref_diff": 3658
+    },
+    {
+     "frame": 1200,
+     "goomba": "f6fa406f72604c1c74d49b1bf83cd74184202594",
+     "reference": "570059bdc435c0b1da6a84115ddbe9fa180c6e46",
+     "ref_diff": 3553
+    },
+    {
+     "frame": 1500,
+     "goomba": "2ceaf3f9c4c816f9fc0bbd65a2fd46048500e148",
+     "reference": "d13b5cc0ec3a1d87e2dd0d2f34dfbc24198ec938",
+     "ref_diff": 3403
+    },
+    {
+     "frame": 1800,
+     "goomba": "b4fdf0d1fe422ad6ecd662ab224aca6071763ee1",
+     "reference": "b4fdf0d1fe422ad6ecd662ab224aca6071763ee1",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "d115cfcc580fb3ec05347973a56ef5200608f161",
+     "reference": "d115cfcc580fb3ec05347973a56ef5200608f161",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "c65820b2e52d00e6ce60e0a432fab002fec4386f": {
+   "title": "Wario Land II (USA) (SGB Enhanced)",
+   "file": "Wario Land II (USA) (SGB Enhanced).gb",
+   "script": "start-a",
+   "model": "SGB",
+   "busy_per_frame": 81532,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "4b4bf7885779b99917437c4669cb2b8b41ea04da",
+     "reference": "97dd3ad3604071dc8ac9b04999adf7e2a55ae6e2",
+     "ref_diff": 17228
+    },
+    {
+     "frame": 600,
+     "goomba": "09ad7a82dc389c5ab71e8a4c537da52eda73bd19",
+     "reference": "597b2c7a41b2e596e6565caab2c51b203ebde56b",
+     "ref_diff": 146
+    },
+    {
+     "frame": 900,
+     "goomba": "63f6bc9f75a50f24371b512f8d4a889246b4dabd",
+     "reference": "b276c4c1c34f70e6c49b8d0d8d521e1762995c10",
+     "ref_diff": 890
+    },
+    {
+     "frame": 1200,
+     "goomba": "bbe3302cfcf053d0aecff45b8ed3ffb3ab00023c",
+     "reference": "d2958151561d7061487950ba1ffab69adcedae63",
+     "ref_diff": 890
+    },
+    {
+     "frame": 1500,
+     "goomba": "c18516ad83fd3e6e268598d9c372c16611e8845f",
+     "reference": "8469b143d8808ca4e9ce8c6895210670120d343a",
+     "ref_diff": 890
+    },
+    {
+     "frame": 1800,
+     "goomba": "ea253f0e466d9bf75730c18d4910f6c850596ee3",
+     "reference": "33da4360245698f887496c6c7e3838e73d1e7604",
+     "ref_diff": 890
+    },
+    {
+     "frame": 2400,
+     "goomba": "c5bf1eabfa830353c958f5cb9244e5e7d858670c",
+     "reference": "dd03c6066a933c32eed931d63923f882379792b8",
+     "ref_diff": 890
+    }
+   ]
+  }
+ }
+}
