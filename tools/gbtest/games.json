@@ -1,5 +1,56 @@
 {
  "games": {
+  "e09277358a7fd4f3a6206464dd9d39f3abe66a53": {
+   "title": "Adventures of Lolo (Europe) (SGB Enhanced)",
+   "file": "Adventures of Lolo (Europe) (SGB Enhanced).gb",
+   "script": "start-a",
+   "model": "SGB",
+   "busy_per_frame": 113035,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "8471f4885be040f17e94c917647b44ac34ddb1ec",
+     "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "ref_diff": 9666
+    },
+    {
+     "frame": 600,
+     "goomba": "c5acd7a1ea9e4e52910722e02ee8c199a3daa659",
+     "reference": "b123d25ed8bb8ee1c7f2172d547a41aa15a8ff7f",
+     "ref_diff": 40
+    },
+    {
+     "frame": 900,
+     "goomba": "374a4b5702adba1d592797e347513a6586e2d30f",
+     "reference": "8fe490dae31a06752cce6c884969f63b08f8e9c6",
+     "ref_diff": 1198
+    },
+    {
+     "frame": 1200,
+     "goomba": "74019a4433f065ea4dfab12221fb242ac31e4685",
+     "reference": "04fe5dfd85feb8068d4e40bd18e878d40148cdbe",
+     "ref_diff": 1060
+    },
+    {
+     "frame": 1500,
+     "goomba": "6b2d7406f7c3a50791b4f492b42c01d028261309",
+     "reference": "5e1e5b39a7bf34c6dac8b09286b23fea3d5bcf27",
+     "ref_diff": 806
+    },
+    {
+     "frame": 1800,
+     "goomba": "debb7cf652afaa218420df2f2574c17127745258",
+     "reference": "0fe959b7aabcbb14cf57e6368e54f0fbfb610bf5",
+     "ref_diff": 1217
+    },
+    {
+     "frame": 2400,
+     "goomba": "debb7cf652afaa218420df2f2574c17127745258",
+     "reference": "0fe959b7aabcbb14cf57e6368e54f0fbfb610bf5",
+     "ref_diff": 1217
+    }
+   ]
+  },
   "a348aeac500d0d8fdaf90f5277631a026504ff44": {
    "title": "Alone in the Dark - The New Nightmare (USA)",
    "file": "Alone in the Dark - The New Nightmare (USA).gbc",
@@ -48,6 +99,108 @@
      "goomba": "fef00c812f3a03deac0d0acc7970eb6f6db1d1bd",
      "reference": "67f5748b3c46bde8611d096baea1b1507141eeaf",
      "ref_diff": 22250
+    }
+   ]
+  },
+  "5c7207137ab422d3326d183d3433db161d8ecbc5": {
+   "title": "Asterix - Search for Dogmatix (Europe)",
+   "file": "Asterix - Search for Dogmatix (Europe).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 108123,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "155e2a292d9ce7f88487814bcfcc37780ae0ffba",
+     "reference": "155e2a292d9ce7f88487814bcfcc37780ae0ffba",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "01f5afdd07ca219c2f5b9dd6d93779b4886365d2",
+     "reference": "01f5afdd07ca219c2f5b9dd6d93779b4886365d2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "8456ae0a6155d12c78610f23daf505d8b1db5bcc",
+     "reference": "8456ae0a6155d12c78610f23daf505d8b1db5bcc",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "ea7e3f08d4449e6ecccd7824f306b6a59641e98a",
+     "reference": "ea7e3f08d4449e6ecccd7824f306b6a59641e98a",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "ab9a8410f50258f4109937407bf488c5bc52a628",
+     "reference": "ab9a8410f50258f4109937407bf488c5bc52a628",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "ab9a8410f50258f4109937407bf488c5bc52a628",
+     "reference": "ab9a8410f50258f4109937407bf488c5bc52a628",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "ab9a8410f50258f4109937407bf488c5bc52a628",
+     "reference": "ab9a8410f50258f4109937407bf488c5bc52a628",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "6c924f693e08e32c0e59f386cd728beb32d00105": {
+   "title": "Baby Felix - Halloween (Europe) (En,Fr,De,Es,It,Nl)",
+   "file": "Baby Felix - Halloween (Europe) (En,Fr,De,Es,It,Nl).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 112947,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "f44d70573cecb02d6f31d117c60f61aa2ab9d35b",
+     "reference": "f44d70573cecb02d6f31d117c60f61aa2ab9d35b",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "3fa45ca13a067de15b2d71321719bb520d426d9a",
+     "reference": "3fa45ca13a067de15b2d71321719bb520d426d9a",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "8b45cd5794208fdee314e2fdd35ef44f6e90591d",
+     "reference": "8b45cd5794208fdee314e2fdd35ef44f6e90591d",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "e8621804481c5dd06d944455ebc766e6f74e11b1",
+     "reference": "edf8a189a88296912608a4b1066c0f5f62dd7541",
+     "ref_diff": 1320
+    },
+    {
+     "frame": 1500,
+     "goomba": "f82980204b22cf8bad38e6a67602b2bbbbe23cbe",
+     "reference": "f82980204b22cf8bad38e6a67602b2bbbbe23cbe",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "5b18e7a8446043dfa686e2608e7358219f2d9c39",
+     "reference": "971de48a308720ff179dc6c0384e05e16cc2433a",
+     "ref_diff": 24
+    },
+    {
+     "frame": 2400,
+     "goomba": "84f26e8b7e32ee66b62247259251ea6c1a67605e",
+     "reference": "84f26e8b7e32ee66b62247259251ea6c1a67605e",
+     "ref_diff": 0
     }
    ]
   },
@@ -150,6 +303,108 @@
      "goomba": "1ab780a76b84f7e94185c29f351e97c7dceb8382",
      "reference": "9215f1b172958debd9e41367f8ff319847fdfb2e",
      "ref_diff": 47
+    }
+   ]
+  },
+  "9a6901cad65e6d0ce89af8442688fec6a9fedd43": {
+   "title": "Cannon Fodder (Europe) (En,Fr,De,Es,It)",
+   "file": "Cannon Fodder (Europe) (En,Fr,De,Es,It).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 183741,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "reference": "d6f7ae3ded68b325ada5ca7ef74f5bab951fe91d",
+     "ref_diff": 427
+    },
+    {
+     "frame": 600,
+     "goomba": "25da56cbfd9d073aba1b10e06cc43ff5ca01ff92",
+     "reference": "25da56cbfd9d073aba1b10e06cc43ff5ca01ff92",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "aa17346fc7c3e8bf1035712917d21927d7290b65",
+     "reference": "aa17346fc7c3e8bf1035712917d21927d7290b65",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "2620f22c48a1a3597fe8367b97bad92222bc47e8",
+     "reference": "2620f22c48a1a3597fe8367b97bad92222bc47e8",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "fc028bb08bc1d75f38d98eda68745fa97600f518",
+     "reference": "215c1e9d83bb821445453e2620f32fc2a9d940d2",
+     "ref_diff": 62
+    },
+    {
+     "frame": 1800,
+     "goomba": "028790e7f94fec1d68097fd2638ee59555cb0d29",
+     "reference": "a3961230d59867e8086f1a1349f12a8dec875a80",
+     "ref_diff": 100
+    },
+    {
+     "frame": 2400,
+     "goomba": "85e954c4e1b86f15ece96b78ed02b540e95dfe28",
+     "reference": "85e954c4e1b86f15ece96b78ed02b540e95dfe28",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "fb1c83ee69fa32c26cdc7031733f17b90cdb0570": {
+   "title": "Choplifter III (Europe)",
+   "file": "Choplifter III (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 72279,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "06fff0818a138f93ee26fe706f544b4f5073523f",
+     "reference": "06fff0818a138f93ee26fe706f544b4f5073523f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "609dd2a6092d2d5bf0f58e58161035ac03679676",
+     "reference": "609dd2a6092d2d5bf0f58e58161035ac03679676",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "60eac51f564f90f64db74da99fb4f0ab2d001b4b",
+     "reference": "60eac51f564f90f64db74da99fb4f0ab2d001b4b",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
+     "reference": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
+     "reference": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
+     "reference": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
+     "ref_diff": 0
     }
    ]
   },
@@ -357,6 +612,57 @@
     }
    ]
   },
+  "8dc3ab8f020e4377af1e1f636396cc3881268a1f": {
+   "title": "FIFA 98 - Road to World Cup (Europe) (Rev-A) (SGB Enhanced)",
+   "file": "FIFA 98 - Road to World Cup (Europe) (Rev-A) (SGB Enhanced).gb",
+   "script": "start-a",
+   "model": "SGB",
+   "busy_per_frame": 70042,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "a3433497b9ad8a730008f3ab4fc3c68bbc224e10",
+     "reference": "abeed5f33cd6960122cb597d1e9ccad5fa284a94",
+     "ref_diff": 4984
+    },
+    {
+     "frame": 600,
+     "goomba": "a3433497b9ad8a730008f3ab4fc3c68bbc224e10",
+     "reference": "81f3dc26c5813e2cbecd45af69c8214c92f60286",
+     "ref_diff": 4448
+    },
+    {
+     "frame": 900,
+     "goomba": "95135e0a285490e7a2c45e6bf86579cc4c658a91",
+     "reference": "b2fce8091115c40e42b936855349329c32fa5f83",
+     "ref_diff": 11433
+    },
+    {
+     "frame": 1200,
+     "goomba": "f213cdeb9825c7f212c6c35e9614330b5c95286f",
+     "reference": "95135e0a285490e7a2c45e6bf86579cc4c658a91",
+     "ref_diff": 11860
+    },
+    {
+     "frame": 1500,
+     "goomba": "f213cdeb9825c7f212c6c35e9614330b5c95286f",
+     "reference": "81f3dc26c5813e2cbecd45af69c8214c92f60286",
+     "ref_diff": 5730
+    },
+    {
+     "frame": 1800,
+     "goomba": "25dee31b871e86fd4e41f2c43d17d4a8f19a4f22",
+     "reference": "f213cdeb9825c7f212c6c35e9614330b5c95286f",
+     "ref_diff": 8766
+    },
+    {
+     "frame": 2400,
+     "goomba": "845c8acb9e84ed060413ab316ed56eecb12f73b5",
+     "reference": "25dee31b871e86fd4e41f2c43d17d4a8f19a4f22",
+     "ref_diff": 9878
+    }
+   ]
+  },
   "7a50fdf0b8ad15556c933df0657fae0a2cd8bc92": {
    "title": "Gradius - The Interstellar Assault (USA)",
    "file": "Gradius - The Interstellar Assault (USA).gb",
@@ -408,6 +714,57 @@
     }
    ]
   },
+  "15bf27a7847817fbbb9cb7729b8046a6d70164c5": {
+   "title": "Halloween Racer (Europe)",
+   "file": "Halloween Racer (Europe).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 176567,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "ec7aedb0af38ba2b6016ac5ad8012d86b9cd3139",
+     "reference": "ec7aedb0af38ba2b6016ac5ad8012d86b9cd3139",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "cd7b3e68437134b2410f0419660ba6e425224fc8",
+     "reference": "cd7b3e68437134b2410f0419660ba6e425224fc8",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "1040a5269665e1655bc01c9ffdb302134d0dbd58",
+     "reference": "5723557f3f0730e7742a4224668f59afde1578cc",
+     "ref_diff": 4153
+    },
+    {
+     "frame": 1200,
+     "goomba": "448a481b1a0d321c45fa8b87cda087eb979a2430",
+     "reference": "c924ad71aed6ff5b981c02ca98a5ac6d30fbecc1",
+     "ref_diff": 38
+    },
+    {
+     "frame": 1500,
+     "goomba": "134e4748d2f529e6027405f221d41fcc843ea892",
+     "reference": "eb78acb53f33aec5836d583c0138854de3294511",
+     "ref_diff": 13070
+    },
+    {
+     "frame": 1800,
+     "goomba": "be3fedb8b4800f2f1c49a0c21e143b83529a27bd",
+     "reference": "f461635bf3dc81bc6d5de7edd62c8532583fa0bf",
+     "ref_diff": 13147
+    },
+    {
+     "frame": 2400,
+     "goomba": "1b4e757472e3b71c46e585809deab065d6d3d245",
+     "reference": "95bdec9c47df22d18d569546a0fb03556aed10b5",
+     "ref_diff": 12891
+    }
+   ]
+  },
   "4e6f676ec15e0e6238cb81853b5a74bbb20657a1": {
    "title": "Harry Potter and the Sorcerer's Stone (USA)",
    "file": "Harry Potter and the Sorcerer's Stone (USA).gbc",
@@ -456,6 +813,108 @@
      "goomba": "cd89ba7560c6791b3fa956be7ffefca81c448e7f",
      "reference": "42275e4fcecffd22938188fba09f7db3f640d805",
      "ref_diff": 5919
+    }
+   ]
+  },
+  "a5c5b52247b2ab78cd9cad19aa752e07c3df86ef": {
+   "title": "John Romero's Daikatana (Europe)",
+   "file": "John Romero's Daikatana (Europe).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 135231,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "8b6d203eebfd54c4b3ecc0e43a453943a6761504",
+     "reference": "8b6d203eebfd54c4b3ecc0e43a453943a6761504",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "d867509029193479e2cd3d5a395c843df20cf715",
+     "reference": "d867509029193479e2cd3d5a395c843df20cf715",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "c900b17d31daa6188e7ea3025abce44f5a723722",
+     "reference": "c900b17d31daa6188e7ea3025abce44f5a723722",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "7a142c52a989d866f3ee960afd1e85866452b9bb",
+     "reference": "4307ffdba95186a95e2664833d41a2d333812d3f",
+     "ref_diff": 123
+    },
+    {
+     "frame": 1800,
+     "goomba": "dc4b1c506d182f699f190697071d5f47c94aa3e8",
+     "reference": "dc4b1c506d182f699f190697071d5f47c94aa3e8",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "073dc89489714d6f1eb957a0fe9eb72cdf4f396d",
+     "reference": "dc4b1c506d182f699f190697071d5f47c94aa3e8",
+     "ref_diff": 14
+    }
+   ]
+  },
+  "1b5ac034b1333b3340fbdc5c128bc12abd310043": {
+   "title": "King of Fighters, The - Heat of Battle (Europe) (SGB Enhanced)",
+   "file": "King of Fighters, The - Heat of Battle (Europe) (SGB Enhanced).gb",
+   "script": "start-a",
+   "model": "SGB",
+   "busy_per_frame": 181684,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "5a811c85f730cef3d032cfd3ef27396e81da2ba8",
+     "reference": "cc6cdcc7ac306b1acb44da59fab0e5294847d673",
+     "ref_diff": 4431
+    },
+    {
+     "frame": 600,
+     "goomba": "5a811c85f730cef3d032cfd3ef27396e81da2ba8",
+     "reference": "5a811c85f730cef3d032cfd3ef27396e81da2ba8",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "e494534de937c255e1482266e39069679ad10ba2",
+     "reference": "5a811c85f730cef3d032cfd3ef27396e81da2ba8",
+     "ref_diff": 1806
+    },
+    {
+     "frame": 1200,
+     "goomba": "73a9c8b5dec8982ffb3bb96295fca938f0dd5e11",
+     "reference": "18f1c9ce1ba7ca960074e670506485b6929c9712",
+     "ref_diff": 10943
+    },
+    {
+     "frame": 1500,
+     "goomba": "6fa5996062619828b22222b67305bfea340ac396",
+     "reference": "b6b9c1ef64f5511b26ddd7ef78ed85c712b1731f",
+     "ref_diff": 4674
+    },
+    {
+     "frame": 1800,
+     "goomba": "187597b5a576da083e7e84fd7e5c039d66de6b8a",
+     "reference": "ed1b94aec54de45867f46e02f7c7643984500604",
+     "ref_diff": 11461
+    },
+    {
+     "frame": 2400,
+     "goomba": "e284bd70d2ae9f912e2a628a9280566b98605bce",
+     "reference": "e9f089a9251241752f393ba381a85a465392ee9c",
+     "ref_diff": 11461
     }
    ]
   },
@@ -612,6 +1071,108 @@
     }
    ]
   },
+  "76ccf9ac82faebc7f9c4a4c8b5cd47ddea46c486": {
+   "title": "Lemmings 2 - The Tribes (Europe)",
+   "file": "Lemmings 2 - The Tribes (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 114606,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "64c183343d458242b3aa853488631a7bbffedd32",
+     "reference": "64c183343d458242b3aa853488631a7bbffedd32",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "317872d8d0fd388ca41485dbc00d5c039a968799",
+     "reference": "317872d8d0fd388ca41485dbc00d5c039a968799",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "03ccbc795ca39662c145dc17af82d8b7b773be6c",
+     "reference": "06a17e32bfde0a545ba30227cdb8778272855948",
+     "ref_diff": 4265
+    },
+    {
+     "frame": 2400,
+     "goomba": "36f4267fdeda849e648ccb10884e293b2c16da2d",
+     "reference": "7eddc8b900ba5609bcb6d1c3005a045253ea2897",
+     "ref_diff": 4278
+    }
+   ]
+  },
+  "857dda99bdb15c49918c633dbcb73bd96ef7bae9": {
+   "title": "Lucky Luke - Desperado Train (Europe)",
+   "file": "Lucky Luke - Desperado Train (Europe).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 267189,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "a4f0c815b4dee4ae7af7cbed66b9bad9f41c0e21",
+     "reference": "a4f0c815b4dee4ae7af7cbed66b9bad9f41c0e21",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "107350a2ff288275507b7f93d2c6a5962d1867f3",
+     "reference": "107350a2ff288275507b7f93d2c6a5962d1867f3",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "7852ce851791853b6d3202ec8e0e561e5796187b",
+     "reference": "7852ce851791853b6d3202ec8e0e561e5796187b",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "96677fa81ed8aab8f757b792ca5ff190eb843844",
+     "reference": "96677fa81ed8aab8f757b792ca5ff190eb843844",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "e8cd361dbce325a31f4985037783c0d1344574b7",
+     "reference": "b80278671c79fc46d7a9fc8274f04a30c9022c76",
+     "ref_diff": 2143
+    },
+    {
+     "frame": 2400,
+     "goomba": "741fd2342ccc4bb86ac32920e83b48f250a7a68c",
+     "reference": "38dc5e0bf6e0e200e4c089dc3fa3067bbbc2d5a0",
+     "ref_diff": 2144
+    }
+   ]
+  },
   "c877449ba0889fdcacf23c49b0611d0ca57283c5": {
    "title": "Mega Man Xtreme (USA)",
    "file": "Mega Man Xtreme (USA).gbc",
@@ -714,6 +1275,108 @@
     }
    ]
   },
+  "50fea244c7b8c982421fccd67bc8177cf510a306": {
+   "title": "Micro Machines 2 - Turbo Tournament (Europe)",
+   "file": "Micro Machines 2 - Turbo Tournament (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 100763,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "ad351ae10f85c8342f780ed2eebd0c16742d2659",
+     "reference": "2323d59695e1af0755f4caf702e6cbef9b70655f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "56dbc046f78fac91cbfd5599a74444ccf11cb51a",
+     "reference": "b5b7c0402f2093f2adaae02d623d6844b8df4f4e",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "83c25add7bbdca7c291facc30dc2494bca542516",
+     "reference": "72f973ce65cb5d8e020a6615b96ae910645fad44",
+     "ref_diff": 48
+    },
+    {
+     "frame": 1500,
+     "goomba": "288557efe2705ce9ce0e2c6cc9010ce06e71dd12",
+     "reference": "9ea4af253afd2750f58911e58537f28ab848b49d",
+     "ref_diff": 1274
+    },
+    {
+     "frame": 1800,
+     "goomba": "07b6480528309d83d2973319e9ab0ca0f31620c2",
+     "reference": "be4bdd9a47cf894cbbcd7370855425bc4b23b1a6",
+     "ref_diff": 1298
+    },
+    {
+     "frame": 2400,
+     "goomba": "07b6480528309d83d2973319e9ab0ca0f31620c2",
+     "reference": "5b72e199dfc80a30f7568c4ef8453c5e4f835f07",
+     "ref_diff": 1298
+    }
+   ]
+  },
+  "4c3647c79c97114bb7daf74b1a30f33fd989cf04": {
+   "title": "Monster Max (Europe)",
+   "file": "Monster Max (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 109444,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "9a383a30e66063a9be7fad900ec38ebcfceea5e2",
+     "reference": "9a383a30e66063a9be7fad900ec38ebcfceea5e2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "c9620ac7f230de205686c4c5bb8c09d9410e106a",
+     "reference": "c9620ac7f230de205686c4c5bb8c09d9410e106a",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "75f24c22badd233d96e405ad5e646cb2fdd59038",
+     "reference": "75f24c22badd233d96e405ad5e646cb2fdd59038",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "77eda05512cff92e729ddfbdc7c2736cb0ae6711",
+     "reference": "77eda05512cff92e729ddfbdc7c2736cb0ae6711",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "77eda05512cff92e729ddfbdc7c2736cb0ae6711",
+     "reference": "858cc277aa70f11160d5b8e6007eb815121bc4d9",
+     "ref_diff": 14
+    },
+    {
+     "frame": 1800,
+     "goomba": "bcf401d2df23dbb8af869cdda419fe59faf77584",
+     "reference": "bcf401d2df23dbb8af869cdda419fe59faf77584",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "93ea91224f5c03fc3832ca90fe45b80d40cd9ca7",
+     "reference": "93ea91224f5c03fc3832ca90fe45b80d40cd9ca7",
+     "ref_diff": 0
+    }
+   ]
+  },
   "3bfda5edb7d125ee99b9235434488876dc6d8245": {
    "title": "Mr. Driller (USA)",
    "file": "Mr. Driller (USA).gbc",
@@ -762,6 +1425,159 @@
      "goomba": "ff57434c135456ae4724fbe0b05488e7120d1242",
      "reference": "e0b263ab5a94c2cbe5d1fe2bc4e38d3d035cb03f",
      "ref_diff": 12545
+    }
+   ]
+  },
+  "c3dc8fa1aebc92b07eacd6c78aece7c6dd33429d": {
+   "title": "Mr. Nutz (Europe)",
+   "file": "Mr. Nutz (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 86613,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "e4cd3bc8b845901c7ca2c3e5d719edd13251a49d",
+     "reference": "4a83c741e29c83cf2b33560818b5affbc6780eef",
+     "ref_diff": 2495
+    },
+    {
+     "frame": 600,
+     "goomba": "9487783a98795b10951d65942f193da35d5e7d6f",
+     "reference": "f079ae670959d7e7d914dcc127d85785d32b9682",
+     "ref_diff": 14030
+    },
+    {
+     "frame": 900,
+     "goomba": "6647ac84af4ba9d971cc4fc227c0417360797195",
+     "reference": "1c7ecc5bdce4e3b7135dbb472ef6a16bbf8b348a",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "afc022a8b90b12252bbe6349276b00b7a2a39a32",
+     "reference": "e7946b299a0036c8024515f42ff3757d0b2cffe6",
+     "ref_diff": 226
+    },
+    {
+     "frame": 1500,
+     "goomba": "a38c298a8bbc3eb0a4f8e47860b9b0614d7e101c",
+     "reference": "7b78edbf8a6d8b2b1ebbb644b1885520e96e4815",
+     "ref_diff": 1901
+    },
+    {
+     "frame": 1800,
+     "goomba": "ea46b1050e2754402932629d0bd73c690d0248ee",
+     "reference": "2f8ebdb976e59490141085cebb731e329cc8c0dc",
+     "ref_diff": 194
+    },
+    {
+     "frame": 2400,
+     "goomba": "bcd8a4053c89a115a49af96df8cbe71212de1b82",
+     "reference": "511c38c864a92bc9fd9210378153342e446dae0f",
+     "ref_diff": 302
+    }
+   ]
+  },
+  "a35ccdf0789ce84df3c12cfe7c4b9b98af08ca9a": {
+   "title": "Oddworld Adventures II (USA, Europe) (En,Fr,De,Es,It)",
+   "file": "Oddworld Adventures II (USA, Europe) (En,Fr,De,Es,It).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 147683,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "3e162cf39a4bd2c03ab3427598391e9cb8b95fec",
+     "reference": "960eef6f5165bf0db6370553b793ad762624ab8e",
+     "ref_diff": 3535
+    },
+    {
+     "frame": 900,
+     "goomba": "7c652219fc1a56ec6427a4c872fe71d48bcbfc16",
+     "reference": "7c652219fc1a56ec6427a4c872fe71d48bcbfc16",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "e131180bca076a38cff8d6a6fa93ce282258f063",
+     "reference": "504f3c48a3d6ed11d58216754c95a812e1a5882c",
+     "ref_diff": 4607
+    },
+    {
+     "frame": 1500,
+     "goomba": "a775b73dc7202a10092dba06de03d1c7c24f1873",
+     "reference": "b0145dca8549a7993f992b28430075deb9773071",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "13a03c323b39ebe80f18b325501485702188fd54",
+     "reference": "13a03c323b39ebe80f18b325501485702188fd54",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "449bc023156d30bad180553dc04d14a0eec08681",
+     "reference": "449bc023156d30bad180553dc04d14a0eec08681",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "a00a1adc326d368e9198c006d43c0fd1ab290219": {
+   "title": "Parodius (Europe)",
+   "file": "Parodius (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 121191,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "9316bf40280a84fb486d3121e64edc8abed29208",
+     "reference": "35f47eca2be2473356cc9ed8967ee00e5a0c7a9f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "0997eafce18032845e85fc42a9c8a2c0b8622763",
+     "reference": "edf4a8ddd34c90663188bdea03bf99455e72241e",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "eea54eae6189592b8b73dff6a1b871824aabc07a",
+     "reference": "1b97a7d2a71411f7be15eefdf99562bb2fe9a368",
+     "ref_diff": 36
+    },
+    {
+     "frame": 1200,
+     "goomba": "9c0a4b61789b9d77807d05b90ff9f26368c9e3c9",
+     "reference": "65da2c0faf8ae846cbeb0c8778bf80b3c87c1daf",
+     "ref_diff": 1472
+    },
+    {
+     "frame": 1500,
+     "goomba": "eae33144302178fc4a0dc4a1f2fa41e81eada77b",
+     "reference": "8d884d6179539b8fbfd613fe2244733381a84a3a",
+     "ref_diff": 2201
+    },
+    {
+     "frame": 1800,
+     "goomba": "29189d7498d8b3c5ad5509db8e0db6e64f6efde0",
+     "reference": "2f1b8bf6f5be8321172eda561602cc7b78263bb2",
+     "ref_diff": 1893
+    },
+    {
+     "frame": 2400,
+     "goomba": "eae33144302178fc4a0dc4a1f2fa41e81eada77b",
+     "reference": "8d884d6179539b8fbfd613fe2244733381a84a3a",
+     "ref_diff": 2201
     }
    ]
   },
@@ -864,6 +1680,57 @@
      "goomba": "979b678a7f4028fdf5705decfa52bd5b86d6784a",
      "reference": "8cad4229046a62e204dff665961b2923f5c7b338",
      "ref_diff": 921
+    }
+   ]
+  },
+  "d8b8a3600a465308c9953dfa04f0081c05bdcb94": {
+   "title": "Pokemon - Gold Version (USA, Europe) (SGB Enhanced) (GB Compatible)",
+   "file": "Pokemon - Gold Version (USA, Europe) (SGB Enhanced) (GB Compatible).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 135639,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "c5b28f0def8c1e2a7fdb8b3e1f2be3f4de4385a7",
+     "reference": "15d2713e54921b969f03528674b4650a0305dff2",
+     "ref_diff": 657
+    },
+    {
+     "frame": 600,
+     "goomba": "b29995ccc9c14adfff2366d42e6065fca89b8d0b",
+     "reference": "b29995ccc9c14adfff2366d42e6065fca89b8d0b",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "6d36e0f37ad03c5f2871a1cc13262156328dc67d",
+     "reference": "6d36e0f37ad03c5f2871a1cc13262156328dc67d",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "b3d425c49fefb384ffe96bf449bc6359c3844727",
+     "reference": "b3d425c49fefb384ffe96bf449bc6359c3844727",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "7c7c911962c65290c2b6a21d4901aa9715a54cc2",
+     "reference": "7c7c911962c65290c2b6a21d4901aa9715a54cc2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "e41428d969a87f7707473e1071b04527c9248047",
+     "reference": "e41428d969a87f7707473e1071b04527c9248047",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "e41428d969a87f7707473e1071b04527c9248047",
+     "reference": "e41428d969a87f7707473e1071b04527c9248047",
+     "ref_diff": 0
     }
    ]
   },
@@ -1020,6 +1887,159 @@
     }
    ]
   },
+  "0206230b55c15a8c18fbb85f852967e44b33a0a4": {
+   "title": "Pop'n TwinBee (Europe)",
+   "file": "Pop'n TwinBee (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 172508,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "3b02672bc8bfa9444ffd2d2be57396b55e109e7f",
+     "reference": "513bfa77abe4a97f030936a3221bcd8f7544ef6b",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "bf5ae8b6192f080444246be057172f0f9c8f3d5b",
+     "reference": "486fdda0c1eaf98187a6ec5e77b3e021bd9dfd74",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "3ba347b22ce63b511978b4c62faa07054ce55d20",
+     "reference": "fc8bac93ee6450e3c43862b5e16ffc3d50d00175",
+     "ref_diff": 2647
+    },
+    {
+     "frame": 1500,
+     "goomba": "2806c602f3b8c8654386c30594af18661240e769",
+     "reference": "282e184fb58290902eeffe25b8eafaa1d538975a",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "2806c602f3b8c8654386c30594af18661240e769",
+     "reference": "282e184fb58290902eeffe25b8eafaa1d538975a",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "2806c602f3b8c8654386c30594af18661240e769",
+     "reference": "282e184fb58290902eeffe25b8eafaa1d538975a",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "f19436dfed41b9c2e94e070a76c5bdbcc7f993c3": {
+   "title": "R-Type II (Europe)",
+   "file": "R-Type II (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 129066,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "111d20299661d7d7c1b183035637a8233e1fecb6",
+     "reference": "111d20299661d7d7c1b183035637a8233e1fecb6",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "b7104e8daedb7e98fd673e57bf48a35a2cdc335f",
+     "reference": "b7104e8daedb7e98fd673e57bf48a35a2cdc335f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "1a86dcabfbf041289932fd38c6c0698bea633014",
+     "reference": "1a86dcabfbf041289932fd38c6c0698bea633014",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "d819bc5368004611caa59028486c988f8e02f295",
+     "reference": "d819bc5368004611caa59028486c988f8e02f295",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "f4f7447849c1d375801cc50dbfd9dd3f0a3bf8df",
+     "reference": "ecf7f3d1704dff323716354e6cb54acdf0e053dc",
+     "ref_diff": 2279
+    },
+    {
+     "frame": 1800,
+     "goomba": "b326a267962547b9e56f24f1c7136ded4cc76d18",
+     "reference": "0653da4b3fc6320983f59a0a5eab5d2defd53e56",
+     "ref_diff": 2801
+    },
+    {
+     "frame": 2400,
+     "goomba": "91f6661b64aa08de402c8f579724c3dd92fb497b",
+     "reference": "c33abc97508e99f975c82a7085f4f94b0461cc4b",
+     "ref_diff": 2883
+    }
+   ]
+  },
+  "15dcf2f868686aea28611df69089e1929ac186f9": {
+   "title": "Rainbow Islands (Europe) (En,Fr,De,Es,It)",
+   "file": "Rainbow Islands (Europe) (En,Fr,De,Es,It).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 100220,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "23b5a6289183b285a5f3973713b7802216bccb14",
+     "reference": "23b5a6289183b285a5f3973713b7802216bccb14",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "cc79c6de29ca1efd8271884cd081102e4ed26628",
+     "reference": "cc79c6de29ca1efd8271884cd081102e4ed26628",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "98ec9a48ee936c0e3d9ee2e8eb096e174f94e6ab",
+     "reference": "d9a389ccf451acd007786fec758d1c9b5a72aa59",
+     "ref_diff": 17128
+    },
+    {
+     "frame": 1200,
+     "goomba": "37e2d426b8a835776814f9a64cedda7070b86388",
+     "reference": "edb6e29c96a6738fbbf7932fc0b50c1f8bbee18c",
+     "ref_diff": 17156
+    },
+    {
+     "frame": 1500,
+     "goomba": "0bc5bf6daa72f4a8cbfc609503902d9d51a04ddf",
+     "reference": "ca095fab27d64ff14472f5bc15772f6834a543d8",
+     "ref_diff": 150
+    },
+    {
+     "frame": 1800,
+     "goomba": "1762ff28e47ccad6e1980c591f002599e029ef08",
+     "reference": "1762ff28e47ccad6e1980c591f002599e029ef08",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "1762ff28e47ccad6e1980c591f002599e029ef08",
+     "reference": "1762ff28e47ccad6e1980c591f002599e029ef08",
+     "ref_diff": 0
+    }
+   ]
+  },
   "488e699490598234e762ecf864c75edcb1bc6066": {
    "title": "Road Rash (USA)",
    "file": "Road Rash (USA).gb",
@@ -1071,6 +2091,108 @@
     }
    ]
   },
+  "fe0c42e949bc41f070b22dd24e643aa42b007667": {
+   "title": "Robin Hood (Europe) (En,Fr,De,Es,It,Nl)",
+   "file": "Robin Hood (Europe) (En,Fr,De,Es,It,Nl).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 91719,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "d434683480a61c43d199e7f221e26896c77eb325",
+     "reference": "d434683480a61c43d199e7f221e26896c77eb325",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "f14e1213a455b1e9c680130f2917631387bca9ab",
+     "reference": "f14e1213a455b1e9c680130f2917631387bca9ab",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "094a0265c67222d272450af73f38b3dbcfdf6e1c",
+     "reference": "094a0265c67222d272450af73f38b3dbcfdf6e1c",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "263492e5f5d0e67d8b4c669353f8aaf2f0f61be2",
+     "reference": "263492e5f5d0e67d8b4c669353f8aaf2f0f61be2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "d32fcbfee48793636988b50bb603786f53835c22",
+     "reference": "8e8661f88ee255ad0293b28362d0943ab38041be",
+     "ref_diff": 13146
+    },
+    {
+     "frame": 1800,
+     "goomba": "a5071493802fa5f38fd40d31a8bf34391752338d",
+     "reference": "a5071493802fa5f38fd40d31a8bf34391752338d",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "22e76f3bce82e235f127d97acd1c782e3fdd4caf",
+     "reference": "22e76f3bce82e235f127d97acd1c782e3fdd4caf",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "eb9f0c6d3c137be7991e9d28fe48d5026beb2f35": {
+   "title": "Sensible Soccer - European Champions (Europe)",
+   "file": "Sensible Soccer - European Champions (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 62231,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "50f3cddfceb815963c94daa9bc21d8d072aeef45",
+     "reference": "f57c96eae55021bf762cd6ac0632941f6ee94ef3",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "f84cff0299e39635df5a0f52c3dba06cfe413974",
+     "reference": "db0d6a0c1f90f2196e653993674dcf82515e65b3",
+     "ref_diff": 104
+    },
+    {
+     "frame": 900,
+     "goomba": "f84cff0299e39635df5a0f52c3dba06cfe413974",
+     "reference": "db0d6a0c1f90f2196e653993674dcf82515e65b3",
+     "ref_diff": 104
+    },
+    {
+     "frame": 1200,
+     "goomba": "1a6f9b1c3fd1573fb1f28a1950774b908cbaaccd",
+     "reference": "e6a32bbace135a1c5178b25719e5ef4d0e81123a",
+     "ref_diff": 104
+    },
+    {
+     "frame": 1500,
+     "goomba": "1a6f9b1c3fd1573fb1f28a1950774b908cbaaccd",
+     "reference": "e6a32bbace135a1c5178b25719e5ef4d0e81123a",
+     "ref_diff": 104
+    },
+    {
+     "frame": 1800,
+     "goomba": "29191e5dcf07d7660f44dad878f987005bfa2eaf",
+     "reference": "93338eb2dd390c486997254825dd7cace850b546",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "967ab7ef3776f7126335122b8dea9e9fe76b5fdd",
+     "reference": "62a005902ff190abd2ee5ebfe08318a8473023b1",
+     "ref_diff": 0
+    }
+   ]
+  },
   "520e48c50f6e997fcd841ca368fc9abc1dbddec1": {
    "title": "Shantae (USA)",
    "file": "Shantae (USA).gbc",
@@ -1119,6 +2241,108 @@
      "goomba": "c983da7f100323e89800b8dbbcaa00234f2a245d",
      "reference": "9d17ff8c8919d3f3dce418e2f75268c89a911e42",
      "ref_diff": 21980
+    }
+   ]
+  },
+  "1dbfa27ebc11c63b86cb36075b807b24426dcfd5": {
+   "title": "Space Station Silicon Valley (Europe)",
+   "file": "Space Station Silicon Valley (Europe).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 91841,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "708883ea46c1d40b4da79deea11218525e27a4bc",
+     "reference": "708883ea46c1d40b4da79deea11218525e27a4bc",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "9abc672d1fc1ba8938cb892565ab0fe71bb171f4",
+     "reference": "9abc672d1fc1ba8938cb892565ab0fe71bb171f4",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "39113f3d2eb9b7ed1840b6c84bf2514bb7b59ed2",
+     "reference": "1e2e124317d41d6358971653ca6a1a17bb6419d2",
+     "ref_diff": 1420
+    },
+    {
+     "frame": 1200,
+     "goomba": "cd8de30ed4d9c9368cb431b657364a872c0e9019",
+     "reference": "ae6b3428aa5846f4b098415defbbafe5699d141f",
+     "ref_diff": 2443
+    },
+    {
+     "frame": 1500,
+     "goomba": "d4391e86ab8214f05b08677279980a04fd183d49",
+     "reference": "e3504277f82a7cd809a68e29d02134441e94ecaf",
+     "ref_diff": 731
+    },
+    {
+     "frame": 1800,
+     "goomba": "e7fa51f1a505954ef1ca7000d24f1dc77f3d14bb",
+     "reference": "2bd3d5eeaf6a0ea9d851b96945120b4b6ef5a4bc",
+     "ref_diff": 8569
+    },
+    {
+     "frame": 2400,
+     "goomba": "84549641b4d6795502abadc15cbf0bd37f7083b8",
+     "reference": "f8ab93377dd1bfbd639b29cd2b8fe585d586048f",
+     "ref_diff": 35
+    }
+   ]
+  },
+  "4c22e06cb98119923126f6500568ce9f136a33c5": {
+   "title": "Star Hawk (Europe)",
+   "file": "Star Hawk (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 137024,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "d5a5317a3e1d350d0a2ab9871cbb3bb6b4fece6f",
+     "reference": "d5a5317a3e1d350d0a2ab9871cbb3bb6b4fece6f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "4481fea3c3f087834f709d9442dcf1d6b2c8ce8f",
+     "reference": "4481fea3c3f087834f709d9442dcf1d6b2c8ce8f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "07bc1feabbc334008297680a2f32c148ea52b3a2",
+     "reference": "045005f083fdeecddc513c3ef26a4addf10af6d2",
+     "ref_diff": 19089
+    },
+    {
+     "frame": 1500,
+     "goomba": "2beffa2764f696aa1f096ac81fe0eb7268b5f8c9",
+     "reference": "045005f083fdeecddc513c3ef26a4addf10af6d2",
+     "ref_diff": 15131
+    },
+    {
+     "frame": 1800,
+     "goomba": "2beffa2764f696aa1f096ac81fe0eb7268b5f8c9",
+     "reference": "045005f083fdeecddc513c3ef26a4addf10af6d2",
+     "ref_diff": 15131
+    },
+    {
+     "frame": 2400,
+     "goomba": "2beffa2764f696aa1f096ac81fe0eb7268b5f8c9",
+     "reference": "045005f083fdeecddc513c3ef26a4addf10af6d2",
+     "ref_diff": 15131
     }
    ]
   },
@@ -1275,6 +2499,108 @@
     }
    ]
   },
+  "7e037008eabf01fa647cdfb0d5c88766a6f77423": {
+   "title": "SWIV (Europe) (En,Fr,De,Es,It)",
+   "file": "SWIV (Europe) (En,Fr,De,Es,It).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 377561,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "be60d1a6b643cc2a10d67c31e1362b8d42af8e7c",
+     "reference": "be60d1a6b643cc2a10d67c31e1362b8d42af8e7c",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "efeb336e1ff524ab2dfd4f94b845317a2c017025",
+     "reference": "efeb336e1ff524ab2dfd4f94b845317a2c017025",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "4f90b2679d2dbbd8e89f54f608e058be9610c13d",
+     "reference": "056993870e59254db98daec30062a349020ab15d",
+     "ref_diff": 43
+    },
+    {
+     "frame": 2400,
+     "goomba": "7e7bfc3695543ce92d0fc23dc3fee2a201b0233e",
+     "reference": "d85271bfe317f717e3066a70ba776d77384834a3",
+     "ref_diff": 18119
+    }
+   ]
+  },
+  "8d8978fbd5a5634e2cce940122039d575e7b3646": {
+   "title": "Tintin in Tibet (Europe) (SGB Enhanced)",
+   "file": "Tintin in Tibet (Europe) (SGB Enhanced).gb",
+   "script": "start-a",
+   "model": "SGB",
+   "busy_per_frame": 97008,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "9951e4bfd9876fc46012f40173075aaf633921a3",
+     "reference": "0c3d038dd7237e2445a1b0a26aacb47a239b1219",
+     "ref_diff": 70
+    },
+    {
+     "frame": 600,
+     "goomba": "1ae5be7630af197cdcb0777d79100c1ed969853d",
+     "reference": "0c3d038dd7237e2445a1b0a26aacb47a239b1219",
+     "ref_diff": 7913
+    },
+    {
+     "frame": 900,
+     "goomba": "2d258bd59b034212f5e058482084e8a6b8fe1069",
+     "reference": "54bb942d82985ab1fc89ebbbd11d8a97648d7297",
+     "ref_diff": 16323
+    },
+    {
+     "frame": 1200,
+     "goomba": "03adbbbe5e22adadf4860bb32beaf8edd3ca104d",
+     "reference": "39133534572347090e84bb5a0e6378396d3b6365",
+     "ref_diff": 16212
+    },
+    {
+     "frame": 1500,
+     "goomba": "f4ca09bacce8ab4705786b241d451948005e453f",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 13147
+    },
+    {
+     "frame": 1800,
+     "goomba": "f4ca09bacce8ab4705786b241d451948005e453f",
+     "reference": "68cce214dc273d54f8ea8308f3e4db14773884c5",
+     "ref_diff": 610
+    },
+    {
+     "frame": 2400,
+     "goomba": "f4ca09bacce8ab4705786b241d451948005e453f",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 13147
+    }
+   ]
+  },
   "208b054ca63c43f32befa989c75e8de96847f4fe": {
    "title": "Tomb Raider (USA)",
    "file": "Tomb Raider (USA).gbc",
@@ -1377,6 +2703,57 @@
     }
    ]
   },
+  "adc10a23dd33d40740f5c8c086dfcb97b8389286": {
+   "title": "Trip World (Europe)",
+   "file": "Trip World (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 51738,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "d0d74771cde116a585dbbb963f6cd0dfb7345091",
+     "reference": "162072e1e24208d898b3e29ba217b9a178ef48bd",
+     "ref_diff": 7362
+    },
+    {
+     "frame": 600,
+     "goomba": "614e136916d68c6f8567239592b880613832ea7c",
+     "reference": "614e136916d68c6f8567239592b880613832ea7c",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "a2e36327455bbfb027f4d7c33bc7b939e888ae8b",
+     "reference": "a2e36327455bbfb027f4d7c33bc7b939e888ae8b",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "f8bbed9ffd5a8c07495cf9cfb260a9d8ca5a3e9f",
+     "reference": "f8bbed9ffd5a8c07495cf9cfb260a9d8ca5a3e9f",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "9c479f6192e6e262b3417976ea28ccfd964b5512",
+     "reference": "247fff9c12bfa88616ca7c2dcd7c72c6558c6b74",
+     "ref_diff": 3885
+    },
+    {
+     "frame": 1800,
+     "goomba": "9c479f6192e6e262b3417976ea28ccfd964b5512",
+     "reference": "247fff9c12bfa88616ca7c2dcd7c72c6558c6b74",
+     "ref_diff": 3885
+    },
+    {
+     "frame": 2400,
+     "goomba": "9c479f6192e6e262b3417976ea28ccfd964b5512",
+     "reference": "247fff9c12bfa88616ca7c2dcd7c72c6558c6b74",
+     "ref_diff": 3885
+    }
+   ]
+  },
   "4b240f6b8e3648f2cbafa2fd6ee4e5b508950122": {
    "title": "Turok 3 - Shadow of Oblivion (USA)",
    "file": "Turok 3 - Shadow of Oblivion (USA).gbc",
@@ -1425,6 +2802,57 @@
      "goomba": "2b931eccdafd0b2015db8ef223c02a7d025cdbea",
      "reference": "3c1cd04e79a76ce05fc3f00973c79e8555fd6fef",
      "ref_diff": 16771
+    }
+   ]
+  },
+  "67d2a6e41b6a1d8372808535ac8c8222d7c53480": {
+   "title": "V-Rally - Championship Edition (Europe)",
+   "file": "V-Rally - Championship Edition (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 152817,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "188105d4176b3e51b1e631fdac9ffd7ec43658f0",
+     "reference": "67dc5c3d3a516d430973a614095c5a4f96fbdae8",
+     "ref_diff": 21526
+    },
+    {
+     "frame": 600,
+     "goomba": "b3046cbc517a76d444989f809ad2ea3f91508b82",
+     "reference": "e9be1619aed595b4c0bf855fad6eaf59fa66e09d",
+     "ref_diff": 14913
+    },
+    {
+     "frame": 900,
+     "goomba": "5ceb95b4119cafe426f2f0723f8f99a7305ee759",
+     "reference": "fa1670fe5efb58329a88e4355f6c971d45f93be7",
+     "ref_diff": 4959
+    },
+    {
+     "frame": 1200,
+     "goomba": "af872d376278d35f813564024781061b9cf580eb",
+     "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "ref_diff": 1334
+    },
+    {
+     "frame": 1500,
+     "goomba": "2f0d019089086abfb42e9e280941faad8ff51769",
+     "reference": "9d9915534d52b226974e6dd7765c671036420108",
+     "ref_diff": 15302
+    },
+    {
+     "frame": 1800,
+     "goomba": "2f0d019089086abfb42e9e280941faad8ff51769",
+     "reference": "9d9915534d52b226974e6dd7765c671036420108",
+     "ref_diff": 15302
+    },
+    {
+     "frame": 2400,
+     "goomba": "2f0d019089086abfb42e9e280941faad8ff51769",
+     "reference": "9d9915534d52b226974e6dd7765c671036420108",
+     "ref_diff": 15302
     }
    ]
   },
@@ -1527,6 +2955,108 @@
      "goomba": "c5bf1eabfa830353c958f5cb9244e5e7d858670c",
      "reference": "dd03c6066a933c32eed931d63923f882379792b8",
      "ref_diff": 890
+    }
+   ]
+  },
+  "26137ca97b840c63a462bcf85677a5f3db67fadf": {
+   "title": "Worms (Europe)",
+   "file": "Worms (Europe).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 86897,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "dcee0840fb2303f032834c9004fc2c4b3e4d7a87",
+     "reference": "dcee0840fb2303f032834c9004fc2c4b3e4d7a87",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "19ac936d3b63c2b69ec1b1f4b1752f8cc27f0a0b",
+     "reference": "19ac936d3b63c2b69ec1b1f4b1752f8cc27f0a0b",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "cbef8489b050370d1ff9abf6ccfae4965d020462",
+     "reference": "cbef8489b050370d1ff9abf6ccfae4965d020462",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1200,
+     "goomba": "8a680873f0b7b1b29a2ca9b807ac39a50fd27c03",
+     "reference": "8a680873f0b7b1b29a2ca9b807ac39a50fd27c03",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1500,
+     "goomba": "8a680873f0b7b1b29a2ca9b807ac39a50fd27c03",
+     "reference": "8a680873f0b7b1b29a2ca9b807ac39a50fd27c03",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "a30da076143c1938059e319a2a817d4041749775",
+     "reference": "a30da076143c1938059e319a2a817d4041749775",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "a30da076143c1938059e319a2a817d4041749775",
+     "reference": "a30da076143c1938059e319a2a817d4041749775",
+     "ref_diff": 0
+    }
+   ]
+  },
+  "0bff9f46f2c455e98a5f0d9c0d560eda88d939de": {
+   "title": "Worms Armageddon (Europe) (En,Fr,De,Es,It,Nl)",
+   "file": "Worms Armageddon (Europe) (En,Fr,De,Es,It,Nl).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 104211,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "ref_diff": 0
+    },
+    {
+     "frame": 600,
+     "goomba": "cf66a158807cf6502537d8b914e99f4da6be2109",
+     "reference": "cf66a158807cf6502537d8b914e99f4da6be2109",
+     "ref_diff": 0
+    },
+    {
+     "frame": 900,
+     "goomba": "e24cffdaa60204c4df42b713d5dd1e909f083b2a",
+     "reference": "aa4d1c605bf49154ad51737275f473c6719a7edd",
+     "ref_diff": 19547
+    },
+    {
+     "frame": 1200,
+     "goomba": "33cad6734fbabded8115fbf1a7f81f4000853c02",
+     "reference": "e97e1de3e88bd2bb1e9cf72701bdf8d7a623199c",
+     "ref_diff": 14874
+    },
+    {
+     "frame": 1500,
+     "goomba": "73abfded85618fafb452bd75f811bd44e8c9bba2",
+     "reference": "73abfded85618fafb452bd75f811bd44e8c9bba2",
+     "ref_diff": 0
+    },
+    {
+     "frame": 1800,
+     "goomba": "b78c093021a3946e955ab88ec9a673f6ec50f272",
+     "reference": "b78c093021a3946e955ab88ec9a673f6ec50f272",
+     "ref_diff": 0
+    },
+    {
+     "frame": 2400,
+     "goomba": "b78c093021a3946e955ab88ec9a673f6ec50f272",
+     "reference": "b78c093021a3946e955ab88ec9a673f6ec50f272",
+     "ref_diff": 0
     }
    ]
   }
