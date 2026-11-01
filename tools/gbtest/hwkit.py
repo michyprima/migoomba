@@ -37,6 +37,8 @@ GAMES = [
     ("16", r"^Harry Potter", "harry_potter", "slower than full speed (134%)"),
     ("17", r"^Kirby's Dream Land 2", "kirby_dl2", "SGB border and palettes"),
     ("18", r"^Shantae", "shantae", "demanding CGB game, general"),
+    ("19", r"^Final Fantasy Adventure", "final_fantasy_adventure", "MBC2 save (512 x 4 bits)"),
+    ("21", r"^Pokemon Card GB \(", "pokemon_card_gb", "HuC-1 (stopped after its first screens)"),
 ]
 COMPILATION = [r"^Pokemon - Gold Version", r"^Wario Land II", r"^Mega Man Xtreme", r"^Toki Tori", r"^Donkey Kong Land \("]
 
@@ -204,7 +206,9 @@ def write_checklist(out, built, comp, tests):
     w("| 2.8 | After 2.7: save in game, switch off, on | the in-game save is there | |")
     w("| 2.9 | `20_compilation`: save in Pokemon Gold, back to the menu (L+R, restart/load another game), play Wario Land II and save, switch off, on: both games | both saves kept | |")
     w("| 2.10 | Round trip: `goombasave.py export` Polished Crystal's save, load it in mGBA (GB core) or on the EverDrive X7 | Continue | |")
-    w("| 2.11 | X7 -> MiGoomba: `goombasave.py import` an X7 save of a game you have, copy back, boot | the game sees it | |\n")
+    w("| 2.11 | X7 -> MiGoomba: `goombasave.py import` an X7 save of a game you have, copy back, boot | the game sees it | |")
+    w("| 2.12 | `19_final_fantasy_adventure` (MBC2): save at an inn, switch off, on | save kept | |")
+    w("| 2.13 | `21_pokemon_card_gb` (HuC-1): save in game, switch off, on | Continue | |\n")
     w("## 3. Clock\n")
     w("| # | Check | Expected | Result |\n|---|---|---|---|")
     w("| 3.1 | Pokemon Crystal / Polished Crystal: in-game clock after a few minutes, and after a power cycle | follows real time (the cart's RTC) | |")

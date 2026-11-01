@@ -21,6 +21,11 @@ BLARGG_TIMED = {            # combined ROMs and emulated seconds needed (howto t
     "mem_timing-2/mem_timing.gb": 4, "halt_bug.gb": 2, "interrupt_time/interrupt_time.gb": 2,
     "oam_bug/oam_bug.gb": 21, "dmg_sound/dmg_sound.gb": 36, "cgb_sound/cgb_sound.gb": 37,
 }
+KEYED = {                  # suite -> sub-tests: (name, buttons pressed at the start menu, emulated seconds, reference PNGs)
+    "rtc3test": [("basic", ["A"], 13, "rtc3test-basic-tests"), ("range", ["DOWN", "A"], 8, "rtc3test-range-tests"),
+                 ("sub-second", ["DOWN", "DOWN", "A"], 26, "rtc3test-sub-second-writes")],
+}
+GB_KEYS = {"A": 0x01, "B": 0x02, "SELECT": 0x04, "START": 0x08, "RIGHT": 0x10, "LEFT": 0x20, "UP": 0x40, "DOWN": 0x80}
 LDBB_SUITES = {             # suite dir -> subdirs to include (None = all)
     "mooneye-test-suite": ["acceptance", "emulator-only", "misc", "madness"],
     "mooneye-test-suite-wilbertpol": ["acceptance", "emulator-only", "misc", "madness"], "same-suite": None, "age-test-roms": None,
@@ -43,6 +48,17 @@ def discover(roms, suites, rx, games=(), game_frames=3600, game_shots=6):
                     if f.endswith((".gb", ".gbc")):
                         tests.append(dict(suite=suite, rom=os.path.join(dp, f), kind="ldbb",
                                           exit_op=EXIT_OPCODE.get(suite, 0x40)))
+    if "mbc3-tester" in suites:         # result on screen after 40 frames (howto)
+        tests.append(dict(suite="mbc3-tester", rom=os.path.join(roms, "mbc3-tester", "mbc3-tester.gb"), kind="timed",
+                          seconds=2))
+    for suite, subtests in KEYED.items():
+        if suite in suites:
+            rom = os.path.join(roms, suite, suite + ".gb")
+            for name, keys, secs, ref in subtests:
+                refs = sorted(os.path.join(roms, suite, f) for f in os.listdir(os.path.join(roms, suite))
+                              if f.startswith(ref) and f.endswith(".png"))
+                tests.append(dict(suite=suite, rom=rom, kind="keyed", keys=keys, seconds=secs * 1.5 + 2,
+                                  refs=refs, name="%s/%s.gb#%s" % (suite, suite, name)))
     if "gbmicrotest" in suites:
         for dp, _, fs in os.walk(os.path.join(roms, "gbmicrotest")):
             for f in sorted(fs):
@@ -50,7 +66,7 @@ def discover(roms, suites, rx, games=(), game_frames=3600, game_shots=6):
                     tests.append(dict(suite="gbmicrotest", rom=os.path.join(dp, f), kind="hram",
                                       seconds=1.0))   # results are read once; a generous window keeps the read point from mattering
     for t in tests:
-        t["name"] = os.path.relpath(t["rom"], roms)
+        t.setdefault("name", os.path.relpath(t["rom"], roms))
     for path in games:
         tests.append(dict(suite="games", rom=path, kind="game", name="games/" + os.path.basename(path),
                           frames=game_frames, shots=game_shots))
@@ -117,7 +133,19 @@ def run_one(t, emu, elf, out, cache):
             res.update(status="RAN", gba_cycles=total - idle, gba_idle=idle, gb_frames=g.gb_frame() - f0,
                        shots=shots, detail="%.0f busy cycles per GB frame" % ((total - idle) / (g.gb_frame() - f0)))
             return res
-        if t["kind"] == "timed" or t["kind"] == "hram":
+        if t["kind"] == "keyed":
+            # pick the sub-test at the start menu, then let it run
+            g.run_gb_frames(60, absolute=True)
+            for k in t["keys"]:
+                h.cmd("keys %x" % GB_KEYS[k])
+                h.frames(6)
+                h.cmd("keys 0")
+                h.frames(20)
+            f1 = g.gb_frame()
+            if not g.run_gb_frames(f1 + int(t["seconds"] * 59.73), step=30,
+                                   max_gba_frames=int(t["seconds"] * 60 * 2) + 120, absolute=True):
+                res.update(status="TIMEOUT", detail="GB frames did not advance")
+        elif t["kind"] == "timed" or t["kind"] == "hram":
             done = g.run_gb_frames(max(2, int(t["seconds"] * 59.73) + 2), step=10 if t["kind"] == "hram" else 30,
                                    max_gba_frames=int(t["seconds"] * 60 * 2) + 120, absolute=True)
             if not done:
@@ -136,7 +164,7 @@ def run_one(t, emu, elf, out, cache):
             h.shot(shot)
             res["shot"] = shot
             return res
-        refs = references(t["rom"])
+        refs = t.get("refs") or references(t["rom"])
         if t["kind"] == "hram":
             v = g.gb_read(0xFF80, 3)
             res.update(status={0x01: "PASS", 0xFF: "FAIL"}.get(v[2], "NORESULT"), detail="FF80-82=%s" % v.hex())
@@ -169,7 +197,7 @@ def main():
     ap.add_argument("--elf", required=True)
     ap.add_argument("--roms", required=True)
     ap.add_argument("--out", required=True)
-    ap.add_argument("--suites", default="blargg,gbmicrotest," + ",".join(LDBB_SUITES))
+    ap.add_argument("--suites", default="blargg,gbmicrotest,mbc3-tester," + ",".join(KEYED) + "," + ",".join(LDBB_SUITES))
     ap.add_argument("--filter")
     ap.add_argument("--jobs", type=int, default=os.cpu_count())
     ap.add_argument("--game", action="append", default=[], help="real game ROM to run as a workload (repeatable)")
