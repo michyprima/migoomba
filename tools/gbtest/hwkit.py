@@ -190,7 +190,7 @@ def write_checklist(out, built, comp, tests):
     w("## 1. Basics\n")
     w("| # | Check | Expected | Result |\n|---|---|---|---|")
     w("| 1.1 | Boot `03_mario_land2.gba` | starts the game directly, no menu | |")
-    w("| 1.2 | L+R in any game | menu reads \"MiGoomba v0.5 on GBA\", text clean (mGBA's BIOS warned about the font data) | |")
+    w("| 1.2 | L+R in any game | menu reads \"MiGoomba v0.1 on GBA\" and the credits, text clean (mGBA's BIOS warned about the font data) | |")
     w("| 1.3 | Boot `20_compilation.gba` | menu lists %d games; each starts | |" % len(comp))
     w("| 1.4 | Sound in a few games | no crackle beyond what you know from Goomba | |\n")
     w("## 2. Saves (most important)\n")

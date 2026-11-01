@@ -448,8 +448,9 @@ void drawui1()
 	selected = main_ui_selection;
 	
 	strmerge(str,EMUNAME " " VERSION " on ",hostname[(u32)gbaversion]);
-	drawtext(18,str,0);
-	drawtext(19,"By FluBBa, Dwedit, Jaga",0);
+	drawtext(17,str,0);
+	drawtext(18,"By FluBBa, Dwedit, Jaga,",0);
+	drawtext(19,"michyprima",0);
 
 	print_1("B autofire: ",autotxt[autoB]);
 	print_1("A autofire: ",autotxt[autoA]);
