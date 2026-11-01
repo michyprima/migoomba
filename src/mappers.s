@@ -392,8 +392,7 @@ MBC7RAMB:
 @----------------------------------------------------------------------------
 huc1init:
 @----------------------------------------------------------------------------
-	.word RamEnable,HUC1map0,MBC1map1,MBC1mode
-@	DCD RamEnable,HUC1map0,MBC5RAMB,void
+	.word HUC1ramenable,HUC1map0,HUC1ramb,void
 
 	ldr r0,=empty_W					@ Disable RAM = $00
 	str_ r0,writemem_tbl+40
@@ -403,6 +402,17 @@ huc1init:
 	str_ r0,readmem_tbl_-44
 
 	mov pc,lr
+@----------------------------------------------------------------------------
+HUC1ramenable:	@$0000-$1FFF: $0E selects the infrared port, anything else cart RAM
+@----------------------------------------------------------------------------
+	cmp r0,#0x0E
+	movne r0,#0x0A
+	b RamEnable
+@----------------------------------------------------------------------------
+HUC1ramb:	@$4000-$5FFF: cart RAM bank only (not MBC1's upper ROM bank bits)
+@----------------------------------------------------------------------------
+	strb_ r0,mapperdata+4
+	b RamSelect
 	.popsection
 @----------------------------------------------------------------------------
 HUC1map0:
