@@ -34,6 +34,7 @@ class Harness:
 
     def frames(self, n): self.cmd("frames %d" % n)
     def stepframes(self, n): self.cmd("stepframes %d" % n)
+    def step(self, n=1): self.cmd("step %d" % n)
 
     def stats(self):
         """(total, idle) GBA cycles of stepped execution since the last call."""

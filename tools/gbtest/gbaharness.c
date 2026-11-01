@@ -9,6 +9,7 @@
  *   profile N PATH      step N frames instruction by instruction; write "pc cycles count" per PC
  *   until ADDR MAXFRAMES [REG DELTA HEXBYTE]  step until the executing PC == ADDR (and, if given,
  *                       byte at gprs[REG]+DELTA == HEXBYTE): "hit", or "timeout" after MAXFRAMES
+ *   step N              execute N ARM instructions
  *   stepframes N        like frames, but stepped so idle time is accounted (see stats)
  *   stats               "total idle" GBA cycles over stepped execution since last stats; resets
  *   regs                r0-r15 and cpsr
@@ -230,6 +231,11 @@ int main(int argc, char** argv) {
 				stepOne(core, gba);
 			}
 			printf("%s\n", hit ? "hit" : "timeout");
+		} else if (!strcmp(cmd, "step")) {
+			unsigned long count = strtoul(line + 5, NULL, 10);
+			for (unsigned long i = 0; i < count; ++i) {
+				stepOne(core, gba);
+			}
 		} else if (!strcmp(cmd, "stepframes")) {
 			uint32_t end = core->frameCounter(core) + strtoul(line + 11, NULL, 10);
 			while (core->frameCounter(core) < end) {
