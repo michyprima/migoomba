@@ -1,5 +1,6 @@
 /* Headless GBA harness on libmgba. Line commands on stdin, each answered with output then "ok".
- * usage: gbaharness ROM.gba [SAVE.sav]   (SAVE is the GBA's battery save, kept across runs)
+ * usage: gbaharness ROM.gba [SAVE.sav [SRAMKB]]   (SAVE is the GBA's battery save, kept across runs;
+ *        SRAMKB 64 makes it 64KB of SRAM, like many flash carts, instead of mGBA's usual 32KB)
  *   frames N            run N video frames
  *   cycles              print exact GBA cycles since reset
  *   frame               print frame counter
@@ -161,8 +162,11 @@ int main(int argc, char** argv) {
 		fprintf(stderr, "cannot open save %s\n", argv[2]);
 		return 1;
 	}
-	core->reset(core);
 	struct GBA* gba = core->board;
+	if (argc > 3 && atoi(argv[3]) == 64) {
+		GBASavedataForceType(&gba->memory.savedata, SAVEDATA_SRAM512);
+	}
+	core->reset(core);
 
 	char line[1024];
 	setvbuf(stdout, NULL, _IOLBF, 0);

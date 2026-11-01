@@ -15,9 +15,10 @@ def symbols(elf):
 
 
 class Harness:
-    def __init__(self, gba_path, stderr=subprocess.DEVNULL, save=None):
-        """save: path of the GBA battery save to use (kept across runs, written on close)."""
-        args = [os.path.join(HERE, "build", "gbaharness"), gba_path] + ([save] if save else [])
+    def __init__(self, gba_path, stderr=subprocess.DEVNULL, save=None, sram_kb=32):
+        """save: path of the GBA battery save to use (kept across runs, written on close);
+        sram_kb: 32 (mGBA's usual SRAM) or 64 (like many flash carts)."""
+        args = [os.path.join(HERE, "build", "gbaharness"), gba_path] + ([save, str(sram_kb)] if save else [])
         self.p = subprocess.Popen(args, stdin=subprocess.PIPE,
                                   stdout=subprocess.PIPE, stderr=stderr, text=True, bufsize=1)
 

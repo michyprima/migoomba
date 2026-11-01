@@ -47,32 +47,40 @@ def run_rom(emu, elf, rom, gb_frames, out):
 
 
 def run_saves(emu, elf, out):
-    """Quick save / quick load: Goomba's deepest C paths (state compression)."""
-    rom = os.path.join(out, "savetest.gb")
+    """Quick save / quick load and a boot that packs saved cart RAM: Goomba's deepest C paths
+    (state compression), with 8KB-style cart RAM and with a live 32KB one (64KB GBA SRAM)."""
     logo = os.path.join(os.path.dirname(os.path.abspath(__file__)), "roms", "mooneye-test-suite",
                         "emulator-only", "mbc2", "ram.gb")
-    savetest.build_rom(rom, logo)
-    gba = os.path.join(out, "savetest.gba")
-    open(gba, "wb").write(open(emu, "rb").read() + open(rom, "rb").read())
-    sav = os.path.join(out, "stack.sav")
-    if os.path.exists(sav):
-        os.remove(sav)
-    s = savetest.Session(gba, elf, sav, stepall=True)
-    s.report(); s.report()
-    s.hotkey(savetest.KEY_SELECT)
-    s.press_a()
-    s.hotkey(savetest.KEY_START)
-    s.press_a()
-    usr, irq = s.h.stackstats()
-    deepest = s.h.deepest
-    s.close()
-    s = savetest.Session(gba, elf, sav, stepall=True)   # boot with an existing save: unpacking path
-    s.report()
-    usr2, irq2 = s.h.stackstats()
-    if usr2 < usr:
+    best = None
+    for kind, sram_kb in (("mbc2", 32), ("mbc5_32k", 64)):
+        rom = os.path.join(out, "savetest_%s.gb" % kind)
+        savetest.build_rom(rom, logo, kind)
+        gba = os.path.join(out, "savetest_%s.gba" % kind)
+        open(gba, "wb").write(open(emu, "rb").read() + open(rom, "rb").read())
+        sav = os.path.join(out, "stack_%s.sav" % kind)
+        if os.path.exists(sav):
+            os.remove(sav)
+        s = savetest.Session(gba, elf, sav, sram_kb, stepall=True)
+        s.report(); s.report()
+        s.hotkey(savetest.KEY_SELECT)
+        s.press_a()
+        s.hotkey(savetest.KEY_START)
+        s.press_a()
+        usr, irq = s.h.stackstats()
         deepest = s.h.deepest
-    s.close()
-    return min(usr, usr2), min(irq, irq2), deepest
+        s.close()
+        s = savetest.Session(gba, elf, sav, sram_kb, stepall=True)   # boot with an existing save: packing/unpacking
+        s.report()
+        usr2, irq2 = s.h.stackstats()
+        if usr2 < usr:
+            deepest = s.h.deepest
+        s.close()
+        r = (min(usr, usr2), min(irq, irq2), deepest)
+        if best is None or r[0] < best[0]:
+            best = (r[0], min(r[1], best[1]) if best else r[1], r[2])
+        elif r[1] < best[1]:
+            best = (best[0], r[1], best[2])
+    return best
 
 
 def main():
