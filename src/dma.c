@@ -49,6 +49,7 @@ static __inline bool PacketOverlaps(VramPacketData2 *newPacket, VramPacketData2 
 }
 
 static void RegisterDmaPackets();
+static void CopyMap(u8 *destAddress, u8 *sourceAddress, int dest, int byteCount) __attribute__((long_call));
 
 static __inline u8* GetRealAddress(int address)
 {
@@ -150,7 +151,7 @@ void VRAM_CODE DoDma(int byteCountRemaining)
 			{
 				if (dest >= 0x9800)  // 0x9800 = highest VRAM destination?
 				{
-					copy_map_and_compare(destAddress, sourceAddress, byteCount, &dirty_map_words[(dest - 0x9800) / 32]);
+					CopyMap(destAddress, sourceAddress, dest, byteCount);
 					//_set_bg_cache_full(2);
 				}
 				else
@@ -166,7 +167,7 @@ void VRAM_CODE DoDma(int byteCountRemaining)
 			u8 *destAddress = GetRealAddress(dest);
             if (dest >= 0x9800)
             {
-                copy_map_and_compare(destAddress, sourceAddress, byteCount, &dirty_map_words[(dest - 0x9800) / 32]);
+                CopyMap(destAddress, sourceAddress, dest, byteCount);
                 //_set_bg_cache_full(2);
             }
             else
@@ -201,6 +202,27 @@ u32 vram_packet_first_dest;
 u8 *vram_packet_first_source;
 
 int incoming_packet_cursor;
+
+//Copies DMA data to the BG maps. copy_map_and_compare sets one dirty byte per 32 map bytes, starting at
+//bit 0, so a transfer starting at the second 16 bytes of a dirty byte (always 16 byte aligned) does those
+//bytes on their own: their bits are 4-7.
+static void CopyMap(u8 *destAddress, u8 *sourceAddress, int dest, int byteCount)
+{
+	u8 *dirty = &dirty_map_words[(dest - 0x9800) / 32];
+	if ((dest & 16) && byteCount > 0)
+	{
+		u8 bits = 0;
+		copy_map_and_compare(destAddress, sourceAddress, 16, &bits);
+		*dirty++ |= bits << 4;
+		destAddress += 16;
+		sourceAddress += 16;
+		byteCount -= 16;
+	}
+	if (byteCount > 0)
+	{
+		copy_map_and_compare(destAddress, sourceAddress, byteCount, dirty);
+	}
+}
 
 void VRAM_CODE new_dma_packet(u32 newDestAddress, u8* newSourceAddress)
 {
