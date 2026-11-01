@@ -4771,6 +4771,7 @@ cgbp_frame_end:	@called at line 144 after the line buffers are swapped
 	ldrb_ r2,lcdctrl0frame
 	tst r2,#0x80
 	moveq r1,#0			@LCD off: nothing to show
+	ldrb r2,[r12,#CP_LAST]
 	strb r0,[r12,#CP_LAST]
 	strb r0,[r12,#CP_MID]
 	cmp r1,#0
@@ -4784,8 +4785,10 @@ cgbp_frame_end:	@called at line 144 after the line buffers are swapped
 	cmp r1,#0
 	addne r4,r4,r5			@this frame's buffer
 	ldrb r3,[r12,#CP_N]
+	cmp r2,#144
+	beq 2f				@already closed on line 144 (cgbp_newline)
 	cgbp_close
-	mov r0,#0
+2:	mov r0,#0
 	strb r0,[r12,#CP_N]
 	mov r1,#1			@the next frame reuses this result, without the FF69 hook
 	strb r1,[r12,#CP_SKIP]
@@ -4939,8 +4942,8 @@ cgbp_newline:	@first FF69 write on a scanline, entered by branch from FF69_W and
 	ldrb r1,[r1]
 	tst r1,#0x01
 	bne 9f
-	cmp r2,#144
-	bge 9f
+	cmp r2,#145			@line 144 (HBlank of line 143) closes the last entry, so
+	bge 9f				@writes for the next frame don't leak into it
 	ldr addy,=cgbp_state
 	ldrb r3,[addy,#CP_LAST]
 	cmp r2,r3
