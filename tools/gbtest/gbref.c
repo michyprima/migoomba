@@ -1,12 +1,14 @@
 /* Headless Game Boy reference renderer on mGBA's own GB core. Line commands on stdin, each answered
  * with output then "ok" (same protocol as gbaharness).
- * usage: gbref ROM.gb MODEL      MODEL: DMG, SGB, CGB or AGB (screenshots are always the 160x144 GB screen)
+ * usage: gbref ROM.gb MODEL [SAVE]   MODEL: DMG, SGB, CGB or AGB (screenshots are always the 160x144 GB screen);
+ *                                    SAVE: battery save to load (a copy; the file is not written)
  *   frames N            run N GB frames
  *   frame               print the GB frame counter
  *   keys HEX            set GB keys (A=1 B=2 Sel=4 Start=8 R=10 L=20 U=40 D=80)
  *   shot PATH           write the 160x144 screen as PNG
  *   vram PATH           write both 8 KB VRAM banks to PATH
  *   peek ADDR N         print N bytes of GB memory from ADDR (current banks) in hex
+ *   sram PATH           write the cartridge RAM to PATH
  *   cgbpal              print the 64 CGB palette words (BG 0-31, OBJ 32-63) in hex
  *   iolog N PATH [LO HI]  run N GB frames one instruction at a time and append each write to a video register
  *                       (FF40-FF4F, FF51-FF55, FF68-FF6B), or to LO-HI (hex), to PATH as "frame ly pc reg value"
@@ -18,6 +20,8 @@
 #include <mgba/internal/gb/gb.h>
 #include <mgba/internal/gb/io.h>
 #include <mgba/internal/sm83/sm83.h>
+#include <mgba-util/vfs.h>
+#include <fcntl.h>
 #include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -77,7 +81,7 @@ static int ioTarget(struct mCore* core, struct SM83Core* cpu, uint8_t* value, un
 
 int main(int argc, char** argv) {
 	if (argc < 3) {
-		fprintf(stderr, "usage: %s ROM.gb DMG|SGB|CGB|AGB\n", argv[0]);
+		fprintf(stderr, "usage: %s ROM.gb DMG|SGB|CGB|AGB [SAVE]\n", argv[0]);
 		return 1;
 	}
 	mLogSetDefaultLogger(&logger);
@@ -100,6 +104,23 @@ int main(int argc, char** argv) {
 		return 1;
 	}
 	mCoreLoadConfig(core);
+	if (argc > 3) {
+		/* load the save into memory so the file itself is never written */
+		struct VFile* f = VFileOpen(argv[3], O_RDONLY);
+		struct VFile* mem = f ? VFileMemChunk(NULL, f->size(f)) : NULL;
+		if (!mem) {
+			fprintf(stderr, "cannot read %s\n", argv[3]);
+			return 1;
+		}
+		char buf[4096];
+		ssize_t n;
+		while ((n = f->read(f, buf, sizeof(buf))) > 0) {
+			mem->write(mem, buf, n);
+		}
+		f->close(f);
+		mem->seek(mem, 0, SEEK_SET);
+		core->loadSave(core, mem);
+	}
 	core->reset(core);
 
 	char line[1024];
@@ -142,6 +163,15 @@ int main(int argc, char** argv) {
 				printf("%02x", core->rawRead8(core, (strtoul(arg, NULL, 16) + i) & 0xFFFF, -1));
 			}
 			printf("\n");
+		} else if (!strcmp(cmd, "sram") && n >= 2) {
+			struct GB* gb = core->board;
+			FILE* f = fopen(arg, "wb");
+			if (!f || fwrite(gb->memory.sram, 1, gb->sramSize, f) != gb->sramSize) {
+				printf("error cannot write %s\n", arg);
+			}
+			if (f) {
+				fclose(f);
+			}
 		} else if (!strcmp(cmd, "cgbpal")) {
 			struct GB* gb = core->board;
 			for (int i = 0; i < 64; ++i) {
