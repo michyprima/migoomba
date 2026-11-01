@@ -239,7 +239,8 @@ int SaveEmu(u8 *dest)
 }
 int SaveOam(u8 *dest)
 {
-	memcpy32(dest, _gb_oam_buffer_writing, 160);
+	//after a buffer swap the writing buffer is stale and the latest OAM is on screen (as OAM_R)
+	memcpy32(dest, (_gboamdirty & 0x80) ? _gb_oam_buffer_screen : _gb_oam_buffer_writing, 160);
 	return 160;
 }
 int SaveSgb(u8 *dest)

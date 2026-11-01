@@ -217,6 +217,7 @@ extern u8* _dirty_tile_bits;
 extern u8* _gb_oam_buffer_screen;
 extern u8* _gb_oam_buffer_writing;
 extern u8* _gb_oam_buffer_alt;
+extern u8 _gboamdirty;
 
 //extern u8* _dirty_tiles;
 //extern u8* _dirty_rows;

@@ -107,6 +107,7 @@
 	.global _gb_oam_buffer_screen
 	.global _gb_oam_buffer_writing
 	.global _gb_oam_buffer_alt
+	.global _gboamdirty
 	
 	global_func GFX_init
 	global_func GFX_init_irq
