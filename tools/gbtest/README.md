@@ -42,6 +42,14 @@ busy cycles per GB frame by about 0.1% on Polished Crystal and about 0.2% over t
 300 GB frames (the default); short tests can move by tens of percent. Treat smaller differences as noise.
 Game checkpoints stop on exact GB frames, so their screenshots can be compared between builds.
 
+## Battery saves
+
+    python3 tools/gbtest/savetest.py --emu jagoombacolor.gba --elf jagoombacolor.elf --out tools/gbtest/out/save
+
+Builds a small MBC2 + battery ROM that keeps a counter in cart RAM, then runs it across simulated power
+cycles (each harness run is one power-on; the GBA battery save is kept between runs) and around Goomba's
+quick save / quick load hotkeys (R+Select / R+Start). `gbaharness ROM.gba SAVE.sav` keeps the save file.
+
 ## Profiling
 
 Exact cycle profile (every ARM instruction stepped and timed):

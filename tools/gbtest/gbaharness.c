@@ -1,4 +1,5 @@
 /* Headless GBA harness on libmgba. Line commands on stdin, each answered with output then "ok".
+ * usage: gbaharness ROM.gba [SAVE.sav]   (SAVE is the GBA's battery save, kept across runs)
  *   frames N            run N video frames
  *   cycles              print exact GBA cycles since reset
  *   frame               print frame counter
@@ -170,6 +171,10 @@ int main(int argc, char** argv) {
 	core->setVideoBuffer(core, video, W);
 	if (!mCoreLoadFile(core, argv[1])) {
 		fprintf(stderr, "cannot load %s\n", argv[1]);
+		return 1;
+	}
+	if (argc > 2 && !mCoreLoadSaveFile(core, argv[2], false)) {
+		fprintf(stderr, "cannot open save %s\n", argv[2]);
 		return 1;
 	}
 	core->reset(core);
