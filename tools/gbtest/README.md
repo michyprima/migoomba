@@ -1,6 +1,6 @@
 # gbtest: headless test and profiling tools
 
-Runs jagoombacolor builds with Game Boy test ROMs inside libmgba (mGBA 0.10.3) without a GUI.
+Runs migoomba builds with Game Boy test ROMs inside libmgba (mGBA 0.10.3) without a GUI.
 Results include exact GBA cycle counts, so the same run serves as a regression and performance check.
 
 ## Setup
@@ -12,7 +12,7 @@ Requires git, cmake, a C compiler, Python 3 and devkitARM (for `arm-none-eabi-nm
 
 ## Test suites
 
-    python3 tools/gbtest/runtests.py --emu jagoombacolor.gba --elf jagoombacolor.elf \
+    python3 tools/gbtest/runtests.py --emu migoomba.gba --elf migoomba.elf \
         --roms tools/gbtest/roms --out tools/gbtest/out/NAME [--game path/to/game.gbc] [--filter REGEX]
 
 Suites and pass criteria (from each suite's `game-boy-test-roms-howto.md`):
@@ -44,7 +44,7 @@ Game checkpoints stop on exact GB frames, so their screenshots can be compared b
 
 ## Real games
 
-    python3 tools/gbtest/gametests.py --emu jagoombacolor.gba --elf jagoombacolor.elf --out tools/gbtest/out/games \
+    python3 tools/gbtest/gametests.py --emu migoomba.gba --elf migoomba.elf --out tools/gbtest/out/games \
         [--filter REGEX] [--record]
 
 Commercial ROMs are never committed. Put them, under any file name, in `tools/gbtest/games/` (gitignored;
@@ -69,7 +69,7 @@ show as `NEW`; games in the database whose ROM is missing are listed. Exit statu
 
 ## Battery saves
 
-    python3 tools/gbtest/savetest.py --emu jagoombacolor.gba --elf jagoombacolor.elf --out tools/gbtest/out/save
+    python3 tools/gbtest/savetest.py --emu migoomba.gba --elf migoomba.elf --out tools/gbtest/out/save
 
 Builds small ROMs that keep a counter in cart RAM (MBC2, and MBC5 with 32KB of RAM using bank 3), then
 runs them across simulated power cycles (each harness run is one power-on; the GBA battery save is kept
@@ -87,11 +87,11 @@ SRAM, or too many saves) 32KB cart RAM is only saved when the menu opens.
 `tools/goombasave.py` moves a game's cart RAM between Goomba's GBA save and a plain Game Boy save
 (cartridge dumps, EverDrive GB, emulators); `goombasave_test.py` checks it with Goomba itself:
 
-    python3 tools/gbtest/goombasave_test.py --emu jagoombacolor.gba --elf jagoombacolor.elf --out tools/gbtest/out/gsave
+    python3 tools/gbtest/goombasave_test.py --emu migoomba.gba --elf migoomba.elf --out tools/gbtest/out/gsave
 
 ## Stack headroom (run after any change that adds IWRAM code or data)
 
-    python3 tools/gbtest/stackcheck.py --emu jagoombacolor.gba --elf jagoombacolor.elf \
+    python3 tools/gbtest/stackcheck.py --emu migoomba.gba --elf migoomba.elf \
         --roms tools/gbtest/roms --out tools/gbtest/out/stack --game path/to/game.gbc
 
 IWRAM is nearly full and .bss ends just below the user stack. The deepest stack in normal play is the
@@ -107,7 +107,7 @@ Keep code that runs at most a few times per frame in .text (ROM) rather than IWR
 
 Exact cycle profile (every ARM instruction stepped and timed):
 
-    python3 tools/gbtest/profile.py --emu jagoombacolor.gba --elf jagoombacolor.elf \
+    python3 tools/gbtest/profile.py --emu migoomba.gba --elf migoomba.elf \
         --rom game.gb [--skip GBFRAMES] [--frames GBAFRAMES] [--annotate SYMBOL ...]
 
 ## Notes on Goomba under test

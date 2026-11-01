@@ -1,6 +1,6 @@
 """Exact cycle profile of Goomba running a GB ROM: every ARM instruction is stepped and timed.
 
-usage: profile.py --emu jagoombacolor.gba --elf jagoombacolor.elf --rom game.gb
+usage: profile.py --emu migoomba.gba --elf migoomba.elf --rom game.gb
                   [--skip GBFRAMES] [--frames GBAFRAMES] [--top N] [--annotate SYMBOL ...]
 """
 import argparse, bisect, collections, os, subprocess, sys, tempfile

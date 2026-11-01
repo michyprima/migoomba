@@ -6,7 +6,7 @@ The ROM keeps a counter in cart RAM at $A000. At boot it reports the stored valu
 it was 0, and increments it on each A press; every report puts the value in D and runs LD B,B.
 Each harness run is one power-on; the GBA battery save (.sav) is kept between runs.
 
-usage: savetest.py --emu jagoombacolor.gba --elf jagoombacolor.elf --out DIR
+usage: savetest.py --emu migoomba.gba --elf migoomba.elf --out DIR
 """
 import argparse, os, sys
 

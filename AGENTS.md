@@ -1,4 +1,4 @@
-# Working on jagoombacolor
+# Working on migoomba
 
 Goomba Color fork: a Game Boy / Game Boy Color emulator that runs on the GBA, mostly ARM assembly.
 The goal is compatibility and accuracy without costing GBA cycles. Pixel-perfect output is not a goal:
@@ -7,7 +7,7 @@ proxy, so keep cycle-sensitive choices conservative.
 
 ## Build
 
-    make                      # needs DEVKITARM; produces jagoombacolor.gba + jagoombacolor.elf
+    make                      # needs DEVKITARM; produces migoomba.gba + migoomba.elf
 
 - make compares 1-second mtimes. After `git stash`/`checkout` in the same second, `touch src/all.s`
   (or `make clean`) before building, or you test a stale binary.
@@ -38,7 +38,7 @@ must read/write with `newline=''` (Python) and keep `\r\n`. Check after editing:
   chain (`bgp_vcount`, `hblank_palette`, `cgbp_*` in lcd.s).
 - Code placement is a budget: IWRAM is full, `.vram1` (0x0600F000, 3584 bytes) is nearly full, ROM code
   costs ~7.5 cycles/instruction. Hot paths in IWRAM/VRAM, rarely-run code in `.text`. Check sizes with
-  `arm-none-eabi-size -A jagoombacolor.elf`.
+  `arm-none-eabi-size -A migoomba.elf`.
 - After any IWRAM/stack change run `tools/gbtest/stackcheck.py` (needs >= 32 bytes spare).
 - EWRAM between the heap start and `Next` (equates.h) is borrowed by the save code (`sram_copy`, LZO
   workspace, compressed buffers, from `ewram_start`) and by multiboot for the ROM; saves run past `Next`
@@ -50,10 +50,10 @@ must read/write with `newline=''` (Python) and keep `\r\n`. Check after editing:
 
 Set up once with `tools/gbtest/build.sh` and `fetch_roms.sh`. Runs are deterministic per build.
 
-- Test ROMs: `runtests.py --emu jagoombacolor.gba --elf jagoombacolor.elf --roms tools/gbtest/roms --out DIR`
+- Test ROMs: `runtests.py --emu migoomba.gba --elf migoomba.elf --roms tools/gbtest/roms --out DIR`
   (~900 tests, ~1 min); compare two runs with `diffruns.py A/results.json B/results.json`, which also
   reports busy cycles per GB frame. Noise floor ~0.1-0.2%.
-- Real games: `gametests.py --emu jagoombacolor.gba --elf jagoombacolor.elf --out DIR [--filter RE] [--record]`.
+- Real games: `gametests.py --emu migoomba.gba --elf migoomba.elf --out DIR [--filter RE] [--record]`.
   ROMs live in gitignored `tools/gbtest/games/`, identified by SHA-1 in `games.json`; each run is compared
   with Goomba's recorded screens and with mGBA's GB core (`build/gbref`) as reference. `busy/fr` above
   280,896 means slower than real time.

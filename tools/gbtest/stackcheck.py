@@ -9,7 +9,7 @@ the stack reaches it, tiles decode wrongly until a canary (CANARY2) triggers a r
 Every byte added to IWRAM moves .bss's end up, so run this after any change that adds IWRAM code or
 data. It steps every instruction of real workloads and reports the lowest SP and where it happened.
 
-usage: stackcheck.py --emu jagoombacolor.gba --elf jagoombacolor.elf --roms ROMS --out DIR
+usage: stackcheck.py --emu migoomba.gba --elf migoomba.elf --roms ROMS --out DIR
                      [--game GAME ...] [--min-spare BYTES]
 Exit status 1 if the user stack comes within --min-spare bytes (default 32) of the end of .bss, or
 the IRQ stack leaves its region.

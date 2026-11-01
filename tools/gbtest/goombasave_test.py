@@ -3,7 +3,7 @@ plain save and check the game reads it, for the savetest ROMs (MBC2; MBC5 with 3
 counter in bank 3) on 32KB and 64KB of GBA SRAM (32KB cart RAM on 32KB of GBA SRAM: opening the menu before each
 power-off, as that is when it is saved).
 
-usage: goombasave_test.py --emu jagoombacolor.gba --elf jagoombacolor.elf --out DIR
+usage: goombasave_test.py --emu migoomba.gba --elf migoomba.elf --out DIR
 """
 import argparse, os, subprocess, sys
 

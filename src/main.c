@@ -329,7 +329,7 @@ void C_entry()
 			drawtext(2,"to build a compilation ROM,",0);
 			drawtext(3,"or use Pogoshell with a",0);
 			drawtext(4,"supported flash cartridge.",0);
-			drawtext(19,"Goomba Color " VERSION,0);
+			drawtext(19,"MiGoomba " VERSION,0);
 			while (1)
 			{
 				waitframe();

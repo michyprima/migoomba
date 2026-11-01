@@ -13,7 +13,7 @@ Each game runs the same input script in both emulators and is captured at the sa
     Goomba's screen equals the reference up to recolouring (Goomba uses its own palettes); input timing
     differs by a frame or so between the two, so a mismatch is a lead to look at, not a failure.
 
-usage: gametests.py --emu jagoombacolor.gba --elf jagoombacolor.elf --out DIR
+usage: gametests.py --emu migoomba.gba --elf migoomba.elf --out DIR
                     [--games DIR] [--db games.json] [--filter REGEX] [--record] [--jobs N]
 """
 import argparse, hashlib, json, os, re, subprocess, sys, time, traceback

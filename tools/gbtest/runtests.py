@@ -1,6 +1,6 @@
-"""Run Game Boy test ROM suites through Goomba (jagoombacolor) on libmgba.
+"""Run Game Boy test ROM suites through Goomba (migoomba) on libmgba.
 
-usage: runtests.py --emu jagoombacolor.gba --elf jagoombacolor.elf --roms DIR --out DIR
+usage: runtests.py --emu migoomba.gba --elf migoomba.elf --roms DIR --out DIR
                    [--suites a,b] [--filter REGEX] [--jobs N]
 
 Result per test: PASS / FAIL / TIMEOUT / ERROR, plus GBA cycles and GB frames used.
