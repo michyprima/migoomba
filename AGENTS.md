@@ -44,6 +44,7 @@ must read/write with `newline=''` (Python) and keep `\r\n`. Check after editing:
   workspace, compressed buffers, from `ewram_start`) and by multiboot for the ROM; saves run past `Next`
   and `cleanup_ewram()` repairs what they hit. Don't grow `.sbss` (it moves the heap start): put
   emulator buffers in equates.h below `Next` and make them safe to clear in `cleanup_ewram()`.
+- Battery saves: see "Battery saves" in tools/gbtest/README.md (live areas in GBA SRAM, `savetest.py`).
 
 ## Testing (tools/gbtest, see its README)
 

@@ -2509,10 +2509,10 @@ cpu_reset:
 	@reset SRAM size - so it can tell the actual SRAM size detected
 	ldr r0,=save_start
 	ldr r0,[r0]
-	cmp r0,#0xE000
+	cmp r0,#0x6000			@32K GBA SRAM (any other save_start is a 64K layout)
 	
-	ldreq r0,sram_W2_instruction_save64
-	ldrne r0,sram_W2_instruction_save32
+	ldrne r0,sram_W2_instruction_save64
+	ldreq r0,sram_W2_instruction_save32
 	ldr r1,=sram_W2_modify
 	str r0,[r1]
 

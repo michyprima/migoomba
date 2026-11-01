@@ -17,6 +17,7 @@
 	global_func mem_RC0_2
 	global_func sram_W
 	global_func sram_W2
+	global_func set_sram_writer
 	global_func wram_W
 	global_func wram_W_2
 	global_func echo_W
@@ -132,6 +133,40 @@ wram_W_2:	@wram write ($D000-$DFFF)
 	strb r0,[r1,addy]
 	mov pc,lr
 .text
+@----------------------------------------------------------------------------
+sram_W3:	@32KB cart RAM write ($A000-$BFFF): emulated sram AND its live copy in
+@----------------------------------------------------------------------------
+	@GBA SRAM $8000-$FFFF, which sram.c keeps while a 32KB game runs (ROM: cart RAM
+	@writes are rare)
+	.if RESIZABLE
+	.error "sram_W3 needs a fixed XGB_SRAM"
+	.endif
+	ldr_ r1,memmap_tbl+40
+	strb r0,[r1,addy]!
+	add r1,r1,#0x0C000000		@XGB_SRAM+offset -> AGB_SRAM+$8000+offset
+	sub r1,r1,#0x0C000000-(AGB_SRAM+0x8000-XGB_SRAM)
+	strb r0,[r1]
+	mov pc,lr
+@----------------------------------------------------------------------------
+set_sram_writer:	@void set_sram_writer(int live32): cart RAM writes of a 32KB game
+@----------------------------------------------------------------------------
+	@go to sram_W3 (live32) or sram_W
+	stmfd sp!,{globalptr,lr}
+	ldr globalptr,=GLOBAL_PTR_BASE
+	ldr r1,=sram_W
+	cmp r0,#0
+	ldrne r1,=sram_W3
+	ldr_ r0,sramwptr
+	str_ r1,sramwptr
+	ldr_ r2,writemem_tbl+40
+	cmp r2,r0			@cart RAM enabled right now: switch its handler too
+	bne 0f
+	str_ r1,writemem_tbl+40
+	str_ r1,writemem_tbl+44
+0:	ldmfd sp!,{globalptr,lr}
+	bx lr
+	.ltorg
+
 echo_R:
 	sub addy,addy,#0x2000
 	tst addy,#0x1000

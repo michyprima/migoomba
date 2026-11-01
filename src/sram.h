@@ -23,8 +23,8 @@ typedef struct {		//(modified stateheader)
 	char unused1;
 	char palettebank;
 	char misc;
-	char reserved3;
-	u32 sram_checksum;	//checksum of rom using SRAM e000-ffff	
+	char live_sram;		//1: the owner (sram_checksum) is a 32KB game, its cart RAM lives at 8000-ffff
+	u32 sram_checksum;	//checksum of rom using SRAM e000-ffff (8000-ffff with live_sram)
 	u32 zero;	//=0
 	char reserved4[32];  //="CFG"
 } configdata;

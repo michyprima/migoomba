@@ -71,9 +71,18 @@ show as `NEW`; games in the database whose ROM is missing are listed. Exit statu
 
     python3 tools/gbtest/savetest.py --emu jagoombacolor.gba --elf jagoombacolor.elf --out tools/gbtest/out/save
 
-Builds a small MBC2 + battery ROM that keeps a counter in cart RAM, then runs it across simulated power
-cycles (each harness run is one power-on; the GBA battery save is kept between runs) and around Goomba's
-quick save / quick load hotkeys (R+Select / R+Start). `gbaharness ROM.gba SAVE.sav` keeps the save file.
+Builds small ROMs that keep a counter in cart RAM (MBC2, and MBC5 with 32KB of RAM using bank 3), then
+runs them across simulated power cycles (each harness run is one power-on; the GBA battery save is kept
+between runs), around Goomba's quick save / quick load hotkeys (R+Select / R+Start) and around opening
+and closing the menu, with 32KB of GBA SRAM (mGBA's usual) and 64KB (like most flash carts).
+`gbaharness ROM.gba SAVE.sav [64]` keeps the save file; 64 makes it 64KB of SRAM.
+
+How Goomba keeps cart RAM (src/sram.c): saved states and every game's packed (LZO) cart RAM fill GBA
+SRAM from the start; the running game's cart RAM is also written through to the end, so it survives a
+power-off and is packed on the next boot. Up to 8KB it lives at the last 8KB. 32KB cart RAM lives at
+$8000-$FFFF while the game runs, on 64KB GBA SRAM when everything else fits below $8000 (with 4KB to
+spare); the menu packs it and gives the whole SRAM back until the game resumes. Otherwise (32KB GBA
+SRAM, or too many saves) 32KB cart RAM is only saved when the menu opens.
 
 ## Stack headroom (run after any change that adds IWRAM code or data)
 

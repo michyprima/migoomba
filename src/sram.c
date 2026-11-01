@@ -34,6 +34,16 @@ int get_saved_sram(void)
 
 EWRAM_DATA u32 save_start = SAVE_START;
 
+//32KB cart RAM write-through: while a 32KB game runs (64K GBA SRAM only), its cart RAM is kept
+//at LIVE32_START by sram_W3 as well as in XGB_SRAM, and the saved states and other games' saves
+//must fit below it (save_start = LIVE32_START). The config records it (live_sram), so after a
+//power-off the next boot packs it like any other owner's SRAM (backup_gb_sram(0)). The UI
+//releases it when the menu opens and the game takes it again when the menu closes.
+#define LIVE32_START 0x8000
+#define LIVE32_MARGIN 0x1000	//room left for the owner's packed SRAM to grow
+EWRAM_BSS u32 base_save_start;	//save_start as probed
+EWRAM_BSS u8 sram_live32;
+
 
 
 #define STATEID 0x57a731d8
@@ -250,6 +260,57 @@ void getsram()	//copy GBA sram to sram_copy
 			sramCopy32[0] = STATEID;	//nope.  initialize
 			sramCopy32[1] = 0;
 		}
+		//a 32KB game's cart RAM live at LIVE32_START (from before a power-off, or still running)
+		base_save_start = save_start;
+		sram_live32 = 0;
+		if (save_start == SAVE_START_64K)
+		{
+			stateheader *sh = (stateheader*)(sramCopy + 4);
+			while (sh->size != 0 && (u8*)sh < sramCopy + LIVE32_START)
+			{
+				if (sh->type == CONFIGSAVE)
+				{
+					if (((configdata*)sh)->live_sram && ((configdata*)sh)->sram_checksum)
+					{
+						save_start = LIVE32_START;
+						sram_live32 = 1;
+					}
+					break;
+				}
+				sh = (stateheader*)((u8*)sh + sh->size);
+			}
+		}
+	}
+}
+
+//current game (32KB cart RAM, loaded in XGB_SRAM): keep its cart RAM live at LIVE32_START.
+//Returns 0 if it can't (32K GBA SRAM, or saves don't fit below LIVE32_START).
+static int take_live32(void)
+{
+	if (base_save_start != SAVE_START_64K || sram_live32)
+	{
+		return 0;
+	}
+	findstate(0, CONFIGSAVE, NULL);		//updates totalstatesize
+	if (totalstatesize + 8 + LIVE32_MARGIN > LIVE32_START)
+	{
+		return 0;
+	}
+	save_start = LIVE32_START;
+	sram_live32 = 1;
+	bytecopy(MEM_SRAM + LIVE32_START, XGB_SRAM, 0x8000);
+	register_sram_owner();
+	set_sram_writer(1);
+	return 1;
+}
+
+static void release_live32(void)
+{
+	if (sram_live32)
+	{
+		sram_live32 = 0;
+		save_start = base_save_start;
+		set_sram_writer(0);
 	}
 }
 
@@ -1036,7 +1097,11 @@ restart:
 				}
 				compressed_save = NULL;
 				current_save_file = NULL;
-				return 0;
+				return 0;	//a live cart RAM stays live: nothing is lost
+			}
+			if (sram_live32 && chk == sram_owner)
+			{
+				no_sram_owner();	//packed: the menu has the whole SRAM again
 			}
 		}
 		compressed_save = NULL;
@@ -1086,7 +1151,7 @@ restart:
 	
 	i=findstate(0,CONFIGSAVE,(stateheader**)&cfg);	//find config
 	
-	if (called_from==1 && chk==sram_owner)
+	if (called_from==1 && chk==sram_owner && !sram_live32)
 	{
 		//copy XGB_SRAM to MEM_SRAM, because some instructions (push) don't properly modify GBA SRAM
 		bytecopy(MEM_SRAM+save_start,XGB_SRAM,0x2000);
@@ -1095,12 +1160,13 @@ restart:
 	if(i>=0 && cfg->sram_checksum)	//SRAM is occupied?
 	{
 		i=findstate(cfg->sram_checksum,SRAMSAVE,&sh);//find out where to save
+		u8 *live = sram_live32 ? MEM_SRAM+LIVE32_START : MEM_SRAM+save_start;
 		if(i>=0)
 		{
-			int save_size=0x2000;
+			int save_size=sram_live32 ? 0x8000 : 0x2000;
 
 			memcpy(compressed_save,sh,sizeof(stateheader));//use old info, in case the rom for this sram is gone and we can't look up its name.
-			lzo1x_1_compress(MEM_SRAM+save_start,save_size,compressed_save+sizeof(stateheader),&compressedsize,lzo_workspace);	//workspace needs to be 64k
+			lzo1x_1_compress(live,save_size,compressed_save+sizeof(stateheader),&compressedsize,lzo_workspace);	//workspace needs to be 64k
 			sh=(stateheader*)current_save_file;
 			sh->size=(compressedsize+sizeof(stateheader)+3)&~3;	//size of compressed state+header, word aligned
 			sh->checksum = cfg->sram_checksum;
@@ -1140,7 +1206,7 @@ restart:
 				//u8* oldromstart=romstart;
 				//romstart=findrom2(r);
 				romnum=r;
-				save_success=save_new_sram(MEM_SRAM+save_start);
+				save_success=save_new_sram(live);
 				romnum=oldromnum;
 				//romstart=oldromstart;
 				if (!save_success)
@@ -1183,8 +1249,8 @@ int save_new_sram(u8 *SRAM_SOURCE)
 	if (SRAM_SOURCE != XGB_SRAM)
 	{
 		breakpoint();
-		//if we are saving from MEM_SRAM instead of XGB_SRAM, always use size 8KB
-		sramsize = 0x2000;
+		//if we are saving from MEM_SRAM instead of XGB_SRAM: the live area's size
+		sramsize = (sram_live32 && SRAM_SOURCE == MEM_SRAM+LIVE32_START) ? 0x8000 : 0x2000;
 	}
 	if (sram_copy == NULL)
 	{
@@ -1228,6 +1294,10 @@ int get_saved_sram(void)
 
 	if(g_cartflags&MBC_SAV)
 	{	//if rom uses SRAM
+		if (sram_live32)
+		{
+			backup_gb_sram(0);	//pack a live 32KB cart RAM before anything replaces it
+		}
 		chk=checksum_this();
 		i=findstate(0,CONFIGSAVE,(stateheader**)&cfg);	//find config
 		j=findstate(chk,SRAMSAVE,&sh);	//see if packed SRAM exists
@@ -1265,8 +1335,11 @@ int get_saved_sram(void)
 			retval=2;
 		}
 		
-		//For 32k SRAM, don't bother storing anything in real SRAM, in fact, flush it out.
-		if (g_sramsize==3 || g_sramsize==4)
+		//32KB: kept live at LIVE32_START if possible, otherwise only packed (from the menu)
+		if (g_sramsize==3 && take_live32())
+		{
+		}
+		else if (g_sramsize==3 || g_sramsize==4)
 		{
 			no_sram_owner();
 		}
@@ -1292,6 +1365,7 @@ void register_sram_owner()
 
 void no_sram_owner()
 {
+	release_live32();
 	sram_owner=0;
 	writeconfig();
 	flush_end_sram();
@@ -1331,6 +1405,10 @@ void setup_sram_after_loadstate() {
 		{
 			//otherwise rewrite the SRAM to the save file immediately
 			backup_gb_sram(1);
+			if (g_sramsize == 3)
+			{
+				take_live32();	//a quick load returns to the game without the menu loop
+			}
 		}
 	}
 }
@@ -1431,6 +1509,7 @@ void writeconfig()
 	j |= (gammavalue & 0x7)<<5;					//store current gamma setting
 	cfg->misc = j;
 	cfg->sram_checksum=sram_owner;
+	cfg->live_sram=sram_live32;
 	if(i<0) {	//create new config
 		updatestates(0,0,CONFIGSAVE);
 	} else {		//config already exists, update sram directly (faster)

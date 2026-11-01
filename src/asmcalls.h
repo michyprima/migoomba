@@ -36,6 +36,7 @@ extern u8 sgb_palette_number;
 extern u32 ewram_canary_1;
 extern u32 ewram_canary_2;
 void bgp_reset(void);
+void set_sram_writer(int live32);
 
 #if !GCC
 extern u8 Image$$RO$$Base[];
