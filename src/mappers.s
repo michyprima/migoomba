@@ -131,11 +131,39 @@ mbc2init:
 MBC2map:	@$0000-$3FFF: address bit 8 clear = RAM enable, set = ROM bank
 @----------------------------------------------------------------------------
 	tst addy,#0x0100
-	beq_long RamEnable
+	beq_long MBC2RamEnable
 	ands r0,r0,#0xf
 	moveq r0,#1
 	b map4567_
 	.pushsection .text
+@----------------------------------------------------------------------------
+MBC2RamEnable:	@like RamEnable, but with MBC2's 512 x 4-bit RAM handlers
+@----------------------------------------------------------------------------
+	strb_ r0,mapperdata+2
+	and r0,r0,#0x0F
+	cmp r0,#0x0A
+	ldrne r1,=empty_W
+	ldreq r1,=MBC2_RAM_W
+	str_ r1,writemem_tbl+40
+	str_ r1,writemem_tbl+44
+	ldrne r1,=empty_R
+	ldreq r1,=MBC2_RAM_R
+	str_ r1,readmem_tbl_-40
+	str_ r1,readmem_tbl_-44
+	mov pc,lr
+@----------------------------------------------------------------------------
+MBC2_RAM_R:	@512 cells repeat across $A000-$BFFF; the upper nibble reads as 1s
+@----------------------------------------------------------------------------
+	ldr_ r1,memmap_tbl+40
+	bic r2,addy,#0x1E00
+	ldrb r0,[r1,r2]
+	orr r0,r0,#0xF0
+	mov pc,lr
+@----------------------------------------------------------------------------
+MBC2_RAM_W:	@fold the address into the 512 cells, then the normal SRAM write
+@----------------------------------------------------------------------------
+	bic addy,addy,#0x1E00
+	ldr_ pc,sramwptr
 
 @----------------------------------------------------------------------------
 mbc3init:
