@@ -1,6 +1,6 @@
 /* Headless Game Boy reference renderer on mGBA's own GB core. Line commands on stdin, each answered
  * with output then "ok" (same protocol as gbaharness).
- * usage: gbref ROM.gb MODEL      MODEL: DMG, SGB or CGB (screenshots are always the 160x144 GB screen)
+ * usage: gbref ROM.gb MODEL      MODEL: DMG, SGB, CGB or AGB (screenshots are always the 160x144 GB screen)
  *   frames N            run N GB frames
  *   frame               print the GB frame counter
  *   keys HEX            set GB keys (A=1 B=2 Sel=4 Start=8 R=10 L=20 U=40 D=80)
@@ -31,7 +31,7 @@ static color_t video[256 * 224];
 
 int main(int argc, char** argv) {
 	if (argc < 3) {
-		fprintf(stderr, "usage: %s ROM.gb DMG|SGB|CGB\n", argv[0]);
+		fprintf(stderr, "usage: %s ROM.gb DMG|SGB|CGB|AGB\n", argv[0]);
 		return 1;
 	}
 	mLogSetDefaultLogger(&logger);

@@ -9,7 +9,7 @@ Each game runs the same input script in both emulators and is captured at the sa
   - Goomba (gbaharness): screen hashes must equal the recorded ones, otherwise the game is CHANGED
     (a regression, or an intended change to accept with --record). A game whose GB frames stop
     advancing is HANG.
-  - reference (gbref, mGBA's GB core on the same model): informational. "match" counts checkpoints where
+  - reference (gbref, mGBA's GB core on the same model; AGB when Goomba identifies as a GBA): informational. "match" counts checkpoints where
     Goomba's screen equals the reference up to recolouring (Goomba uses its own palettes); input timing
     differs by a frame or so between the two, so a mismatch is a lead to look at, not a failure.
 
@@ -145,7 +145,8 @@ def run_game(rom, sha, entry, emu, elf, out, cache):
                 break
             if ref_model is None:
                 gbc, sgb = h.read(syms["_gbcmode"], 2)
-                ref_model = "CGB" if gbc else "SGB" if sgb else "DMG"
+                gba = h.read(syms["_gbamode"], 1)[0]   # "Identify as GBA" (off by default)
+                ref_model = ("AGB" if gba else "CGB") if gbc else "SGB" if sgb else "DMG"
                 ref = Reference(rom, ref_model)
             ref.run_to(f)
             if action == "press":
