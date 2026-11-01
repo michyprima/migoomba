@@ -9,6 +9,8 @@
  *   vram PATH           write both 8 KB VRAM banks to PATH
  *   peek ADDR N         print N bytes of GB memory from ADDR (current banks) in hex
  *   sram PATH           write the cartridge RAM to PATH
+ *   huc3log N PATH      run N GB frames one instruction at a time, appending "frame ly pc mode value index"
+ *                       to PATH whenever the HuC-3 mapper's state changes
  *   cgbpal              print the 64 CGB palette words (BG 0-31, OBJ 32-63) in hex
  *   iolog N PATH [LO HI]  run N GB frames one instruction at a time and append each write to a video register
  *                       (FF40-FF4F, FF51-FF55, FF68-FF6B), or to LO-HI (hex), to PATH as "frame ly pc reg value"
@@ -168,6 +170,28 @@ int main(int argc, char** argv) {
 			FILE* f = fopen(arg, "wb");
 			if (!f || fwrite(gb->memory.sram, 1, gb->sramSize, f) != gb->sramSize) {
 				printf("error cannot write %s\n", arg);
+			}
+			if (f) {
+				fclose(f);
+			}
+		} else if (!strcmp(cmd, "huc3log") && n >= 2) {
+			char path[900] = { 0 };
+			sscanf(line, "%*s %*s %899s", path);
+			FILE* f = fopen(path, "a");
+			struct GB* gb = core->board;
+			struct GBHuC3State* st = &gb->memory.mbcState.huc3;
+			uint32_t end = core->frameCounter(core) + strtoul(arg, NULL, 10);
+			uint8_t last[3] = { st->mode, st->value, st->index };
+			while (f && core->frameCounter(core) < end) {
+				uint16_t pc = gb->cpu->pc;
+				core->step(core);
+				if (st->mode != last[0] || st->value != last[1] || st->index != last[2]) {
+					last[0] = st->mode;
+					last[1] = st->value;
+					last[2] = st->index;
+					fprintf(f, "%u %u %04x %02x %02x %02x\n", core->frameCounter(core), gb->memory.io[GB_REG_LY], pc,
+					        st->mode, st->value, st->index);
+				}
 			}
 			if (f) {
 				fclose(f);
