@@ -21,6 +21,7 @@
 	global_func huc1init
 	global_func huc3init
 	global_func RamSelect
+	.pushsection .text	@cart RAM enable is rare: kept out of IWRAM, which is full
 @----------------------------------------------------------------------------
 RamSelect:
 @----------------------------------------------------------------------------
@@ -31,16 +32,17 @@ RamEnable:
 	strb_ r0,mapperdata+2
 	and r0,r0,#0x0F
 	cmp r0,#0x0A
-	adrnel r1,empty_W
+	ldrne r1,=empty_W
 	ldreq_ r1,sramwptr
 	str_ r1,writemem_tbl+40
 	str_ r1,writemem_tbl+44
-	adrnel r1,empty_R
-	adreql r1,mem_RA0
+	ldrne r1,=empty_R
+	ldreq r1,=mem_RA0
 	str_ r1,readmem_tbl_-40
 	str_ r1,readmem_tbl_-44
 	ldrb_ r0,mapperdata+4		@rambank
-	b mapAB_
+	b_long mapAB_
+	.popsection
 
 	.pushsection .text
 @----------------------------------------------------------------------------
@@ -360,7 +362,7 @@ no_Rumble:
 	@--
  .endif
  .endif
-	b RamSelect
+	b_long RamSelect
 
 	.pushsection .text
 @----------------------------------------------------------------------------

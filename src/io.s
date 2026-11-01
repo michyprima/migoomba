@@ -790,6 +790,7 @@ joy0_R_subsequent_check:
 	mov pc,lr
 @----------------------------
 
+	.pushsection .text	@DMA starts are rare: kept out of IWRAM, which is full
 FF55_W:	@HDMA5
 	tst r0,#0x80
 @	bxne lr
@@ -845,6 +846,8 @@ start_hdma:
     strb r0,[r2]
     
 	bx lr
+	.ltorg
+	.popsection
 	
 @r0 = dest, r1 = src, r2 = byteCount, r3 = dirtyMapBits
 	global_func copy_map_and_compare
