@@ -5,49 +5,49 @@
    "file": "3-D Ultra Pinball - Thrillride (USA) (Rumble Version).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 137952,
+   "busy_per_frame": 138141,
    "checkpoints": [
     {
      "frame": 300,
-     "goomba": "6bd3b8b1c984be2a9a84e87f5df8e43424333510",
+     "goomba": "e9384cfbb570568ac3c2aebd7d59ffbaf1bda592",
      "reference": "b1ca39038aaa16f411935894db0047c2118698c2",
-     "ref_diff": 1389
+     "ref_diff": 57
     },
     {
      "frame": 600,
-     "goomba": "01cb1eb0044982ebe3370eef978984d145986f71",
+     "goomba": "17c3e26cb751a109eb1fb9a8333b7472852990ea",
      "reference": "90082777ad7acf750b6cc19770351c50d64a31ec",
-     "ref_diff": 2887
+     "ref_diff": 1296
     },
     {
      "frame": 900,
-     "goomba": "aeb6c1a2e56277b98651b1d925983c4f8ed7b2d5",
+     "goomba": "8de96252d77e5ab688008a28c6b3091ad088f8ba",
      "reference": "aa91c59609532b0cbde78f55132c676680630363",
-     "ref_diff": 5336
+     "ref_diff": 3957
     },
     {
      "frame": 1200,
-     "goomba": "1c54f669a2014879e5cdba78cb5fdd079e953cfb",
+     "goomba": "835d509785396d8b4b29c056b59409292c47b735",
      "reference": "8b852718d4dc36820e51f3b8c91e3eac606296c9",
-     "ref_diff": 21824
+     "ref_diff": 22277
     },
     {
      "frame": 1500,
-     "goomba": "4f3908c6a970afc67250b0761bf2a4860f4b1928",
+     "goomba": "0655cd95057d700be19bfb25d4b71b923af91552",
      "reference": "5e70778347004c80214b62c3dd9ac6508e8e2a1d",
-     "ref_diff": 10893
+     "ref_diff": 10643
     },
     {
      "frame": 1800,
-     "goomba": "dc7fc4b60e31cb638947259ce2e5c720a99778c1",
+     "goomba": "db55b78b1117c076f495ca8575644296712047cd",
      "reference": "f79736d56511aa997a0317af8e305ea47b3cb958",
-     "ref_diff": 5077
+     "ref_diff": 3134
     },
     {
      "frame": 2400,
-     "goomba": "4f06575e05f0cf150495470ff161d4565051d791",
+     "goomba": "3decda3cbe0d30b55a448c714b39f5ebb423b4bc",
      "reference": "d2a8da94d8f07e322703851b9877b5601e7fdfd6",
-     "ref_diff": 5002
+     "ref_diff": 3188
     }
    ]
   },
@@ -107,7 +107,7 @@
    "file": "Alfred's Adventure (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 391955,
+   "busy_per_frame": 392417,
    "checkpoints": [
     {
      "frame": 300,
@@ -129,9 +129,9 @@
     },
     {
      "frame": 1200,
-     "goomba": "ca25bac904cf39a2ad0fe020fb4bb941b7c38cb4",
+     "goomba": "fc2423301e3b985883c59d4322250d3c77cba935",
      "reference": "f31b69855a238eba1c63a394c0132906b1e2efb7",
-     "ref_diff": 22881
+     "ref_diff": 311
     },
     {
      "frame": 1500,
@@ -158,7 +158,7 @@
    "file": "Alone in the Dark - The New Nightmare (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 269441,
+   "busy_per_frame": 282198,
    "checkpoints": [
     {
      "frame": 300,
@@ -192,15 +192,15 @@
     },
     {
      "frame": 1800,
-     "goomba": "e36856467dc556d0af2dfcccc65bc525569d3640",
+     "goomba": "67f5748b3c46bde8611d096baea1b1507141eeaf",
      "reference": "67f5748b3c46bde8611d096baea1b1507141eeaf",
-     "ref_diff": 18486
+     "ref_diff": 0
     },
     {
      "frame": 2400,
-     "goomba": "f60ec5925abfbeb8db26afb2a029c9b1e3f74a32",
+     "goomba": "67f5748b3c46bde8611d096baea1b1507141eeaf",
      "reference": "67f5748b3c46bde8611d096baea1b1507141eeaf",
-     "ref_diff": 18344
+     "ref_diff": 0
     }
    ]
   },
@@ -260,7 +260,7 @@
    "file": "Baby Felix - Halloween (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 112947,
+   "busy_per_frame": 114372,
    "checkpoints": [
     {
      "frame": 300,
@@ -282,9 +282,9 @@
     },
     {
      "frame": 1200,
-     "goomba": "e8621804481c5dd06d944455ebc766e6f74e11b1",
+     "goomba": "866c66424c51b3e666d3c296526379d865f73493",
      "reference": "edf8a189a88296912608a4b1066c0f5f62dd7541",
-     "ref_diff": 1320
+     "ref_diff": 1395
     },
     {
      "frame": 1500,
@@ -413,7 +413,7 @@
    "file": "Bionic Commando - Elite Forces (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 163043,
+   "busy_per_frame": 178037,
    "checkpoints": [
     {
      "frame": 300,
@@ -441,21 +441,21 @@
     },
     {
      "frame": 1500,
-     "goomba": "72e947255a5ec2e4cbb7ef237869d39fcf4e7022",
+     "goomba": "bb0f06e86511a4f98729c46fcdcc55c2ad9bc27a",
      "reference": "6c569fd974d50c8abd870fbfa4ec0fe286c64eff",
-     "ref_diff": 1
+     "ref_diff": 7
     },
     {
      "frame": 1800,
-     "goomba": "1ab780a76b84f7e94185c29f351e97c7dceb8382",
+     "goomba": "a1236f43bc59302be0d59873a903e5a08303fd25",
      "reference": "9215f1b172958debd9e41367f8ff319847fdfb2e",
-     "ref_diff": 47
+     "ref_diff": 53
     },
     {
      "frame": 2400,
-     "goomba": "1ab780a76b84f7e94185c29f351e97c7dceb8382",
+     "goomba": "a1236f43bc59302be0d59873a903e5a08303fd25",
      "reference": "9215f1b172958debd9e41367f8ff319847fdfb2e",
-     "ref_diff": 47
+     "ref_diff": 53
     }
    ]
   },
@@ -1331,7 +1331,7 @@
    "file": "Gradius - The Interstellar Assault (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 112224,
+   "busy_per_frame": 112529,
    "checkpoints": [
     {
      "frame": 300,
@@ -1347,15 +1347,15 @@
     },
     {
      "frame": 900,
-     "goomba": "004d4fbe93fcaa786ae00ee820bef253f6c06124",
+     "goomba": "915a1d60b603074b4613949b12f24b4e0e35b6ea",
      "reference": "1db5a48295a37415ed2b725ba3b6ddd5aaca2bf8",
-     "ref_diff": 625
+     "ref_diff": 509
     },
     {
      "frame": 1200,
-     "goomba": "0fc700ea63dae7f1241fbec2f58f5ba071f148ce",
+     "goomba": "00df00462f4f64682592c349070db0f5dbf80450",
      "reference": "00df00462f4f64682592c349070db0f5dbf80450",
-     "ref_diff": 400
+     "ref_diff": 0
     },
     {
      "frame": 1500,
@@ -1382,7 +1382,7 @@
    "file": "Halloween Racer (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 194959,
+   "busy_per_frame": 194956,
    "checkpoints": [
     {
      "frame": 300,
@@ -1398,9 +1398,9 @@
     },
     {
      "frame": 900,
-     "goomba": "50b533c8df0249532bb88d39cf2b8534b287a955",
+     "goomba": "7cf6b47f5771bedf47f19535dd7bb412526b300b",
      "reference": "5723557f3f0730e7742a4224668f59afde1578cc",
-     "ref_diff": 15602
+     "ref_diff": 1327
     },
     {
      "frame": 1200,
@@ -1790,7 +1790,7 @@
    "file": "Konami GB Collection Vol.4 (Europe) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 137141,
+   "busy_per_frame": 137170,
    "checkpoints": [
     {
      "frame": 300,
@@ -1812,9 +1812,9 @@
     },
     {
      "frame": 1200,
-     "goomba": "f41f5be72c2e0680c6ef6042258da9e08cfbd0ae",
+     "goomba": "efc5346a4f862cc5dc0da11072af5cebf60267f9",
      "reference": "1fed1c5220bacd85d4f540a1bcdee2c860ca1d27",
-     "ref_diff": 16
+     "ref_diff": 1177
     },
     {
      "frame": 1500,
@@ -1841,7 +1841,7 @@
    "file": "Korokoro Kirby (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 216161,
+   "busy_per_frame": 213360,
    "checkpoints": [
     {
      "frame": 300,
@@ -1857,33 +1857,33 @@
     },
     {
      "frame": 900,
-     "goomba": "ef4edc18e52839c8ad938467385fbeba0d8bc45a",
+     "goomba": "82d5956e2c9df38010e62361b23b8fdfee28a419",
      "reference": "b4e2a26a97443994ad40edc564107f1757be3a47",
-     "ref_diff": 17754
+     "ref_diff": 1051
     },
     {
      "frame": 1200,
-     "goomba": "9015fc87f48e9ece31e80ed5d2a4a393143e4926",
+     "goomba": "4776c6a6995fef8a760c3733b989965d864b9598",
      "reference": "a161213c6dd7629bfbf10570718311c2553ac0e4",
-     "ref_diff": 20160
+     "ref_diff": 20665
     },
     {
      "frame": 1500,
-     "goomba": "2c64ca3d285f6473b4ec671edf6c1f8da79abd69",
+     "goomba": "5fe44937874968b97c0e4d9e004e2a923f2bdee9",
      "reference": "cd191d7cb7b583dae889860611f225f45e55b7aa",
-     "ref_diff": 20549
+     "ref_diff": 2169
     },
     {
      "frame": 1800,
-     "goomba": "639650c9078ae2fd2379a2bfb118871227b1a8ba",
+     "goomba": "e9a3d134e702a9ceb51704e890f40912055901f7",
      "reference": "045e049555463da788cf6b9a9c43baef5fd9aefc",
-     "ref_diff": 20852
+     "ref_diff": 20306
     },
     {
      "frame": 2400,
-     "goomba": "aa2c527906b210d710bf5c81640bbd65c59dc655",
+     "goomba": "cd0d8f415d396ab866ef8576e6faf87228a59049",
      "reference": "338dba84114e9375c30c20767919441abc18493b",
-     "ref_diff": 21009
+     "ref_diff": 21107
     }
    ]
   },
@@ -1994,7 +1994,7 @@
    "file": "Lemmings 2 - The Tribes (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 116345,
+   "busy_per_frame": 115155,
    "checkpoints": [
     {
      "frame": 300,
@@ -2028,15 +2028,15 @@
     },
     {
      "frame": 1800,
-     "goomba": "1b0c340799c8f8ab16578480ae9a732544c0000b",
+     "goomba": "133a2cbebfacc86ffa7c31cc04bffb8b0f20b491",
      "reference": "06a17e32bfde0a545ba30227cdb8778272855948",
-     "ref_diff": 26
+     "ref_diff": 52
     },
     {
      "frame": 2400,
-     "goomba": "0872a229e0e0004816e7bf3e09d8ed496451c8df",
+     "goomba": "69c2b2005df8c9b3d3a1752e4ed98835159acda8",
      "reference": "7eddc8b900ba5609bcb6d1c3005a045253ea2897",
-     "ref_diff": 37
+     "ref_diff": 48
     }
    ]
   },
@@ -2045,7 +2045,7 @@
    "file": "Lucky Luke - Desperado Train (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 267189,
+   "busy_per_frame": 269487,
    "checkpoints": [
     {
      "frame": 300,
@@ -2079,15 +2079,15 @@
     },
     {
      "frame": 1800,
-     "goomba": "e8cd361dbce325a31f4985037783c0d1344574b7",
+     "goomba": "9ff119861a3c9f793dfcd1d9ccfe8c97446e019d",
      "reference": "b80278671c79fc46d7a9fc8274f04a30c9022c76",
-     "ref_diff": 2143
+     "ref_diff": 90
     },
     {
      "frame": 2400,
-     "goomba": "741fd2342ccc4bb86ac32920e83b48f250a7a68c",
+     "goomba": "19b89070ef0a74937fa110fa4e1d8943689bcdab",
      "reference": "38dc5e0bf6e0e200e4c089dc3fa3067bbbc2d5a0",
-     "ref_diff": 2144
+     "ref_diff": 91
     }
    ]
   },
@@ -2096,7 +2096,7 @@
    "file": "Lufia - The Legend Returns (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 185806,
+   "busy_per_frame": 185941,
    "checkpoints": [
     {
      "frame": 300,
@@ -2124,15 +2124,15 @@
     },
     {
      "frame": 1500,
-     "goomba": "794457d776a3bd4c425023d96def6e25992e3b77",
+     "goomba": "3ba13a3749a15d8a4b3b3e5975ca48084155d116",
      "reference": "e7eaa6f57c7d52ca36b0f74a5ba32367e08c6310",
-     "ref_diff": 22630
+     "ref_diff": 18113
     },
     {
      "frame": 1800,
-     "goomba": "109b58f9055d8c0bcff288309c572e60b1aaa467",
+     "goomba": "ad629cb10cc2bb86575b4988f53b14513f39bc7f",
      "reference": "2fc5717ad9b54e305aeff26ca1c617b5485ffbfd",
-     "ref_diff": 19363
+     "ref_diff": 139
     },
     {
      "frame": 2400,
@@ -3116,7 +3116,7 @@
    "file": "Pokemon Pinball (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 135691,
+   "busy_per_frame": 136058,
    "checkpoints": [
     {
      "frame": 300,
@@ -3156,7 +3156,7 @@
     },
     {
      "frame": 2400,
-     "goomba": "ab661b189fee995889bff680839bfc56facf0841",
+     "goomba": "5acab00b9748db4b0fe49036a605393ced0d5d84",
      "reference": "e6a4f4298caef6f66e9865181c5dc904277811b3",
      "ref_diff": 20868
     }
@@ -4289,13 +4289,13 @@
    "file": "Test Drive 2001 (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 190622,
+   "busy_per_frame": 190850,
    "checkpoints": [
     {
      "frame": 300,
-     "goomba": "5f4313dd8cd6b1f6035f4114ad02e2c7633ddbef",
+     "goomba": "9527802b2dce956c7d0df06810330bd43104625d",
      "reference": "5c10792f6d101ccfa71e020b8ccd4097784a660b",
-     "ref_diff": 1639
+     "ref_diff": 0
     },
     {
      "frame": 600,
@@ -4317,21 +4317,21 @@
     },
     {
      "frame": 1500,
-     "goomba": "385dfe6b5e177980b7ea4e6deb4ef63e8a597fea",
+     "goomba": "7663dc304365b8ff046bf41eba292525a6296db2",
      "reference": "50c8673c35b647a7424e2c34cb9ee9a25c98cac7",
-     "ref_diff": 467
+     "ref_diff": 968
     },
     {
      "frame": 1800,
-     "goomba": "2ba5047cf490be16ae767d4a80b27a888dfe5455",
+     "goomba": "7ad5aee6d8f32361cd57f51f1337518ca61a1315",
      "reference": "3a303619670bf56836b8b26c37b6ce2b21677738",
-     "ref_diff": 12
+     "ref_diff": 15
     },
     {
      "frame": 2400,
-     "goomba": "fd1bf2e9acc7b6bc94b6ec4209146611b79f4697",
+     "goomba": "5980b5e53ba5d3485f9ec4c930787f61f3836f47",
      "reference": "b508af9da6b6dd9b7a42b77f7c0d1517c9fe127d",
-     "ref_diff": 22
+     "ref_diff": 51
     }
    ]
   },
@@ -4493,7 +4493,7 @@
    "file": "Top Gear Pocket (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 202435,
+   "busy_per_frame": 205001,
    "checkpoints": [
     {
      "frame": 300,
@@ -4527,15 +4527,15 @@
     },
     {
      "frame": 1800,
-     "goomba": "95cb57ca6d509035cd101a6b9653d4c9b3d0189e",
+     "goomba": "acb42916492e6d3e3d8bfcf40b3ebb846193f402",
      "reference": "9cd414dbee4dd8da2613e16cc32c185ee4ac142f",
-     "ref_diff": 2696
+     "ref_diff": 2534
     },
     {
      "frame": 2400,
-     "goomba": "46a402e142e28f403abfacc4cd7f3971a8b2db0a",
+     "goomba": "d27dcdf0f922e114dff7d1f8e9fe0e94f3805376",
      "reference": "982be28074992ffb78fe0dbd2a7e35f5e18fd4af",
-     "ref_diff": 2650
+     "ref_diff": 2651
     }
    ]
   },
@@ -4544,7 +4544,7 @@
    "file": "Trip World (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 51738,
+   "busy_per_frame": 52076,
    "checkpoints": [
     {
      "frame": 300,
@@ -4572,21 +4572,21 @@
     },
     {
      "frame": 1500,
-     "goomba": "9c479f6192e6e262b3417976ea28ccfd964b5512",
+     "goomba": "9780c7034d00138d5c802b86c332b6f63001e36b",
      "reference": "247fff9c12bfa88616ca7c2dcd7c72c6558c6b74",
-     "ref_diff": 3885
+     "ref_diff": 3913
     },
     {
      "frame": 1800,
-     "goomba": "9c479f6192e6e262b3417976ea28ccfd964b5512",
+     "goomba": "9780c7034d00138d5c802b86c332b6f63001e36b",
      "reference": "247fff9c12bfa88616ca7c2dcd7c72c6558c6b74",
-     "ref_diff": 3885
+     "ref_diff": 3913
     },
     {
      "frame": 2400,
-     "goomba": "9c479f6192e6e262b3417976ea28ccfd964b5512",
+     "goomba": "9780c7034d00138d5c802b86c332b6f63001e36b",
      "reference": "247fff9c12bfa88616ca7c2dcd7c72c6558c6b74",
-     "ref_diff": 3885
+     "ref_diff": 3913
     }
    ]
   },
@@ -4595,19 +4595,19 @@
    "file": "Turok 3 - Shadow of Oblivion (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 232274,
+   "busy_per_frame": 234593,
    "checkpoints": [
     {
      "frame": 300,
-     "goomba": "8ccd07d5eed3a9d75c07b0fb60809b365c07877b",
+     "goomba": "ee3f5fc272c9947567bf45a433867f2f793ee0d3",
      "reference": "ee3f5fc272c9947567bf45a433867f2f793ee0d3",
-     "ref_diff": 231
+     "ref_diff": 0
     },
     {
      "frame": 600,
-     "goomba": "6103294c2fdd5952194ffd4aa713bed1a46b8ea4",
+     "goomba": "10e61df496f80fb0dda2f03db1d35408c92e1dde",
      "reference": "10e61df496f80fb0dda2f03db1d35408c92e1dde",
-     "ref_diff": 1203
+     "ref_diff": 0
     },
     {
      "frame": 900,
@@ -4617,27 +4617,27 @@
     },
     {
      "frame": 1200,
-     "goomba": "6546b75a8e26cdc7f171824c161306bd416a34b4",
+     "goomba": "61c4d6f4ae79990ed6b5d329e73d2218af6df6a7",
      "reference": "61c4d6f4ae79990ed6b5d329e73d2218af6df6a7",
-     "ref_diff": 17887
+     "ref_diff": 0
     },
     {
      "frame": 1500,
-     "goomba": "b3a41bcd05f74a3688d95a42ff8b8cab34ea04cb",
+     "goomba": "a3a13ad0a481a18e107164005a336f8d3e0ca19b",
      "reference": "a3a13ad0a481a18e107164005a336f8d3e0ca19b",
-     "ref_diff": 3947
+     "ref_diff": 0
     },
     {
      "frame": 1800,
-     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "goomba": "7f90bc847b448924b96219365942c266b424966e",
      "reference": "7f90bc847b448924b96219365942c266b424966e",
-     "ref_diff": 12828
+     "ref_diff": 0
     },
     {
      "frame": 2400,
-     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "goomba": "3c1cd04e79a76ce05fc3f00973c79e8555fd6fef",
      "reference": "3c1cd04e79a76ce05fc3f00973c79e8555fd6fef",
-     "ref_diff": 13584
+     "ref_diff": 0
     }
    ]
   },
@@ -5003,7 +5003,7 @@
    "file": "Worms Armageddon (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 119688,
+   "busy_per_frame": 119574,
    "checkpoints": [
     {
      "frame": 300,
@@ -5025,9 +5025,9 @@
     },
     {
      "frame": 1200,
-     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "goomba": "46adb588014f009415ca10b6528a75dd5cdd047a",
      "reference": "e97e1de3e88bd2bb1e9cf72701bdf8d7a623199c",
-     "ref_diff": 21303
+     "ref_diff": 564
     },
     {
      "frame": 1500,
