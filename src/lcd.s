@@ -3553,16 +3553,51 @@ FF40W_entry:
 @----------------------------------------------------------------------------
 FF41_W:@		LCD Status
 @----------------------------------------------------------------------------
-	ldrb r1,lcdstat
-	and r2,r1,#0x07		@Preserve VBlank bit, mode flags, and LCDYC bit
-	and r0,r0,#0x78		@only use new interrupt and LCDYC test flags
-	orr r2,r0,r2
-	orr r2,r2,#0x80		@bit 7 unused, reads as 1
-	eors r0,r2,r1		@anything changed?
-	bxeq lr
-	strb r2,lcdstat
-	strb r2,lcdstat2
-	b lcdyc_check
+	ldr pc,=FF41_W_		@STAT writes are rare: in ROM
+	.ltorg
+	.pushsection .text
+FF41_W_:
+	@On DMG/SGB a STAT write acts for a moment as if every source were enabled (as in mGBA):
+	@it raises the STAT interrupt in HBlank, VBlank or on LY=LYC unless the STAT line was up
+	@already. Road Rash starts its raster effect chain with it in VBlank. (Mode 2 is left out:
+	@its timing is too rough here and test ROMs for it got worse.) CGB: only stored.
+	stmfd sp!,{r3,r4,lr}
+	ldr r3,=lcdstat
+	ldrb r1,[r3]			@old STAT
+	and r2,r1,#0x07			@Preserve VBlank bit, mode flags, and LCDYC bit
+	and r0,r0,#0x78			@only use new interrupt and LCDYC test flags
+	orr r2,r2,r0
+	orr r2,r2,#0x80			@bit 7 unused, reads as 1
+	strb r2,[r3]
+	ldr r3,=lcdstat2
+	strb r2,[r3]
+	mov r0,#0			@sources active now, as their STAT enable bits
+	ldrb_ r3,gbcmode
+	cmp r3,#0
+	bne 9f
+	tst cycles,#CYC_LCD_ENABLED
+	beq 9f
+	tst r1,#0x04
+	orrne r0,r0,#0x40		@LY=LYC
+	tst r1,#0x01
+	orrne r0,r0,#0x10		@VBlank
+	bne 1f
+	ldr_ r3,scanline_oam_position
+	cmp cycles,r3
+	orrlt r0,r0,#0x08		@HBlank
+	blt 1f
+1:	tst r0,r1			@STAT line already up: no new interrupt
+	bne 9f
+	cmp r0,#0
+	beq 9f
+	ldrb_ r0,gb_if
+	orr r0,r0,#0x02			@2=LCD STAT
+	strb_ r0,gb_if
+	ldmfd sp!,{r3,r4,lr}
+	b_long immediate_check_irq
+9:	ldmfd sp!,{r3,r4,pc}
+	.ltorg
+	.popsection
 
 #if 0	
 	ands r1,r2,r0       @which bits have changed from 0 to 1?
