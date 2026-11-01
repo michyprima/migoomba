@@ -145,6 +145,25 @@ $(BUILD):
 	@make --no-print-directory -C $(BUILD) -f $(CURDIR)/$(MAKEFILE)
 
 all	: $(BUILD)
+
+#---------------------------------------------------------------------------------
+# a playable ROM is the emulator with a Game Boy ROM appended:
+#   make path/to/game.gbc            -> game.gba (here)
+#   make GAME="path/to/my game.gbc"  -> my game.gba (for names with spaces)
+#---------------------------------------------------------------------------------
+GAMES	:=	$(filter %.gb %.gbc %.GB %.GBC,$(MAKECMDGOALS))
+.PHONY: $(GAMES) game
+
+$(GAMES): $(BUILD)
+	@cat $(TARGET).gba "$@" > "$(basename $(notdir $@)).gba"
+	@echo built $(basename $(notdir $@)).gba
+
+ifdef GAME
+.DEFAULT_GOAL := game
+endif
+game: $(BUILD)
+	@[ -n "$(GAME)" ] || { echo 'usage: make GAME="path/to/game.gbc"'; exit 1; }
+	@out="$$(basename "$(GAME)")"; out="$${out%.*}.gba"; cat $(TARGET).gba "$(GAME)" > "$$out"; echo "built $$out"
 #---------------------------------------------------------------------------------
 semiclean:
 	@echo deleting intermediate files...

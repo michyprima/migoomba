@@ -218,13 +218,22 @@ checkpoint and have not been looked into yet.
 - Run `make` in this directory. It produces `migoomba.gba` (the emulator) and `migoomba.elf` (the same
   with debug symbols).
 
-To play, combine `migoomba.gba` with Game Boy ROMs using Goomba Front (`goombafront.exe`, part of the
-Goomba Color releases). For debug symbols in mGBA, put `migoomba.elf` next to the built ROM and rename
-it to `(ROM name).elf` (thanks to Endrift for the tip). `ReadSymbolTable.bat` dumps the symbols to a
-text file.
+### Making a playable ROM
 
-The ROM header keeps Goomba's title and game code (`GOOMBA COLOR`, `GMBC`), so front-ends, kernels and
-emulator settings that recognise Goomba builds still do.
+A playable GBA ROM is just the emulator with the Game Boy ROM appended:
+
+    cat migoomba.gba game.gbc > game.gba
+
+`make` does it too, building the emulator first if needed, and writes the result to this directory:
+
+    make path/to/game.gbc                  # -> game.gba
+    make GAME="path/to/My Game (USA).gbc"  # -> My Game (USA).gba  (make can't take a path with spaces as a target)
+
+For debug symbols in mGBA, put `migoomba.elf` next to the built ROM and rename it to
+`(ROM name).elf` (thanks to Endrift for the tip).
+
+The ROM header keeps Goomba's title and game code (`GOOMBA COLOR`, `GMBC`), so kernels and emulator
+settings that recognise Goomba builds still do.
 
 ## Saves
 

@@ -325,10 +325,11 @@ void C_entry()
 			ui_x=0;
 			move_ui();
 			drawtext(0,"No ROMS found!",0);
-			drawtext(1,"Use Goomba Front",0);
-			drawtext(2,"to build a compilation ROM,",0);
-			drawtext(3,"or use Pogoshell with a",0);
-			drawtext(4,"supported flash cartridge.",0);
+			drawtext(1,"Append a Game Boy ROM:",0);
+			drawtext(2,"cat migoomba.gba game.gb",0);
+			drawtext(3,"  > game.gba",0);
+			drawtext(4,"or use Pogoshell with a",0);
+			drawtext(5,"supported flash cartridge.",0);
 			drawtext(19,"MiGoomba " VERSION,0);
 			while (1)
 			{

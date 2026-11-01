@@ -1,1 +1,0 @@
-readelf -s migoomba.elf > SymbolTable.txt
