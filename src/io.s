@@ -1148,26 +1148,40 @@ IO_reset:
 	str r0,[r1]
 	
 	ldr r1,=io_write_tbl
+	ldr r2,=io_read_tbl
 
-	@lock GBC registers for non GBC mode
+	@lock GBC registers for non GBC mode (they read as $FF)
 	ldrb_ r0,gbcmode
 	movs r0,r0
 	bne 0f
 
 	ldr r0,=void
 	str r0,[r1,#0x4D*4] @speed switch
+	str r0,[r2,#0x4D*4]
 	str r0,[r1,#0x4F*4] @vram bank
+	str r0,[r2,#0x4F*4]
 	str r0,[r1,#0x51*4] @HDMA1
+	str r0,[r2,#0x51*4]
 	str r0,[r1,#0x52*4] @HDMA2 
+	str r0,[r2,#0x52*4]
 	str r0,[r1,#0x53*4] @HDMA3 
+	str r0,[r2,#0x53*4]
 	str r0,[r1,#0x54*4] @HDMA4 
+	str r0,[r2,#0x54*4]
 	str r0,[r1,#0x55*4] @HDMA5 
+	str r0,[r2,#0x55*4]
 	str r0,[r1,#0x56*4] @infrared
+	str r0,[r2,#0x56*4]
 	str r0,[r1,#0x68*4] @bg palette index
+	str r0,[r2,#0x68*4]
 	str r0,[r1,#0x69*4] @bg palette data
+	str r0,[r2,#0x69*4]
 	str r0,[r1,#0x6A*4] @obj palette index
+	str r0,[r2,#0x6A*4]
 	str r0,[r1,#0x6B*4] @obj palette data
+	str r0,[r2,#0x6B*4]
 	str r0,[r1,#0x70*4] @wram bank
+	str r0,[r2,#0x70*4]
 	b 1f
 	
 0:	
@@ -1198,6 +1212,32 @@ IO_reset:
 	str r0,[r1,#0x6B*4] @obj palette data
 	ldr r0,=_FF70W
 	str r0,[r1,#0x70*4] @wram bank
+	ldr r0,=FF4D_R
+	str r0,[r2,#0x4D*4]
+	ldr r0,=FF4F_R
+	str r0,[r2,#0x4F*4]
+	ldr r0,=FF51_R
+	str r0,[r2,#0x51*4]
+	ldr r0,=FF52_R
+	str r0,[r2,#0x52*4]
+	ldr r0,=FF53_R
+	str r0,[r2,#0x53*4]
+	ldr r0,=FF54_R
+	str r0,[r2,#0x54*4]
+	ldr r0,=FF55_R
+	str r0,[r2,#0x55*4]
+	ldr r0,=_FF56R
+	str r0,[r2,#0x56*4]
+	ldr r0,=FF68_R
+	str r0,[r2,#0x68*4]
+	ldr r0,=FF69_R
+	str r0,[r2,#0x69*4]
+	ldr r0,=FF6A_R
+	str r0,[r2,#0x6A*4]
+	ldr r0,=FF6B_R
+	str r0,[r2,#0x6B*4]
+	ldr r0,=_FF70R
+	str r0,[r2,#0x70*4]
 1:
 	bx lr
 
@@ -1257,6 +1297,10 @@ _FF01R:@		SB - Serial Transfer Data
 _FF02R:@		SC - Serial Transfer Ctrl
 @----------------------------------------------------------------------------
 	ldrb_ r0,stctrl
+	ldrb_ r1,gbcmode
+	cmp r1,#0
+	orr r0,r0,#0x7C		@unused bits read as 1...
+	orreq r0,r0,#0x02	@...including bit 1 outside CGB mode
 @	mov r0,#0x00		;0x80 when transfering, 0x00 when finnished.
 	mov pc,lr		@Rc Pro Am ,wants 0x80, Cosmo Tank wants 0x00.
 @----------------------------------------------------------------------------
@@ -1283,6 +1327,7 @@ _FF06R:@		TMA - Timer Modulo
 _FF07R:@		TAC - Timer Control
 @----------------------------------------------------------------------------
 	ldrb_ r0,timerctrl
+	orr r0,r0,#0xF8		@unused bits read as 1
 	mov pc,lr
 @----------------------------------------------------------------------------
 _FF0FR:
@@ -1331,6 +1376,7 @@ FF54_W:	@HDMA4  Dest Low
 
 FF4D_R:	@KEY1 - bit 7, Read current speed of CPU - CGB Mode Only
 	ldrb_ r0,doublespeed
+	orr r0,r0,#0x7E		@unused bits read as 1
 	bx lr
 FF4D_W:	@KEY1 - prepare double speed
 	ldrb_ r1,doublespeed

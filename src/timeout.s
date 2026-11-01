@@ -114,7 +114,7 @@ line0x:
 @	tst r1,#0x80
 	ldr r1,=lcdstat
 	ldrb r0,[r1]		@
-	and r2,r0,#0x7C		@reset lcd mode flags (vblank/hblank/oam/lcd)
+	and r2,r0,#0xFC		@reset lcd mode flags (vblank/hblank/oam/lcd)
 	cmp r0,r2
 	strneb r2,[r1]		@
 	strneb r2,[r1,#-12] @FIXME
@@ -255,7 +255,7 @@ line144: @------------------------
 
 	adrl r1,lcdstat
 	ldrb r0,[r1]		@vbl flag
-	and r0,r0,#0x7C
+	and r0,r0,#0xFC
 	orr r0,r0,#0x01
 	strb r0,[r1]		@vbl flag
 	strb r0,[r1,#-12] @FIXME

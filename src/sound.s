@@ -240,6 +240,7 @@ _FF10R:@		NR10 - Channel 1 Sweep register
 @----------------------------------------------------------------------------
 	mov r1,#REG_BASE
 	ldrb r0,[r1,#REG_SG1CNT_L]
+	orr r0,r0,#0x80		@unused bit reads as 1
 	mov pc,lr
 @----------------------------------------------------------------------------
 _FF11R:@		NR11 - Channel 1 Sound length/Wave pattern duty
@@ -297,6 +298,7 @@ _FF1AR:@		NR30 - Channel 3 Sound on/off
 	mov r1,#REG_BASE
 	ldrb r0,[r1,#REG_SG3CNT_L]
 	and r0,r0,#0x80
+	orr r0,r0,#0x7F		@unused bits read as 1
 	mov pc,lr
 @----------------------------------------------------------------------------
 _FF1BR:@		NR31 - Channel 3 Sound Length
@@ -310,6 +312,7 @@ _FF1CR:@		NR32 - Channel 3 Select output level
 	mov r1,#REG_BASE
 	ldrb r0,[r1,#REG_SG3CNT_H+1]
 	and r0,r0,#0x60
+	orr r0,r0,#0x9F		@unused bits read as 1
 	mov pc,lr
 @----------------------------------------------------------------------------
 _FF1DR:@		NR33 - Channel 3 Frequency lo
@@ -335,8 +338,7 @@ _FF30R:@		Channel 3 wave data
 @----------------------------------------------------------------------------
 _FF20R:@		NR41 - Channel 4 Sound Length
 @----------------------------------------------------------------------------
-	mov r1,#REG_BASE
-	ldrb r0,[r1,#REG_SG4CNT_L]
+	mov r0,#0xFF		@write-only, reads as $FF
 	mov pc,lr
 @----------------------------------------------------------------------------
 _FF21R:@		NR42 - Channel 4 Volume Envelope
@@ -355,6 +357,8 @@ _FF23R:@		NR44 - Channel 4 Counter/consecutive; Inital
 @----------------------------------------------------------------------------
 	mov r1,#REG_BASE
 	ldrb r0,[r1,#REG_SG4CNT_H+1]
+	and r0,r0,#0x40		@only the length enable bit is readable
+	orr r0,r0,#0xBF
 	mov pc,lr
 
 @----------------------------------------------------------------------------
@@ -378,7 +382,7 @@ _FF26R:@		NR52 - Sound on/off
 	ldrb r2,[r1,#REG_SG3CNT_L]	@is channel 3 "play" flag off?
 	tst r2,#0x80
 	biceq r0,#0x04				@clear "channel 3 is playing" bit
-	
+	orr r0,r0,#0x70		@unused bits read as 1
 	mov pc,lr
 
 @----------------------------------------------------------------------------

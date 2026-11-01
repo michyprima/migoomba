@@ -448,10 +448,11 @@ GFX_reset:	@called with CPU reset
 	
 
 	
-	mov r0,#0
+	mov r2,#0x80		@STAT: flags off, unused bit 7 reads as 1
 	ldr r1,=lcdstat
-	strb r0,[r1]@lcdstat		;flags off
-	strb r0,[r1,#-12] @fixme
+	strb r2,[r1]@lcdstat
+	strb r2,[r1,#-12] @fixme
+	mov r0,#0
 	strb_ r0,scrollX
 	strb_ r0,scrollY
 	strb_ r0,windowX
@@ -3493,6 +3494,7 @@ FF41_W:@		LCD Status
 	and r2,r1,#0x07		@Preserve VBlank bit, mode flags, and LCDYC bit
 	and r0,r0,#0x78		@only use new interrupt and LCDYC test flags
 	orr r2,r0,r2
+	orr r2,r2,#0x80		@bit 7 unused, reads as 1
 	eors r0,r2,r1		@anything changed?
 	bxeq lr
 	strb r2,lcdstat
@@ -3553,7 +3555,7 @@ FF41_R_hack:
 FF41_R:@		LCD Status
 @----------------------------------------------------------------------------
 lcdstat:
-	mov r0,#1
+	mov r0,#0x81		@bit 7 unused, reads as 1
 FF41_modify1:
 	cmp cycles,#204*CYCLE	@mode 0 HBLANK if 0-203
 #if LCD_HACKS
