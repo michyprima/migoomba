@@ -98,5 +98,6 @@ class Goomba:
         while self.gb_frame() < target:
             if max_gba_frames is not None and self.h.frame() - start > max_gba_frames:
                 return False
-            self.h.stepframes(step)
+            # coarse steps, then single frames so runs stop on the same GB frame regardless of speed
+            self.h.stepframes(step if target - self.gb_frame() > step + 2 else 1)
         return True

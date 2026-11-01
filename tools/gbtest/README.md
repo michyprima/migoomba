@@ -35,7 +35,12 @@ waits) and `gb_frames`. Runs are deterministic for a given build.
 
 Compare two runs (status changes, busy cycles per GB frame):
 
-    python3 tools/gbtest/diffruns.py out/base/results.json out/new/results.json
+    python3 tools/gbtest/diffruns.py out/base/results.json out/new/results.json [MIN_GB_FRAMES]
+
+Noise floor: moving code around without changing what runs (e.g. a few unreachable instructions) shifts
+busy cycles per GB frame by about 0.1% on Polished Crystal and about 0.2% over test ROMs with at least
+300 GB frames (the default); short tests can move by tens of percent. Treat smaller differences as noise.
+Game checkpoints stop on exact GB frames, so their screenshots can be compared between builds.
 
 ## Profiling
 

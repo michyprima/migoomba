@@ -1,6 +1,6 @@
 """Compare two runtests.py result sets: status changes and GBA-cycle deltas (tests are deterministic).
 gba_cycles are busy cycles (idle waits excluded).
-usage: diffruns.py BASE/results.json NEW/results.json"""
+usage: diffruns.py BASE/results.json NEW/results.json [MIN_GB_FRAMES]"""
 import json, sys
 
 base = {r["name"]: r for r in json.load(open(sys.argv[1]))}
@@ -12,7 +12,7 @@ for n, a, b in changed:
     print("  %-8s -> %-8s %s" % (a, b, n))
 # Busy cycles per GB frame. Goomba's start-up (the ROM menu fade calls run(0), which restarts the
 # GB frame) can shift a test by a GB frame or two between builds, so totals are not compared directly.
-MIN_FRAMES = 60
+MIN_FRAMES = int(sys.argv[3]) if len(sys.argv) > 3 else 300
 rows = []
 for n in sorted(base.keys() & new.keys()):
     a, b = base[n], new[n]
