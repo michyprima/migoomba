@@ -90,9 +90,10 @@ scanline, the DIV/timer coupling), which Goomba trades for speed.
 ### Games
 106 commercial games picked for being hard to emulate, from many regions (USA, Europe, Japan, Korea
 and single-country releases) and covering 17 of the 26 cartridge types (one game for each type the
-collections had: no MMM01, MBC2 without battery, MBC3 without RAM, Pocket Camera or TAMA5 game), all run through the same input script (wait for the intro, alternate
-Start and A for 20 seconds, screenshots at 7 moments up to Game Boy frame 2400) by
-`tools/gbtest/gametests.py`. ROMs are not part of the repository; they are identified by hash.
+collections had: no MMM01, MBC2 without battery, MBC3 without RAM, Pocket Camera or TAMA5 game), all
+run through the same input script (wait for the intro, alternate Start and A for 20 seconds,
+screenshots at 7 moments up to Game Boy frame 2400) by `tools/gbtest/gametests.py`. ROMs are not part
+of the repository; they are identified by hash.
 
 - **Stuck games**: the screen stops changing over the last checkpoints while the reference's goes
   on (`STUCK`), or the cart RAM is set up differently from what the ROM header says (`CART`).
@@ -111,17 +112,18 @@ Start and A for 20 seconds, screenshots at 7 moments up to Game Boy frame 2400) 
   Perfect Dark, SWIV and Tomb Raider.
 
 Games that improved (reference checkpoints): Pocket Family GB 2 (0 -> 7), Robot Poncots (0 -> 4) and
-Pokemon Card GB (0 -> 5), which stopped after their first screens; Road Rash, which hung when a race started (its screens match
-the reference apart from the bottom row); Turok 3 (0 -> 5), Tomb Raider (0 -> 4), Suzuki Alstare
-Extreme Racing (1 -> 5), Inspector Gadget (2 -> 5), Medarot 5 (2 -> 5), Bomberman Selection (0 -> 3),
-Rayman 2 (0 -> 3), Alone in the Dark (5 -> 7), Carmageddon (2 -> 4), Driver (4 -> 6), and one more
-each for Cannon Fodder, Donkey Kong Country, Final Fantasy Adventure, Gradius: The Interstellar
-Assault, Ninja JaJaMaru DX and Robin Hood.
+Pokemon Card GB (0 -> 5), which stopped after their first screens; Road Rash, which hung when a race
+started (its screens match the reference apart from the bottom row); Turok 3 (0 -> 5), Tomb Raider (0
+-> 4), Suzuki Alstare Extreme Racing (1 -> 5), Inspector Gadget (2 -> 5), Medarot 5 (2 -> 5),
+Bomberman Selection (0 -> 3), Rayman 2 (0 -> 3), Alone in the Dark (5 -> 7), Carmageddon (2 -> 4),
+Driver (4 -> 6), and one more each for Cannon Fodder, Donkey Kong Country, Final Fantasy Adventure,
+Gradius: The Interstellar Assault, Ninja JaJaMaru DX and Robin Hood.
 
 Known issues: Net de Get needs the MBC6 mapper; no tilt input for Korokoro Kirby (MBC7) and no
 infrared (Robot Poncots' GB KISS, Pocket Family GB 2, Chee-Chai Alien); the HuC-3 clock is not kept
-across power-offs; the MBC3 clock reads the GBA cart's clock but can't be stopped or set (rtc3test); 3-D Ultra Pinball and The Smurfs' Nightmare differ from the reference at every
-checkpoint and have not been looked into yet.
+across power-offs; the MBC3 clock reads the GBA cart's clock but can't be stopped or set (rtc3test);
+3-D Ultra Pinball and The Smurfs' Nightmare differ from the reference at every checkpoint and have not
+been looked into yet.
 
 <details>
 <summary>All 106 games</summary>
@@ -318,6 +320,9 @@ GBA's clock.
 - `savetest.py`, `goombasave_test.py`: battery saves across power cycles, quick save/load and the
   menu, on 32KB and 64KB of GBA SRAM, and round trips through `goombasave.py`.
 - `stackcheck.py`: stack headroom in IWRAM. `profile.py`: where the time goes.
+- `hwkit.py`: a kit for checking a build on real hardware: games and test ROM compilations to copy
+  to the flash cart, what mGBA showed for each, and a checklist to fill in (written to `hwtest/`,
+  which git ignores as it holds commercial games).
 
 See [tools/gbtest/README.md](tools/gbtest/README.md) for setup and details, and
 [AGENTS.md](AGENTS.md) for notes on the code and on how changes are made and measured.
