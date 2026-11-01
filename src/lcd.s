@@ -235,7 +235,7 @@ GFX_init_irq:
 	str r2,[r1]
 
 	mov r1,#REG_BASE
-	mov r0,#0x0008
+	mov r0,#0x0018		@vblank IRQ, plus the HBlank request (IE decides)
 @	mov r0,#0x0028
 	strh r0,[r1,#REG_DISPSTAT]	@vblank en
 
@@ -330,6 +330,7 @@ ppi0:	mov r0,#0
 GFX_reset:	@called with CPU reset
 @----------------------------------------------------------------------------
 	stmfd sp!,{r3,addy,lr}
+	bl bgp_reset
 
 	ldrb_ r0,gbcmode
 	movs r0,r0
@@ -1570,6 +1571,9 @@ irqhandler:	@r0-r3,r12 are safe to use
 #endif
 
 		@---this CAN'T be interrupted
+		ands r0,r1,#0x02		@HBlank: per-line BG palette (only enabled when a game changes BGP mid-frame)
+		strneh r0,[r2,#2]		@IF clear
+		ldrne pc,=hblank_palette
 		ands r0,r1,#0x80
 		strneh r0,[r2,#2]		@IF clear
 		ldrne r12,serialfptr
@@ -1723,7 +1727,7 @@ force_ui_at_top:
 	@ldr r1,=vcountfptr
 	@str r0,[r1]
 
-	ldr r0,=0x28  + 256*(SCREEN_Y_START-1) @scanline 7, enable vblank+vcount interrupts
+	ldr r0,=0x38  + 256*(SCREEN_Y_START-1) @scanline 7, enable vblank+vcount (+hblank request) interrupts
 	strh r0,[r2,#REG_DISPSTAT]
 
 	@Force UI visible in first 8 scanlines
@@ -2904,6 +2908,7 @@ dm13:
 
 
 
+	.pushsection .vram1, "ax", %progbits	@runs twice per frame: out of IWRAM
 @----------------------------------------------------------------------------
 vcountinterrupt:
 @----------------------------------------------------------------------------
@@ -2930,11 +2935,16 @@ do_gba_hdma:
 	stmia r0!,{r1-r3}
 
 	adr r0,end_gba_hdma
-	str r0,vcountfptr
+	ldr r1,=vcountfptr
+	str r0,[r1]
 
 	mov r2,#REG_BASE
-	ldr r0,=0x28 + 256*(SCREEN_Y_START+144-1) @scanline 144+8-1, enable vblank+vcount interrupts
+	ldr r0,=0x38 + 256*(SCREEN_Y_START+144-1) @scanline 144+8-1, enable vblank+vcount (+hblank request) interrupts
 	strh r0,[r2,#REG_DISPSTAT]
+
+	str lr,[sp,#-4]!
+	bl bgp_line7			@per-line BG palette for this frame?
+	ldr lr,[sp],#4
 
 	ldr_ r0,_ui_border_screen
 	and r0,r0,#3
@@ -2960,12 +2970,19 @@ end_gba_hdma:
 @	strh r2,[r2,#REG_DM3CNT_H]
 
 	ldr r0,=vbldummy
-	str r0,vcountfptr
+	ldr r1,=vcountfptr
+	str r0,[r1]
 
-	mov r0,#0x0008 @scanline 0, enable vblank interrupt
+	mov r0,#0x0018 @scanline 0, enable vblank interrupt (+hblank request)
 	strh r0,[r2,#REG_DISPSTAT]
 
+	ldrb r0,[r2,#REG_IE]
+	bic r0,r0,#2			@per-line BG palette off until line 7
+	strb r0,[r2,#REG_IE]
+
 	bx lr
+	.ltorg
+	.popsection
 	
 	
 
@@ -3184,6 +3201,8 @@ newframe_vblank:	@called at line 144	(??? safe to use)
 	ldr_ r1,dispcntbase2
 	str_ r1,dispcntbase
 	str_ r0,dispcntbase2
+
+	bl bgp_frame_end		@per-line BG palette for the frame just finished
 
 	@@advance 
 	@ldr_ r0,bg_cache_cursor
@@ -4454,16 +4473,275 @@ FF47_W_:
 	ldrb_ r1,sgbmode
 	cmp r1,#0
 	bne update_sgb_bg_palette
-	
+
+	str lr,[sp,#-4]!
+	bl_long bgp_record		@remember which lines use which BGP
 	ldr r2,=gbc_palette
 	ldr addy,=SGB_PALETTE
-	str lr,[sp,#-4]!
 	bl_long dopalette
 	ldr lr,[sp],#4
 	
 	ldr r2,=gbc_palette+4*2
 	ldr addy,=SGB_PALETTE+16
 	b_long dopalette
+
+@----------------------------------------------------------------------------
+@Per-line BG palette (DMG mode). Some games (V-Rally, Lemmings 2) change BGP while
+@lines are being drawn, but Goomba draws a frame with one palette. bgp_record notes
+@which GB lines use which BGP and the lines where it changes. At the end of such a
+@frame bgp_frame_end hands the line list to the display: bgp_line7 (from do_gba_hdma)
+@sets line 0's colours and arms a VCOUNT interrupt for the first change; bgp_vcount
+@enables the HBlank interrupt, and hblank_palette writes the changed line's colours
+@(from a table of all 256 BGP values) just before the line is drawn, staying on while
+@consecutive lines change and re-arming VCOUNT for the next change otherwise.
+@Frames without mid-frame BGP changes cost nothing.
+@----------------------------------------------------------------------------
+ BGP_CUR	= 0		@BGP as of the last recorded write
+ BGP_LAST	= 1		@lines before this one are recorded for this frame
+ BGP_MID	= 2		@BGP changed mid-frame
+ BGP_WHICH	= 3		@line buffer being recorded (0/1)
+ BGP_SHOW	= 4		@line buffer of the frame on screen
+ BGP_DISPLAY	= 8		@line buffer for the next frame shown, 0 = one palette
+ BGP_SHADES	= 12		@GBA colours of shades 0-3 the colour table was built for
+ BGP_TABVALID	= 20		@colour table built
+ BGP_NEWSHADES	= 24		@this frame's shade colours
+ BGP_NCHG	= 32		@change lines recorded this frame
+ BGP_CP		= 36		@next entry of the change list, for the HBlank handler
+ BGP_LINES	= 40		@2 buffers: BGP per GB line (144), change lines ($FF-terminated)
+ BGP_BUF	= 292
+ BGP_COLTAB	= BGP_LINES + 2*BGP_BUF	@BGP -> 4 colours (8 bytes each)
+ BGP_SIZE	= BGP_COLTAB + 256*8
+
+bgp_reset:	@called with CPU reset: per-line palettes off
+	ldr r0,=bgp_state
+	mov r1,#0
+	str r1,[r0]
+	str r1,[r0,#BGP_DISPLAY]
+	str r1,[r0,#BGP_TABVALID]
+	str r1,[r0,#BGP_NCHG]
+	mov r0,#REG_BASE
+	ldrb r1,[r0,#REG_IE]
+	bic r1,r1,#2
+	strb r1,[r0,#REG_IE]
+	bx lr
+	.ltorg
+	.popsection
+
+	.pushsection .sbss,"aw",%nobits
+	.align 2
+bgp_state: .skip BGP_SIZE
+	.popsection
+
+	.pushsection .vram1, "ax", %progbits
+bgp_record:	@in: r0=new BGP (kept). out: r1,r2,addy=?
+	stmfd sp!,{r3,r4,lr}
+	ldr addy,=bgp_state
+	ldrb r1,[addy,#BGP_CUR]
+	cmp r1,r0
+	beq 9f
+	strb r0,[addy,#BGP_CUR]
+	@the line the new value starts on, as tobuffer counts it (vblank = line 0)
+	ldr r3,=lcdstat
+	ldrb r3,[r3]
+	tst r3,#0x01
+	bne 9f
+	ldrb_ r2,scanline
+	ldr_ r3,scanline_oam_position
+	cmp cycles,r3
+	addmi r2,r2,#1
+	cmp r2,#144
+	bge 9f
+	ldrb r3,[addy,#BGP_LAST]
+	cmp r2,r3
+	ble 9f
+	strb r2,[addy,#BGP_LAST]
+	mov lr,#1
+	strb lr,[addy,#BGP_MID]
+	ldrb lr,[addy,#BGP_NCHG]
+	add r4,lr,#1
+	strb r4,[addy,#BGP_NCHG]
+	ldrb r4,[addy,#BGP_WHICH]
+	add addy,addy,#BGP_LINES
+	cmp r4,#0
+	addne addy,addy,#BGP_BUF	@this frame's line buffer
+	add r4,addy,#144
+	strb r2,[r4,lr]			@list the change line
+0:	strb r1,[addy,r3]		@lines up to here used the old value
+	add r3,r3,#1
+	cmp r3,r2
+	blt 0b
+9:	ldmfd sp!,{r3,r4,pc}
+
+hblank_palette:	@IRQ mode, IRQs off, r0-r3,r12 free; returns to the BIOS
+	ldr r12,=bgp_state
+	ldr r3,[r12,#BGP_CP]
+	ldrb r0,[r3],#1			@GB line about to be drawn
+	str r3,[r12,#BGP_CP]
+	ldr r1,[r12,#BGP_SHOW]
+	ldrb r1,[r1,r0]
+	add r12,r12,#BGP_COLTAB
+	add r12,r12,r1,lsl#3
+	ldmia r12,{r1,r2}
+	mov r12,#PALETTE_BASE
+	add r12,r12,#0x100
+	stmia r12,{r1,r2}		@BG palette 8, colours 0-3
+	strh r1,[r12,#-0x10]		@colour 0 copy used by the colour-0 tiles
+	ldrb r1,[r3]			@next change line
+	add r0,r0,#1
+	cmp r1,r0
+	bxeq lr				@the next line changes too: stay on
+	mov r2,#REG_BASE
+	ldrb r0,[r2,#REG_IE]
+	bic r0,r0,#2
+	strb r0,[r2,#REG_IE]
+	cmp r1,#0xFF
+	ldreq r0,=end_gba_hdma		@no more changes: back to the line 151 interrupt
+	moveq r1,#144
+	ldrne r0,=bgp_vcount
+	ldr r3,=vcountfptr
+	str r0,[r3]
+	add r1,r1,#SCREEN_Y_START-1	@VCOUNT interrupt at the start of the GBA line before it
+	mov r0,#0x38
+	orr r0,r0,r1,lsl#8
+	strh r0,[r2,#REG_DISPSTAT]
+	bx lr
+
+bgp_vcount:	@VCOUNT interrupt on the GBA line before a change: HBlank interrupt on
+	mov r2,#REG_BASE
+	add r0,r2,#REG_IE
+	mov r1,#2
+	strh r1,[r0,#2]			@drop HBlank requests from earlier lines
+	ldrb r1,[r0]
+	orr r1,r1,#2
+	strb r1,[r0]
+	bx lr
+
+bgp_frame_end:	@called at line 144 after the line buffers are swapped
+	ldr r12,=bgp_state
+	ldrb_ r0,bgpalette
+	strb r0,[r12,#BGP_CUR]
+	ldrb r1,[r12,#BGP_MID]
+	cmp r1,#0
+	bne 5f
+	@usual case, one palette all frame: nothing recorded, nothing to show
+	strb r1,[r12,#BGP_LAST]
+	strb r1,[r12,#BGP_NCHG]
+	str r1,[r12,#BGP_DISPLAY]
+	bx lr
+5:	stmfd sp!,{r4-r9,lr}
+	ldrb r1,[r12,#BGP_WHICH]
+	add r4,r12,#BGP_LINES
+	cmp r1,#0
+	addne r4,r4,#BGP_BUF		@this frame's line buffer
+	ldrb r3,[r12,#BGP_LAST]
+0:	cmp r3,#144
+	strltb r0,[r4,r3]		@the rest of the frame used the current value
+	addlt r3,r3,#1
+	blt 0b
+	ldrb r2,[r12,#BGP_NCHG]
+	add r2,r2,#144
+	mov r0,#0xFF
+	strb r0,[r4,r2]			@end of the change list
+	ldrb r5,[r12,#BGP_MID]
+	mov r0,#0
+	strb r0,[r12,#BGP_LAST]
+	strb r0,[r12,#BGP_MID]
+	strb r0,[r12,#BGP_NCHG]
+	@only DMG frames with the LCD on whose BGP changed mid-frame
+	ldrb_ r0,gbcmode
+	ldrb_ r2,sgbmode
+	orr r0,r0,r2
+	ldrb_ r2,lcdctrl0frame
+	eor r2,r2,#0x80
+	orr r0,r0,r2,lsr#7
+	cmp r5,#0
+	moveq r0,#1
+	cmp r0,#0
+	movne r0,#0
+	strne r0,[r12,#BGP_DISPLAY]
+	ldmnefd sp!,{r4-r9,pc}
+	eor r1,r1,#1
+	strb r1,[r12,#BGP_WHICH]	@record the next frame in the other buffer
+
+	@GBA colours of shades 0-3, as transfer_palette_ makes them
+	ldr r5,=SGB_PALETTE
+	add r6,r12,#BGP_NEWSHADES
+	mov r8,r4
+	mov r4,r6
+	ldrb_ r1,_gammavalue
+	movs r1,r1
+	ldmeqia r5,{r6,r7}
+	stmeqia r4,{r6,r7}
+	beq 1f
+	mov r9,#4
+2:	bl_long gamma_convert_one	@[r5]+ -> [r4]+, gamma in r1
+	subs r9,r9,#1
+	bne 2b
+	sub r4,r4,#8
+1:	@rebuild the BGP -> colours table when the shades changed
+	ldmia r4,{r6,r7}
+	add r5,r12,#BGP_SHADES
+	ldmia r5,{r0,r1}
+	ldr r2,[r12,#BGP_TABVALID]
+	cmp r0,r6
+	cmpeq r1,r7
+	cmpeq r2,#1
+	beq 4f
+	stmia r5,{r6,r7}
+	mov r2,#1
+	str r2,[r12,#BGP_TABVALID]
+	add r6,r12,#BGP_COLTAB
+	mov r0,#0
+3:	and r2,r0,#0x03
+	add r2,r4,r2,lsl#1
+	ldrh r1,[r2]
+	and r2,r0,#0x0C
+	add r2,r4,r2,lsr#1
+	ldrh r2,[r2]
+	orr r1,r1,r2,lsl#16
+	and r9,r0,#0x30
+	add r9,r4,r9,lsr#3
+	ldrh r2,[r9]
+	and r9,r0,#0xC0
+	add r9,r4,r9,lsr#5
+	ldrh r9,[r9]
+	orr r2,r2,r9,lsl#16
+	stmia r6!,{r1,r2}
+	add r0,r0,#1
+	cmp r0,#256
+	blt 3b
+4:	str r8,[r12,#BGP_DISPLAY]	@the buffer just finished
+	ldmfd sp!,{r4-r9,pc}
+
+bgp_line7:	@do_gba_hdma: per-line palettes for this frame? in: r2=REG_BASE (kept)
+	ldr r0,=bgp_state
+	ldr r1,[r0,#BGP_DISPLAY]
+	str r1,[r0,#BGP_SHOW]
+	cmp r1,#0
+	bxeq lr
+	add r3,r1,#144
+	str r3,[r0,#BGP_CP]
+	ldrb r3,[r3]			@first change line
+	ldrb r1,[r1]			@line 0's BGP: set it now
+	add r0,r0,#BGP_COLTAB
+	add r0,r0,r1,lsl#3
+	ldmia r0,{r0,r1}
+	add r2,r2,#PALETTE_BASE-REG_BASE
+	add r2,r2,#0x100
+	stmia r2,{r0,r1}
+	strh r0,[r2,#-0x10]
+	mov r2,#REG_BASE
+	cmp r3,#0xFF
+	bxeq lr
+	ldr r0,=bgp_vcount
+	ldr r1,=vcountfptr
+	str r0,[r1]
+	add r3,r3,#SCREEN_Y_START-1
+	mov r0,#0x38
+	orr r0,r0,r3,lsl#8
+	strh r0,[r2,#REG_DISPSTAT]
+	bx lr
+	.ltorg
 	.popsection
 dopalette:
 	and r1,r0,#0x03

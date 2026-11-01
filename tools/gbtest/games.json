@@ -1076,7 +1076,7 @@
    "file": "Lemmings 2 - The Tribes (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 114606,
+   "busy_per_frame": 116345,
    "checkpoints": [
     {
      "frame": 300,
@@ -1110,15 +1110,15 @@
     },
     {
      "frame": 1800,
-     "goomba": "03ccbc795ca39662c145dc17af82d8b7b773be6c",
+     "goomba": "1b0c340799c8f8ab16578480ae9a732544c0000b",
      "reference": "06a17e32bfde0a545ba30227cdb8778272855948",
-     "ref_diff": 4265
+     "ref_diff": 26
     },
     {
      "frame": 2400,
-     "goomba": "36f4267fdeda849e648ccb10884e293b2c16da2d",
+     "goomba": "0872a229e0e0004816e7bf3e09d8ed496451c8df",
      "reference": "7eddc8b900ba5609bcb6d1c3005a045253ea2897",
-     "ref_diff": 4278
+     "ref_diff": 37
     }
    ]
   },
@@ -1586,7 +1586,7 @@
    "file": "Perfect Dark (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 464534,
+   "busy_per_frame": 464885,
    "checkpoints": [
     {
      "frame": 300,
@@ -1614,7 +1614,7 @@
     },
     {
      "frame": 1500,
-     "goomba": "f991c7b212e89323f72e641ae1fdd2ed339ec48c",
+     "goomba": "1addbe1db4ff3e25345d86d128cf76f6416588f6",
      "reference": "64773bc1a8b0725372002115decbc637a33e9b5c",
      "ref_diff": 0
     },
@@ -1994,7 +1994,7 @@
    "file": "Rainbow Islands (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 100220,
+   "busy_per_frame": 100408,
    "checkpoints": [
     {
      "frame": 300,
@@ -2016,7 +2016,7 @@
     },
     {
      "frame": 1200,
-     "goomba": "37e2d426b8a835776814f9a64cedda7070b86388",
+     "goomba": "c6fdbc0b31afe8a00f9436d910ad615f6a8b95b5",
      "reference": "edb6e29c96a6738fbbf7932fc0b50c1f8bbee18c",
      "ref_diff": 17156
     },
@@ -2504,7 +2504,7 @@
    "file": "SWIV (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 377561,
+   "busy_per_frame": 377880,
    "checkpoints": [
     {
      "frame": 300,
@@ -2544,9 +2544,9 @@
     },
     {
      "frame": 2400,
-     "goomba": "7e7bfc3695543ce92d0fc23dc3fee2a201b0233e",
+     "goomba": "ae13db3e365a3af70db2df970f3ac39178daa7ce",
      "reference": "d85271bfe317f717e3066a70ba776d77384834a3",
-     "ref_diff": 18119
+     "ref_diff": 580
     }
    ]
   },
@@ -2810,7 +2810,7 @@
    "file": "V-Rally - Championship Edition (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 152817,
+   "busy_per_frame": 156832,
    "checkpoints": [
     {
      "frame": 300,
@@ -2832,27 +2832,27 @@
     },
     {
      "frame": 1200,
-     "goomba": "af872d376278d35f813564024781061b9cf580eb",
+     "goomba": "766f6d6ffe412856e191b3b6ed03b8474e5f3ed4",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 1334
+     "ref_diff": 15276
     },
     {
      "frame": 1500,
-     "goomba": "2f0d019089086abfb42e9e280941faad8ff51769",
+     "goomba": "166916e4011e52e83bdb25aa64726b089a366c91",
      "reference": "9d9915534d52b226974e6dd7765c671036420108",
-     "ref_diff": 15302
+     "ref_diff": 1036
     },
     {
      "frame": 1800,
-     "goomba": "2f0d019089086abfb42e9e280941faad8ff51769",
+     "goomba": "166916e4011e52e83bdb25aa64726b089a366c91",
      "reference": "9d9915534d52b226974e6dd7765c671036420108",
-     "ref_diff": 15302
+     "ref_diff": 1036
     },
     {
      "frame": 2400,
-     "goomba": "2f0d019089086abfb42e9e280941faad8ff51769",
+     "goomba": "166916e4011e52e83bdb25aa64726b089a366c91",
      "reference": "9d9915534d52b226974e6dd7765c671036420108",
-     "ref_diff": 15302
+     "ref_diff": 1036
     }
    ]
   },
