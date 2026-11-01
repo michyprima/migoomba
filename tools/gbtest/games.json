@@ -5,49 +5,56 @@
    "file": "3-D Ultra Pinball - Thrillride (USA) (Rumble Version).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 138141,
+   "busy_per_frame": 138226,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "e9384cfbb570568ac3c2aebd7d59ffbaf1bda592",
      "reference": "b1ca39038aaa16f411935894db0047c2118698c2",
-     "ref_diff": 57
+     "ref_diff": 57,
+     "colours": 10
     },
     {
      "frame": 600,
      "goomba": "17c3e26cb751a109eb1fb9a8333b7472852990ea",
      "reference": "90082777ad7acf750b6cc19770351c50d64a31ec",
-     "ref_diff": 1296
+     "ref_diff": 1296,
+     "colours": 10
     },
     {
      "frame": 900,
      "goomba": "8de96252d77e5ab688008a28c6b3091ad088f8ba",
      "reference": "aa91c59609532b0cbde78f55132c676680630363",
-     "ref_diff": 3957
+     "ref_diff": 3957,
+     "colours": 14
     },
     {
      "frame": 1200,
      "goomba": "835d509785396d8b4b29c056b59409292c47b735",
      "reference": "8b852718d4dc36820e51f3b8c91e3eac606296c9",
-     "ref_diff": 22277
+     "ref_diff": 22277,
+     "colours": 16
     },
     {
      "frame": 1500,
      "goomba": "0655cd95057d700be19bfb25d4b71b923af91552",
      "reference": "5e70778347004c80214b62c3dd9ac6508e8e2a1d",
-     "ref_diff": 10643
+     "ref_diff": 10643,
+     "colours": 16
     },
     {
      "frame": 1800,
      "goomba": "db55b78b1117c076f495ca8575644296712047cd",
      "reference": "f79736d56511aa997a0317af8e305ea47b3cb958",
-     "ref_diff": 3134
+     "ref_diff": 3134,
+     "colours": 15
     },
     {
      "frame": 2400,
      "goomba": "3decda3cbe0d30b55a448c714b39f5ebb423b4bc",
      "reference": "d2a8da94d8f07e322703851b9877b5601e7fdfd6",
-     "ref_diff": 3188
+     "ref_diff": 3188,
+     "colours": 13
     }
    ]
   },
@@ -56,49 +63,56 @@
    "file": "Adventures of Lolo (Europe) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 113035,
+   "busy_per_frame": 113772,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "8471f4885be040f17e94c917647b44ac34ddb1ec",
      "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
-     "ref_diff": 9666
+     "ref_diff": 9666,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "c5acd7a1ea9e4e52910722e02ee8c199a3daa659",
      "reference": "b123d25ed8bb8ee1c7f2172d547a41aa15a8ff7f",
-     "ref_diff": 40
+     "ref_diff": 40,
+     "colours": 3
     },
     {
      "frame": 900,
      "goomba": "374a4b5702adba1d592797e347513a6586e2d30f",
      "reference": "8fe490dae31a06752cce6c884969f63b08f8e9c6",
-     "ref_diff": 1198
+     "ref_diff": 1198,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "74019a4433f065ea4dfab12221fb242ac31e4685",
      "reference": "04fe5dfd85feb8068d4e40bd18e878d40148cdbe",
-     "ref_diff": 1060
+     "ref_diff": 1060,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "6b2d7406f7c3a50791b4f492b42c01d028261309",
      "reference": "5e1e5b39a7bf34c6dac8b09286b23fea3d5bcf27",
-     "ref_diff": 806
+     "ref_diff": 806,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "debb7cf652afaa218420df2f2574c17127745258",
      "reference": "0fe959b7aabcbb14cf57e6368e54f0fbfb610bf5",
-     "ref_diff": 1217
+     "ref_diff": 1217,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "debb7cf652afaa218420df2f2574c17127745258",
      "reference": "0fe959b7aabcbb14cf57e6368e54f0fbfb610bf5",
-     "ref_diff": 1217
+     "ref_diff": 1217,
+     "colours": 4
     }
    ]
   },
@@ -107,49 +121,56 @@
    "file": "Alfred's Adventure (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 392417,
+   "busy_per_frame": 392528,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "51fa9f6a2d64c07c33edb18f23f98495e9d8c37f",
      "reference": "51fa9f6a2d64c07c33edb18f23f98495e9d8c37f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 18
     },
     {
      "frame": 600,
      "goomba": "5da4b0804c87bedee32dec78e88bf3f89fc5e7b9",
      "reference": "2d751db8170023581f1e83a5eceb9a1f166db00b",
-     "ref_diff": 4605
+     "ref_diff": 4605,
+     "colours": 84
     },
     {
      "frame": 900,
      "goomba": "cc15792f73427d78f7ae562b06438f69f9ea837c",
      "reference": "911d25896db0e4c94312690a372f1975752b2fbc",
-     "ref_diff": 1520
+     "ref_diff": 1520,
+     "colours": 56
     },
     {
      "frame": 1200,
      "goomba": "fc2423301e3b985883c59d4322250d3c77cba935",
      "reference": "f31b69855a238eba1c63a394c0132906b1e2efb7",
-     "ref_diff": 311
+     "ref_diff": 311,
+     "colours": 610
     },
     {
      "frame": 1500,
      "goomba": "50e8bef6f5acdb9317b5568836459ed6a11b63b8",
      "reference": "6495d73e3815128c1b83f895b29f7a715749fef2",
-     "ref_diff": 6508
+     "ref_diff": 6508,
+     "colours": 10
     },
     {
      "frame": 1800,
      "goomba": "7bb71cfb6b25bbde73b9cafda7f83d5722333399",
      "reference": "8ca8ac5d02e0531e45b877942b66b821b1c86d60",
-     "ref_diff": 211
+     "ref_diff": 211,
+     "colours": 25
     },
     {
      "frame": 2400,
      "goomba": "8f7934f2a98d7609c55759289040e10b26b15cca",
      "reference": "d7f503c8f9cc6d0592e6d97e1e1200f800c709c9",
-     "ref_diff": 63
+     "ref_diff": 63,
+     "colours": 25
     }
    ]
   },
@@ -158,49 +179,56 @@
    "file": "Alone in the Dark - The New Nightmare (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 282198,
+   "busy_per_frame": 282368,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "9a9db359acd63b23a577822bd34c54164dfe8d55",
      "reference": "9a9db359acd63b23a577822bd34c54164dfe8d55",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "2f6b69c70ec6a7a3aa2f90f6efc25e69a6cceee7",
      "reference": "2f6b69c70ec6a7a3aa2f90f6efc25e69a6cceee7",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 900,
      "goomba": "4810b3b840fa394cac013b0cc082ba17d337b04c",
      "reference": "989fe5dd450d8306f4ed88683124c3e6a7f37948",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 1200,
      "goomba": "681cef8aad290382ce73b04222f959fc0b066ada",
      "reference": "681cef8aad290382ce73b04222f959fc0b066ada",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 20
     },
     {
      "frame": 1500,
      "goomba": "7959e0dbfac860ac22f9954489d8b2ecaf23470c",
      "reference": "7959e0dbfac860ac22f9954489d8b2ecaf23470c",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "67f5748b3c46bde8611d096baea1b1507141eeaf",
      "reference": "67f5748b3c46bde8611d096baea1b1507141eeaf",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 119
     },
     {
      "frame": 2400,
      "goomba": "67f5748b3c46bde8611d096baea1b1507141eeaf",
      "reference": "67f5748b3c46bde8611d096baea1b1507141eeaf",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 119
     }
    ]
   },
@@ -209,49 +237,56 @@
    "file": "Asterix - Search for Dogmatix (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 108123,
+   "busy_per_frame": 109425,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "155e2a292d9ce7f88487814bcfcc37780ae0ffba",
      "reference": "155e2a292d9ce7f88487814bcfcc37780ae0ffba",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 600,
      "goomba": "01f5afdd07ca219c2f5b9dd6d93779b4886365d2",
      "reference": "01f5afdd07ca219c2f5b9dd6d93779b4886365d2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "8456ae0a6155d12c78610f23daf505d8b1db5bcc",
      "reference": "8456ae0a6155d12c78610f23daf505d8b1db5bcc",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 1200,
      "goomba": "ea7e3f08d4449e6ecccd7824f306b6a59641e98a",
      "reference": "ea7e3f08d4449e6ecccd7824f306b6a59641e98a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 5
     },
     {
      "frame": 1500,
      "goomba": "ab9a8410f50258f4109937407bf488c5bc52a628",
      "reference": "ab9a8410f50258f4109937407bf488c5bc52a628",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 9
     },
     {
      "frame": 1800,
      "goomba": "ab9a8410f50258f4109937407bf488c5bc52a628",
      "reference": "ab9a8410f50258f4109937407bf488c5bc52a628",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 9
     },
     {
      "frame": 2400,
      "goomba": "ab9a8410f50258f4109937407bf488c5bc52a628",
      "reference": "ab9a8410f50258f4109937407bf488c5bc52a628",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 9
     }
    ]
   },
@@ -260,49 +295,56 @@
    "file": "Baby Felix - Halloween (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 114372,
+   "busy_per_frame": 114465,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "f44d70573cecb02d6f31d117c60f61aa2ab9d35b",
      "reference": "f44d70573cecb02d6f31d117c60f61aa2ab9d35b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 600,
      "goomba": "3fa45ca13a067de15b2d71321719bb520d426d9a",
      "reference": "3fa45ca13a067de15b2d71321719bb520d426d9a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 5
     },
     {
      "frame": 900,
      "goomba": "8b45cd5794208fdee314e2fdd35ef44f6e90591d",
      "reference": "8b45cd5794208fdee314e2fdd35ef44f6e90591d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 1200,
      "goomba": "866c66424c51b3e666d3c296526379d865f73493",
      "reference": "edf8a189a88296912608a4b1066c0f5f62dd7541",
-     "ref_diff": 1395
+     "ref_diff": 1395,
+     "colours": 16
     },
     {
      "frame": 1500,
      "goomba": "f82980204b22cf8bad38e6a67602b2bbbbe23cbe",
      "reference": "f82980204b22cf8bad38e6a67602b2bbbbe23cbe",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 1800,
      "goomba": "5b18e7a8446043dfa686e2608e7358219f2d9c39",
      "reference": "971de48a308720ff179dc6c0384e05e16cc2433a",
-     "ref_diff": 24
+     "ref_diff": 24,
+     "colours": 10
     },
     {
      "frame": 2400,
      "goomba": "84f26e8b7e32ee66b62247259251ea6c1a67605e",
      "reference": "84f26e8b7e32ee66b62247259251ea6c1a67605e",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     }
    ]
   },
@@ -311,49 +353,56 @@
    "file": "Beatmania GB - Gotcha Mix 2 (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 94781,
+   "busy_per_frame": 95402,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "f9d2fce8a4ff20ecef650c8c13af66f1bfad8f1b",
      "reference": "f9d2fce8a4ff20ecef650c8c13af66f1bfad8f1b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 600,
      "goomba": "87ffe2bc2a1bb75612ee03e3316fc220a7ad5e5a",
      "reference": "87ffe2bc2a1bb75612ee03e3316fc220a7ad5e5a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 18
     },
     {
      "frame": 900,
      "goomba": "5172b28e09162b2b1c5a97d00f7d3d4f71e8e310",
      "reference": "5172b28e09162b2b1c5a97d00f7d3d4f71e8e310",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 17
     },
     {
      "frame": 1200,
      "goomba": "f9e3cae34fe2d8ccc78ca70714bcad049abf012a",
      "reference": "f9e3cae34fe2d8ccc78ca70714bcad049abf012a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 18
     },
     {
      "frame": 1500,
      "goomba": "c540b95c01737e8c0dad59148efa4b74f95ecf6b",
      "reference": "c540b95c01737e8c0dad59148efa4b74f95ecf6b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 15
     },
     {
      "frame": 1800,
      "goomba": "fcaf688832f3554ea5563de4fa4bc6e7694af5b0",
      "reference": "fcaf688832f3554ea5563de4fa4bc6e7694af5b0",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 22
     },
     {
      "frame": 2400,
      "goomba": "fcaf688832f3554ea5563de4fa4bc6e7694af5b0",
      "reference": "fcaf688832f3554ea5563de4fa4bc6e7694af5b0",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 22
     }
    ]
   },
@@ -362,49 +411,56 @@
    "file": "Beavis and Butt-Head (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 78728,
+   "busy_per_frame": 79088,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "ae8cc38c1ddd25a83a568f5a56326b980f880771",
      "reference": "ae8cc38c1ddd25a83a568f5a56326b980f880771",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "5e0119bec605dda8fc37f7382035a61a094ccc60",
      "reference": "5e0119bec605dda8fc37f7382035a61a094ccc60",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "fed6258c3da30c9817b55de4d88922b92fb1e65e",
      "reference": "fed6258c3da30c9817b55de4d88922b92fb1e65e",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "0dca9dd987976f9f03dac9f07f3a3f62bdda5389",
      "reference": "0dca9dd987976f9f03dac9f07f3a3f62bdda5389",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "cc078283a0a3cb304e5757124de4abdb5d8d4658",
      "reference": "cc078283a0a3cb304e5757124de4abdb5d8d4658",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "a512f26bee9afb79bb2e868e07618c4145112d4d",
      "reference": "a512f26bee9afb79bb2e868e07618c4145112d4d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "0736beff31812b0c2efb44e6b5c7bcd14346d686",
      "reference": "0736beff31812b0c2efb44e6b5c7bcd14346d686",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     }
    ]
   },
@@ -413,49 +469,56 @@
    "file": "Bionic Commando - Elite Forces (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 178037,
+   "busy_per_frame": 178128,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "5c68fafa405780ef5463b105d3dc413799831511",
      "reference": "5c68fafa405780ef5463b105d3dc413799831511",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 600,
      "goomba": "942c145dd5306e08d258300a6700235f3f7c23f2",
      "reference": "942c145dd5306e08d258300a6700235f3f7c23f2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 900,
      "goomba": "ec4293e580d5162ce2a60180cbe0db6f3ae7b2ba",
      "reference": "1010bbd6818c2b09702e2bc5e22ca8fb8a1448b8",
-     "ref_diff": 900
+     "ref_diff": 900,
+     "colours": 18
     },
     {
      "frame": 1200,
      "goomba": "c01da9bb36035590fdc227c3d3505bb4d1a6cc83",
      "reference": "2d78eb31e260b6c215a9496c53869b2a4802b76b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 9
     },
     {
      "frame": 1500,
      "goomba": "bb0f06e86511a4f98729c46fcdcc55c2ad9bc27a",
      "reference": "6c569fd974d50c8abd870fbfa4ec0fe286c64eff",
-     "ref_diff": 7
+     "ref_diff": 7,
+     "colours": 17
     },
     {
      "frame": 1800,
      "goomba": "a1236f43bc59302be0d59873a903e5a08303fd25",
      "reference": "9215f1b172958debd9e41367f8ff319847fdfb2e",
-     "ref_diff": 53
+     "ref_diff": 53,
+     "colours": 16
     },
     {
      "frame": 2400,
      "goomba": "a1236f43bc59302be0d59873a903e5a08303fd25",
      "reference": "9215f1b172958debd9e41367f8ff319847fdfb2e",
-     "ref_diff": 53
+     "ref_diff": 53,
+     "colours": 16
     }
    ]
   },
@@ -464,49 +527,56 @@
    "file": "Bomberman Selection (Korea).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 81408,
+   "busy_per_frame": 81494,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "a7aecca39c7f581a816ba76f347d6a9ba2a6e27b",
      "reference": "954a882d9b55f2eaf8331e863e4cd3524cf1c94b",
-     "ref_diff": 10
+     "ref_diff": 10,
+     "colours": 9
     },
     {
      "frame": 600,
      "goomba": "532d28f2c60fd2fb430e0b95f897da389fe1cc2e",
      "reference": "2d872e574d1b7d0cca5f758cedde5aa84bf285f8",
-     "ref_diff": 4222
+     "ref_diff": 4222,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "7c4d807ee3224a713f0181d6b6931197171f3722",
      "reference": "7e084a4dfdfa419db293b773f952e1c860579cd6",
-     "ref_diff": 5398
+     "ref_diff": 5398,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "613742899c7ca184bb23045d32f0128b54ed1e39",
      "reference": "9e3376a529e6308a513dd5411cbda56ce52783fd",
-     "ref_diff": 12681
+     "ref_diff": 12681,
+     "colours": 5
     },
     {
      "frame": 1500,
      "goomba": "4c2862ad2293ca1e237130298847142b18fbe90e",
      "reference": "4c2862ad2293ca1e237130298847142b18fbe90e",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 1800,
      "goomba": "4c2862ad2293ca1e237130298847142b18fbe90e",
      "reference": "4c2862ad2293ca1e237130298847142b18fbe90e",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 2400,
      "goomba": "4c2862ad2293ca1e237130298847142b18fbe90e",
      "reference": "4c2862ad2293ca1e237130298847142b18fbe90e",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     }
    ]
   },
@@ -515,49 +585,56 @@
    "file": "Cannon Fodder (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 194405,
+   "busy_per_frame": 195502,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d6f7ae3ded68b325ada5ca7ef74f5bab951fe91d",
      "reference": "d6f7ae3ded68b325ada5ca7ef74f5bab951fe91d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 27
     },
     {
      "frame": 600,
      "goomba": "25da56cbfd9d073aba1b10e06cc43ff5ca01ff92",
      "reference": "25da56cbfd9d073aba1b10e06cc43ff5ca01ff92",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 900,
      "goomba": "aa17346fc7c3e8bf1035712917d21927d7290b65",
      "reference": "aa17346fc7c3e8bf1035712917d21927d7290b65",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 1200,
      "goomba": "2620f22c48a1a3597fe8367b97bad92222bc47e8",
      "reference": "2620f22c48a1a3597fe8367b97bad92222bc47e8",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 1500,
      "goomba": "fc028bb08bc1d75f38d98eda68745fa97600f518",
      "reference": "215c1e9d83bb821445453e2620f32fc2a9d940d2",
-     "ref_diff": 62
+     "ref_diff": 62,
+     "colours": 11
     },
     {
      "frame": 1800,
      "goomba": "028790e7f94fec1d68097fd2638ee59555cb0d29",
      "reference": "a3961230d59867e8086f1a1349f12a8dec875a80",
-     "ref_diff": 100
+     "ref_diff": 100,
+     "colours": 11
     },
     {
      "frame": 2400,
      "goomba": "85e954c4e1b86f15ece96b78ed02b540e95dfe28",
      "reference": "85e954c4e1b86f15ece96b78ed02b540e95dfe28",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     }
    ]
   },
@@ -566,49 +643,56 @@
    "file": "Carmageddon - Carpocalypse Now (USA, Europe) (En,Fr,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 196597,
+   "busy_per_frame": 196703,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "faeb53df07716f7097e244016898fb5e9ca434e9",
      "reference": "faeb53df07716f7097e244016898fb5e9ca434e9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 16
     },
     {
      "frame": 600,
      "goomba": "90e3885413b64f6691cb9472f3a9377640ba7170",
      "reference": "90e3885413b64f6691cb9472f3a9377640ba7170",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 900,
      "goomba": "e49794d5fdf7c89294f849cce1dee7e902e05545",
      "reference": "a635a3763fe5c4b25d030214be5f6ee8eca9453c",
-     "ref_diff": 160
+     "ref_diff": 160,
+     "colours": 25
     },
     {
      "frame": 1200,
      "goomba": "5671be9e7741cac6b15257dea6fac1fbdb3b594a",
      "reference": "5671be9e7741cac6b15257dea6fac1fbdb3b594a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 26
     },
     {
      "frame": 1500,
      "goomba": "1b891c3d7b341e781980b02afc9dc265a31c2f7d",
      "reference": "51d5da9e4f1d9d5abee4047d42ec6500836d4bd0",
-     "ref_diff": 160
+     "ref_diff": 160,
+     "colours": 23
     },
     {
      "frame": 1800,
      "goomba": "6d3164b09937f79faf43f0fb3273efa37419439d",
      "reference": "6d3164b09937f79faf43f0fb3273efa37419439d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 23
     },
     {
      "frame": 2400,
      "goomba": "5a319818ffdf6d69044ded47f5ab1cbac096aef4",
      "reference": "e4524ea4699d4f637670b295c6a1a02b6e3c0ea7",
-     "ref_diff": 160
+     "ref_diff": 160,
+     "colours": 23
     }
    ]
   },
@@ -617,49 +701,56 @@
    "file": "Chee-Chai Alien (Japan) (Rumble Version).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 92735,
+   "busy_per_frame": 92976,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "06cc0cb8f8b381326062bd267f1a8ab2086c8051",
      "reference": "82ca248870f5f6003d03883ccc2ec03666d18015",
-     "ref_diff": 668
+     "ref_diff": 668,
+     "colours": 16
     },
     {
      "frame": 600,
      "goomba": "4ee10856a38b9e8158edca808b08a9c58055e053",
      "reference": "2415288e87c7902f2087a44f54fafb498eea4306",
-     "ref_diff": 728
+     "ref_diff": 728,
+     "colours": 14
     },
     {
      "frame": 900,
      "goomba": "ee422bc670b8c85006ffcf1bb0e35b438eafd92b",
      "reference": "c385aa313c965399202c3037102b3f7b059a4895",
-     "ref_diff": 179
+     "ref_diff": 179,
+     "colours": 15
     },
     {
      "frame": 1200,
      "goomba": "9115bb4c9478e8f25caf2cffb22320dd644eb5c6",
      "reference": "be26fc810b5ebf19ae2b6b30a7e2f8a4ab3109f2",
-     "ref_diff": 165
+     "ref_diff": 165,
+     "colours": 15
     },
     {
      "frame": 1500,
      "goomba": "365ddb037d4f552c204fa66da9bf26a93d98b599",
      "reference": "7308761c525d57674a5599899432204c68cd3905",
-     "ref_diff": 756
+     "ref_diff": 756,
+     "colours": 15
     },
     {
      "frame": 1800,
      "goomba": "31da8d380a865df5c4d192b70d13d613808201fb",
      "reference": "7931f17e9e776f34113a323e197ab1c4060de475",
-     "ref_diff": 195
+     "ref_diff": 195,
+     "colours": 15
     },
     {
      "frame": 2400,
      "goomba": "85b44d7ee391c8b72e75c234115ce7566b594c89",
      "reference": "f82e7865a4de1abddd3f66e31847d8701b21efd7",
-     "ref_diff": 195
+     "ref_diff": 195,
+     "colours": 15
     }
    ]
   },
@@ -668,49 +759,56 @@
    "file": "Choplifter III (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 72279,
+   "busy_per_frame": 72713,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "06fff0818a138f93ee26fe706f544b4f5073523f",
      "reference": "06fff0818a138f93ee26fe706f544b4f5073523f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "609dd2a6092d2d5bf0f58e58161035ac03679676",
      "reference": "609dd2a6092d2d5bf0f58e58161035ac03679676",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "60eac51f564f90f64db74da99fb4f0ab2d001b4b",
      "reference": "60eac51f564f90f64db74da99fb4f0ab2d001b4b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
      "reference": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
      "reference": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
      "reference": "5d0c8a5f91561e95ca770845ad6b7a816c154317",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     }
    ]
   },
@@ -719,49 +817,56 @@
    "file": "Croc 2 (USA, Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 90275,
+   "busy_per_frame": 90364,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "5b47fe6c5891addf753f9e2c37cab5df426ad643",
      "reference": "5b47fe6c5891addf753f9e2c37cab5df426ad643",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 600,
      "goomba": "d61ebf79caad82049c4f35eafed8ac3a26dbf920",
      "reference": "bf0b39d6152c33b2ec1904f10d2e647cc24c4491",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 900,
      "goomba": "b454ecff5a9055ecc2be030800cf13c8f2b5d29f",
      "reference": "b454ecff5a9055ecc2be030800cf13c8f2b5d29f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "13d319c2e3c88ec2cab9e792acc548fdbb742b26",
      "reference": "f85641c681f80f07b35949b9db18b888e0426127",
-     "ref_diff": 14387
+     "ref_diff": 14387,
+     "colours": 7
     },
     {
      "frame": 1500,
      "goomba": "aa35ad61e9895f8082ac06c7ba1b26169938939f",
      "reference": "b13b4706688d50fc1465c04c9bcdd55bdb569f7e",
-     "ref_diff": 579
+     "ref_diff": 579,
+     "colours": 14
     },
     {
      "frame": 1800,
      "goomba": "c49f589bf7a8ae55d20b9422c72fffe4f34b05ed",
      "reference": "c49f589bf7a8ae55d20b9422c72fffe4f34b05ed",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 2400,
      "goomba": "c49f589bf7a8ae55d20b9422c72fffe4f34b05ed",
      "reference": "c49f589bf7a8ae55d20b9422c72fffe4f34b05ed",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     }
    ]
   },
@@ -770,49 +875,56 @@
    "file": "Dance Dance Revolution GB (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 125686,
+   "busy_per_frame": 125771,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "7c3e5b5a5f7e37bfa84f295272dbe7af3b60e671",
      "reference": "4eb6fabb109d388ca7874bfbc359c3794f934419",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 600,
      "goomba": "0d2d2b5fd8fdbc86fb75a10e183435b1608709e6",
      "reference": "0d2d2b5fd8fdbc86fb75a10e183435b1608709e6",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 9
     },
     {
      "frame": 900,
      "goomba": "51f8aef997e3f6fb065c3db4b90ccc604a82ae97",
      "reference": "51f8aef997e3f6fb065c3db4b90ccc604a82ae97",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 1200,
      "goomba": "8c335c4e6780146d6bc41013ec0027cc29baa750",
      "reference": "8c335c4e6780146d6bc41013ec0027cc29baa750",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 19
     },
     {
      "frame": 1500,
      "goomba": "8ff9b68ef396387ca4b6a947b8dfd18a413a35e3",
      "reference": "8ff9b68ef396387ca4b6a947b8dfd18a413a35e3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 22
     },
     {
      "frame": 1800,
      "goomba": "94ea6ec44b14fbf3f5c4e80765b581650fb4998a",
      "reference": "94ea6ec44b14fbf3f5c4e80765b581650fb4998a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 2400,
      "goomba": "34d49459bf5cccb3edc9de24ad35a95cfe3c8233",
      "reference": "d74f2c8ecb18744e02a7cf9ab61a2d887697c645",
-     "ref_diff": 192
+     "ref_diff": 192,
+     "colours": 16
     }
    ]
   },
@@ -821,49 +933,56 @@
    "file": "Densha de Go! 2 (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 98701,
+   "busy_per_frame": 98837,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "9e0d6942d7307984ba0d62f6f5c6aae20462eee5",
      "reference": "9e0d6942d7307984ba0d62f6f5c6aae20462eee5",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 600,
      "goomba": "db40a552c4f32999b4eb57616bcd847e8d3e9134",
      "reference": "db40a552c4f32999b4eb57616bcd847e8d3e9134",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 900,
      "goomba": "297c0935e675b3d14ad8fef67f4707149ab30885",
      "reference": "87833d786f1ee2900342473514a29398f0caeb10",
-     "ref_diff": 464
+     "ref_diff": 464,
+     "colours": 24
     },
     {
      "frame": 1200,
      "goomba": "76d9a13a817c50d93d909bffa5a1222cb927bc22",
      "reference": "67482bd6e71dfcc2e24c7a750cc8f1dd6a979c0a",
-     "ref_diff": 728
+     "ref_diff": 728,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "8f84c079a9830448888a950f143e5f111de9a218",
-     "ref_diff": 14663
+     "ref_diff": 14663,
+     "colours": 1
     },
     {
      "frame": 1800,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "42880b33791117db12786cd1f90932ef7458e7eb",
-     "ref_diff": 15050
+     "ref_diff": 15050,
+     "colours": 1
     },
     {
      "frame": 2400,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "aed14d0780a1e728a273d5448c271eacd0aede48",
-     "ref_diff": 15053
+     "ref_diff": 15053,
+     "colours": 1
     }
    ]
   },
@@ -872,49 +991,56 @@
    "file": "Donkey Kong Country (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 161761,
+   "busy_per_frame": 161922,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "53d01348ec124eb01596c8e5e311f5c5ace1c729",
      "reference": "53d01348ec124eb01596c8e5e311f5c5ace1c729",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 900,
      "goomba": "6160cd193791f64767068038f4dac6503b782fbf",
      "reference": "213b9be6b429e0d04fad3b5b9c9268feaca2515c",
-     "ref_diff": 8904
+     "ref_diff": 8904,
+     "colours": 13
     },
     {
      "frame": 1200,
      "goomba": "7e2894fdbca626b6be2d0a18918ca0516b5bef9f",
      "reference": "7e2894fdbca626b6be2d0a18918ca0516b5bef9f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 26
     },
     {
      "frame": 1500,
      "goomba": "5750298f1c2b04c95d0cd3fc96f2ce99a401a4dc",
      "reference": "81d33255f601bf9cb3d0534e7f030ddd2566a41f",
-     "ref_diff": 3553
+     "ref_diff": 3553,
+     "colours": 39
     },
     {
      "frame": 1800,
      "goomba": "bc77ccc4cd0b457325640a6b836f7b53038ebb61",
      "reference": "c36aac9b8d0a3300521c0f0a15b19920a86b669c",
-     "ref_diff": 564
+     "ref_diff": 564,
+     "colours": 19
     },
     {
      "frame": 2400,
      "goomba": "d7bbfe8a557afa9948624519a0468374a0f6e739",
      "reference": "ece2aef4a3fa62bd5ce2e3dbd4cf269a9b2643df",
-     "ref_diff": 542
+     "ref_diff": 542,
+     "colours": 19
     }
    ]
   },
@@ -923,49 +1049,56 @@
    "file": "Donkey Kong Land (USA) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 112163,
+   "busy_per_frame": 112494,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "dd80a25a6fe9af911fe2b812e9bf6a8ef240d7c1",
-     "ref_diff": 2281
+     "ref_diff": 2281,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "7d5d9d132eb37dbd372224157ea00ab4cd2ff512",
      "reference": "7dff36927997ddc3c6278578eb174bc805e8ebe0",
-     "ref_diff": 12523
+     "ref_diff": 12523,
+     "colours": 1
     },
     {
      "frame": 900,
      "goomba": "ed604e946453d6a43329ef935fb25d1506c31550",
      "reference": "db168612c41cd4bee7ff0024310a8331f39cd21a",
-     "ref_diff": 17289
+     "ref_diff": 17289,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "4abffbfb4e197eb8ada894e2262c9b193d7935dd",
      "reference": "6de2371d661816b7dcedae8f6d1b16e27cd7ecc2",
-     "ref_diff": 605
+     "ref_diff": 605,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "5ef81fe8d15c5ff081f8dac1e9b2d935a0f1336c",
      "reference": "4abffbfb4e197eb8ada894e2262c9b193d7935dd",
-     "ref_diff": 702
+     "ref_diff": 702,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "d38c3f466080864b3e50075dd58688116c6bc640",
      "reference": "4abffbfb4e197eb8ada894e2262c9b193d7935dd",
-     "ref_diff": 569
+     "ref_diff": 569,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "71512bc6aa30a9721c7cba0ac1c72de80345bb24",
      "reference": "4abffbfb4e197eb8ada894e2262c9b193d7935dd",
-     "ref_diff": 662
+     "ref_diff": 662,
+     "colours": 4
     }
    ]
   },
@@ -974,49 +1107,56 @@
    "file": "Dragon Ball Z - Guerreros de Leyenda (Spain).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 85889,
+   "busy_per_frame": 86491,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "a56951760bfed64566082ab3063227b1aed99b93",
      "reference": "a56951760bfed64566082ab3063227b1aed99b93",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 16
     },
     {
      "frame": 600,
      "goomba": "bac8e94743612b8aa6c14b9f6ef1007d904ba443",
      "reference": "bac8e94743612b8aa6c14b9f6ef1007d904ba443",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 900,
      "goomba": "56fac89edebbb65d2923ec0f3cac19628688c68e",
      "reference": "008a4b8d24e29c695406483a4e2f1ba0330f8433",
-     "ref_diff": 546
+     "ref_diff": 546,
+     "colours": 7
     },
     {
      "frame": 1200,
      "goomba": "b722002af8adce376efc410f42a36356f0b24042",
      "reference": "b722002af8adce376efc410f42a36356f0b24042",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 1500,
      "goomba": "f0f9e33c526a7876effffcc9c87b29cf682ba7f2",
      "reference": "f0f9e33c526a7876effffcc9c87b29cf682ba7f2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 1800,
      "goomba": "3a305952ebba93b5db2bb9239ae7a6603a0270a9",
      "reference": "3a305952ebba93b5db2bb9239ae7a6603a0270a9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 2400,
      "goomba": "3a305952ebba93b5db2bb9239ae7a6603a0270a9",
      "reference": "3a305952ebba93b5db2bb9239ae7a6603a0270a9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     }
    ]
   },
@@ -1025,49 +1165,56 @@
    "file": "Dragon Ball Z - I Leggendari Super Guerrieri (Italy).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 85977,
+   "busy_per_frame": 86579,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "c13387193f1e5437e902b296a17f942f0367755b",
      "reference": "c13387193f1e5437e902b296a17f942f0367755b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 16
     },
     {
      "frame": 600,
      "goomba": "49fae574769923426ec79579df0650ba152d3631",
      "reference": "49fae574769923426ec79579df0650ba152d3631",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 900,
      "goomba": "56fac89edebbb65d2923ec0f3cac19628688c68e",
      "reference": "008a4b8d24e29c695406483a4e2f1ba0330f8433",
-     "ref_diff": 546
+     "ref_diff": 546,
+     "colours": 7
     },
     {
      "frame": 1200,
      "goomba": "db2dcecb20b93fa59ee5cc29f1c659525073cb6d",
      "reference": "db2dcecb20b93fa59ee5cc29f1c659525073cb6d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 1500,
      "goomba": "827eeaa1d9cc81d8d4bbbb1c532367853ef986eb",
      "reference": "5394fe0b82d283c91a53bbf18105e4936f1f3891",
-     "ref_diff": 26
+     "ref_diff": 26,
+     "colours": 10
     },
     {
      "frame": 1800,
      "goomba": "52965886205f7933f3f57638ccb775a6763da7ff",
      "reference": "52965886205f7933f3f57638ccb775a6763da7ff",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 2400,
      "goomba": "52965886205f7933f3f57638ccb775a6763da7ff",
      "reference": "52965886205f7933f3f57638ccb775a6763da7ff",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     }
    ]
   },
@@ -1076,49 +1223,56 @@
    "file": "Dragon Warrior III (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 143428,
+   "busy_per_frame": 145031,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "739014f56142c78bee8060405971075649148aff",
      "reference": "739014f56142c78bee8060405971075649148aff",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "4ca34df915a9b804620669d18b5d91cc255e0484",
      "reference": "4ca34df915a9b804620669d18b5d91cc255e0484",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 900,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "e31c9dee9c0e15d5dff8a2994fa5ff6308a7452b",
      "reference": "e31c9dee9c0e15d5dff8a2994fa5ff6308a7452b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 1500,
      "goomba": "5e1affdb0746712a88ee1363e27fbb64e6e51a37",
      "reference": "5e1affdb0746712a88ee1363e27fbb64e6e51a37",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 1800,
      "goomba": "a7103782f3b2be142f2574be0b15d5d4e267dca0",
      "reference": "a7103782f3b2be142f2574be0b15d5d4e267dca0",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 2400,
      "goomba": "faf88dbb020f97c3cd559349f179985704ed9a5b",
      "reference": "a7103782f3b2be142f2574be0b15d5d4e267dca0",
-     "ref_diff": 23
+     "ref_diff": 23,
+     "colours": 3
     }
    ]
   },
@@ -1127,49 +1281,56 @@
    "file": "Driver (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 154254,
+   "busy_per_frame": 154346,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "9992e87e4558f0b04c2d928a1bc88fd6764663a9",
      "reference": "9992e87e4558f0b04c2d928a1bc88fd6764663a9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 600,
      "goomba": "f00fcc91b53d322992b241213802969cc992874a",
      "reference": "38b97aba10c75de943fb430b1a1c0e2965eecb1a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 900,
      "goomba": "0c9d09f9a2418ac3302df68944037acc2e59c623",
      "reference": "790e016c11f7477b5698ea2c9cbf3b8a1bc5ab18",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 1200,
      "goomba": "96a0d05c979715eca3e51c465f4b009b2c1777b5",
      "reference": "96a0d05c979715eca3e51c465f4b009b2c1777b5",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 1500,
      "goomba": "1b4fbc7ea9948621e09b33b3c62f612153a413f5",
      "reference": "77e0dd66e3e92f248f8318f667f741ce997dbfbe",
-     "ref_diff": 4595
+     "ref_diff": 4595,
+     "colours": 6
     },
     {
      "frame": 1800,
      "goomba": "d1820cc075eeaaa2325a90316a4450adb01cba58",
      "reference": "d1820cc075eeaaa2325a90316a4450adb01cba58",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 2400,
      "goomba": "5fd9fb9255319ad0b1e19f32300c296c9220b3c4",
      "reference": "5fd9fb9255319ad0b1e19f32300c296c9220b3c4",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     }
    ]
   },
@@ -1178,49 +1339,56 @@
    "file": "F1 Championship Season 2000 (Brazil) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 273083,
+   "busy_per_frame": 273323,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "37526e82233612789b96cc701c947e20729356e8",
      "reference": "37526e82233612789b96cc701c947e20729356e8",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "b46f5c4b75a95dc10373cf5df845e8085ed597dc",
      "reference": "b46f5c4b75a95dc10373cf5df845e8085ed597dc",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 1200,
      "goomba": "e7e487c1f2578ebd364ecaffc71bd1be010668b4",
      "reference": "2a04b1e96617b1ceb42cba9419b4b78bd7c9d0e6",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 15
     },
     {
      "frame": 1500,
      "goomba": "4b28c5a0d32f6529ed65cd7dd5cbb17c7b0d7c3d",
      "reference": "4b28c5a0d32f6529ed65cd7dd5cbb17c7b0d7c3d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 1800,
      "goomba": "4b28c5a0d32f6529ed65cd7dd5cbb17c7b0d7c3d",
      "reference": "4b28c5a0d32f6529ed65cd7dd5cbb17c7b0d7c3d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 2400,
      "goomba": "4b28c5a0d32f6529ed65cd7dd5cbb17c7b0d7c3d",
      "reference": "4b28c5a0d32f6529ed65cd7dd5cbb17c7b0d7c3d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     }
    ]
   },
@@ -1229,49 +1397,56 @@
    "file": "Faceball 2000 (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 151362,
+   "busy_per_frame": 151709,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "6922a094ff9c7d274cc378849f720870d2faafd0",
      "reference": "6922a094ff9c7d274cc378849f720870d2faafd0",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "f659bb182dadf69f6c76e32bb70a97012f50d6e3",
      "reference": "f659bb182dadf69f6c76e32bb70a97012f50d6e3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 900,
      "goomba": "cee9713a854d386c8a42fff0228c9556fdd5c47f",
      "reference": "cee9713a854d386c8a42fff0228c9556fdd5c47f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "06ff99ccd5c42bb77942fe5b5b792ca7251af1ad",
      "reference": "06ff99ccd5c42bb77942fe5b5b792ca7251af1ad",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1800,
      "goomba": "0c32f582e9d36fa6c3dcd235453189f2352f850b",
      "reference": "0c32f582e9d36fa6c3dcd235453189f2352f850b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "0c32f582e9d36fa6c3dcd235453189f2352f850b",
      "reference": "0c32f582e9d36fa6c3dcd235453189f2352f850b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     }
    ]
   },
@@ -1280,49 +1455,56 @@
    "file": "FIFA 98 - Road to World Cup (Europe) (Rev-A) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 70042,
+   "busy_per_frame": 70374,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "a3433497b9ad8a730008f3ab4fc3c68bbc224e10",
      "reference": "abeed5f33cd6960122cb597d1e9ccad5fa284a94",
-     "ref_diff": 4984
+     "ref_diff": 4984,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "a3433497b9ad8a730008f3ab4fc3c68bbc224e10",
      "reference": "81f3dc26c5813e2cbecd45af69c8214c92f60286",
-     "ref_diff": 4448
+     "ref_diff": 4448,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "95135e0a285490e7a2c45e6bf86579cc4c658a91",
      "reference": "b2fce8091115c40e42b936855349329c32fa5f83",
-     "ref_diff": 11433
+     "ref_diff": 11433,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "f213cdeb9825c7f212c6c35e9614330b5c95286f",
      "reference": "95135e0a285490e7a2c45e6bf86579cc4c658a91",
-     "ref_diff": 11860
+     "ref_diff": 11860,
+     "colours": 3
     },
     {
      "frame": 1500,
      "goomba": "f213cdeb9825c7f212c6c35e9614330b5c95286f",
      "reference": "81f3dc26c5813e2cbecd45af69c8214c92f60286",
-     "ref_diff": 5730
+     "ref_diff": 5730,
+     "colours": 3
     },
     {
      "frame": 1800,
      "goomba": "25dee31b871e86fd4e41f2c43d17d4a8f19a4f22",
      "reference": "f213cdeb9825c7f212c6c35e9614330b5c95286f",
-     "ref_diff": 8766
+     "ref_diff": 8766,
+     "colours": 3
     },
     {
      "frame": 2400,
      "goomba": "845c8acb9e84ed060413ab316ed56eecb12f73b5",
      "reference": "25dee31b871e86fd4e41f2c43d17d4a8f19a4f22",
-     "ref_diff": 9878
+     "ref_diff": 9878,
+     "colours": 3
     }
    ]
   },
@@ -1331,49 +1513,56 @@
    "file": "Gradius - The Interstellar Assault (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 112529,
+   "busy_per_frame": 112613,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "7ac4a70e53e594863722b9dbd30e17baac703f12",
      "reference": "7ac4a70e53e594863722b9dbd30e17baac703f12",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 600,
      "goomba": "f04f7022773652374e647b610d51df93d498e367",
      "reference": "f04f7022773652374e647b610d51df93d498e367",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "915a1d60b603074b4613949b12f24b4e0e35b6ea",
      "reference": "1db5a48295a37415ed2b725ba3b6ddd5aaca2bf8",
-     "ref_diff": 509
+     "ref_diff": 509,
+     "colours": 2
     },
     {
      "frame": 1200,
      "goomba": "00df00462f4f64682592c349070db0f5dbf80450",
      "reference": "00df00462f4f64682592c349070db0f5dbf80450",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1800,
      "goomba": "39ce671477605304bb12c0ddbcc47cedb8b0c3ea",
      "reference": "39ce671477605304bb12c0ddbcc47cedb8b0c3ea",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 2400,
      "goomba": "e81eaee3d5731c01efbf0f14bcd8615c628e14d4",
      "reference": "e81eaee3d5731c01efbf0f14bcd8615c628e14d4",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     }
    ]
   },
@@ -1382,49 +1571,56 @@
    "file": "Halloween Racer (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 194956,
+   "busy_per_frame": 195114,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "ec7aedb0af38ba2b6016ac5ad8012d86b9cd3139",
      "reference": "ec7aedb0af38ba2b6016ac5ad8012d86b9cd3139",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 18
     },
     {
      "frame": 600,
      "goomba": "cd7b3e68437134b2410f0419660ba6e425224fc8",
      "reference": "cd7b3e68437134b2410f0419660ba6e425224fc8",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 900,
      "goomba": "7cf6b47f5771bedf47f19535dd7bb412526b300b",
      "reference": "5723557f3f0730e7742a4224668f59afde1578cc",
-     "ref_diff": 1327
+     "ref_diff": 1327,
+     "colours": 69
     },
     {
      "frame": 1200,
      "goomba": "448a481b1a0d321c45fa8b87cda087eb979a2430",
      "reference": "c924ad71aed6ff5b981c02ca98a5ac6d30fbecc1",
-     "ref_diff": 38
+     "ref_diff": 38,
+     "colours": 15
     },
     {
      "frame": 1500,
      "goomba": "3936f13766f623ec217da28b888a744a5370394e",
      "reference": "eb78acb53f33aec5836d583c0138854de3294511",
-     "ref_diff": 3512
+     "ref_diff": 3512,
+     "colours": 59
     },
     {
      "frame": 1800,
      "goomba": "f0c89cf3c3b3ffed27ad11d6981a3ec6b7934a08",
      "reference": "f461635bf3dc81bc6d5de7edd62c8532583fa0bf",
-     "ref_diff": 3527
+     "ref_diff": 3527,
+     "colours": 59
     },
     {
      "frame": 2400,
      "goomba": "737eb59926f1a5ff2cd59bcd607a5a4568963261",
      "reference": "95bdec9c47df22d18d569546a0fb03556aed10b5",
-     "ref_diff": 3180
+     "ref_diff": 3180,
+     "colours": 57
     }
    ]
   },
@@ -1433,49 +1629,56 @@
    "file": "Harry Potter and the Sorcerer's Stone (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 362552,
+   "busy_per_frame": 376677,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "302baffbc80fbc68a6152b710c858aa74b927aeb",
      "reference": "302baffbc80fbc68a6152b710c858aa74b927aeb",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 600,
      "goomba": "625298d19a505a2eda5ee1b1a8a19f77e6c8b215",
      "reference": "625298d19a505a2eda5ee1b1a8a19f77e6c8b215",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 900,
      "goomba": "8be7d3d545fa120fb953b97546c3e864dd4d3030",
      "reference": "8be7d3d545fa120fb953b97546c3e864dd4d3030",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "45675e0c90d697491f90b060ac8cc82b8f42b359",
      "reference": "45675e0c90d697491f90b060ac8cc82b8f42b359",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 9
     },
     {
      "frame": 1500,
-     "goomba": "66b8a147471b7bd51f5218bdd4346931195b0de4",
+     "goomba": "4fa8185846d354fd8d34011a3cadf5ad5a201963",
      "reference": "cedcf549f879e9ccdcbe59a271a005b4c323114d",
-     "ref_diff": 6352
+     "ref_diff": 6559,
+     "colours": 20
     },
     {
      "frame": 1800,
      "goomba": "7a27902eb6ca1c07eaed71ee3d20a63ce4fb7e75",
      "reference": "ab79297e9972ed6301f13a35fc8043922febc34e",
-     "ref_diff": 5933
+     "ref_diff": 5933,
+     "colours": 28
     },
     {
      "frame": 2400,
      "goomba": "cd89ba7560c6791b3fa956be7ffefca81c448e7f",
      "reference": "42275e4fcecffd22938188fba09f7db3f640d805",
-     "ref_diff": 5919
+     "ref_diff": 5919,
+     "colours": 28
     }
    ]
   },
@@ -1484,49 +1687,56 @@
    "file": "Harvest Moon 3 GBC (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 108156,
+   "busy_per_frame": 108158,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "ff4b7c92e3b2c7a56483434f32c1de808adb0c62",
      "reference": "846ea8e1e65bd3c381c1708c72d62608834740c0",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 600,
      "goomba": "48ac9454240851ca49e6a7522ff7c53e940a5261",
      "reference": "48ac9454240851ca49e6a7522ff7c53e940a5261",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 900,
      "goomba": "caf90b18e0414ed6a2327e7cb90223ba1f8a1778",
      "reference": "caf90b18e0414ed6a2327e7cb90223ba1f8a1778",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 1200,
      "goomba": "0a843ad9b6d8ee475b649feb90e9b755c520c18f",
      "reference": "ccb0ecc02191b77b7bd7d57eed59371e45294c1c",
-     "ref_diff": 7
+     "ref_diff": 7,
+     "colours": 6
     },
     {
      "frame": 1500,
      "goomba": "0a843ad9b6d8ee475b649feb90e9b755c520c18f",
      "reference": "0a843ad9b6d8ee475b649feb90e9b755c520c18f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 1800,
      "goomba": "64653b283ed66aa0b95695cbf7f67c7dba5902ef",
      "reference": "64653b283ed66aa0b95695cbf7f67c7dba5902ef",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 2400,
      "goomba": "64653b283ed66aa0b95695cbf7f67c7dba5902ef",
      "reference": "64653b283ed66aa0b95695cbf7f67c7dba5902ef",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     }
    ]
   },
@@ -1535,49 +1745,56 @@
    "file": "Inspector Gadget - Operation Madkactus (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 167864,
+   "busy_per_frame": 167967,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "1fac30797f3fcfbdc7468a139c0f9698fd36f230",
      "reference": "1fac30797f3fcfbdc7468a139c0f9698fd36f230",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 27
     },
     {
      "frame": 600,
      "goomba": "6c8bee82f1ae9f5efc42c593b3a969ce8a6c947c",
      "reference": "f3ace796b3ed355a5c8236efe03244f0edc49a28",
-     "ref_diff": 53
+     "ref_diff": 53,
+     "colours": 17
     },
     {
      "frame": 900,
      "goomba": "40f101cf510c580ea818b510f758b1f8863e9450",
      "reference": "40f101cf510c580ea818b510f758b1f8863e9450",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 26
     },
     {
      "frame": 1200,
      "goomba": "70cd552a7285bcb7d08fec6ec49200d1dcdfeb55",
      "reference": "ff78cf25c9bece90d99795fc87682ff320efd9b8",
-     "ref_diff": 264
+     "ref_diff": 264,
+     "colours": 25
     },
     {
      "frame": 1500,
      "goomba": "dd7be3c5376b93ea4f92f5e0f2d3bd6299b00867",
      "reference": "dd7be3c5376b93ea4f92f5e0f2d3bd6299b00867",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 25
     },
     {
      "frame": 1800,
      "goomba": "dd7be3c5376b93ea4f92f5e0f2d3bd6299b00867",
      "reference": "dd7be3c5376b93ea4f92f5e0f2d3bd6299b00867",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 25
     },
     {
      "frame": 2400,
      "goomba": "dd7be3c5376b93ea4f92f5e0f2d3bd6299b00867",
      "reference": "dd7be3c5376b93ea4f92f5e0f2d3bd6299b00867",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 25
     }
    ]
   },
@@ -1586,49 +1803,56 @@
    "file": "John Romero's Daikatana (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 135231,
+   "busy_per_frame": 136231,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "8b6d203eebfd54c4b3ecc0e43a453943a6761504",
      "reference": "8b6d203eebfd54c4b3ecc0e43a453943a6761504",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 900,
      "goomba": "d867509029193479e2cd3d5a395c843df20cf715",
      "reference": "d867509029193479e2cd3d5a395c843df20cf715",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 18
     },
     {
      "frame": 1200,
      "goomba": "c900b17d31daa6188e7ea3025abce44f5a723722",
      "reference": "c900b17d31daa6188e7ea3025abce44f5a723722",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 1500,
      "goomba": "7a142c52a989d866f3ee960afd1e85866452b9bb",
      "reference": "4307ffdba95186a95e2664833d41a2d333812d3f",
-     "ref_diff": 123
+     "ref_diff": 123,
+     "colours": 13
     },
     {
      "frame": 1800,
      "goomba": "dc4b1c506d182f699f190697071d5f47c94aa3e8",
      "reference": "dc4b1c506d182f699f190697071d5f47c94aa3e8",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 2400,
      "goomba": "073dc89489714d6f1eb957a0fe9eb72cdf4f396d",
      "reference": "dc4b1c506d182f699f190697071d5f47c94aa3e8",
-     "ref_diff": 14
+     "ref_diff": 14,
+     "colours": 11
     }
    ]
   },
@@ -1637,49 +1861,56 @@
    "file": "Keitai Denjuu Telefang - Power Version (Japan) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 87716,
+   "busy_per_frame": 87802,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "792ef13d7d970d4572ceb5a6982ac44f551b2e66",
      "reference": "792ef13d7d970d4572ceb5a6982ac44f551b2e66",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "980092a2eccec8a3f4701ed5cb4429d9b304ed61",
      "reference": "980092a2eccec8a3f4701ed5cb4429d9b304ed61",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 900,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "bc3138522292458e737a60e41834e403982c7346",
      "reference": "bc3138522292458e737a60e41834e403982c7346",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 1500,
      "goomba": "14935e8dffbe567f8b28a75bbd53336e33b6bd9d",
      "reference": "14935e8dffbe567f8b28a75bbd53336e33b6bd9d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 1800,
      "goomba": "fa27a12f6956ef0bba43432743485d902b6d9f6a",
      "reference": "fa27a12f6956ef0bba43432743485d902b6d9f6a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 2400,
      "goomba": "a8e0a41b196138b402f0d5e417b0ff045fefcdcf",
      "reference": "a8e0a41b196138b402f0d5e417b0ff045fefcdcf",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     }
    ]
   },
@@ -1688,49 +1919,56 @@
    "file": "King of Fighters, The - Heat of Battle (Europe) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 181684,
+   "busy_per_frame": 182014,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "5a811c85f730cef3d032cfd3ef27396e81da2ba8",
      "reference": "cc6cdcc7ac306b1acb44da59fab0e5294847d673",
-     "ref_diff": 4431
+     "ref_diff": 4431,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "5a811c85f730cef3d032cfd3ef27396e81da2ba8",
      "reference": "5a811c85f730cef3d032cfd3ef27396e81da2ba8",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "e494534de937c255e1482266e39069679ad10ba2",
      "reference": "5a811c85f730cef3d032cfd3ef27396e81da2ba8",
-     "ref_diff": 1806
+     "ref_diff": 1806,
+     "colours": 2
     },
     {
      "frame": 1200,
      "goomba": "73a9c8b5dec8982ffb3bb96295fca938f0dd5e11",
      "reference": "18f1c9ce1ba7ca960074e670506485b6929c9712",
-     "ref_diff": 10943
+     "ref_diff": 10943,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "6fa5996062619828b22222b67305bfea340ac396",
      "reference": "b6b9c1ef64f5511b26ddd7ef78ed85c712b1731f",
-     "ref_diff": 4674
+     "ref_diff": 4674,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "187597b5a576da083e7e84fd7e5c039d66de6b8a",
      "reference": "ed1b94aec54de45867f46e02f7c7643984500604",
-     "ref_diff": 11461
+     "ref_diff": 11461,
+     "colours": 2
     },
     {
      "frame": 2400,
      "goomba": "e284bd70d2ae9f912e2a628a9280566b98605bce",
      "reference": "e9f089a9251241752f393ba381a85a465392ee9c",
-     "ref_diff": 11461
+     "ref_diff": 11461,
+     "colours": 2
     }
    ]
   },
@@ -1739,100 +1977,117 @@
    "file": "Kirby's Dream Land 2 (USA) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 103946,
+   "busy_per_frame": 104287,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "81f67705a1d12f204b2f23a20e7e9248b5b3b50b",
      "reference": "b45e2e9f95d451b4b4c1af433be74388023747c1",
-     "ref_diff": 17782
+     "ref_diff": 17782,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "72a2326896d1db4fdb38d072a8be66d4a3ed2660",
      "reference": "05c79c2600fe826d24000db063a66bdf14d243e7",
-     "ref_diff": 19223
+     "ref_diff": 19223,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "e659adc4e3db423812c90ed1e16387eb36f8a359",
      "reference": "3eba984aee057b8949da69c1287bd4e4686c5481",
-     "ref_diff": 14556
+     "ref_diff": 14556,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "2e201e598d25bf462842e0bca1b6223da216cce6",
      "reference": "7fd7f21e125bd1fa2c6f91540753bddccf078a5a",
-     "ref_diff": 8640
+     "ref_diff": 8640,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "2e201e598d25bf462842e0bca1b6223da216cce6",
      "reference": "ca6bb512c92ba40093cc9ce63eb73b0b3411d829",
-     "ref_diff": 2560
+     "ref_diff": 2560,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "2e201e598d25bf462842e0bca1b6223da216cce6",
      "reference": "ca6bb512c92ba40093cc9ce63eb73b0b3411d829",
-     "ref_diff": 2560
+     "ref_diff": 2560,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "2e201e598d25bf462842e0bca1b6223da216cce6",
      "reference": "ca6bb512c92ba40093cc9ce63eb73b0b3411d829",
-     "ref_diff": 2560
+     "ref_diff": 2560,
+     "colours": 4
     }
-   ]
+   ],
+   "known": {
+    "STUCK": "input timing: the Super Game Boy start-up runs ahead of the reference's, so the script's presses take Kirby to the hub, where he waits for input (he responds to it)"
+   }
   },
   "4c0c9e9cba36bfe5588e2a2dc799d207afd1321e": {
    "title": "Konami GB Collection Vol.4 (Europe) (GB Compatible)",
    "file": "Konami GB Collection Vol.4 (Europe) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 137170,
+   "busy_per_frame": 137256,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "184b9f966eab9311b2fdba5cb04de268c354712a",
      "reference": "184b9f966eab9311b2fdba5cb04de268c354712a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "13873e0b792c41efd1dfef05faf41b7c5c3aa441",
      "reference": "13873e0b792c41efd1dfef05faf41b7c5c3aa441",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 900,
      "goomba": "88e67360444fd4b85c3531ba324e12bcb8b10748",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 10295
+     "ref_diff": 10295,
+     "colours": 21
     },
     {
      "frame": 1200,
      "goomba": "efc5346a4f862cc5dc0da11072af5cebf60267f9",
      "reference": "1fed1c5220bacd85d4f540a1bcdee2c860ca1d27",
-     "ref_diff": 1177
+     "ref_diff": 1177,
+     "colours": 7
     },
     {
      "frame": 1500,
      "goomba": "1b7221698977ef61d80186fd63c5e804bed61469",
      "reference": "c0c9e5517014ae341d3169db8285222c1dfed49e",
-     "ref_diff": 236
+     "ref_diff": 236,
+     "colours": 15
     },
     {
      "frame": 1800,
      "goomba": "cd186da2e557c8188f0b9c77aef9634e55cf431c",
      "reference": "cd186da2e557c8188f0b9c77aef9634e55cf431c",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 2400,
      "goomba": "996562a9720ead2fbd432df52e073177e19e4600",
      "reference": "af2baa42001ec48ad0594881aed3566e170dff55",
-     "ref_diff": 238
+     "ref_diff": 238,
+     "colours": 15
     }
    ]
   },
@@ -1841,49 +2096,56 @@
    "file": "Korokoro Kirby (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 213360,
+   "busy_per_frame": 213430,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "af4d3fff8172511f7896aa68ba1dbd99b5c953e6",
      "reference": "af4d3fff8172511f7896aa68ba1dbd99b5c953e6",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 600,
      "goomba": "bd67471d1b3b4b1e59f149c58ebb4810be6ba260",
      "reference": "bd67471d1b3b4b1e59f149c58ebb4810be6ba260",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 900,
      "goomba": "82d5956e2c9df38010e62361b23b8fdfee28a419",
      "reference": "b4e2a26a97443994ad40edc564107f1757be3a47",
-     "ref_diff": 1051
+     "ref_diff": 1051,
+     "colours": 8
     },
     {
      "frame": 1200,
      "goomba": "4776c6a6995fef8a760c3733b989965d864b9598",
      "reference": "a161213c6dd7629bfbf10570718311c2553ac0e4",
-     "ref_diff": 20665
+     "ref_diff": 20665,
+     "colours": 12
     },
     {
      "frame": 1500,
      "goomba": "5fe44937874968b97c0e4d9e004e2a923f2bdee9",
      "reference": "cd191d7cb7b583dae889860611f225f45e55b7aa",
-     "ref_diff": 2169
+     "ref_diff": 2169,
+     "colours": 12
     },
     {
      "frame": 1800,
      "goomba": "e9a3d134e702a9ceb51704e890f40912055901f7",
      "reference": "045e049555463da788cf6b9a9c43baef5fd9aefc",
-     "ref_diff": 20306
+     "ref_diff": 20306,
+     "colours": 8
     },
     {
      "frame": 2400,
      "goomba": "cd0d8f415d396ab866ef8576e6faf87228a59049",
      "reference": "338dba84114e9375c30c20767919441abc18493b",
-     "ref_diff": 21107
+     "ref_diff": 21107,
+     "colours": 11
     }
    ]
   },
@@ -1892,49 +2154,56 @@
    "file": "Legend of Zelda, The - Link's Awakening DX (USA, Europe) (Rev 2) (SGB Enhanced) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 112930,
+   "busy_per_frame": 113440,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "eb2089ca6efa093da3161685d0eceaaa2f481a2a",
      "reference": "1a61042d403a81b4d0d2f1e5d3543d7d7d171411",
-     "ref_diff": 10077
+     "ref_diff": 10077,
+     "colours": 10
     },
     {
      "frame": 600,
      "goomba": "a58e4af3d49b59e04d29a29426f052b045cabd8e",
      "reference": "0ee9ea6217c7c5abb6200ce57633d41642d9c4a3",
-     "ref_diff": 21
+     "ref_diff": 21,
+     "colours": 10
     },
     {
      "frame": 900,
      "goomba": "762aa8bb3f7f225a6f02ddb2315154ae5770450e",
      "reference": "762aa8bb3f7f225a6f02ddb2315154ae5770450e",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 1200,
      "goomba": "2b6a6ce2200379fcb45f3adefb76c7317827b5ea",
      "reference": "2b6a6ce2200379fcb45f3adefb76c7317827b5ea",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 15
     },
     {
      "frame": 1500,
      "goomba": "4041e9c81b429e2ae19bf9c9c336811faaab4865",
      "reference": "9df0108b41818a3e5c785f40fc87a484b6ad6f3f",
-     "ref_diff": 187
+     "ref_diff": 187,
+     "colours": 19
     },
     {
      "frame": 1800,
      "goomba": "b093331557ba76004fd45028a345425e7916f9d7",
      "reference": "981c5bc72698bd10e94b674616adbd9c57b4d3be",
-     "ref_diff": 123
+     "ref_diff": 123,
+     "colours": 18
     },
     {
      "frame": 2400,
      "goomba": "5b0bef54f813b510a1eb7c595674175f32f5e590",
      "reference": "486266436152e0075c8540ccac058db09dc8a847",
-     "ref_diff": 28
+     "ref_diff": 28,
+     "colours": 18
     }
    ]
   },
@@ -1943,49 +2212,56 @@
    "file": "Legend of Zelda, The - Oracle of Ages (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 95817,
+   "busy_per_frame": 96293,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "f1d0b8859a7e454cbe2bb8b62397bcf9c82cef4d",
      "reference": "f1d0b8859a7e454cbe2bb8b62397bcf9c82cef4d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 600,
      "goomba": "0bf8ac61893ad43c2ed2631a7298eeb8371698eb",
      "reference": "0bf8ac61893ad43c2ed2631a7298eeb8371698eb",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 21
     },
     {
      "frame": 900,
      "goomba": "5da2218227f121f932b3892b5fdef5843f87d49a",
      "reference": "5da2218227f121f932b3892b5fdef5843f87d49a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 1200,
      "goomba": "b8137069c2861b4bccfa7b526c0fa52d5911d418",
      "reference": "b8137069c2861b4bccfa7b526c0fa52d5911d418",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 1500,
      "goomba": "b8e7122af5e7f7d4825b7e67967c23e2c2bff1d5",
      "reference": "b8e7122af5e7f7d4825b7e67967c23e2c2bff1d5",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 1800,
      "goomba": "eb0b01c59cced98d45ea4e56ba69f531077cf1ee",
      "reference": "eb0b01c59cced98d45ea4e56ba69f531077cf1ee",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 2400,
      "goomba": "eb0b01c59cced98d45ea4e56ba69f531077cf1ee",
      "reference": "eb0b01c59cced98d45ea4e56ba69f531077cf1ee",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     }
    ]
   },
@@ -1994,49 +2270,56 @@
    "file": "Lemmings 2 - The Tribes (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 115155,
+   "busy_per_frame": 115450,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "64c183343d458242b3aa853488631a7bbffedd32",
      "reference": "64c183343d458242b3aa853488631a7bbffedd32",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "317872d8d0fd388ca41485dbc00d5c039a968799",
      "reference": "317872d8d0fd388ca41485dbc00d5c039a968799",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 900,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1500,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1800,
-     "goomba": "133a2cbebfacc86ffa7c31cc04bffb8b0f20b491",
+     "goomba": "ba8c8cdcf72013833a2160b555d2a6ba13d36605",
      "reference": "06a17e32bfde0a545ba30227cdb8778272855948",
-     "ref_diff": 52
+     "ref_diff": 56,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "69c2b2005df8c9b3d3a1752e4ed98835159acda8",
      "reference": "7eddc8b900ba5609bcb6d1c3005a045253ea2897",
-     "ref_diff": 48
+     "ref_diff": 48,
+     "colours": 4
     }
    ]
   },
@@ -2045,49 +2328,56 @@
    "file": "Lucky Luke - Desperado Train (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 269487,
+   "busy_per_frame": 269594,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "a4f0c815b4dee4ae7af7cbed66b9bad9f41c0e21",
      "reference": "a4f0c815b4dee4ae7af7cbed66b9bad9f41c0e21",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 600,
      "goomba": "107350a2ff288275507b7f93d2c6a5962d1867f3",
      "reference": "107350a2ff288275507b7f93d2c6a5962d1867f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 17
     },
     {
      "frame": 900,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "7852ce851791853b6d3202ec8e0e561e5796187b",
      "reference": "7852ce851791853b6d3202ec8e0e561e5796187b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 1500,
      "goomba": "96677fa81ed8aab8f757b792ca5ff190eb843844",
      "reference": "96677fa81ed8aab8f757b792ca5ff190eb843844",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 1800,
      "goomba": "9ff119861a3c9f793dfcd1d9ccfe8c97446e019d",
      "reference": "b80278671c79fc46d7a9fc8274f04a30c9022c76",
-     "ref_diff": 90
+     "ref_diff": 90,
+     "colours": 18
     },
     {
      "frame": 2400,
      "goomba": "19b89070ef0a74937fa110fa4e1d8943689bcdab",
      "reference": "38dc5e0bf6e0e200e4c089dc3fa3067bbbc2d5a0",
-     "ref_diff": 91
+     "ref_diff": 91,
+     "colours": 18
     }
    ]
   },
@@ -2096,49 +2386,56 @@
    "file": "Lufia - The Legend Returns (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 185941,
+   "busy_per_frame": 186038,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "1ee082d2a97be73e20b25d67e6370684ec736088",
      "reference": "1ee082d2a97be73e20b25d67e6370684ec736088",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 600,
      "goomba": "54d909ea83190fb836d1e4769c18235067fdf504",
      "reference": "54d909ea83190fb836d1e4769c18235067fdf504",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 900,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "6e060499f70312fc26a67a0dfd2fb10da0aa083e",
      "reference": "7c33735ea35b65777ea299377d131ad62aaafbca",
-     "ref_diff": 187
+     "ref_diff": 187,
+     "colours": 5
     },
     {
      "frame": 1500,
      "goomba": "3ba13a3749a15d8a4b3b3e5975ca48084155d116",
      "reference": "e7eaa6f57c7d52ca36b0f74a5ba32367e08c6310",
-     "ref_diff": 18113
+     "ref_diff": 18113,
+     "colours": 12
     },
     {
      "frame": 1800,
      "goomba": "ad629cb10cc2bb86575b4988f53b14513f39bc7f",
      "reference": "2fc5717ad9b54e305aeff26ca1c617b5485ffbfd",
-     "ref_diff": 139
+     "ref_diff": 139,
+     "colours": 14
     },
     {
      "frame": 2400,
      "goomba": "ca13439ba7e09edeab89b772c6a831ef97f6fa73",
      "reference": "ca13439ba7e09edeab89b772c6a831ef97f6fa73",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     }
    ]
   },
@@ -2147,49 +2444,56 @@
    "file": "Magi Nation (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 96734,
+   "busy_per_frame": 96816,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "5393901eed24fd1c7948da1903f1b7ce12f8820b",
      "reference": "7521e6545ed384c62ef029d0b8db68254e4744b9",
-     "ref_diff": 491
+     "ref_diff": 491,
+     "colours": 2
     },
     {
      "frame": 900,
      "goomba": "bdf0f29533579ea63024408b61cb3384fa0026a3",
      "reference": "73bf446ed0a6d0fbf4e5c08a602b078931bd40b9",
-     "ref_diff": 1411
+     "ref_diff": 1411,
+     "colours": 9
     },
     {
      "frame": 1200,
      "goomba": "7e1e814ed1cbb75ba4daa0d9b3eb0e467cc7ffe6",
      "reference": "7e1e814ed1cbb75ba4daa0d9b3eb0e467cc7ffe6",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 1500,
      "goomba": "e0081b8bb0e0e5dbd7ce219af8c63109c73f9dc8",
      "reference": "e0081b8bb0e0e5dbd7ce219af8c63109c73f9dc8",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 1800,
      "goomba": "e0081b8bb0e0e5dbd7ce219af8c63109c73f9dc8",
      "reference": "e0081b8bb0e0e5dbd7ce219af8c63109c73f9dc8",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 2400,
      "goomba": "e0081b8bb0e0e5dbd7ce219af8c63109c73f9dc8",
      "reference": "e0081b8bb0e0e5dbd7ce219af8c63109c73f9dc8",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     }
    ]
   },
@@ -2198,49 +2502,56 @@
    "file": "Medarot 5 - Susutake Mura no Tenkousei - Kabuto (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 178743,
+   "busy_per_frame": 178840,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "a73c36c9d10f5244f49135ac355a57258bc3a160",
      "reference": "c81ec4c282674e29f67b0a8bc19163a70fa525b2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 20
     },
     {
      "frame": 900,
      "goomba": "075f3dd4b405e8e0381ae9006ca58e9e660bd4ce",
      "reference": "a80d9e20e5a3754565b778ef33002d53ca8faa0d",
-     "ref_diff": 9599
+     "ref_diff": 9599,
+     "colours": 22
     },
     {
      "frame": 1200,
      "goomba": "12efe56ee53b7cee2d839dd84d57058ec0faaa2a",
      "reference": "12efe56ee53b7cee2d839dd84d57058ec0faaa2a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 17
     },
     {
      "frame": 1500,
      "goomba": "48f9ebc6cfd0b2d6f37ff7c6a789f3b0340846df",
      "reference": "48f9ebc6cfd0b2d6f37ff7c6a789f3b0340846df",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 32
     },
     {
      "frame": 1800,
      "goomba": "264024e7f6bbbd6c6b282ef0c1c6e8983f34f6ee",
      "reference": "264024e7f6bbbd6c6b282ef0c1c6e8983f34f6ee",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 32
     },
     {
      "frame": 2400,
      "goomba": "264024e7f6bbbd6c6b282ef0c1c6e8983f34f6ee",
      "reference": "264024e7f6bbbd6c6b282ef0c1c6e8983f34f6ee",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 32
     }
    ]
   },
@@ -2249,49 +2560,56 @@
    "file": "Mega Man Xtreme (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 142337,
+   "busy_per_frame": 143877,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "df8e00dca300d2152a2447143c1e21b8def5e27a",
      "reference": "df8e00dca300d2152a2447143c1e21b8def5e27a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 600,
      "goomba": "2c4f28fb9d6c977aa0e4994280e80982b8c0080f",
      "reference": "2c4f28fb9d6c977aa0e4994280e80982b8c0080f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 31
     },
     {
      "frame": 900,
      "goomba": "4c6ebe7c2f77f5162876c397f29704e6eb4f92ca",
      "reference": "4c6ebe7c2f77f5162876c397f29704e6eb4f92ca",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 1200,
      "goomba": "3452b850e38cbe6db847d2643db80a6eabb4fc45",
      "reference": "3452b850e38cbe6db847d2643db80a6eabb4fc45",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 1500,
      "goomba": "5eae51c42dcc49e8aa4729e3878f0aebfa7a0ee1",
      "reference": "5eae51c42dcc49e8aa4729e3878f0aebfa7a0ee1",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 22
     },
     {
      "frame": 1800,
      "goomba": "4636f3ce0b6b80be4ac034a8a935df2632449986",
      "reference": "4636f3ce0b6b80be4ac034a8a935df2632449986",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 22
     },
     {
      "frame": 2400,
      "goomba": "5eae51c42dcc49e8aa4729e3878f0aebfa7a0ee1",
      "reference": "5eae51c42dcc49e8aa4729e3878f0aebfa7a0ee1",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 22
     }
    ]
   },
@@ -2300,49 +2618,56 @@
    "file": "Metal Gear - Ghost Babel (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 142669,
+   "busy_per_frame": 143156,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "39a5c1de33b2e19d4d0ee84f83a78a08dc2f4d03",
      "reference": "2edfb769fd853cf30b578213806c2a4a27082906",
-     "ref_diff": 304
+     "ref_diff": 304,
+     "colours": 3
     },
     {
      "frame": 600,
      "goomba": "40414979d4a9d9f9d641c8381a7231ee373a0cee",
      "reference": "bbc5833692d89014831e1d3ed73fb917cea822d2",
-     "ref_diff": 599
+     "ref_diff": 599,
+     "colours": 7
     },
     {
      "frame": 900,
      "goomba": "8ec7ea7d39f55aa2b22aad5e0c197c468afbc306",
      "reference": "8ec7ea7d39f55aa2b22aad5e0c197c468afbc306",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 15
     },
     {
      "frame": 1200,
      "goomba": "c29e6f1531446fdb880fb6f0379bc917c2c607cc",
      "reference": "0706899565d9820eef928d9f018d3fdd661ea660",
-     "ref_diff": 4
+     "ref_diff": 4,
+     "colours": 6
     },
     {
      "frame": 1500,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1800,
      "goomba": "a590fdf9d88c6a70b370f585d5ba55914074c0f7",
      "reference": "a590fdf9d88c6a70b370f585d5ba55914074c0f7",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "de955174c942f97ce5a18fab7fec54b07ee73e94",
      "reference": "de955174c942f97ce5a18fab7fec54b07ee73e94",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     }
    ]
   },
@@ -2351,49 +2676,56 @@
    "file": "Metal Gear Solid (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 127302,
+   "busy_per_frame": 128113,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "f11cafeda5af20587a8b3b7f9e40386980bffa41",
      "reference": "f11cafeda5af20587a8b3b7f9e40386980bffa41",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "86558262b6a98cd0efab29c40182ce3140ce42f0",
      "reference": "86558262b6a98cd0efab29c40182ce3140ce42f0",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 900,
      "goomba": "e6dd48e09b706fce1695f7ff7646787efc15185d",
      "reference": "6cb745ea7f9ed1901e502c70f4dea725e951a620",
-     "ref_diff": 10000
+     "ref_diff": 10000,
+     "colours": 7
     },
     {
      "frame": 1200,
      "goomba": "5e304ac15666b5ea364f0dec00771b9d93d20875",
      "reference": "5e304ac15666b5ea364f0dec00771b9d93d20875",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "9df09e0b60d81ce244b379cbe46f63c8053eac65",
      "reference": "9df09e0b60d81ce244b379cbe46f63c8053eac65",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 1800,
      "goomba": "515cd5a44a8d120904d86ff2e84e26d4c89cb7b7",
      "reference": "515cd5a44a8d120904d86ff2e84e26d4c89cb7b7",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 2400,
      "goomba": "515cd5a44a8d120904d86ff2e84e26d4c89cb7b7",
      "reference": "515cd5a44a8d120904d86ff2e84e26d4c89cb7b7",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     }
    ]
   },
@@ -2402,49 +2734,56 @@
    "file": "Micro Machines 2 - Turbo Tournament (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 100763,
+   "busy_per_frame": 101997,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "ad351ae10f85c8342f780ed2eebd0c16742d2659",
      "reference": "2323d59695e1af0755f4caf702e6cbef9b70655f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "56dbc046f78fac91cbfd5599a74444ccf11cb51a",
      "reference": "b5b7c0402f2093f2adaae02d623d6844b8df4f4e",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 900,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "83c25add7bbdca7c291facc30dc2494bca542516",
      "reference": "72f973ce65cb5d8e020a6615b96ae910645fad44",
-     "ref_diff": 48
+     "ref_diff": 48,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "288557efe2705ce9ce0e2c6cc9010ce06e71dd12",
      "reference": "9ea4af253afd2750f58911e58537f28ab848b49d",
-     "ref_diff": 1274
+     "ref_diff": 1274,
+     "colours": 6
     },
     {
      "frame": 1800,
      "goomba": "07b6480528309d83d2973319e9ab0ca0f31620c2",
      "reference": "be4bdd9a47cf894cbbcd7370855425bc4b23b1a6",
-     "ref_diff": 1298
+     "ref_diff": 1298,
+     "colours": 6
     },
     {
      "frame": 2400,
      "goomba": "07b6480528309d83d2973319e9ab0ca0f31620c2",
      "reference": "5b72e199dfc80a30f7568c4ef8453c5e4f835f07",
-     "ref_diff": 1298
+     "ref_diff": 1298,
+     "colours": 6
     }
    ]
   },
@@ -2453,49 +2792,56 @@
    "file": "Monster Max (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 109444,
+   "busy_per_frame": 110306,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "9a383a30e66063a9be7fad900ec38ebcfceea5e2",
      "reference": "9a383a30e66063a9be7fad900ec38ebcfceea5e2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "c9620ac7f230de205686c4c5bb8c09d9410e106a",
      "reference": "c9620ac7f230de205686c4c5bb8c09d9410e106a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 900,
      "goomba": "75f24c22badd233d96e405ad5e646cb2fdd59038",
      "reference": "75f24c22badd233d96e405ad5e646cb2fdd59038",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "77eda05512cff92e729ddfbdc7c2736cb0ae6711",
      "reference": "77eda05512cff92e729ddfbdc7c2736cb0ae6711",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 1500,
      "goomba": "77eda05512cff92e729ddfbdc7c2736cb0ae6711",
      "reference": "858cc277aa70f11160d5b8e6007eb815121bc4d9",
-     "ref_diff": 14
+     "ref_diff": 14,
+     "colours": 3
     },
     {
      "frame": 1800,
      "goomba": "bcf401d2df23dbb8af869cdda419fe59faf77584",
      "reference": "bcf401d2df23dbb8af869cdda419fe59faf77584",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 2400,
      "goomba": "93ea91224f5c03fc3832ca90fe45b80d40cd9ca7",
      "reference": "93ea91224f5c03fc3832ca90fe45b80d40cd9ca7",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     }
    ]
   },
@@ -2504,49 +2850,56 @@
    "file": "Mr. Driller (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 252929,
+   "busy_per_frame": 258179,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d9ddc3e4ed25e541b2eef0c099b84b504095567c",
      "reference": "d9ddc3e4ed25e541b2eef0c099b84b504095567c",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 600,
      "goomba": "1d7b99b6bb87aa2d02ed5b8a763ed52f7fa0dd45",
      "reference": "1d7b99b6bb87aa2d02ed5b8a763ed52f7fa0dd45",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 900,
      "goomba": "8f0ae72fec31ec1cf57119e92b5701d777f42d15",
      "reference": "6c94ab600730e4f5e7e064454e0343c39d0e7f0e",
-     "ref_diff": 3906
+     "ref_diff": 3906,
+     "colours": 22
     },
     {
      "frame": 1200,
      "goomba": "aec4e076135ce36519d979a91437622a1ff631b4",
      "reference": "799619b81236b9aa0a881a65562ff323a3b2dea0",
-     "ref_diff": 91
+     "ref_diff": 91,
+     "colours": 18
     },
     {
      "frame": 1500,
      "goomba": "3fdb4b260c604349cf617ad19f85fcd7cc36a4d7",
      "reference": "b3dd3a3b0e5d351244080573368b9f990247e774",
-     "ref_diff": 85
+     "ref_diff": 85,
+     "colours": 18
     },
     {
      "frame": 1800,
      "goomba": "bf08c28bc64d20ac7e64b54ba97e7625f5ce67fc",
      "reference": "d6789d6cf034197a3a93bf4af0d8b65d72266c86",
-     "ref_diff": 12342
+     "ref_diff": 12342,
+     "colours": 25
     },
     {
      "frame": 2400,
      "goomba": "ff57434c135456ae4724fbe0b05488e7120d1242",
      "reference": "e0b263ab5a94c2cbe5d1fe2bc4e38d3d035cb03f",
-     "ref_diff": 12545
+     "ref_diff": 12545,
+     "colours": 25
     }
    ]
   },
@@ -2555,49 +2908,56 @@
    "file": "Mr. Nutz (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 86613,
+   "busy_per_frame": 86982,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "e4cd3bc8b845901c7ca2c3e5d719edd13251a49d",
      "reference": "4a83c741e29c83cf2b33560818b5affbc6780eef",
-     "ref_diff": 2495
+     "ref_diff": 2495,
+     "colours": 5
     },
     {
      "frame": 600,
      "goomba": "9487783a98795b10951d65942f193da35d5e7d6f",
      "reference": "f079ae670959d7e7d914dcc127d85785d32b9682",
-     "ref_diff": 14030
+     "ref_diff": 14030,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "6647ac84af4ba9d971cc4fc227c0417360797195",
      "reference": "1c7ecc5bdce4e3b7135dbb472ef6a16bbf8b348a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "afc022a8b90b12252bbe6349276b00b7a2a39a32",
      "reference": "e7946b299a0036c8024515f42ff3757d0b2cffe6",
-     "ref_diff": 226
+     "ref_diff": 226,
+     "colours": 5
     },
     {
      "frame": 1500,
      "goomba": "a38c298a8bbc3eb0a4f8e47860b9b0614d7e101c",
      "reference": "7b78edbf8a6d8b2b1ebbb644b1885520e96e4815",
-     "ref_diff": 1901
+     "ref_diff": 1901,
+     "colours": 5
     },
     {
      "frame": 1800,
      "goomba": "ea46b1050e2754402932629d0bd73c690d0248ee",
      "reference": "2f8ebdb976e59490141085cebb731e329cc8c0dc",
-     "ref_diff": 194
+     "ref_diff": 194,
+     "colours": 5
     },
     {
      "frame": 2400,
      "goomba": "bcd8a4053c89a115a49af96df8cbe71212de1b82",
      "reference": "511c38c864a92bc9fd9210378153342e446dae0f",
-     "ref_diff": 302
+     "ref_diff": 302,
+     "colours": 5
     }
    ]
   },
@@ -2606,100 +2966,118 @@
    "file": "Net de Get - Minigame @ 100 (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 193435,
+   "busy_per_frame": 193518,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "6f9b23ade6e8a870b3e3185f01c902abc3fba630",
-     "ref_diff": 2854
+     "ref_diff": 2854,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "d557b6838b0257a7d05f9802a7156bdab1d07f01",
-     "ref_diff": 2508
+     "ref_diff": 2508,
+     "colours": 1
     },
     {
      "frame": 900,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "22c52e5ce07b58d694319bdf35d692f85c1a6021",
-     "ref_diff": 7186
+     "ref_diff": 7186,
+     "colours": 1
     },
     {
      "frame": 1500,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "c1976d23a1c40d8416bcb9dfdc5d6fae579e8ced",
-     "ref_diff": 7260
+     "ref_diff": 7260,
+     "colours": 1
     },
     {
      "frame": 1800,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "bd770c6032db3a111e41ceac193052fccc84a680",
-     "ref_diff": 7317
+     "ref_diff": 7317,
+     "colours": 1
     },
     {
      "frame": 2400,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "fd26c6cec513faeb0d4fb216cc942686f564e0a4",
-     "ref_diff": 7279
+     "ref_diff": 7279,
+     "colours": 1
     }
-   ]
+   ],
+   "known": {
+    "CART": "MBC6 is not supported (two 8KB ROM windows and flash memory)",
+    "STUCK": "MBC6 is not supported: the game does not start"
+   }
   },
   "a35ccdf0789ce84df3c12cfe7c4b9b98af08ca9a": {
    "title": "Oddworld Adventures II (USA, Europe) (En,Fr,De,Es,It)",
    "file": "Oddworld Adventures II (USA, Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 147683,
+   "busy_per_frame": 148122,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "3e162cf39a4bd2c03ab3427598391e9cb8b95fec",
      "reference": "960eef6f5165bf0db6370553b793ad762624ab8e",
-     "ref_diff": 3535
+     "ref_diff": 3535,
+     "colours": 13
     },
     {
      "frame": 900,
      "goomba": "7c652219fc1a56ec6427a4c872fe71d48bcbfc16",
      "reference": "7c652219fc1a56ec6427a4c872fe71d48bcbfc16",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 1200,
      "goomba": "e131180bca076a38cff8d6a6fa93ce282258f063",
      "reference": "504f3c48a3d6ed11d58216754c95a812e1a5882c",
-     "ref_diff": 4607
+     "ref_diff": 4607,
+     "colours": 8
     },
     {
      "frame": 1500,
      "goomba": "a775b73dc7202a10092dba06de03d1c7c24f1873",
      "reference": "b0145dca8549a7993f992b28430075deb9773071",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 1800,
      "goomba": "13a03c323b39ebe80f18b325501485702188fd54",
      "reference": "13a03c323b39ebe80f18b325501485702188fd54",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 2400,
      "goomba": "449bc023156d30bad180553dc04d14a0eec08681",
      "reference": "449bc023156d30bad180553dc04d14a0eec08681",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     }
    ]
   },
@@ -2708,49 +3086,56 @@
    "file": "Parodius (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 121191,
+   "busy_per_frame": 121611,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "9316bf40280a84fb486d3121e64edc8abed29208",
      "reference": "35f47eca2be2473356cc9ed8967ee00e5a0c7a9f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 600,
      "goomba": "0997eafce18032845e85fc42a9c8a2c0b8622763",
      "reference": "edf4a8ddd34c90663188bdea03bf99455e72241e",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "eea54eae6189592b8b73dff6a1b871824aabc07a",
      "reference": "1b97a7d2a71411f7be15eefdf99562bb2fe9a368",
-     "ref_diff": 36
+     "ref_diff": 36,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "9c0a4b61789b9d77807d05b90ff9f26368c9e3c9",
      "reference": "65da2c0faf8ae846cbeb0c8778bf80b3c87c1daf",
-     "ref_diff": 1472
+     "ref_diff": 1472,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "eae33144302178fc4a0dc4a1f2fa41e81eada77b",
      "reference": "8d884d6179539b8fbfd613fe2244733381a84a3a",
-     "ref_diff": 2201
+     "ref_diff": 2201,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "29189d7498d8b3c5ad5509db8e0db6e64f6efde0",
      "reference": "2f1b8bf6f5be8321172eda561602cc7b78263bb2",
-     "ref_diff": 1893
+     "ref_diff": 1893,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "eae33144302178fc4a0dc4a1f2fa41e81eada77b",
      "reference": "8d884d6179539b8fbfd613fe2244733381a84a3a",
-     "ref_diff": 2201
+     "ref_diff": 2201,
+     "colours": 4
     }
    ]
   },
@@ -2759,49 +3144,56 @@
    "file": "Perfect Dark (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 465610,
+   "busy_per_frame": 462193,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "038db5384c1afa5db149f78dce08339eecc02a22",
      "reference": "ebcfd11567ae59b7867d1770b826e2ea90a5cdf7",
-     "ref_diff": 316
+     "ref_diff": 316,
+     "colours": 7
     },
     {
      "frame": 600,
      "goomba": "ac75604a2e97a27e0ba6a8fe24afc07a43218dd1",
      "reference": "ac75604a2e97a27e0ba6a8fe24afc07a43218dd1",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 900,
      "goomba": "a47a37c6c535c05a2b3efab0207793d48f900c78",
      "reference": "0ef6bd91cf9508d23e7e31462fcbd88e79413d4d",
-     "ref_diff": 16744
+     "ref_diff": 16744,
+     "colours": 5
     },
     {
      "frame": 1200,
      "goomba": "1f342e24751523ce868c13402ff264445c05f7f1",
      "reference": "6a9045d8350db46a7f9c24f6a463b25b91001f67",
-     "ref_diff": 4130
+     "ref_diff": 4130,
+     "colours": 7
     },
     {
      "frame": 1500,
      "goomba": "f991c7b212e89323f72e641ae1fdd2ed339ec48c",
      "reference": "64773bc1a8b0725372002115decbc637a33e9b5c",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 1800,
      "goomba": "4362fb455cdf0fe5dba024c8fa44c08bb6564a2d",
      "reference": "9b90b5b0e0993ba064001886e10aaa244752b0aa",
-     "ref_diff": 16
+     "ref_diff": 16,
+     "colours": 14
     },
     {
      "frame": 2400,
      "goomba": "48b645de27bec546d3885d325841d3db0a338537",
      "reference": "48b645de27bec546d3885d325841d3db0a338537",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     }
    ]
   },
@@ -2810,49 +3202,56 @@
    "file": "Pinball Fantasies (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 71983,
+   "busy_per_frame": 72366,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "89ed3e1e6389ba7bf14711f3dd853181c4f20161",
      "reference": "eb19db0955930be1098a226ea81fc0c00eb5efa5",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 600,
      "goomba": "dd7a6ec7f452d3dbf962fba6bf13aa663eab21b9",
      "reference": "b4affd42e37a3ca2893ed9cea59ebab9cab4aa3f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "c561bd8aed7f27d200d802b77016acae5803e460",
      "reference": "0b372de85f345d33d999dd9e703fe70a46d1bf24",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "593451b60f756ecb18ea2d327300cede82b378e3",
      "reference": "61a7586becb280fcdfd98c82ec5d22b7060b185f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 1500,
      "goomba": "593451b60f756ecb18ea2d327300cede82b378e3",
      "reference": "61a7586becb280fcdfd98c82ec5d22b7060b185f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 1800,
      "goomba": "6edc8fee03067017ed4610b262b2f30027223b86",
      "reference": "294810b83370aa8dd4772f5436094d2f872b67dd",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "979b678a7f4028fdf5705decfa52bd5b86d6784a",
      "reference": "8cad4229046a62e204dff665961b2923f5c7b338",
-     "ref_diff": 921
+     "ref_diff": 921,
+     "colours": 4
     }
    ]
   },
@@ -2867,43 +3266,50 @@
      "frame": 300,
      "goomba": "c87a797925a58f438770b8fdae916f6d66ebc387",
      "reference": "c87a797925a58f438770b8fdae916f6d66ebc387",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 600,
      "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 900,
      "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 1200,
      "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 1500,
      "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 1800,
      "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 2400,
      "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     }
    ]
   },
@@ -2912,49 +3318,56 @@
    "file": "Pocket Music (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 171773,
+   "busy_per_frame": 172032,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "9550f7b1eb359931d807c12afb749f058912af8b",
      "reference": "9550f7b1eb359931d807c12afb749f058912af8b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "4310040961e2c4dbfe2f1b4ada1a5ba3e1f6a396",
      "reference": "4310040961e2c4dbfe2f1b4ada1a5ba3e1f6a396",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 900,
      "goomba": "320d629bba244c1ae926fbc2d1ff12f1c96e09cd",
      "reference": "8a357c9db99416f8fd71f80b97b72086ec19ee2f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 1200,
      "goomba": "f792ef92b5b691dc04d6b01984f14674f1623cfe",
      "reference": "f792ef92b5b691dc04d6b01984f14674f1623cfe",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 1500,
      "goomba": "59fc34677cdcdba5ede152d9857d3e027baed6a9",
      "reference": "59fc34677cdcdba5ede152d9857d3e027baed6a9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 1800,
      "goomba": "f1cfdd8064ea8e1eb3ee29202a3ea427ff4b189f",
      "reference": "3ba4832c657db42624de803e1990f9b30f946086",
-     "ref_diff": 18
+     "ref_diff": 18,
+     "colours": 19
     },
     {
      "frame": 2400,
      "goomba": "a4e12041738d7f771d9838722475995ea2d64398",
      "reference": "ad999b8a18ac154ddfa419f912d7e5ede54c00fd",
-     "ref_diff": 18
+     "ref_diff": 18,
+     "colours": 19
     }
    ]
   },
@@ -2963,49 +3376,56 @@
    "file": "Pokemon - Gold Version (USA, Europe) (SGB Enhanced) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 135639,
+   "busy_per_frame": 135971,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "c5b28f0def8c1e2a7fdb8b3e1f2be3f4de4385a7",
      "reference": "15d2713e54921b969f03528674b4650a0305dff2",
-     "ref_diff": 657
+     "ref_diff": 657,
+     "colours": 2
     },
     {
      "frame": 600,
      "goomba": "b29995ccc9c14adfff2366d42e6065fca89b8d0b",
      "reference": "b29995ccc9c14adfff2366d42e6065fca89b8d0b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 900,
      "goomba": "6d36e0f37ad03c5f2871a1cc13262156328dc67d",
      "reference": "6d36e0f37ad03c5f2871a1cc13262156328dc67d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 1200,
      "goomba": "b3d425c49fefb384ffe96bf449bc6359c3844727",
      "reference": "b3d425c49fefb384ffe96bf449bc6359c3844727",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 1500,
      "goomba": "7c7c911962c65290c2b6a21d4901aa9715a54cc2",
      "reference": "7c7c911962c65290c2b6a21d4901aa9715a54cc2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 1800,
      "goomba": "e41428d969a87f7707473e1071b04527c9248047",
      "reference": "e41428d969a87f7707473e1071b04527c9248047",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 2400,
      "goomba": "e41428d969a87f7707473e1071b04527c9248047",
      "reference": "e41428d969a87f7707473e1071b04527c9248047",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     }
    ]
   },
@@ -3014,49 +3434,56 @@
    "file": "Pokemon Card GB 2 - GR Dan Sanjou! (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 129599,
+   "busy_per_frame": 130055,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "9dbf0a8a4618b66680281067f402b4ff60d06c02",
      "reference": "620430b52080dacc5eb68f2a8c8579b5eeeeb284",
-     "ref_diff": 2899
+     "ref_diff": 2899,
+     "colours": 18
     },
     {
      "frame": 600,
      "goomba": "49fb23e7673b3ebc9c12fecf8a075708c1a886b2",
      "reference": "49fb23e7673b3ebc9c12fecf8a075708c1a886b2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 5
     },
     {
      "frame": 900,
      "goomba": "80c0265aad69752bc2ded64ccb34ec8e29c542cd",
      "reference": "80c0265aad69752bc2ded64ccb34ec8e29c542cd",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 17
     },
     {
      "frame": 1200,
      "goomba": "6e10b121036b2ada88a3d9449ba04b9c6c07b394",
      "reference": "6e10b121036b2ada88a3d9449ba04b9c6c07b394",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 17
     },
     {
      "frame": 1500,
      "goomba": "6e10b121036b2ada88a3d9449ba04b9c6c07b394",
      "reference": "6e10b121036b2ada88a3d9449ba04b9c6c07b394",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 17
     },
     {
      "frame": 1800,
      "goomba": "c818404cb2577effff6cb219465b29e7da425fe3",
      "reference": "c818404cb2577effff6cb219465b29e7da425fe3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 17
     },
     {
      "frame": 2400,
      "goomba": "c818404cb2577effff6cb219465b29e7da425fe3",
      "reference": "c818404cb2577effff6cb219465b29e7da425fe3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 17
     }
    ]
   },
@@ -3065,49 +3492,56 @@
    "file": "Pokemon Crystal Version (USA) (Rev-A).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 121691,
+   "busy_per_frame": 122055,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "ccfe7ad3c99ea7448e4e7207ede7d8121a92cf36",
      "reference": "ccfe7ad3c99ea7448e4e7207ede7d8121a92cf36",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 600,
      "goomba": "23c46e4b654699361067a618cd2eb229251a83d9",
      "reference": "23c46e4b654699361067a618cd2eb229251a83d9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 900,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "a20012a2b5e3e5485219b9e1847639f192912bb6",
      "reference": "a20012a2b5e3e5485219b9e1847639f192912bb6",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 1500,
      "goomba": "0ce272e7badd8835f01c9749484296623af469f3",
      "reference": "0ce272e7badd8835f01c9749484296623af469f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 1800,
      "goomba": "5d8f5ebbe3a4843480ce420c4610bb4448b1725e",
      "reference": "5d8f5ebbe3a4843480ce420c4610bb4448b1725e",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 2400,
      "goomba": "5d8f5ebbe3a4843480ce420c4610bb4448b1725e",
      "reference": "5d8f5ebbe3a4843480ce420c4610bb4448b1725e",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     }
    ]
   },
@@ -3116,49 +3550,56 @@
    "file": "Pokemon Pinball (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 136058,
+   "busy_per_frame": 136299,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "7a58f782aab254878cfe1569d909ce69e1efe733",
      "reference": "ed85a97c7105e6215a44d4c871e7af21d624fa8f",
-     "ref_diff": 123
+     "ref_diff": 123,
+     "colours": 8
     },
     {
      "frame": 600,
      "goomba": "6b49ab5d6cc09df5ede1df81f36ff9dd9bf7fa39",
      "reference": "6b49ab5d6cc09df5ede1df81f36ff9dd9bf7fa39",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 900,
      "goomba": "322d6416fd82a3216e77efc429bd1bb2003696bd",
      "reference": "cf55fc03f40acad0ea4a80461cb0edad24b27315",
-     "ref_diff": 501
+     "ref_diff": 501,
+     "colours": 21
     },
     {
      "frame": 1200,
      "goomba": "41c06028e299902dd4c790047e8c8b6fb2702384",
      "reference": "cb6bf640f5d489bee64b56061a1e623057f6f84d",
-     "ref_diff": 150
+     "ref_diff": 150,
+     "colours": 14
     },
     {
      "frame": 1500,
      "goomba": "a3bf7e4ed930c88b7f2d273a7989f807ead0039a",
      "reference": "c3999a607099c5013d132b4cf09d3d102914fbe4",
-     "ref_diff": 5961
+     "ref_diff": 5961,
+     "colours": 14
     },
     {
      "frame": 1800,
      "goomba": "1839c7538cf6ef2eaa50119527531a0f67bfc13f",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 20303
+     "ref_diff": 20303,
+     "colours": 17
     },
     {
      "frame": 2400,
      "goomba": "5acab00b9748db4b0fe49036a605393ced0d5d84",
      "reference": "e6a4f4298caef6f66e9865181c5dc904277811b3",
-     "ref_diff": 20868
+     "ref_diff": 20868,
+     "colours": 17
     }
    ]
   },
@@ -3167,49 +3608,56 @@
    "file": "Pokemon Yellow Version - Special Pikachu Edition (USA) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 160164,
+   "busy_per_frame": 160538,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "cfd31f3d89f111fe6fd2fd8f36a1fe4971aae642",
      "reference": "cfd31f3d89f111fe6fd2fd8f36a1fe4971aae642",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 600,
      "goomba": "92b7cc1c74ee35a9983399d0770507f71c0590e2",
      "reference": "92b7cc1c74ee35a9983399d0770507f71c0590e2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 900,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "5584e74fdd731d0265d04043e605c04ae462b081",
      "reference": "5584e74fdd731d0265d04043e605c04ae462b081",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "6019ef5d6a5a6e6efa0396a2418c7a46064b366f",
      "reference": "6019ef5d6a5a6e6efa0396a2418c7a46064b366f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "dbba5f4bb6e1f7c2d644433d29cf1affb058b4ce",
      "reference": "dbba5f4bb6e1f7c2d644433d29cf1affb058b4ce",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "74d4a85dca31b4869e6a118ea4597bbf8255176e",
      "reference": "dbba5f4bb6e1f7c2d644433d29cf1affb058b4ce",
-     "ref_diff": 23
+     "ref_diff": 23,
+     "colours": 4
     }
    ]
   },
@@ -3218,49 +3666,56 @@
    "file": "Pop'n TwinBee (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 172508,
+   "busy_per_frame": 172882,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "3b02672bc8bfa9444ffd2d2be57396b55e109e7f",
      "reference": "513bfa77abe4a97f030936a3221bcd8f7544ef6b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "bf5ae8b6192f080444246be057172f0f9c8f3d5b",
      "reference": "486fdda0c1eaf98187a6ec5e77b3e021bd9dfd74",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "3ba347b22ce63b511978b4c62faa07054ce55d20",
      "reference": "fc8bac93ee6450e3c43862b5e16ffc3d50d00175",
-     "ref_diff": 2647
+     "ref_diff": 2647,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "2806c602f3b8c8654386c30594af18661240e769",
      "reference": "282e184fb58290902eeffe25b8eafaa1d538975a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 1800,
      "goomba": "2806c602f3b8c8654386c30594af18661240e769",
      "reference": "282e184fb58290902eeffe25b8eafaa1d538975a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 2400,
      "goomba": "2806c602f3b8c8654386c30594af18661240e769",
      "reference": "282e184fb58290902eeffe25b8eafaa1d538975a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     }
    ]
   },
@@ -3269,49 +3724,56 @@
    "file": "Prince of Persia (USA, Europe) (En,Fr,De,Es,It) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 150138,
+   "busy_per_frame": 150222,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "504481ae89f0659a232efcb8c4f9e8a86610ea1d",
      "reference": "9329c67ac64f2b3f1efac8ba28bb96a03e626a42",
-     "ref_diff": 4824
+     "ref_diff": 4824,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "008c0e360f89c5389b98b04082396cc865b77599",
      "reference": "008c0e360f89c5389b98b04082396cc865b77599",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 17
     },
     {
      "frame": 900,
      "goomba": "5dddc4939a80a65a163f35ead53f92a3a16ac1d4",
      "reference": "4c2516f1d86cf6b6afdb0464ef668f2b7f424049",
-     "ref_diff": 114
+     "ref_diff": 114,
+     "colours": 13
     },
     {
      "frame": 1200,
      "goomba": "18cd3dfbcdb2641901569b62c6331ed877ca54ca",
      "reference": "166c1785a869f9db90262eb14fdcb63be7474028",
-     "ref_diff": 113
+     "ref_diff": 113,
+     "colours": 13
     },
     {
      "frame": 1500,
      "goomba": "abdd391e3aa68d43d8f2360adee894d3abe4620f",
      "reference": "18cd3dfbcdb2641901569b62c6331ed877ca54ca",
-     "ref_diff": 115
+     "ref_diff": 115,
+     "colours": 13
     },
     {
      "frame": 1800,
      "goomba": "9a5119ab9d5db80ac329fe90fd969b38b22a28b5",
      "reference": "abdd391e3aa68d43d8f2360adee894d3abe4620f",
-     "ref_diff": 120
+     "ref_diff": 120,
+     "colours": 13
     },
     {
      "frame": 2400,
      "goomba": "18cd3dfbcdb2641901569b62c6331ed877ca54ca",
      "reference": "166c1785a869f9db90262eb14fdcb63be7474028",
-     "ref_diff": 113
+     "ref_diff": 113,
+     "colours": 13
     }
    ]
   },
@@ -3320,49 +3782,56 @@
    "file": "R-Type II (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 129066,
+   "busy_per_frame": 129451,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "111d20299661d7d7c1b183035637a8233e1fecb6",
      "reference": "111d20299661d7d7c1b183035637a8233e1fecb6",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "b7104e8daedb7e98fd673e57bf48a35a2cdc335f",
      "reference": "b7104e8daedb7e98fd673e57bf48a35a2cdc335f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "1a86dcabfbf041289932fd38c6c0698bea633014",
      "reference": "1a86dcabfbf041289932fd38c6c0698bea633014",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "d819bc5368004611caa59028486c988f8e02f295",
      "reference": "d819bc5368004611caa59028486c988f8e02f295",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "f4f7447849c1d375801cc50dbfd9dd3f0a3bf8df",
      "reference": "ecf7f3d1704dff323716354e6cb54acdf0e053dc",
-     "ref_diff": 2279
+     "ref_diff": 2279,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "b326a267962547b9e56f24f1c7136ded4cc76d18",
      "reference": "0653da4b3fc6320983f59a0a5eab5d2defd53e56",
-     "ref_diff": 2801
+     "ref_diff": 2801,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "91f6661b64aa08de402c8f579724c3dd92fb497b",
      "reference": "c33abc97508e99f975c82a7085f4f94b0461cc4b",
-     "ref_diff": 2883
+     "ref_diff": 2883,
+     "colours": 4
     }
    ]
   },
@@ -3377,43 +3846,50 @@
      "frame": 300,
      "goomba": "23b5a6289183b285a5f3973713b7802216bccb14",
      "reference": "23b5a6289183b285a5f3973713b7802216bccb14",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 600,
      "goomba": "cc79c6de29ca1efd8271884cd081102e4ed26628",
      "reference": "cc79c6de29ca1efd8271884cd081102e4ed26628",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "3eff90bdeccb93ce5ffe56a09d20ab0ad15ee6b2",
      "reference": "d9a389ccf451acd007786fec758d1c9b5a72aa59",
-     "ref_diff": 5830
+     "ref_diff": 5830,
+     "colours": 351
     },
     {
      "frame": 1200,
      "goomba": "1c837d88c1f5e9d0413c8160a8ea5c0e943503e4",
      "reference": "edb6e29c96a6738fbbf7932fc0b50c1f8bbee18c",
-     "ref_diff": 4758
+     "ref_diff": 4758,
+     "colours": 347
     },
     {
      "frame": 1500,
      "goomba": "0bc5bf6daa72f4a8cbfc609503902d9d51a04ddf",
      "reference": "ca095fab27d64ff14472f5bc15772f6834a543d8",
-     "ref_diff": 150
+     "ref_diff": 150,
+     "colours": 23
     },
     {
      "frame": 1800,
      "goomba": "1762ff28e47ccad6e1980c591f002599e029ef08",
      "reference": "1762ff28e47ccad6e1980c591f002599e029ef08",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 23
     },
     {
      "frame": 2400,
      "goomba": "1762ff28e47ccad6e1980c591f002599e029ef08",
      "reference": "1762ff28e47ccad6e1980c591f002599e029ef08",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 23
     }
    ]
   },
@@ -3422,49 +3898,56 @@
    "file": "Rayman 2 (USA) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 145067,
+   "busy_per_frame": 145414,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "05c51d702968449a99876cbff33353a67b121cc1",
      "reference": "0e226bde784b137efd0b120c37f428df8bf72307",
-     "ref_diff": 642
+     "ref_diff": 642,
+     "colours": 13
     },
     {
      "frame": 600,
      "goomba": "f0dd42a128f0f6e1551c82a8a97c78cf5cdaada9",
      "reference": "719f22aafc7642b2cc2d63178dbb90b93666ddca",
-     "ref_diff": 44
+     "ref_diff": 44,
+     "colours": 16
     },
     {
      "frame": 900,
      "goomba": "f60f79b13c4922830a4bd0919b780b37242b011f",
      "reference": "6b7ed0ac9c333a18eba5c318566124b1ae0572ba",
-     "ref_diff": 1872
+     "ref_diff": 1872,
+     "colours": 12
     },
     {
      "frame": 1200,
      "goomba": "476d5ad49040b51be29cd18b4f9f4de31386cf1b",
      "reference": "a9490f6d2648d4eb59059cd5489668ad4fda705d",
-     "ref_diff": 2625
+     "ref_diff": 2625,
+     "colours": 29
     },
     {
      "frame": 1500,
      "goomba": "b6baf4920d475e373445d386c0cadef7575d22a4",
      "reference": "b6baf4920d475e373445d386c0cadef7575d22a4",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 25
     },
     {
      "frame": 1800,
      "goomba": "b6baf4920d475e373445d386c0cadef7575d22a4",
      "reference": "b6baf4920d475e373445d386c0cadef7575d22a4",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 25
     },
     {
      "frame": 2400,
      "goomba": "b6baf4920d475e373445d386c0cadef7575d22a4",
      "reference": "b6baf4920d475e373445d386c0cadef7575d22a4",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 25
     }
    ]
   },
@@ -3473,49 +3956,56 @@
    "file": "Resident Evil Gaiden (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 133185,
+   "busy_per_frame": 133475,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "7b567b377a9f1c5a09cec759938395b51b1c311a",
      "reference": "7b567b377a9f1c5a09cec759938395b51b1c311a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 600,
      "goomba": "251b9eaac4b71f51745e1ae3bd3172d344572c43",
      "reference": "251b9eaac4b71f51745e1ae3bd3172d344572c43",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 900,
      "goomba": "0d0e2aec6bfa68fc0bb9989fdd342a7b3212a438",
      "reference": "0d0e2aec6bfa68fc0bb9989fdd342a7b3212a438",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 1200,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1500,
      "goomba": "3000e1cd04247ecbc5d23791dbfe1c450d40debc",
      "reference": "3000e1cd04247ecbc5d23791dbfe1c450d40debc",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 1800,
      "goomba": "3000e1cd04247ecbc5d23791dbfe1c450d40debc",
      "reference": "3000e1cd04247ecbc5d23791dbfe1c450d40debc",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 2400,
      "goomba": "3000e1cd04247ecbc5d23791dbfe1c450d40debc",
      "reference": "3000e1cd04247ecbc5d23791dbfe1c450d40debc",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     }
    ]
   },
@@ -3524,49 +4014,56 @@
    "file": "Road Rash (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 62801,
+   "busy_per_frame": 155860,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "c65bad9cf134782c91349a037b1c7ab7b83cda48",
      "reference": "c65bad9cf134782c91349a037b1c7ab7b83cda48",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "8879f23468d1ed9e47f2b18a71d7d0a37946c135",
      "reference": "1fbac62ef357364670e7b18b654377d30979a891",
-     "ref_diff": 8270
+     "ref_diff": 8270,
+     "colours": 4
     },
     {
      "frame": 1200,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "03dc5d598b866bce0b8735f6cbf545bb0f813439",
      "reference": "469dd7f7ba69c55e97c7b944588def52911a5b37",
-     "ref_diff": 15541
+     "ref_diff": 14062,
+     "colours": 4
     },
     {
      "frame": 1500,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "8f9db3094a955ce1cd32af1dc11629c6ebd0dfa5",
      "reference": "9fdd5bf95bb62c811fbc2d324ed771028b4c334f",
-     "ref_diff": 15561
+     "ref_diff": 17904,
+     "colours": 4
     },
     {
      "frame": 1800,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "5d9aeca90c99504cbbb01d0fb76d53c68061dc2b",
      "reference": "76ed9ff55a2c1a92d8ccbe51d97a761b94d090d0",
-     "ref_diff": 15562
+     "ref_diff": 17905,
+     "colours": 4
     },
     {
      "frame": 2400,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "5d9aeca90c99504cbbb01d0fb76d53c68061dc2b",
      "reference": "76ed9ff55a2c1a92d8ccbe51d97a761b94d090d0",
-     "ref_diff": 15562
+     "ref_diff": 17905,
+     "colours": 4
     }
    ]
   },
@@ -3575,49 +4072,56 @@
    "file": "Robin Hood (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 93103,
+   "busy_per_frame": 93277,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d434683480a61c43d199e7f221e26896c77eb325",
      "reference": "d434683480a61c43d199e7f221e26896c77eb325",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "f14e1213a455b1e9c680130f2917631387bca9ab",
      "reference": "f14e1213a455b1e9c680130f2917631387bca9ab",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 900,
      "goomba": "094a0265c67222d272450af73f38b3dbcfdf6e1c",
      "reference": "094a0265c67222d272450af73f38b3dbcfdf6e1c",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 1200,
      "goomba": "263492e5f5d0e67d8b4c669353f8aaf2f0f61be2",
      "reference": "263492e5f5d0e67d8b4c669353f8aaf2f0f61be2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 15
     },
     {
      "frame": 1500,
      "goomba": "ef73d7d492ab0d3b5d3d1d58a6d8f38508876543",
      "reference": "8e8661f88ee255ad0293b28362d0943ab38041be",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 1800,
      "goomba": "a5071493802fa5f38fd40d31a8bf34391752338d",
      "reference": "a5071493802fa5f38fd40d31a8bf34391752338d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 2400,
      "goomba": "22e76f3bce82e235f127d97acd1c782e3fdd4caf",
      "reference": "22e76f3bce82e235f127d97acd1c782e3fdd4caf",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     }
    ]
   },
@@ -3626,49 +4130,56 @@
    "file": "Robot Poncots - Sun Version (Japan) (SGB Enhanced) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 137417,
+   "busy_per_frame": 137418,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 900,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "ccde09b4a0b8c2902cb0e9cce69766e297d66afd",
      "reference": "ccde09b4a0b8c2902cb0e9cce69766e297d66afd",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 1500,
      "goomba": "ccde09b4a0b8c2902cb0e9cce69766e297d66afd",
      "reference": "ccde09b4a0b8c2902cb0e9cce69766e297d66afd",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 1800,
      "goomba": "b8fb364fc80f4205b54f05c13783fccb7dbd9fb8",
      "reference": "b8fb364fc80f4205b54f05c13783fccb7dbd9fb8",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 2400,
      "goomba": "b8fb364fc80f4205b54f05c13783fccb7dbd9fb8",
      "reference": "b8fb364fc80f4205b54f05c13783fccb7dbd9fb8",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     }
    ]
   },
@@ -3677,49 +4188,56 @@
    "file": "Sakura Taisen GB 2 - Thunderbolt Sakusen (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 99982,
+   "busy_per_frame": 100237,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d0a0703a4e53aae611d03c2e9fca09ed0548676d",
      "reference": "d0a0703a4e53aae611d03c2e9fca09ed0548676d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 600,
      "goomba": "1c10e78efa5d4d2c661cb9b4296609e457321651",
      "reference": "1c10e78efa5d4d2c661cb9b4296609e457321651",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 900,
      "goomba": "62da294a9250b2c4087a0051dc7e8335e75a384f",
      "reference": "62da294a9250b2c4087a0051dc7e8335e75a384f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "fcf70a1ef4d880f26771f544d2554c847d796f2f",
      "reference": "2d4cdb38031d37964706c481fc38d763a91d880e",
-     "ref_diff": 64
+     "ref_diff": 64,
+     "colours": 8
     },
     {
      "frame": 1500,
      "goomba": "afc1a6a4f1a9700b7e48859e0d472f02dfac3c69",
      "reference": "0b554e2d5cbf8f440507e67e548e27d9749957b4",
-     "ref_diff": 66
+     "ref_diff": 66,
+     "colours": 7
     },
     {
      "frame": 1800,
      "goomba": "77b9e7423ee878fa708888729a106a0255030de3",
      "reference": "2d4cdb38031d37964706c481fc38d763a91d880e",
-     "ref_diff": 3225
+     "ref_diff": 3225,
+     "colours": 6
     },
     {
      "frame": 2400,
      "goomba": "77b9e7423ee878fa708888729a106a0255030de3",
      "reference": "2d4cdb38031d37964706c481fc38d763a91d880e",
-     "ref_diff": 3225
+     "ref_diff": 3225,
+     "colours": 6
     }
    ]
   },
@@ -3728,49 +4246,56 @@
    "file": "Sensible Soccer - European Champions (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 62231,
+   "busy_per_frame": 62635,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "50f3cddfceb815963c94daa9bc21d8d072aeef45",
      "reference": "f57c96eae55021bf762cd6ac0632941f6ee94ef3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "f84cff0299e39635df5a0f52c3dba06cfe413974",
      "reference": "db0d6a0c1f90f2196e653993674dcf82515e65b3",
-     "ref_diff": 104
+     "ref_diff": 104,
+     "colours": 5
     },
     {
      "frame": 900,
      "goomba": "f84cff0299e39635df5a0f52c3dba06cfe413974",
      "reference": "db0d6a0c1f90f2196e653993674dcf82515e65b3",
-     "ref_diff": 104
+     "ref_diff": 104,
+     "colours": 5
     },
     {
      "frame": 1200,
      "goomba": "1a6f9b1c3fd1573fb1f28a1950774b908cbaaccd",
      "reference": "e6a32bbace135a1c5178b25719e5ef4d0e81123a",
-     "ref_diff": 104
+     "ref_diff": 104,
+     "colours": 5
     },
     {
      "frame": 1500,
      "goomba": "1a6f9b1c3fd1573fb1f28a1950774b908cbaaccd",
      "reference": "e6a32bbace135a1c5178b25719e5ef4d0e81123a",
-     "ref_diff": 104
+     "ref_diff": 104,
+     "colours": 5
     },
     {
      "frame": 1800,
      "goomba": "29191e5dcf07d7660f44dad878f987005bfa2eaf",
      "reference": "93338eb2dd390c486997254825dd7cace850b546",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "967ab7ef3776f7126335122b8dea9e9fe76b5fdd",
      "reference": "62a005902ff190abd2ee5ebfe08318a8473023b1",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     }
    ]
   },
@@ -3779,49 +4304,56 @@
    "file": "Shantae (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 220687,
+   "busy_per_frame": 223179,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "b50c714aadb95844449fb61062fc48aceec841c3",
      "reference": "b50c714aadb95844449fb61062fc48aceec841c3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 600,
      "goomba": "1190434f7947a052e41c704cb0d9895090e0aec1",
      "reference": "1190434f7947a052e41c704cb0d9895090e0aec1",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "82594efd10ea1f29f4e0ddf4f1442b69147bef62",
      "reference": "82594efd10ea1f29f4e0ddf4f1442b69147bef62",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 13
     },
     {
      "frame": 1200,
      "goomba": "ebac1052e9730ac4ae1e7a28700f3dafa401829e",
      "reference": "453f5b0949b9a0291143d847088ed7cbe8d7ce67",
-     "ref_diff": 154
+     "ref_diff": 154,
+     "colours": 15
     },
     {
      "frame": 1500,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "f0b13d27c4776cb9ed77ec85b145c60b9bbd4695",
-     "ref_diff": 22560
+     "ref_diff": 22560,
+     "colours": 1
     },
     {
      "frame": 1800,
      "goomba": "a4d1bd64036d2b3cb7457ff757fc33acbef65e94",
      "reference": "689a419cc59241b9d6b2993c4a6528a9590a4b58",
-     "ref_diff": 21970
+     "ref_diff": 21970,
+     "colours": 22
     },
     {
      "frame": 2400,
      "goomba": "c983da7f100323e89800b8dbbcaa00234f2a245d",
      "reference": "9d17ff8c8919d3f3dce418e2f75268c89a911e42",
-     "ref_diff": 21980
+     "ref_diff": 21980,
+     "colours": 22
     }
    ]
   },
@@ -3830,49 +4362,56 @@
    "file": "Shin Megami Tensei Devil Children - Shiro no Sho (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 173891,
+   "busy_per_frame": 173983,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "eac5928600df72127b6c332841f69b06f5830820",
      "reference": "eac5928600df72127b6c332841f69b06f5830820",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 600,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 900,
      "goomba": "00efbd6976a310d0a8c9b2911def796e999eb46a",
      "reference": "00efbd6976a310d0a8c9b2911def796e999eb46a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 1200,
      "goomba": "ef0aca9b4f1d96df4766e325e8587e86590654b1",
      "reference": "ef0aca9b4f1d96df4766e325e8587e86590654b1",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 1500,
      "goomba": "5118f2264404b69d3bd2aa856b5c93267a61f015",
      "reference": "75bcd4fa03c1c4165f0f1d32d7f0a1d30baffd51",
-     "ref_diff": 150
+     "ref_diff": 150,
+     "colours": 12
     },
     {
      "frame": 1800,
      "goomba": "5c627cefcfc471c9ec37994650988e15c5a51110",
      "reference": "5391e1ecaeaa2308c502d1cc95a9f4aeb06de232",
-     "ref_diff": 32
+     "ref_diff": 32,
+     "colours": 10
     },
     {
      "frame": 2400,
      "goomba": "5391e1ecaeaa2308c502d1cc95a9f4aeb06de232",
      "reference": "5391e1ecaeaa2308c502d1cc95a9f4aeb06de232",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     }
    ]
   },
@@ -3881,49 +4420,56 @@
    "file": "Smurfs Nightmare, The (Europe) (En,Fr,De,Es).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 81629,
+   "busy_per_frame": 81712,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "f3721e1e47af0143eb736bf9f5eb764d0cbfdbec",
      "reference": "6b6c0eb629f95657991176a277e53eea26f1ea36",
-     "ref_diff": 2587
+     "ref_diff": 2587,
+     "colours": 6
     },
     {
      "frame": 600,
      "goomba": "5767ab6ddbdf7709744c811f84cbb32672e0dc0e",
      "reference": "bc406590507536f77c9c92b43d81a74ffe33cfb5",
-     "ref_diff": 33
+     "ref_diff": 33,
+     "colours": 16
     },
     {
      "frame": 900,
      "goomba": "04391fb4cb14aed996068ae8141dbc27a8563df1",
      "reference": "e193c4338a98319b7cb8ce5b3a73bec4f7b9de69",
-     "ref_diff": 657
+     "ref_diff": 657,
+     "colours": 16
     },
     {
      "frame": 1200,
      "goomba": "b24db06864a4f1f84750266be84ea2d98d6e500e",
      "reference": "c3885509372ed6ae764d48a82e8ace38728ac5a4",
-     "ref_diff": 77
+     "ref_diff": 77,
+     "colours": 16
     },
     {
      "frame": 1500,
      "goomba": "fc8f90779c7ba7ab173803c562b151193e31192d",
      "reference": "952f29ab98c058a8fb386088f87251e36f6e5dbf",
-     "ref_diff": 57
+     "ref_diff": 57,
+     "colours": 16
     },
     {
      "frame": 1800,
      "goomba": "fc8f90779c7ba7ab173803c562b151193e31192d",
      "reference": "952f29ab98c058a8fb386088f87251e36f6e5dbf",
-     "ref_diff": 57
+     "ref_diff": 57,
+     "colours": 16
     },
     {
      "frame": 2400,
      "goomba": "fc8f90779c7ba7ab173803c562b151193e31192d",
      "reference": "952f29ab98c058a8fb386088f87251e36f6e5dbf",
-     "ref_diff": 57
+     "ref_diff": 57,
+     "colours": 16
     }
    ]
   },
@@ -3932,49 +4478,56 @@
    "file": "Space Station Silicon Valley (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 91841,
+   "busy_per_frame": 92587,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "708883ea46c1d40b4da79deea11218525e27a4bc",
      "reference": "708883ea46c1d40b4da79deea11218525e27a4bc",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 600,
      "goomba": "9abc672d1fc1ba8938cb892565ab0fe71bb171f4",
      "reference": "9abc672d1fc1ba8938cb892565ab0fe71bb171f4",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "39113f3d2eb9b7ed1840b6c84bf2514bb7b59ed2",
      "reference": "1e2e124317d41d6358971653ca6a1a17bb6419d2",
-     "ref_diff": 1420
+     "ref_diff": 1420,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "cd8de30ed4d9c9368cb431b657364a872c0e9019",
      "reference": "ae6b3428aa5846f4b098415defbbafe5699d141f",
-     "ref_diff": 2443
+     "ref_diff": 2443,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "d4391e86ab8214f05b08677279980a04fd183d49",
      "reference": "e3504277f82a7cd809a68e29d02134441e94ecaf",
-     "ref_diff": 731
+     "ref_diff": 731,
+     "colours": 17
     },
     {
      "frame": 1800,
      "goomba": "e7fa51f1a505954ef1ca7000d24f1dc77f3d14bb",
      "reference": "2bd3d5eeaf6a0ea9d851b96945120b4b6ef5a4bc",
-     "ref_diff": 8569
+     "ref_diff": 8569,
+     "colours": 12
     },
     {
      "frame": 2400,
      "goomba": "84549641b4d6795502abadc15cbf0bd37f7083b8",
      "reference": "f8ab93377dd1bfbd639b29cd2b8fe585d586048f",
-     "ref_diff": 35
+     "ref_diff": 35,
+     "colours": 9
     }
    ]
   },
@@ -3983,49 +4536,56 @@
    "file": "Star Hawk (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 137024,
+   "busy_per_frame": 137386,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "d5a5317a3e1d350d0a2ab9871cbb3bb6b4fece6f",
      "reference": "d5a5317a3e1d350d0a2ab9871cbb3bb6b4fece6f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "4481fea3c3f087834f709d9442dcf1d6b2c8ce8f",
      "reference": "4481fea3c3f087834f709d9442dcf1d6b2c8ce8f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "07bc1feabbc334008297680a2f32c148ea52b3a2",
      "reference": "045005f083fdeecddc513c3ef26a4addf10af6d2",
-     "ref_diff": 19089
+     "ref_diff": 19089,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "2beffa2764f696aa1f096ac81fe0eb7268b5f8c9",
      "reference": "045005f083fdeecddc513c3ef26a4addf10af6d2",
-     "ref_diff": 15131
+     "ref_diff": 15131,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "2beffa2764f696aa1f096ac81fe0eb7268b5f8c9",
      "reference": "045005f083fdeecddc513c3ef26a4addf10af6d2",
-     "ref_diff": 15131
+     "ref_diff": 15131,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "2beffa2764f696aa1f096ac81fe0eb7268b5f8c9",
      "reference": "045005f083fdeecddc513c3ef26a4addf10af6d2",
-     "ref_diff": 15131
+     "ref_diff": 15131,
+     "colours": 4
     }
    ]
   },
@@ -4034,49 +4594,56 @@
    "file": "Star Wars Episode I - Racer (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 99732,
+   "busy_per_frame": 100928,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "ce173371df091b30fbdf1365f519b85c55fcc2fc",
      "reference": "ce173371df091b30fbdf1365f519b85c55fcc2fc",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "fec237e869c0d0d00babce712184c2d9324b14a3",
      "reference": "174341ed82a6d7b03060968e863384106e2ef2ae",
-     "ref_diff": 165
+     "ref_diff": 165,
+     "colours": 22
     },
     {
      "frame": 900,
      "goomba": "938c42e0991f0077711103e97bdf320dbc6aad18",
      "reference": "a684e2efb3a1abffbc18513a1a51927edc568e57",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 1200,
      "goomba": "9964d5b5ea67093301184100c982ea42f69b35a0",
      "reference": "db89882ec0659041018e6916a1bb8cb2f52e2201",
-     "ref_diff": 112
+     "ref_diff": 112,
+     "colours": 10
     },
     {
      "frame": 1500,
      "goomba": "759acf9cfe80fcc822992a75458e200d4bf9ddbe",
      "reference": "b95dbc84ffcc69d76dace3c390bc91977beebad1",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 1800,
      "goomba": "f998dbd2bd2b0124581cbc2960445838fa1d8479",
      "reference": "178d586890da0325bcb1229c8ee1d9b95156c195",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 2400,
      "goomba": "d544235faca7493a5b569a20bc1a5c056a06d3c2",
      "reference": "f89c42bf3b4a74315a1b22d689f8410682fbc39c",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     }
    ]
   },
@@ -4085,49 +4652,56 @@
    "file": "Super Mario Bros. Deluxe (USA) (Rev-B).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 103231,
+   "busy_per_frame": 103777,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "74e9c8971ad5fea2ec61f301d84e97a83b9db99d",
      "reference": "cda844e998fa566323314bc28350da64ac5edbfe",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "bf42dbc47d4d48ff1c0c42320c28afac2b4e1f2f",
      "reference": "bf42dbc47d4d48ff1c0c42320c28afac2b4e1f2f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 9
     },
     {
      "frame": 900,
      "goomba": "ff1174f9d99c034887809ae0da1dc7389a985169",
      "reference": "8938bff86f517ac900597a3a0aaac4d92b4ddf6b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 1200,
      "goomba": "a0a5a8e9d50e58f5e92e0476a54882219792a5e5",
      "reference": "a0a5a8e9d50e58f5e92e0476a54882219792a5e5",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 5
     },
     {
      "frame": 1500,
      "goomba": "a0a5a8e9d50e58f5e92e0476a54882219792a5e5",
      "reference": "a0a5a8e9d50e58f5e92e0476a54882219792a5e5",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 5
     },
     {
      "frame": 1800,
      "goomba": "79251ea461b78c1ca17a21194d202747e7e20a21",
      "reference": "79251ea461b78c1ca17a21194d202747e7e20a21",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 2400,
      "goomba": "89c99c35c9815fbe9cd5379dcfea8635be581330",
      "reference": "564cc038c71c6c2b918752de5cd915165f5f4345",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     }
    ]
   },
@@ -4136,49 +4710,56 @@
    "file": "Super Mario Land 2 - 6 Golden Coins (USA) (Rev-B).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 87423,
+   "busy_per_frame": 87767,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "a784d54d5f3fa4b9373b0dcd6c3397bc7e6d460c",
      "reference": "d35e4a6c857b3e23c02ac3bd83f84c5d0c458575",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "7428edafb3a9b823c1b9320e5f3851d50c8c5251",
      "reference": "4f4c06955950916e5eed330b005945a40983f696",
-     "ref_diff": 505
+     "ref_diff": 505,
+     "colours": 7
     },
     {
      "frame": 900,
      "goomba": "d0e43f02f292000d0e46ad17d4a683a482c62b4b",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "e7131988524dacde39357b424af1b88c84600682",
      "reference": "896ea9ed36f54919f3b1ca7b13920f063490807a",
-     "ref_diff": 833
+     "ref_diff": 833,
+     "colours": 7
     },
     {
      "frame": 1500,
      "goomba": "d7d67d67a89ea271c54459c80570c073e11cc1bc",
      "reference": "00eab4cc03c6be98bb2d4570c971412f137f8ce1",
-     "ref_diff": 835
+     "ref_diff": 835,
+     "colours": 7
     },
     {
      "frame": 1800,
      "goomba": "16ebdb793ef12706f876f2a73e8702267481d17a",
      "reference": "b4e3a86b7ef1be88e6f9356ef8527fa14cb94ebc",
-     "ref_diff": 839
+     "ref_diff": 839,
+     "colours": 7
     },
     {
      "frame": 2400,
      "goomba": "18d1f14cb7b9b23faebddda74bd0b2e49111dc2e",
      "reference": "e3645f3613e93fbc869e787a9922e95f7fffd5be",
-     "ref_diff": 827
+     "ref_diff": 827,
+     "colours": 7
     }
    ]
   },
@@ -4187,49 +4768,56 @@
    "file": "Suzuki Alstare Extreme Racing (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 199903,
+   "busy_per_frame": 200049,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d3fa0885efc071ad10caced7b61b0d62a73cb1f3",
      "reference": "d3fa0885efc071ad10caced7b61b0d62a73cb1f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 18
     },
     {
      "frame": 600,
      "goomba": "45ae7fbef047abc4bbfc3462dd2e01e9a093db44",
      "reference": "45ae7fbef047abc4bbfc3462dd2e01e9a093db44",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 45
     },
     {
      "frame": 900,
      "goomba": "139d38fee0ce291b61e844959dca3f2a9dd9a74d",
      "reference": "4e34f8eb8771d098ce07f758ea31c153a7af1184",
-     "ref_diff": 11573
+     "ref_diff": 11573,
+     "colours": 28
     },
     {
      "frame": 1200,
      "goomba": "0db7c5077a86b5ebe0e55e0418d4309c83253600",
      "reference": "dfa9651ca01c247183827098f715d6be29bc13db",
-     "ref_diff": 117
+     "ref_diff": 117,
+     "colours": 51
     },
     {
      "frame": 1500,
      "goomba": "543e14468ea8f82ce608c04c70642fd41eb958d6",
      "reference": "543e14468ea8f82ce608c04c70642fd41eb958d6",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 50
     },
     {
      "frame": 1800,
      "goomba": "543e14468ea8f82ce608c04c70642fd41eb958d6",
      "reference": "543e14468ea8f82ce608c04c70642fd41eb958d6",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 50
     },
     {
      "frame": 2400,
      "goomba": "543e14468ea8f82ce608c04c70642fd41eb958d6",
      "reference": "543e14468ea8f82ce608c04c70642fd41eb958d6",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 50
     }
    ]
   },
@@ -4238,49 +4826,56 @@
    "file": "SWIV (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 378108,
+   "busy_per_frame": 378109,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "be60d1a6b643cc2a10d67c31e1362b8d42af8e7c",
      "reference": "be60d1a6b643cc2a10d67c31e1362b8d42af8e7c",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "efeb336e1ff524ab2dfd4f94b845317a2c017025",
      "reference": "efeb336e1ff524ab2dfd4f94b845317a2c017025",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 1500,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1800,
      "goomba": "4f90b2679d2dbbd8e89f54f608e058be9610c13d",
      "reference": "056993870e59254db98daec30062a349020ab15d",
-     "ref_diff": 43
+     "ref_diff": 43,
+     "colours": 6
     },
     {
      "frame": 2400,
      "goomba": "7e7bfc3695543ce92d0fc23dc3fee2a201b0233e",
      "reference": "d85271bfe317f717e3066a70ba776d77384834a3",
-     "ref_diff": 18119
+     "ref_diff": 18119,
+     "colours": 10
     }
    ]
   },
@@ -4289,49 +4884,56 @@
    "file": "Test Drive 2001 (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 190850,
+   "busy_per_frame": 190945,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "9527802b2dce956c7d0df06810330bd43104625d",
      "reference": "5c10792f6d101ccfa71e020b8ccd4097784a660b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "bb56dfdd366fa668830374cf01d1fd33755b894b",
      "reference": "bb56dfdd366fa668830374cf01d1fd33755b894b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 15
     },
     {
      "frame": 900,
      "goomba": "ed5604f9cc07ed9a28c9815a28389290864036b6",
      "reference": "c941095286bc25f9c24368d25d2b0287a64f6437",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 15
     },
     {
      "frame": 1200,
      "goomba": "3c021ad6d2fddc597a0688597eb81d9f88a67d56",
      "reference": "3c021ad6d2fddc597a0688597eb81d9f88a67d56",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 20
     },
     {
      "frame": 1500,
      "goomba": "7663dc304365b8ff046bf41eba292525a6296db2",
      "reference": "50c8673c35b647a7424e2c34cb9ee9a25c98cac7",
-     "ref_diff": 968
+     "ref_diff": 968,
+     "colours": 23
     },
     {
      "frame": 1800,
      "goomba": "7ad5aee6d8f32361cd57f51f1337518ca61a1315",
      "reference": "3a303619670bf56836b8b26c37b6ce2b21677738",
-     "ref_diff": 15
+     "ref_diff": 15,
+     "colours": 17
     },
     {
      "frame": 2400,
      "goomba": "5980b5e53ba5d3485f9ec4c930787f61f3836f47",
      "reference": "b508af9da6b6dd9b7a42b77f7c0d1517c9fe127d",
-     "ref_diff": 51
+     "ref_diff": 51,
+     "colours": 17
     }
    ]
   },
@@ -4340,49 +4942,56 @@
    "file": "Tintin in Tibet (Europe) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 97008,
+   "busy_per_frame": 97494,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "9951e4bfd9876fc46012f40173075aaf633921a3",
      "reference": "0c3d038dd7237e2445a1b0a26aacb47a239b1219",
-     "ref_diff": 70
+     "ref_diff": 70,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "1ae5be7630af197cdcb0777d79100c1ed969853d",
      "reference": "0c3d038dd7237e2445a1b0a26aacb47a239b1219",
-     "ref_diff": 7913
+     "ref_diff": 7913,
+     "colours": 3
     },
     {
      "frame": 900,
      "goomba": "2d258bd59b034212f5e058482084e8a6b8fe1069",
      "reference": "54bb942d82985ab1fc89ebbbd11d8a97648d7297",
-     "ref_diff": 16323
+     "ref_diff": 16323,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "03adbbbe5e22adadf4860bb32beaf8edd3ca104d",
      "reference": "39133534572347090e84bb5a0e6378396d3b6365",
-     "ref_diff": 16212
+     "ref_diff": 16212,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "f4ca09bacce8ab4705786b241d451948005e453f",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 13147
+     "ref_diff": 13147,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "f4ca09bacce8ab4705786b241d451948005e453f",
      "reference": "68cce214dc273d54f8ea8308f3e4db14773884c5",
-     "ref_diff": 610
+     "ref_diff": 610,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "f4ca09bacce8ab4705786b241d451948005e453f",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 13147
+     "ref_diff": 13147,
+     "colours": 4
     }
    ]
   },
@@ -4391,49 +5000,56 @@
    "file": "Toki Tori (USA, Europe) (En,Ja,Fr,De,Es).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 74906,
+   "busy_per_frame": 75008,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "a0c95611d918883551102ad89f468325baabc478",
      "reference": "a0c95611d918883551102ad89f468325baabc478",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "7d4c4ba7625c088d53e2b1d855febe3c44f27a20",
      "reference": "7d4c4ba7625c088d53e2b1d855febe3c44f27a20",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 900,
      "goomba": "dfa7c8c865050cf4ba0449f9142062ec31606aab",
      "reference": "dfa7c8c865050cf4ba0449f9142062ec31606aab",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 1200,
      "goomba": "dfa7c8c865050cf4ba0449f9142062ec31606aab",
      "reference": "dfa7c8c865050cf4ba0449f9142062ec31606aab",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     },
     {
      "frame": 1500,
      "goomba": "c6b38ee287dc8cc7a5d950a3b71c8f26b9438898",
      "reference": "509f87559fe2cf20487621d78265897ed7883e94",
-     "ref_diff": 109
+     "ref_diff": 109,
+     "colours": 19
     },
     {
      "frame": 1800,
      "goomba": "f8c5e7e354bc071cab3d77aa45bf8d643fa5f770",
      "reference": "fcef9c3da2750e3cb0fd4072938396ca00e206a0",
-     "ref_diff": 228
+     "ref_diff": 228,
+     "colours": 14
     },
     {
      "frame": 2400,
      "goomba": "4e963c658720f16086e4307a3bae12876c0f0ed1",
      "reference": "4e963c658720f16086e4307a3bae12876c0f0ed1",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 3
     }
    ]
   },
@@ -4442,49 +5058,56 @@
    "file": "Tomb Raider (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 454816,
+   "busy_per_frame": 454921,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "b6b0e3e4dc3a159694036ba68882978896ee19c8",
      "reference": "b6b0e3e4dc3a159694036ba68882978896ee19c8",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 257
     },
     {
      "frame": 600,
      "goomba": "d0b85e21e869bb0897590f1e35f6dd76eaee12f0",
      "reference": "d0b85e21e869bb0897590f1e35f6dd76eaee12f0",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 225
     },
     {
      "frame": 900,
-     "goomba": "4ef72562928d7ece79665d0719912ad0eb374cd3",
+     "goomba": "1233e4f45a81254d70739cc06edb4794f9b4c26e",
      "reference": "4ef72562928d7ece79665d0719912ad0eb374cd3",
-     "ref_diff": 0
+     "ref_diff": 52,
+     "colours": 736
     },
     {
      "frame": 1200,
      "goomba": "2a62b858498800b1666c2b9a17ccdbedba331b31",
      "reference": "2a62b858498800b1666c2b9a17ccdbedba331b31",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 861
     },
     {
      "frame": 1500,
      "goomba": "d0fbcde2159720c10358bc6f67c64672f15eab88",
      "reference": "d0fbcde2159720c10358bc6f67c64672f15eab88",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 1800,
      "goomba": "8ba55d40a1cd6ed1997a1b44300d3fcc0ed953f3",
      "reference": "8ba55d40a1cd6ed1997a1b44300d3fcc0ed953f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 528
     },
     {
      "frame": 2400,
      "goomba": "2c6e82c332899ef96501283126a8591826b4af67",
      "reference": "2c6e82c332899ef96501283126a8591826b4af67",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     }
    ]
   },
@@ -4499,43 +5122,50 @@
      "frame": 300,
      "goomba": "e05a3763282e6a424df41ceb816e8d16d2b68f0f",
      "reference": "e05a3763282e6a424df41ceb816e8d16d2b68f0f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 6
     },
     {
      "frame": 600,
      "goomba": "fdb6a7d107b8132eebe5428cac428f56e51e41e9",
      "reference": "fdb6a7d107b8132eebe5428cac428f56e51e41e9",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 17
     },
     {
      "frame": 900,
      "goomba": "a92716a331116fcc7cc3257f2948d5de668d5b83",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 1200,
      "goomba": "7b1417662c4540e0cf41efb5b10dbeb175324eef",
      "reference": "7b1417662c4540e0cf41efb5b10dbeb175324eef",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 1500,
      "goomba": "248c59924761624db354582f17449d72a07b76fa",
      "reference": "3cf5db952b8e4347741313a5bf153649b3bf7f3b",
-     "ref_diff": 2619
+     "ref_diff": 2619,
+     "colours": 21
     },
     {
      "frame": 1800,
      "goomba": "6e0d961c14940d67e771cb46784dfb1bc70c70e1",
      "reference": "9cd414dbee4dd8da2613e16cc32c185ee4ac142f",
-     "ref_diff": 2666
+     "ref_diff": 2666,
+     "colours": 23
     },
     {
      "frame": 2400,
      "goomba": "d27dcdf0f922e114dff7d1f8e9fe0e94f3805376",
      "reference": "982be28074992ffb78fe0dbd2a7e35f5e18fd4af",
-     "ref_diff": 2651
+     "ref_diff": 2651,
+     "colours": 24
     }
    ]
   },
@@ -4544,49 +5174,56 @@
    "file": "Trip World (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 52076,
+   "busy_per_frame": 52159,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "d0d74771cde116a585dbbb963f6cd0dfb7345091",
      "reference": "162072e1e24208d898b3e29ba217b9a178ef48bd",
-     "ref_diff": 7362
+     "ref_diff": 7362,
+     "colours": 3
     },
     {
      "frame": 600,
      "goomba": "614e136916d68c6f8567239592b880613832ea7c",
      "reference": "614e136916d68c6f8567239592b880613832ea7c",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "a2e36327455bbfb027f4d7c33bc7b939e888ae8b",
      "reference": "a2e36327455bbfb027f4d7c33bc7b939e888ae8b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "f8bbed9ffd5a8c07495cf9cfb260a9d8ca5a3e9f",
      "reference": "f8bbed9ffd5a8c07495cf9cfb260a9d8ca5a3e9f",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "9780c7034d00138d5c802b86c332b6f63001e36b",
      "reference": "247fff9c12bfa88616ca7c2dcd7c72c6558c6b74",
-     "ref_diff": 3913
+     "ref_diff": 3913,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "9780c7034d00138d5c802b86c332b6f63001e36b",
      "reference": "247fff9c12bfa88616ca7c2dcd7c72c6558c6b74",
-     "ref_diff": 3913
+     "ref_diff": 3913,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "9780c7034d00138d5c802b86c332b6f63001e36b",
      "reference": "247fff9c12bfa88616ca7c2dcd7c72c6558c6b74",
-     "ref_diff": 3913
+     "ref_diff": 3913,
+     "colours": 4
     }
    ]
   },
@@ -4595,49 +5232,56 @@
    "file": "Turok 3 - Shadow of Oblivion (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 234593,
+   "busy_per_frame": 234913,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "ee3f5fc272c9947567bf45a433867f2f793ee0d3",
      "reference": "ee3f5fc272c9947567bf45a433867f2f793ee0d3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 600,
      "goomba": "10e61df496f80fb0dda2f03db1d35408c92e1dde",
      "reference": "10e61df496f80fb0dda2f03db1d35408c92e1dde",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 900,
      "goomba": "f3765d145120c57ea494d44f2a093e80d5e84236",
      "reference": "f3765d145120c57ea494d44f2a093e80d5e84236",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 1200,
      "goomba": "61c4d6f4ae79990ed6b5d329e73d2218af6df6a7",
      "reference": "61c4d6f4ae79990ed6b5d329e73d2218af6df6a7",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 546
     },
     {
      "frame": 1500,
      "goomba": "a3a13ad0a481a18e107164005a336f8d3e0ca19b",
      "reference": "a3a13ad0a481a18e107164005a336f8d3e0ca19b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 1800,
      "goomba": "7f90bc847b448924b96219365942c266b424966e",
      "reference": "7f90bc847b448924b96219365942c266b424966e",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 625
     },
     {
      "frame": 2400,
      "goomba": "3c1cd04e79a76ce05fc3f00973c79e8555fd6fef",
      "reference": "3c1cd04e79a76ce05fc3f00973c79e8555fd6fef",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 626
     }
    ]
   },
@@ -4646,49 +5290,56 @@
    "file": "V-Rally - Championship Edition (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 156832,
+   "busy_per_frame": 158055,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "188105d4176b3e51b1e631fdac9ffd7ec43658f0",
      "reference": "67dc5c3d3a516d430973a614095c5a4f96fbdae8",
-     "ref_diff": 21526
+     "ref_diff": 21526,
+     "colours": 4
     },
     {
      "frame": 600,
      "goomba": "b3046cbc517a76d444989f809ad2ea3f91508b82",
      "reference": "e9be1619aed595b4c0bf855fad6eaf59fa66e09d",
-     "ref_diff": 14913
+     "ref_diff": 14913,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "5ceb95b4119cafe426f2f0723f8f99a7305ee759",
      "reference": "fa1670fe5efb58329a88e4355f6c971d45f93be7",
-     "ref_diff": 4959
+     "ref_diff": 4959,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "766f6d6ffe412856e191b3b6ed03b8474e5f3ed4",
      "reference": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
-     "ref_diff": 15276
+     "ref_diff": 15276,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "166916e4011e52e83bdb25aa64726b089a366c91",
      "reference": "9d9915534d52b226974e6dd7765c671036420108",
-     "ref_diff": 1036
+     "ref_diff": 1036,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "166916e4011e52e83bdb25aa64726b089a366c91",
      "reference": "9d9915534d52b226974e6dd7765c671036420108",
-     "ref_diff": 1036
+     "ref_diff": 1036,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "166916e4011e52e83bdb25aa64726b089a366c91",
      "reference": "9d9915534d52b226974e6dd7765c671036420108",
-     "ref_diff": 1036
+     "ref_diff": 1036,
+     "colours": 4
     }
    ]
   },
@@ -4697,49 +5348,56 @@
    "file": "Vigilante 8 (USA) (Rumble Version).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 139902,
+   "busy_per_frame": 141926,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "641ebd9cdb981c8550363190c3008fedbc860695",
      "reference": "641ebd9cdb981c8550363190c3008fedbc860695",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 600,
      "goomba": "ed9fe98672838a60e5c234713563a1bd6ae3357a",
      "reference": "ed9fe98672838a60e5c234713563a1bd6ae3357a",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 12
     },
     {
      "frame": 900,
      "goomba": "0dcdc0595f5a3dd8d089bb713a58b24a5691042d",
      "reference": "0dcdc0595f5a3dd8d089bb713a58b24a5691042d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 21
     },
     {
      "frame": 1200,
      "goomba": "0cbfdacba8b50162d034f68492e09722b0fbe7b9",
      "reference": "e17e717d33b3439ae0e46f62bc225904e91358ae",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 1500,
      "goomba": "46a347075f3047f7cc8c1330f2e8e9d4563955b2",
      "reference": "46a347075f3047f7cc8c1330f2e8e9d4563955b2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 1800,
      "goomba": "c1512d2b69676fde41e30aae91e38c98103f462b",
      "reference": "3acfd40f2bcc4a19a198ba6328e1baff7bd920d4",
-     "ref_diff": 18480
+     "ref_diff": 18480,
+     "colours": 21
     },
     {
      "frame": 2400,
      "goomba": "9b18eb91874716309b77597695b414a5d68e3ee9",
      "reference": "ffadd3627c98189759a16fd0be51e7af430baac8",
-     "ref_diff": 18466
+     "ref_diff": 18466,
+     "colours": 20
     }
    ]
   },
@@ -4748,49 +5406,56 @@
    "file": "Visiteurs, Les (France) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 219155,
+   "busy_per_frame": 219261,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "715db6ab2288abdf95e5bedb3d408caad6bbdf16",
      "reference": "715db6ab2288abdf95e5bedb3d408caad6bbdf16",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 22
     },
     {
      "frame": 600,
      "goomba": "edc580ae4ddcfa17542c4d7dc169cf645be3797c",
      "reference": "edc580ae4ddcfa17542c4d7dc169cf645be3797c",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 15
     },
     {
      "frame": 900,
      "goomba": "6159e951514a826327058bfb92840dc65c8f6901",
      "reference": "3adeb21beadf283a321557fea9a52913a81314c0",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 1200,
      "goomba": "724689dbfc03ba37825c2ae3453a825f3ba78c42",
      "reference": "724689dbfc03ba37825c2ae3453a825f3ba78c42",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 1500,
      "goomba": "e1d57d03b6b0e5a5bdb6553ea7ed505249a9c5bb",
      "reference": "e1d57d03b6b0e5a5bdb6553ea7ed505249a9c5bb",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 26
     },
     {
      "frame": 1800,
      "goomba": "434c02cf668f8707bdbd9702da6820308f2706d3",
      "reference": "3734fde162ede5713ed0ac85af964e52799f306b",
-     "ref_diff": 86
+     "ref_diff": 86,
+     "colours": 29
     },
     {
      "frame": 2400,
      "goomba": "abd5f24743d8316911df1debfe99c3d0de1e3ecf",
      "reference": "a1447e9837b032ce24c1df3f276121445a6ee7d6",
-     "ref_diff": 86
+     "ref_diff": 86,
+     "colours": 29
     }
    ]
   },
@@ -4799,49 +5464,56 @@
    "file": "Wario Land 3 (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 111518,
+   "busy_per_frame": 111935,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "914bbd328c3df109e40ce89e31bc180e3a4c7dd3",
      "reference": "659ba3523e005be6d52faf0515a9c26b0c9a0252",
-     "ref_diff": 3471
+     "ref_diff": 3471,
+     "colours": 9
     },
     {
      "frame": 600,
      "goomba": "6011dd9fd3de627142a49f44cd795cbb884e7c88",
      "reference": "4d4774c97ee8756c7c22881242b00032b8ca9ed3",
-     "ref_diff": 6218
+     "ref_diff": 6218,
+     "colours": 14
     },
     {
      "frame": 900,
      "goomba": "c572a01fa3420c3fb0e39aa9565162d642bed5f9",
      "reference": "9fd663bdba5641b72bf0a8301830d77a9d2a3d92",
-     "ref_diff": 3658
+     "ref_diff": 3658,
+     "colours": 10
     },
     {
      "frame": 1200,
      "goomba": "f6fa406f72604c1c74d49b1bf83cd74184202594",
      "reference": "570059bdc435c0b1da6a84115ddbe9fa180c6e46",
-     "ref_diff": 3553
+     "ref_diff": 3553,
+     "colours": 13
     },
     {
      "frame": 1500,
      "goomba": "2ceaf3f9c4c816f9fc0bbd65a2fd46048500e148",
      "reference": "d13b5cc0ec3a1d87e2dd0d2f34dfbc24198ec938",
-     "ref_diff": 3403
+     "ref_diff": 3403,
+     "colours": 10
     },
     {
      "frame": 1800,
      "goomba": "b4fdf0d1fe422ad6ecd662ab224aca6071763ee1",
      "reference": "b4fdf0d1fe422ad6ecd662ab224aca6071763ee1",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 2400,
      "goomba": "d115cfcc580fb3ec05347973a56ef5200608f161",
      "reference": "d115cfcc580fb3ec05347973a56ef5200608f161",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 17
     }
    ]
   },
@@ -4850,49 +5522,56 @@
    "file": "Wario Land II (USA) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 81532,
+   "busy_per_frame": 81862,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "4b4bf7885779b99917437c4669cb2b8b41ea04da",
      "reference": "97dd3ad3604071dc8ac9b04999adf7e2a55ae6e2",
-     "ref_diff": 17228
+     "ref_diff": 17228,
+     "colours": 3
     },
     {
      "frame": 600,
      "goomba": "09ad7a82dc389c5ab71e8a4c537da52eda73bd19",
      "reference": "597b2c7a41b2e596e6565caab2c51b203ebde56b",
-     "ref_diff": 146
+     "ref_diff": 146,
+     "colours": 2
     },
     {
      "frame": 900,
      "goomba": "63f6bc9f75a50f24371b512f8d4a889246b4dabd",
      "reference": "b276c4c1c34f70e6c49b8d0d8d521e1762995c10",
-     "ref_diff": 890
+     "ref_diff": 890,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "bbe3302cfcf053d0aecff45b8ed3ffb3ab00023c",
      "reference": "d2958151561d7061487950ba1ffab69adcedae63",
-     "ref_diff": 890
+     "ref_diff": 890,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "c18516ad83fd3e6e268598d9c372c16611e8845f",
      "reference": "8469b143d8808ca4e9ce8c6895210670120d343a",
-     "ref_diff": 890
+     "ref_diff": 890,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "ea253f0e466d9bf75730c18d4910f6c850596ee3",
      "reference": "33da4360245698f887496c6c7e3838e73d1e7604",
-     "ref_diff": 890
+     "ref_diff": 890,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "c5bf1eabfa830353c958f5cb9244e5e7d858670c",
      "reference": "dd03c6066a933c32eed931d63923f882379792b8",
-     "ref_diff": 890
+     "ref_diff": 890,
+     "colours": 4
     }
    ]
   },
@@ -4901,49 +5580,56 @@
    "file": "Wendy - Der Traum von Arizona (Germany).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 237050,
+   "busy_per_frame": 237117,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "cc9ab0a53ca2f8ac8dbfd435df1b4180fed5bd07",
      "reference": "cc9ab0a53ca2f8ac8dbfd435df1b4180fed5bd07",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 600,
      "goomba": "773862ab6b1cca1fc3d999226fb6e2b8d32768a2",
      "reference": "a48b6fae97ab4cc31e5c1f7d58ebcba0ad72bfc0",
-     "ref_diff": 1762
+     "ref_diff": 1762,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "c625e9f3b9a3738a66beace8a515b7b5fa53f1b1",
      "reference": "b760096ed5c4a0966c05a2befc26f2ea418ac0f6",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "fcb3b60c803d364bd0e3bdc023af309aa282ca60",
      "reference": "fcb3b60c803d364bd0e3bdc023af309aa282ca60",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 10
     },
     {
      "frame": 1500,
      "goomba": "f633b93fc64b795cb268304f5e8702d9784df7af",
      "reference": "f633b93fc64b795cb268304f5e8702d9784df7af",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 8
     },
     {
      "frame": 1800,
      "goomba": "2e068bdf18a4f856e4d1ff3ab5f6632693b34413",
      "reference": "2e068bdf18a4f856e4d1ff3ab5f6632693b34413",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     },
     {
      "frame": 2400,
      "goomba": "2e068bdf18a4f856e4d1ff3ab5f6632693b34413",
      "reference": "2e068bdf18a4f856e4d1ff3ab5f6632693b34413",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 7
     }
    ]
   },
@@ -4952,49 +5638,56 @@
    "file": "Worms (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 86897,
+   "busy_per_frame": 87311,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "dcee0840fb2303f032834c9004fc2c4b3e4d7a87",
      "reference": "dcee0840fb2303f032834c9004fc2c4b3e4d7a87",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 2
     },
     {
      "frame": 600,
      "goomba": "19ac936d3b63c2b69ec1b1f4b1752f8cc27f0a0b",
      "reference": "19ac936d3b63c2b69ec1b1f4b1752f8cc27f0a0b",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 900,
      "goomba": "cbef8489b050370d1ff9abf6ccfae4965d020462",
      "reference": "cbef8489b050370d1ff9abf6ccfae4965d020462",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1200,
      "goomba": "8a680873f0b7b1b29a2ca9b807ac39a50fd27c03",
      "reference": "8a680873f0b7b1b29a2ca9b807ac39a50fd27c03",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1500,
      "goomba": "8a680873f0b7b1b29a2ca9b807ac39a50fd27c03",
      "reference": "8a680873f0b7b1b29a2ca9b807ac39a50fd27c03",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 1800,
      "goomba": "a30da076143c1938059e319a2a817d4041749775",
      "reference": "a30da076143c1938059e319a2a817d4041749775",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     },
     {
      "frame": 2400,
      "goomba": "a30da076143c1938059e319a2a817d4041749775",
      "reference": "a30da076143c1938059e319a2a817d4041749775",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 4
     }
    ]
   },
@@ -5003,49 +5696,56 @@
    "file": "Worms Armageddon (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 119574,
+   "busy_per_frame": 119603,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 1
     },
     {
      "frame": 600,
      "goomba": "cf66a158807cf6502537d8b914e99f4da6be2109",
      "reference": "cf66a158807cf6502537d8b914e99f4da6be2109",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 14
     },
     {
      "frame": 900,
      "goomba": "943cff8a26a7d8e2137b7a41c498daeb952eee86",
      "reference": "aa4d1c605bf49154ad51737275f473c6719a7edd",
-     "ref_diff": 478
+     "ref_diff": 478,
+     "colours": 30
     },
     {
      "frame": 1200,
      "goomba": "46adb588014f009415ca10b6528a75dd5cdd047a",
      "reference": "e97e1de3e88bd2bb1e9cf72701bdf8d7a623199c",
-     "ref_diff": 564
+     "ref_diff": 564,
+     "colours": 69
     },
     {
      "frame": 1500,
      "goomba": "73abfded85618fafb452bd75f811bd44e8c9bba2",
      "reference": "73abfded85618fafb452bd75f811bd44e8c9bba2",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 9
     },
     {
      "frame": 1800,
      "goomba": "b78c093021a3946e955ab88ec9a673f6ec50f272",
      "reference": "b78c093021a3946e955ab88ec9a673f6ec50f272",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     },
     {
      "frame": 2400,
      "goomba": "b78c093021a3946e955ab88ec9a673f6ec50f272",
      "reference": "b78c093021a3946e955ab88ec9a673f6ec50f272",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 11
     }
    ]
   },
@@ -5054,49 +5754,56 @@
    "file": "Xtreme Sports (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 117375,
+   "busy_per_frame": 117775,
    "checkpoints": [
     {
      "frame": 300,
      "goomba": "8a8232d87651b08250e85b042a1ec7e8c870699d",
      "reference": "8a8232d87651b08250e85b042a1ec7e8c870699d",
-     "ref_diff": 0
+     "ref_diff": 0,
+     "colours": 5
     },
     {
      "frame": 600,
      "goomba": "4c5a70cf110b2eff5a567a1fb859b01d6adb3987",
      "reference": "14fe3b54d34247d0978bb0fce462e6f01a40cb4b",
-     "ref_diff": 266
+     "ref_diff": 266,
+     "colours": 27
     },
     {
      "frame": 900,
      "goomba": "b20171cc191d0435bb2bc4c63c8564b7dd93d4f7",
      "reference": "1de7c570aeb3113bac58d3d6d14a6cdb4f73ef4e",
-     "ref_diff": 13
+     "ref_diff": 13,
+     "colours": 15
     },
     {
      "frame": 1200,
      "goomba": "1653008d26c9aa59cc4c1bf53629caf6714f7a1f",
      "reference": "13b857c1e593a950a9cf227fe92c4b69ba9ecac6",
-     "ref_diff": 7
+     "ref_diff": 7,
+     "colours": 20
     },
     {
      "frame": 1500,
      "goomba": "f0610d5e0c179af13179d1b6c7ced8fd206fc802",
      "reference": "ccc3e1dcd14db50e75caa682e4a17990683e9935",
-     "ref_diff": 10
+     "ref_diff": 10,
+     "colours": 26
     },
     {
      "frame": 1800,
      "goomba": "a43f9479da527731f48dde0bfcad1bf25339aa8f",
      "reference": "7ed9b3d6341fae41d1300e3f90cb22ae4b07db00",
-     "ref_diff": 10
+     "ref_diff": 10,
+     "colours": 26
     },
     {
      "frame": 2400,
      "goomba": "8d18a6e5f69d9b289c4bdd558d41c3f852537c86",
      "reference": "13f8f2a17ff9070546fe7492bd26057c6035e0c6",
-     "ref_diff": 10
+     "ref_diff": 10,
+     "colours": 26
     }
    ]
   }

@@ -28,6 +28,9 @@ real hardware (EZ-Flash Omega Definitive Edition) are still to come.
 - Reads with cart RAM disabled return $FF; unused I/O bits read as 1; CGB-only registers read $FF in
   DMG mode; $FF46 returns the last value written.
 - **OAM DMA** from echo RAM; OAM reads after a frame no longer return stale data.
+- **STAT writes on DMG**: as on the original Game Boy, a write to STAT briefly enables every STAT
+  interrupt source, so it raises the interrupt in HBlank, VBlank or on LY=LYC. Road Rash starts its
+  road effect with it and used to hang when a race began.
 - **HuC-3** (Robot Poncots, Pocket Family GB 2): the clock controller behind $A000 is emulated, and
   the cart's RAM is battery-backed RAM again (cart types $FC-$FF read their flags from past the end
   of a table): Robot Poncots no longer stops after the Hudson logo.
@@ -69,8 +72,8 @@ fixes applied.
 |---|---|---|
 | Blargg | 1/9 | 1/9 |
 | Mooneye Test Suite | 29/112 | 43/112 |
-| Mooneye (wilbertpol) | 8/116 | 11/116 |
-| GBMicrotest | 75/513 | 137/513 |
+| Mooneye (wilbertpol) | 8/116 | 12/116 |
+| GBMicrotest | 75/513 | 136/513 |
 | SameSuite | 1/78 | 1/78 |
 | AGE | 0/47 | 0/47 |
 | Mealybug Tearoom | 0/35 | 0/35 |
@@ -86,25 +89,32 @@ and single-country releases), all run through the same input script (wait for th
 Start and A for 20 seconds, screenshots at 7 moments up to Game Boy frame 2400) by
 `tools/gbtest/gametests.py`. ROMs are not part of the repository; they are identified by hash.
 
-- All 100 boot and run without hangs, on both builds.
+- **Stuck games**: the screen stops changing over the last checkpoints while the reference's goes
+  on (`STUCK`), or the cart RAM is set up differently from what the ROM header says (`CART`).
+  Jagoomba Color: Robot Poncots and Pocket Family GB 2 (CART), Rayman 2, Bomberman Selection, Road
+  Rash, Kirby's Dream Land 2 and Net de Get. MiGoomba: Kirby's Dream Land 2 (a false
+  alarm: the start-up runs ahead of the reference, so the scripted presses leave Kirby waiting at the
+  hub) and Net de Get (MBC6, not supported).
 - **Reference**: screenshots that match mGBA's own Game Boy core (on the CGB, SGB or DMG model
-  MiGoomba picks), allowing for different colours: **365/700 for Jagoomba Color, 413/700 for
-  MiGoomba**. 16 games improve, none get worse, 19 match at every checkpoint. Input timing differs by
-  a frame or so between the two emulators, and SGB games differ wherever borders and palettes do, so a
-  low number is a lead to look at rather than a failure (Adventures of Lolo plays fine but differs in
-  its SGB colours).
+  MiGoomba picks), allowing for different colours and not counting blank screens: **302/700 for
+  Jagoomba Color, 348/700 for MiGoomba**. 16 games improve and none get worse. Input timing differs
+  by a frame or so between the two emulators, and SGB games differ wherever borders and palettes do, so
+  a low number is a lead to look at rather than a failure (Adventures of Lolo plays fine but differs
+  in its SGB colours).
 - **GBA load**: emulation time per Game Boy frame as a share of a real GBA's frame time. Above 100%
   the game runs slower than full speed: Alfred's Adventure, Alone in the Dark (just), Harry Potter,
   Perfect Dark, SWIV and Tomb Raider.
 
-Games that improved: Turok 3 (1 -> 7 of 7 checkpoints), Pocket Family GB 2 (0 -> 7), Robot Poncots
-(3 -> 7, it stopped after the Hudson logo), Alone in the Dark (5 -> 7), Tomb Raider (2 -> 7), Suzuki Alstare Extreme Racing (1 -> 5), Inspector Gadget (2 -> 5), Medarot 5 (3 -> 6),
-Bomberman Selection (0 -> 3), Rayman 2 (0 -> 3), Carmageddon (2 -> 4), Driver (4 -> 6), and one more
-checkpoint each for Cannon Fodder, Donkey Kong Country, Gradius: The Interstellar Assault and Robin
-Hood.
+Games that improved (reference checkpoints): Pocket Family GB 2 (0 -> 7) and Robot Poncots (0 -> 4),
+which stopped after their first screens; Road Rash, which hung when a race started (its screens match
+the reference apart from the bottom row); Turok 3 (0 -> 5), Tomb Raider (0 -> 4), Suzuki Alstare
+Extreme Racing (1 -> 5), Inspector Gadget (2 -> 5), Medarot 5 (2 -> 5), Bomberman Selection (0 -> 3),
+Rayman 2 (0 -> 3), Alone in the Dark (5 -> 7), Carmageddon (2 -> 4), Driver (4 -> 6), and one more
+each for Cannon Fodder, Donkey Kong Country, Gradius: The Interstellar Assault and Robin Hood.
 
-Known issues: no tilt input for Korokoro Kirby (MBC7) and no infrared (Robot Poncots' GB KISS,
-Pocket Family GB 2, Chee-Chai Alien); the HuC-3 clock is not kept across power-offs; 3-D Ultra Pinball and The Smurfs' Nightmare differ from the reference at every
+Known issues: Net de Get needs the MBC6 mapper; no tilt input for Korokoro Kirby (MBC7) and no
+infrared (Robot Poncots' GB KISS, Pocket Family GB 2, Chee-Chai Alien); the HuC-3 clock is not kept
+across power-offs; 3-D Ultra Pinball and The Smurfs' Nightmare differ from the reference at every
 checkpoint and have not been looked into yet.
 
 <details>
@@ -115,8 +125,8 @@ checkpoint and have not been looked into yet.
 | 3-D Ultra Pinball - Thrillride (USA) (Rumble Version) | CGB | 0/7 | 0/7 | 49% |
 | Adventures of Lolo (Europe) (SGB Enhanced) | SGB | 0/7 | 0/7 | 41% |
 | Alfred's Adventure (Europe) (En,Fr,De,Es,It) | CGB | 1/7 | 1/7 | 140% |
-| Alone in the Dark - The New Nightmare (USA) | CGB | 5/7 | 7/7 | 100% |
-| Asterix - Search for Dogmatix (Europe) | CGB | 7/7 | 7/7 | 39% |
+| Alone in the Dark - The New Nightmare (USA) | CGB | 5/7 | 7/7 | 101% |
+| Asterix - Search for Dogmatix (Europe) | CGB | 6/7 | 6/7 | 39% |
 | Baby Felix - Halloween (Europe) (En,Fr,De,Es,It,Nl) | CGB | 5/7 | 5/7 | 41% |
 | Beatmania GB - Gotcha Mix 2 (Japan) | CGB | 7/7 | 7/7 | 34% |
 | Beavis and Butt-Head (USA) | DMG | 7/7 | 7/7 | 28% |
@@ -125,92 +135,92 @@ checkpoint and have not been looked into yet.
 | Cannon Fodder (Europe) (En,Fr,De,Es,It) | CGB | 4/7 | 5/7 | 70% |
 | Carmageddon - Carpocalypse Now (USA, Europe) (En,Fr,Es,It) | CGB | 2/7 | 4/7 | 70% |
 | Chee-Chai Alien (Japan) (Rumble Version) | CGB | 0/7 | 0/7 | 33% |
-| Choplifter III (Europe) | DMG | 7/7 | 7/7 | 26% |
+| Choplifter III (Europe) | DMG | 6/7 | 6/7 | 26% |
 | Croc 2 (USA, Europe) | CGB | 5/7 | 5/7 | 32% |
 | Dance Dance Revolution GB (Japan) | CGB | 6/7 | 6/7 | 45% |
 | Densha de Go! 2 (Japan) | CGB | 2/7 | 2/7 | 35% |
-| Donkey Kong Country (USA) | CGB | 2/7 | 3/7 | 58% |
+| Donkey Kong Country (USA) | CGB | 1/7 | 2/7 | 58% |
 | Donkey Kong Land (USA) (SGB Enhanced) | SGB | 0/7 | 0/7 | 40% |
 | Dragon Ball Z - Guerreros de Leyenda (Spain) | CGB | 6/7 | 6/7 | 31% |
 | Dragon Ball Z - I Leggendari Super Guerrieri (Italy) | CGB | 5/7 | 5/7 | 31% |
-| Dragon Warrior III (USA) | CGB | 6/7 | 6/7 | 52% |
+| Dragon Warrior III (USA) | CGB | 5/7 | 5/7 | 52% |
 | Driver (Europe) (En,Fr,De,Es,It) | CGB | 4/7 | 6/7 | 55% |
-| F1 Championship Season 2000 (Brazil) (En,Fr,De,Es,It) | CGB | 7/7 | 7/7 | 97% |
-| Faceball 2000 (USA) | DMG | 7/7 | 7/7 | 54% |
+| F1 Championship Season 2000 (Brazil) (En,Fr,De,Es,It) | CGB | 6/7 | 6/7 | 97% |
+| Faceball 2000 (USA) | DMG | 6/7 | 6/7 | 54% |
 | FIFA 98 - Road to World Cup (Europe) (Rev-A) (SGB Enhanced) | SGB | 0/7 | 0/7 | 25% |
-| Gradius - The Interstellar Assault (USA) | DMG | 5/7 | 6/7 | 40% |
+| Gradius - The Interstellar Assault (USA) | DMG | 2/7 | 3/7 | 40% |
 | Halloween Racer (Europe) | CGB | 2/7 | 2/7 | 69% |
 | Harry Potter and the Sorcerer's Stone (USA) | CGB | 4/7 | 4/7 | 134% |
 | Harvest Moon 3 GBC (USA) | CGB | 6/7 | 6/7 | 39% |
 | Inspector Gadget - Operation Madkactus (Europe) (En,Fr,De,Es,It,Nl) | CGB | 2/7 | 5/7 | 60% |
-| John Romero's Daikatana (Europe) | CGB | 5/7 | 5/7 | 48% |
-| Keitai Denjuu Telefang - Power Version (Japan) (GB Compatible) | CGB | 7/7 | 7/7 | 31% |
+| John Romero's Daikatana (Europe) | CGB | 4/7 | 4/7 | 48% |
+| Keitai Denjuu Telefang - Power Version (Japan) (GB Compatible) | CGB | 6/7 | 6/7 | 31% |
 | King of Fighters, The - Heat of Battle (Europe) (SGB Enhanced) | SGB | 1/7 | 1/7 | 65% |
 | Kirby's Dream Land 2 (USA) (SGB Enhanced) | SGB | 0/7 | 0/7 | 37% |
-| Konami GB Collection Vol.4 (Europe) (GB Compatible) | CGB | 3/7 | 3/7 | 49% |
-| Korokoro Kirby (Japan) | CGB | 2/7 | 2/7 | 76% |
+| Konami GB Collection Vol.4 (Europe) (GB Compatible) | CGB | 2/7 | 2/7 | 49% |
+| Korokoro Kirby (Japan) | CGB | 1/7 | 1/7 | 76% |
 | Legend of Zelda, The - Link's Awakening DX (USA, Europe) (Rev 2) (SGB Enhanced) (GB Compatible) | CGB | 2/7 | 2/7 | 40% |
-| Legend of Zelda, The - Oracle of Ages (USA) | CGB | 7/7 | 7/7 | 34% |
-| Lemmings 2 - The Tribes (Europe) | DMG | 5/7 | 5/7 | 41% |
-| Lucky Luke - Desperado Train (Europe) | CGB | 5/7 | 5/7 | 96% |
-| Lufia - The Legend Returns (USA) | CGB | 4/7 | 4/7 | 66% |
-| Magi Nation (USA) | CGB | 5/7 | 5/7 | 34% |
-| Medarot 5 - Susutake Mura no Tenkousei - Kabuto (Japan) | CGB | 3/7 | 6/7 | 64% |
-| Mega Man Xtreme (USA) | CGB | 7/7 | 7/7 | 51% |
-| Metal Gear - Ghost Babel (Japan) | CGB | 4/7 | 4/7 | 51% |
+| Legend of Zelda, The - Oracle of Ages (USA) | CGB | 6/7 | 6/7 | 34% |
+| Lemmings 2 - The Tribes (Europe) | DMG | 2/7 | 2/7 | 41% |
+| Lucky Luke - Desperado Train (Europe) | CGB | 4/7 | 4/7 | 96% |
+| Lufia - The Legend Returns (USA) | CGB | 3/7 | 3/7 | 66% |
+| Magi Nation (USA) | CGB | 4/7 | 4/7 | 34% |
+| Medarot 5 - Susutake Mura no Tenkousei - Kabuto (Japan) | CGB | 2/7 | 5/7 | 64% |
+| Mega Man Xtreme (USA) | CGB | 6/7 | 6/7 | 51% |
+| Metal Gear - Ghost Babel (Japan) | CGB | 3/7 | 3/7 | 51% |
 | Metal Gear Solid (USA) | CGB | 6/7 | 6/7 | 46% |
-| Micro Machines 2 - Turbo Tournament (Europe) | DMG | 3/7 | 3/7 | 36% |
-| Monster Max (Europe) | DMG | 6/7 | 6/7 | 39% |
-| Mr. Driller (USA) | CGB | 2/7 | 2/7 | 92% |
+| Micro Machines 2 - Turbo Tournament (Europe) | DMG | 2/7 | 2/7 | 36% |
+| Monster Max (Europe) | DMG | 5/7 | 5/7 | 39% |
+| Mr. Driller (USA) | CGB | 1/7 | 1/7 | 92% |
 | Mr. Nutz (Europe) | DMG | 1/7 | 1/7 | 31% |
-| Net de Get - Minigame @ 100 (Japan) | CGB | 1/7 | 1/7 | 69% |
-| Oddworld Adventures II (USA, Europe) (En,Fr,De,Es,It) | CGB | 5/7 | 5/7 | 53% |
+| Net de Get - Minigame @ 100 (Japan) | CGB | 0/7 | 0/7 | 69% |
+| Oddworld Adventures II (USA, Europe) (En,Fr,De,Es,It) | CGB | 4/7 | 4/7 | 53% |
 | Parodius (Europe) | DMG | 2/7 | 2/7 | 43% |
 | Perfect Dark (USA) | CGB | 3/7 | 3/7 | 165% |
 | Pinball Fantasies (USA) | DMG | 6/7 | 6/7 | 26% |
 | Pocket Family GB 2 (Japan) | CGB | 0/7 | 7/7 | 28% |
 | Pocket Music (Europe) (En,Fr,De,Es,It) | CGB | 5/7 | 5/7 | 61% |
-| Pokemon - Gold Version (USA, Europe) (SGB Enhanced) (GB Compatible) | CGB | 6/7 | 6/7 | 48% |
+| Pokemon - Gold Version (USA, Europe) (SGB Enhanced) (GB Compatible) | CGB | 0/7 | 0/7 | 48% |
 | Pokemon Card GB 2 - GR Dan Sanjou! (Japan) | CGB | 6/7 | 6/7 | 46% |
-| Pokemon Crystal Version (USA) (Rev-A) | CGB | 7/7 | 7/7 | 43% |
-| Pokemon Pinball (USA) | CGB | 1/7 | 1/7 | 48% |
-| Pokemon Yellow Version - Special Pikachu Edition (USA) (SGB Enhanced) | CGB | 6/7 | 6/7 | 57% |
-| Pop'n TwinBee (Europe) | DMG | 6/7 | 6/7 | 62% |
+| Pokemon Crystal Version (USA) (Rev-A) | CGB | 1/7 | 1/7 | 43% |
+| Pokemon Pinball (USA) | CGB | 1/7 | 1/7 | 49% |
+| Pokemon Yellow Version - Special Pikachu Edition (USA) (SGB Enhanced) | CGB | 4/7 | 4/7 | 57% |
+| Pop'n TwinBee (Europe) | DMG | 5/7 | 5/7 | 62% |
 | Prince of Persia (USA, Europe) (En,Fr,De,Es,It) (GB Compatible) | CGB | 1/7 | 1/7 | 53% |
 | R-Type II (Europe) | DMG | 4/7 | 4/7 | 46% |
 | Rainbow Islands (Europe) (En,Fr,De,Es,It) | CGB | 4/7 | 4/7 | 38% |
 | Rayman 2 (USA) (En,Fr,De,Es,It) | CGB | 0/7 | 3/7 | 52% |
-| Resident Evil Gaiden (Europe) (En,Fr,De,Es,It) | CGB | 7/7 | 7/7 | 48% |
-| Road Rash (USA) | DMG | 2/7 | 2/7 | 23% |
+| Resident Evil Gaiden (Europe) (En,Fr,De,Es,It) | CGB | 5/7 | 5/7 | 48% |
+| Road Rash (USA) | DMG | 1/7 | 1/7 | 55% |
 | Robin Hood (Europe) (En,Fr,De,Es,It,Nl) | CGB | 6/7 | 7/7 | 33% |
-| Robot Poncots - Sun Version (Japan) (SGB Enhanced) (GB Compatible) | CGB | 3/7 | 7/7 | 49% |
-| Sakura Taisen GB 2 - Thunderbolt Sakusen (Japan) | CGB | 3/7 | 3/7 | 36% |
+| Robot Poncots - Sun Version (Japan) (SGB Enhanced) (GB Compatible) | CGB | 0/7 | 4/7 | 49% |
+| Sakura Taisen GB 2 - Thunderbolt Sakusen (Japan) | CGB | 2/7 | 2/7 | 36% |
 | Sensible Soccer - European Champions (Europe) | DMG | 3/7 | 3/7 | 22% |
 | Shantae (USA) | CGB | 3/7 | 3/7 | 79% |
-| Shin Megami Tensei Devil Children - Shiro no Sho (Japan) | CGB | 5/7 | 5/7 | 62% |
+| Shin Megami Tensei Devil Children - Shiro no Sho (Japan) | CGB | 4/7 | 4/7 | 62% |
 | Smurfs Nightmare, The (Europe) (En,Fr,De,Es) | CGB | 0/7 | 0/7 | 29% |
 | Space Station Silicon Valley (Europe) | CGB | 2/7 | 2/7 | 33% |
-| Star Hawk (Europe) | DMG | 3/7 | 3/7 | 49% |
+| Star Hawk (Europe) | DMG | 2/7 | 2/7 | 49% |
 | Star Wars Episode I - Racer (USA) | CGB | 5/7 | 5/7 | 36% |
 | Super Mario Bros. Deluxe (USA) (Rev-B) | CGB | 7/7 | 7/7 | 37% |
-| Super Mario Land 2 - 6 Golden Coins (USA) (Rev-B) | DMG | 2/7 | 2/7 | 31% |
+| Super Mario Land 2 - 6 Golden Coins (USA) (Rev-B) | DMG | 1/7 | 1/7 | 31% |
 | Suzuki Alstare Extreme Racing (Europe) (En,Fr,De,Es,It,Nl) | CGB | 1/7 | 5/7 | 71% |
-| SWIV (Europe) (En,Fr,De,Es,It) | CGB | 5/7 | 5/7 | 135% |
+| SWIV (Europe) (En,Fr,De,Es,It) | CGB | 2/7 | 2/7 | 135% |
 | Test Drive 2001 (USA) | CGB | 4/7 | 4/7 | 68% |
 | Tintin in Tibet (Europe) (SGB Enhanced) | SGB | 0/7 | 0/7 | 35% |
 | Toki Tori (USA, Europe) (En,Ja,Fr,De,Es) | CGB | 5/7 | 5/7 | 27% |
-| Tomb Raider (USA) | CGB | 2/7 | 7/7 | 162% |
-| Top Gear Pocket (USA) | CGB | 4/7 | 4/7 | 73% |
+| Tomb Raider (USA) | CGB | 0/7 | 4/7 | 162% |
+| Top Gear Pocket (USA) | CGB | 3/7 | 3/7 | 73% |
 | Trip World (Europe) | DMG | 3/7 | 3/7 | 19% |
-| Turok 3 - Shadow of Oblivion (USA) | CGB | 1/7 | 7/7 | 84% |
+| Turok 3 - Shadow of Oblivion (USA) | CGB | 0/7 | 5/7 | 84% |
 | V-Rally - Championship Edition (Europe) | DMG | 0/7 | 0/7 | 56% |
 | Vigilante 8 (USA) (Rumble Version) | CGB | 5/7 | 5/7 | 51% |
 | Visiteurs, Les (France) (GB Compatible) | CGB | 5/7 | 5/7 | 78% |
 | Wario Land 3 (USA) | CGB | 2/7 | 2/7 | 40% |
 | Wario Land II (USA) (SGB Enhanced) | SGB | 0/7 | 0/7 | 29% |
-| Wendy - Der Traum von Arizona (Germany) | CGB | 6/7 | 6/7 | 84% |
-| Worms (Europe) | DMG | 7/7 | 7/7 | 31% |
-| Worms Armageddon (Europe) (En,Fr,De,Es,It,Nl) | CGB | 5/7 | 5/7 | 43% |
+| Wendy - Der Traum von Arizona (Germany) | CGB | 5/7 | 5/7 | 84% |
+| Worms (Europe) | DMG | 6/7 | 6/7 | 31% |
+| Worms Armageddon (Europe) (En,Fr,De,Es,It,Nl) | CGB | 4/7 | 4/7 | 43% |
 | Xtreme Sports (USA) | CGB | 1/7 | 1/7 | 42% |
 
 </details>
@@ -290,7 +300,9 @@ GBA's clock.
 
 - `runtests.py`: the test ROM suites above; `diffruns.py` compares two runs, emulation cost included.
 - `gametests.py`: the game checks above, against a baseline of screen hashes in `games.json` and
-  against mGBA's Game Boy core (`gbref`).
+  against mGBA's Game Boy core (`gbref`). Besides changes from the baseline and hangs it reports
+  games stuck on one screen while the reference goes on (`STUCK`) and cart RAM or battery set up
+  differently from the ROM header (`CART`); known cases carry their reason in `games.json`.
 - `savetest.py`, `goombasave_test.py`: battery saves across power cycles, quick save/load and the
   menu, on 32KB and 64KB of GBA SRAM, and round trips through `goombasave.py`.
 - `stackcheck.py`: stack headroom in IWRAM. `profile.py`: where the time goes.
