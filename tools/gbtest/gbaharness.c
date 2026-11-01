@@ -20,6 +20,7 @@
  *                       before it (pc, cpsr, r0-r3, r9, sp, lr), then "hit" or "timeout"
  *   watch ADDR LEN MAXFRAMES  step until one of LEN (<=256) bytes at ADDR changes; print the PC that
  *                       changed it and r0-r15 before it ran, then "hit" or "timeout"
+ *   dma                 per DMA channel: control, next source and next destination
  *   regs                r0-r15 and cpsr
  *   quit
  */
@@ -307,6 +308,12 @@ int main(int argc, char** argv) {
 				}
 			}
 			printf(hit ? "hit\n" : "timeout\n");
+		} else if (!strcmp(cmd, "dma")) {
+			/* per channel: control, source and destination of the next transfer */
+			for (int i = 0; i < 4; ++i) {
+				struct GBADMA* d = &gba->memory.dma[i];
+				printf("%04x %08x %08x%c", d->reg, d->nextSource, d->nextDest, i == 3 ? '\n' : ' ');
+			}
 		} else if (!strcmp(cmd, "regs")) {
 			for (int i = 0; i < 16; ++i) {
 				printf("%08x ", gba->cpu->gprs[i]);
