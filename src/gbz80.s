@@ -1703,6 +1703,9 @@ _D9:@	RETI, return and enable interrupt
 	pop16 gb_pc
 	encodePC
 	sub cycles,cycles,#12*CYCLE		@total of 16 cycles
+	orr cycles,cycles,#CYC_IE		@unlike EI, takes effect immediately
+	sub cycles,cycles,#4*CYCLE
+	b checkIRQ
 @----------------------------------------------------------------------------
 _FB:@	EI, enable interrupt
 @----------------------------------------------------------------------------
@@ -1710,7 +1713,16 @@ _FB:@	EI, enable interrupt
 @	mov r0,#1
 @	strb_ r0,gb_ime
 	sub cycles,cycles,#4*CYCLE
-	b checkIRQ
+	@same as checkIRQ, except that EI only takes effect after the next
+	@instruction, so EI;DI never takes an interrupt
+	ldrb_ r0,gb_ie
+	ldrb_ r1,gb_if
+	ands r0,r0,r1
+	beq _GO
+	ldrb r2,[gb_pc]
+	cmp r2,#0xF3
+	bne irqGBZ80
+	b _GO
 @----------------------------------------------------------------------------
 _FE:@	CP #nn
 @----------------------------------------------------------------------------
