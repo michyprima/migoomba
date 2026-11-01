@@ -379,37 +379,7 @@ checkScanlineIRQ:
 default_scanlinehook_nohblank:
     ldrb_ r1,dma_blocks_total
     cmp r1,#0
-    beq _checkScanlineIRQ  @ If not mid-hdma, continue normal execution.
-    @ Else, fall through to tick_hdma
-tick_hdma:
-    @ Decrement _dma_blocks_remaining
-    ldr r1,=_dma_blocks_remaining
-    ldrb r2,[r1]
-    sub r2,r2,#1
-    strb r2,[r1]
-    
-    @ If _dma_blocks_remaining == 0, call DoDma
-    cmp r2,#0
-    bne _checkScanlineIRQ
-    @ Fall through to call_dodma
-call_dodma:
-    @ Call DoDma
-    
-    stmfd sp!,{r0-r12,lr}
-    ldrb_ r0,dma_blocks_total
-    lsl r0,r0,#4
-    blx_long DoDma  @ Call DoDma if we're doing HDMA
-    ldmfd sp!,{r0-r12,lr}
-    
-    @ Set _dma_blocks_remaining and _dma_blocks_total to 0
-    mov r2,#0
-    ldr r1,=_dma_blocks_remaining
-    strb r2,[r1]
-    ldr r1,=_dma_blocks_total
-    strb r2,[r1]
-    
-
-    @ Finally, fall through and continue execution
+    bne tick_hdma  @ Mid-hdma (rare): handled out of line, returns to _checkScanlineIRQ.
 _checkScanlineIRQ:
 	tst cycles,#CYC_LCD_ENABLED
 	beq noScanlineIRQ
@@ -424,16 +394,9 @@ _checkScanlineIRQ:
 	orreq r2,r0,#4
 	bicne r2,r0,#4
 	cmp r2,r0
-	@ne if LYC bit has changed
-	strneb r2,[r1]
-	strneb r2,[r1,#-12] @FIXME
-@	beq 0f
-	@has it turned on, and interrupts are enabled?
-	tstne r2,#4
-	tstne r2,#0x40
-	bne ScanlineIRQ
-@	ldrb r2,lcdstat
-@0:
+	@ne if LYC bit has changed (rare: handled out of line)
+	bne lyc_changed
+lyc_checked:
 	@in vblank?  no Hblank or Mode 2 IRQ
 	tst r2,#0x01
 	bne noScanlineIRQ
@@ -477,14 +440,7 @@ noTimer:
 	ldrb_ r1,stctrl
 	and r1,r1,#0x81
 	cmp r1,#0x81		@Are going to transfer on internal clock?
-
-	ldreqb_ r1,gb_if		@IRQ flags
-	orreq r1,r1,#8		@8=Serial
-	streqb_ r1,gb_if
-
-	ldreqb_ r0,stctrl
-	andeq r0,r0,#0x7F		@Clear Serial Transfer flag.
-	streqb_ r0,stctrl
+	beq serial_internal
 checkMasterIRQDelayed:
 	tst cycles,#CYC_IE
 	beq _GO
@@ -513,6 +469,55 @@ checkIRQDelayed:
 	adr r0,checkMasterIRQ_minus12
 	str_ r0,nexttimeout
 	b _GO
+
+lyc_changed:
+	strb r2,[r1]
+	strb r2,[r1,#-12] @FIXME
+	@has it turned on, and interrupts are enabled?
+	tst r2,#4
+	tstne r2,#0x40
+	bne ScanlineIRQ
+	b lyc_checked
+
+serial_internal:
+	ldrb_ r1,gb_if		@IRQ flags
+	orr r1,r1,#8		@8=Serial
+	strb_ r1,gb_if
+
+	ldrb_ r0,stctrl
+	and r0,r0,#0x7F		@Clear Serial Transfer flag.
+	strb_ r0,stctrl
+	b checkMasterIRQDelayed
+
+tick_hdma:
+    @ Decrement _dma_blocks_remaining
+    ldr r1,=_dma_blocks_remaining
+    ldrb r2,[r1]
+    sub r2,r2,#1
+    strb r2,[r1]
+    
+    @ If _dma_blocks_remaining == 0, call DoDma
+    cmp r2,#0
+    bne _checkScanlineIRQ
+    @ Fall through to call_dodma
+call_dodma:
+    @ Call DoDma
+    
+    stmfd sp!,{r0-r12,lr}
+    ldrb_ r0,dma_blocks_total
+    lsl r0,r0,#4
+    blx_long DoDma  @ Call DoDma if we're doing HDMA
+    ldmfd sp!,{r0-r12,lr}
+    
+    @ Set _dma_blocks_remaining and _dma_blocks_total to 0
+    mov r2,#0
+    ldr r1,=_dma_blocks_remaining
+    strb r2,[r1]
+    ldr r1,=_dma_blocks_total
+    strb r2,[r1]
+    
+
+    b _checkScanlineIRQ
 
 checkMasterIRQ_minus12:
 	ldrb r0,lcdstat
