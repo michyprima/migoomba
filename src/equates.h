@@ -334,7 +334,7 @@ RECENT_TILENUM_SIZE = 128
  _m_ ,1 @gb_ime,1  @not used
  _m_ gb_ie,1
  _m_ gb_if,1
- _m_ ,1   @gb_interrupt_lines, not used
+ _m_ oamdma_reg,1   @last value written to $FF46 (slot was gb_interrupt_lines, unused)
  _m_ rambank,1
  _m_ gbcmode,1
  _m_ sgbmode,1

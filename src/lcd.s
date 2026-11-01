@@ -2712,6 +2712,7 @@ gammaconvert:@	takes value in r0(0-0xFF), gamma in r1(0-4),returns new value in 
 @----------------------------------------------------------------------------
 FF46_W:@		sprite DMA transfer
 @----------------------------------------------------------------------------
+	strb_ r0,oamdma_reg		@reads of $FF46 return the last value written
 @	and r0,r0,#0xff		;not needed?
 	and r1,r0,#0xF0
 	adr_ r2,memmap_tbl

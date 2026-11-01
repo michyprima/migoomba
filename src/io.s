@@ -379,7 +379,7 @@ FF41_R_ptr:
 FF44_R_ptr:
 	.word FF44_R	@LY - LCD Y-Coordinate
 	.word FF45_R	@LYC - LCD Y Compare
-	.word void	@DMA - DMA Transfer and Start Address (W?)
+	.word FF46_R	@DMA - DMA Transfer and Start Address
 	.word FF47_R	@BGP - BG Palette Data - Non CGB Mode Only
 	.word FF48_R	@OBP0 - Object Palette 0 Data - Non CGB Mode Only
 	.word FF49_R	@OBP1 - Object Palette 1 Data - Non CGB Mode Only
@@ -1288,6 +1288,10 @@ _FF07R:@		TAC - Timer Control
 _FF0FR:
 @----------------------------------------------------------------------------
 	ldrb_ r0,gb_if
+	orr r0,r0,#0xE0		@unused bits 5-7 read as 1
+	mov pc,lr
+FF46_R:	@DMA
+	ldrb_ r0,oamdma_reg
 	mov pc,lr
 
 FF51_R:	@HDMA1

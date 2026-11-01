@@ -2531,6 +2531,8 @@ cpu_reset:
 @	str_ r1,gb_ime		@disable all IRQ
 	strb_ r1,gb_if
 	strb_ r1,gb_ie
+	mov r0,#0xFF
+	strb_ r0,oamdma_reg		@$FF46 reads $FF at power-on
 	str_ r1,dividereg
 	str_ r1,timercounter	@reset timers
 	str_ r1,timermodulo	@reset timers
@@ -2814,7 +2816,7 @@ _gb_ie:
 	.byte 0 @gb_ie:	(interrupt enable, adr $FFFF)
 _gb_if:
 	.byte 0 @gb_if:	(interrupt flags, adr $FF0F)
-	.byte 0 @_
+	.byte 0 @oamdma_reg: last value written to $FF46
 _rambank:
 	.byte 0 @rambank
 _gbcmode:
