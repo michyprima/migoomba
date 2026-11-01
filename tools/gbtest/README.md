@@ -23,7 +23,7 @@ Suites and pass criteria (from each suite's `game-boy-test-roms-howto.md`):
 | Mooneye, SameSuite, AGE | opcode `LD B,B` | registers B,C,D,E,H,L = 3,5,8,13,21,34 |
 | Mooneye (wilbertpol) | opcode `0xED` | same registers |
 | dmg-acid2, cgb-acid2, Mealybug | `LD B,B` | screenshot |
-| GBMicrotest | a few frames | `$FF82 == $01` |
+| GBMicrotest | 1 s of emulated time | `$FF82 == $01` |
 | `--game` | fixed GB frames | none: busy cycles and screenshots for review |
 
 Screenshots are compared "up to recolouring": Goomba uses its own palettes, so a test passes when every

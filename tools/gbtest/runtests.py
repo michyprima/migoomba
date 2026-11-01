@@ -48,7 +48,7 @@ def discover(roms, suites, rx, games=(), game_frames=3600, game_shots=6):
             for f in sorted(fs):
                 if f.endswith(".gb"):
                     tests.append(dict(suite="gbmicrotest", rom=os.path.join(dp, f), kind="hram",
-                                      seconds=0.6 if f == "is_if_set_during_ime0.gb" else 0.17))
+                                      seconds=1.0))   # results are read once; a generous window keeps the read point from mattering
     for t in tests:
         t["name"] = os.path.relpath(t["rom"], roms)
     for path in games:
