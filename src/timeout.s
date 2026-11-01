@@ -553,6 +553,7 @@ irqGBZ80:
 irqGBZ80_ifhalt:
 @	cmpne r2,#0x10                  ;or STOP
 	addeq gb_pc,gb_pc,#1	@get out of HALT
+	biceq cycles,cycles,#CYC_HALTED
 irqGBZ80_nothalt:
 	bic cycles,cycles,#CYC_IE
 @	mov r2,#0				@disable IRQ

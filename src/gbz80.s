@@ -1039,12 +1039,13 @@ _76:@	HALT, wait for interrupt.
 	ands r0,r0,r1
 	bne _noHalt
 	sub gb_pc,gb_pc,#1
-	and cycles,cycles,#CYC_MASK
-	@orr cycles,cycles,#CYC_HALT
-	fetch 4
+	@wait for the next timeout: cycles = (flags|CYC_HALTED) - 4 cycles, always negative
+	and cycles,cycles,#CYC_MASK&~CYC_HALTED
+	sub cycles,cycles,#4*CYCLE-CYC_HALTED
+	ldr_ pc,nexttimeout
 _noHalt:
-	sub cycles,cycles,#4*CYCLE
-	b checkMasterIRQ
+	ldr pc,=halt_wake		@in ROM: runs at most a few times per frame
+	.ltorg
 @----------------------------------------------------------------------------
 _77:@	LD (HL),A
 @----------------------------------------------------------------------------
@@ -1852,6 +1853,20 @@ _10:@	STOP	stops the processor until an (joypad) interrupt.
 @_noStop
 	add gb_pc,gb_pc,#1
 	fetch 4
+
+@----------------------------------------------------------------------------
+halt_wake:@	HALT with an interrupt pending
+@----------------------------------------------------------------------------
+	tst cycles,#CYC_HALTED|CYC_IE
+	bic cycles,cycles,#CYC_HALTED
+	subne cycles,cycles,#4*CYCLE
+	bne_long checkMasterIRQ
+	@HALT bug: an interrupt was already pending with IME=0, so HALT ends at once and
+	@the next byte is read twice (its opcode runs without PC moving past it)
+	subs cycles,cycles,#4*CYCLE
+	ldrplb r0,[gb_pc]
+	ldrpl pc,[gb_optbl,r0,lsl#2]
+	ldr_ pc,nexttimeout
 
 	.ltorg
 @----------------------------------------------------------------------------

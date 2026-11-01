@@ -587,7 +587,7 @@ RECENT_TILENUM_SIZE = 128
 @ CYC_LYC 		= 0x04  @LY matches LYC
 @ BRANCH			= 0x02 @branch instruction encountered
 @				EQU 0x04
-@				EQU 0x08
+ CYC_HALTED		= 0x08  @HALT is waiting (set when it starts waiting, so a resumed HALT isn't a new one)
  CYC_MASK		= CYCLE-1	@Mask
 
  SINGLE_SPEED = 456*CYCLE
