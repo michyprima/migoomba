@@ -269,7 +269,7 @@ fetch8:
 	fetch 8
 #endif
 @----------------------------------------------------------------------------
-jr_wrap:	@re-encode gb_pc after a JR wrapped below $0000 (e.g. into HRAM), keeps r0
+jr_wrap:	@re-encode gb_pc after a JR wrapped past $0000 or $FFFF, keeps r0
 @----------------------------------------------------------------------------
 	ldr_ r1,lastbank
 	sub r1,gb_pc,r1
@@ -336,7 +336,7 @@ _20:@	JR NZ,*	jump if not zero
 	ldrsb r0,[gb_pc],#1
 	addeq gb_pc,gb_pc,r0
 	subeq cycles,cycles,#4*CYCLE
-	jr_wrapcheck
+	jr_wrapcheck eq
 nobranch:
 	fetch 8
 #if SPEEDHACKS_NEW
@@ -416,7 +416,7 @@ _28:@	JR Z,*	jump if zero
 @	beq _28_
 	addne gb_pc,gb_pc,r0
 	subne cycles,cycles,#4*CYCLE
-	jr_wrapcheck
+	jr_wrapcheck ne
 @	cmp r0,#-4
 @	andeq cycles,cycles,#CYC_MASK
 _28_:
@@ -587,7 +587,7 @@ _30:@	JR NC,*	jump if no carry
 	ldrsb r0,[gb_pc],#1
 	addeq gb_pc,gb_pc,r0
 	subeq cycles,cycles,#4*CYCLE
-	jr_wrapcheck
+	jr_wrapcheck eq
 	fetch 8
 #if SPEEDHACKS_NEW
 @----------------------------------------------------------------------------
@@ -656,7 +656,7 @@ _38:@	JR C,*	jump if carry
 	ldrsb r0,[gb_pc],#1
 	addne gb_pc,gb_pc,r0
 	subne cycles,cycles,#4*CYCLE
-	jr_wrapcheck
+	jr_wrapcheck ne
 	fetch 8
 #if SPEEDHACKS_NEW
 @----------------------------------------------------------------------------

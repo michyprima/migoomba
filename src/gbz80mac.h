@@ -18,10 +18,11 @@
 	add gb_pc,gb_pc,r0
 	.endm
 
-	.macro jr_wrapcheck		@JR backwards from $00xx wraps to $FFxx, leaving gb_pc just below
-	eor r1,gb_pc,#0x06000000	@the copy of bank 0 at 0x0600FE00 (bank_1 in cache.c)
-	cmp r1,#0xFE00
-	bllo jr_wrap
+	.macro jr_wrapcheck cc		@JR past $0000/$FFFF (e.g. $0048 -> HRAM -> $00xx) leaves gb_pc
+	ldr\cc r1,[globalptr,#lastbank]	@outside the mapped 64K; re-encode it if so
+	sub\cc r1,gb_pc,r1		@cc = the branch-taken condition. When it fails, C is still clear
+	cmp\cc r1,#0x10000		@from tst gb_flg,#PSR_x (bit 31 of the immediate is 0)
+	blhs jr_wrap
 #if PERF_COUNTER
 	bl perf_count_jr
 #endif
