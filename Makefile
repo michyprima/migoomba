@@ -147,49 +147,35 @@ $(BUILD):
 all	: $(BUILD)
 
 #---------------------------------------------------------------------------------
-# a playable ROM is the emulator with a Game Boy ROM appended:
-#   make path/to/game.gbc            -> game.gba (here)
-#   make GAME="path/to/my game.gbc"  -> my game.gba (for names with spaces)
-# (several games: make compilation, below)
+# playable ROMs: the emulator followed by Game Boy ROMs, each padded (or cut) to the size its header
+# declares, as the emulator finds the next game by that size; with several games it shows a menu
+#   make game.gbc [OUT=name.gba]                -> game.gba (here)
+#   make a.gbc b.gb c.gbc [OUT=name.gba]        -> compilation.gba, games in this order
+# (make splits its arguments at spaces: rename such files, or cat migoomba.gba "my game.gbc" > out.gba)
 #---------------------------------------------------------------------------------
-GAMES	:=	$(filter %.gb %.gbc %.GB %.GBC,$(MAKECMDGOALS))
-.PHONY: $(GAMES) game
-
-$(GAMES): $(BUILD)
-	@cat $(TARGET).gba "$@" > "$(basename $(notdir $@)).gba"
-	@echo built $(basename $(notdir $@)).gba
-
-ifdef GAME
-.DEFAULT_GOAL := game
-endif
-game: $(BUILD)
-	@[ -n "$(GAME)" ] || { echo 'usage: make GAME="path/to/game.gbc"'; exit 1; }
-	@out="$$(basename "$(GAME)")"; out="$${out%.*}.gba"; cat $(TARGET).gba "$(GAME)" > "$$out"; echo "built $$out"
-
-#---------------------------------------------------------------------------------
-# a compilation, like Goomba Front's: every Game Boy ROM in a folder, in name order (the menu's), each
-# padded to the size its header declares, as the emulator steps from one ROM to the next by it:
-#   make compilation DIR=path/to/roms [OUT=name.gba]   (default compilation.gba)
-#---------------------------------------------------------------------------------
-.PHONY: compilation
-compilation: $(BUILD)
-	@[ -n "$(DIR)" ] || { echo 'usage: make compilation DIR=path/to/roms [OUT=name.gba]'; exit 1; }
-	@out="$(if $(OUT),$(OUT),compilation.gba)"; cp $(TARGET).gba "$$out.tmp"; n=0; \
-	for f in "$(DIR)"/*; do \
-		case "$$f" in *.gb|*.gbc|*.GB|*.GBC) ;; *) continue ;; esac; \
+ROMS	:=	$(filter %.gb %.gbc %.GB %.GBC,$(MAKECMDGOALS))
+ifneq ($(ROMS),)
+ROMOUT	:=	$(if $(OUT),$(OUT),$(if $(word 2,$(ROMS)),compilation.gba,$(basename $(notdir $(ROMS))).gba))
+.PHONY: $(ROMS) romfile
+$(ROMS): romfile
+	@:
+romfile: $(BUILD)
+	@out="$(ROMOUT)"; cp $(TARGET).gba "$$out.tmp"; n=0; \
+	for f in $(ROMS); do \
+		if [ ! -f "$$f" ]; then rm "$$out.tmp"; echo "$$f: no such file"; exit 1; fi; \
 		if [ "$$(od -An -tx1 -j 260 -N4 "$$f" | tr -d ' \n')" != "ceed6666" ]; then \
-			echo "skipping $$f: no Game Boy header"; continue; fi; \
+			rm "$$out.tmp"; echo "$$f: not a Game Boy ROM (no header)"; exit 1; fi; \
 		code=$$(od -An -tu1 -j 328 -N1 "$$f" | tr -d ' \n'); \
-		if [ "$$code" -gt 8 ]; then echo "skipping $$f: unsupported ROM size code $$code"; continue; fi; \
+		if [ "$$code" -gt 8 ]; then rm "$$out.tmp"; echo "$$f: unsupported ROM size code $$code"; exit 1; fi; \
 		size=$$((32768 << code)); have=$$(wc -c < "$$f" | tr -d ' '); \
 		head -c $$size "$$f" >> "$$out.tmp"; \
 		if [ $$have -lt $$size ]; then head -c $$((size - have)) /dev/zero >> "$$out.tmp"; fi; \
-		n=$$((n + 1)); echo "  $$n: $$(basename "$$f")"; \
+		n=$$((n + 1)); \
 	done; \
 	total=$$(wc -c < "$$out.tmp" | tr -d ' '); \
-	if [ $$n -eq 0 ]; then rm "$$out.tmp"; echo "no Game Boy ROMs in $(DIR)"; exit 1; fi; \
 	if [ $$total -gt 33554432 ]; then rm "$$out.tmp"; echo "too big for a GBA cart: $$total bytes, 32MB at most"; exit 1; fi; \
-	mv "$$out.tmp" "$$out"; echo "built $$out: $$n games, $$total bytes"
+	mv "$$out.tmp" "$$out"; if [ $$n -gt 1 ]; then echo "built $$out: $$n games"; else echo "built $$out"; fi
+endif
 #---------------------------------------------------------------------------------
 semiclean:
 	@echo deleting intermediate files...

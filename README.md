@@ -224,21 +224,17 @@ A playable GBA ROM is just the emulator with the Game Boy ROM appended:
 
     cat migoomba.gba game.gbc > game.gba
 
-`make` does it too, building the emulator first if needed, and writes the result to this directory:
+`make` does it too, building the emulator first if needed and writing to this directory, and it can
+put several games on one cart, with a menu to pick them (what Goomba Front used to build):
 
-    make path/to/game.gbc                  # -> game.gba
-    make GAME="path/to/My Game (USA).gbc"  # -> My Game (USA).gba  (make can't take a path with spaces as a target)
+    make path/to/game.gbc [OUT=name.gba]               # -> game.gba
+    make game1.gbc game2.gb game3.gbc [OUT=name.gba]   # -> compilation.gba, games in this order
 
-For several games on one cart, with a menu to pick them (what Goomba Front used to build), put them
-in a folder:
-
-    make compilation DIR=path/to/roms [OUT=name.gba]   # -> compilation.gba by default
-
-Every `.gb`/`.gbc` file in the folder goes in, in name order (the order of the menu, which shows the
-names from the ROM headers). Each ROM is padded, or cut, to the size its header declares, since the
-emulator finds the next game by that size; files without a Game Boy header are skipped, and the result
-must fit in a GBA cart's 32MB. (Goomba Front's "trimmed" ROMs, which save space by dropping unused
-banks, are not supported.)
+Each ROM is padded, or cut, to the size its header declares, since the emulator finds the next game by
+that size; the menu shows the names from the ROM headers, and the result must fit in a GBA cart's 32MB.
+make splits its arguments at spaces, so rename files with spaces in their names first (or use `cat`
+for a single game). Goomba Front's "trimmed" ROMs, which save space by dropping unused banks, are not
+made.
 
 For debug symbols in mGBA, put `migoomba.elf` next to the built ROM and rename it to
 `(ROM name).elf` (thanks to Endrift for the tip).
