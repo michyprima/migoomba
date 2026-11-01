@@ -65,6 +65,9 @@ mbc1init:
 	ldr r0,=empty_W					@ Disable RAM = $00
 	str_ r0,writemem_tbl+40
 	str_ r0,writemem_tbl+44
+	ldr r0,=empty_R					@ disabled RAM reads as $FF
+	str_ r0,readmem_tbl_-40
+	str_ r0,readmem_tbl_-44
 
 	mov pc,lr
 	
@@ -92,19 +95,19 @@ MBC1map1:
 MBC1mode:
 @----------------------------------------------------------------------------
 	strb_ r0,mapperdata+3
+	ldrb_ r1,mapperdata+5
+	strb_ r1,mapperdata+1		@BANK2 is bits 5-6 of the $4000-$7FFF bank in both modes
 	tst r0,#1
-	ldrb_ r0,mapperdata+5
-	mov r1,#0
-	streqb_ r0,mapperdata+1		@16Mbit Rom
-	strneb_ r1,mapperdata+1		@4Mbit Rom
-	streqb_ r1,mapperdata+4		@8kByte Ram
-	strneb_ r0,mapperdata+4		@32kbyte Ram
+	moveq r1,#0
+	strb_ r1,mapperdata+4		@mode 1: BANK2 also selects the RAM bank...
+	str lr,[sp,#-4]!
+	mov r0,r1,lsl#5
+	bl map0123_			@...and the $0000-$3FFF bank (masked to 0 on carts up to 512kB)
 
 	ldrb_ r0,mapperdata
 	ldrb_ r1,mapperdata+1
 	orr r0,r0,r1,lsl#5
-	str lr,[sp,#-4]!
-    tst r0,#0x1f  @ r0 = rom bank.  If lower 5 bits = 0s
+    tst r0,#0x1f  @ r0 = rom bank.  If lower 5 bits = 0s (BANK1 not written yet)
     addeq r0,r0,#1  @ Add 1
 	bl map4567_
 	ldr lr,[sp],#4
@@ -113,28 +116,26 @@ MBC1mode:
 @----------------------------------------------------------------------------
 mbc2init:
 @----------------------------------------------------------------------------
-	.word MBC2RamEnable,MBC2map,void,void
+	.word MBC2map,MBC2map,void,void
 
 	ldr r0,=empty_W					@ Disable RAM = $00
 	str_ r0,writemem_tbl+40
 	str_ r0,writemem_tbl+44
+	ldr r0,=empty_R					@ disabled RAM reads as $FF
+	str_ r0,readmem_tbl_-40
+	str_ r0,readmem_tbl_-44
 
 	mov pc,lr
 	.popsection
 @----------------------------------------------------------------------------
-MBC2map:
+MBC2map:	@$0000-$3FFF: address bit 8 clear = RAM enable, set = ROM bank
 @----------------------------------------------------------------------------
 	tst addy,#0x0100
-	moveq pc,lr
+	beq_long RamEnable
 	ands r0,r0,#0xf
 	moveq r0,#1
 	b map4567_
 	.pushsection .text
-@----------------------------------------------------------------------------
-MBC2RamEnable:
-	tst addy,#0x0100
-	beq_long RamEnable
-	mov pc,lr
 
 @----------------------------------------------------------------------------
 mbc3init:
@@ -144,6 +145,9 @@ mbc3init:
 	ldr r0,=empty_W					@ Disable RAM = $00
 	str_ r0,writemem_tbl+40
 	str_ r0,writemem_tbl+44
+	ldr r0,=empty_R					@ disabled RAM reads as $FF
+	str_ r0,readmem_tbl_-40
+	str_ r0,readmem_tbl_-44
 
 	mov pc,lr
 @----------------------------------------------------------------------------
@@ -219,6 +223,9 @@ mbc5init:
 	ldr r0,=empty_W					@ Disable RAM = $00
 	str_ r0,writemem_tbl+40
 	str_ r0,writemem_tbl+44
+	ldr r0,=empty_R					@ disabled RAM reads as $FF
+	str_ r0,readmem_tbl_-40
+	str_ r0,readmem_tbl_-44
 
 	mov pc,lr
 	.popsection
@@ -310,6 +317,9 @@ huc1init:
 	ldr r0,=empty_W					@ Disable RAM = $00
 	str_ r0,writemem_tbl+40
 	str_ r0,writemem_tbl+44
+	ldr r0,=empty_R					@ disabled RAM reads as $FF
+	str_ r0,readmem_tbl_-40
+	str_ r0,readmem_tbl_-44
 
 	mov pc,lr
 	.popsection
@@ -332,6 +342,9 @@ huc3init:
 	ldr r0,=empty_W					@ Disable RAM = $00
 	str_ r0,writemem_tbl+40
 	str_ r0,writemem_tbl+44
+	ldr r0,=empty_R					@ disabled RAM reads as $FF
+	str_ r0,readmem_tbl_-40
+	str_ r0,readmem_tbl_-44
 
 	mov pc,lr
 
@@ -345,6 +358,9 @@ mbc6init:
 	ldr r0,=empty_W					@ Disable RAM = $00
 	str_ r0,writemem_tbl+40
 	str_ r0,writemem_tbl+44
+	ldr r0,=empty_R					@ disabled RAM reads as $FF
+	str_ r0,readmem_tbl_-40
+	str_ r0,readmem_tbl_-44
 
 	mov pc,lr
 	.popsection
