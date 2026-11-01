@@ -90,7 +90,10 @@ sgb_reset:
 	strb_ r0,borderpartsadded
 	str_ r0,sgb_hack_frame
 	
-	mvn r0,#0
+	ldrb_ r1,sgbmode
+	cmp r1,#0
+	mvnne r0,#0
+	moveq r0,#0xCF		@P1 after the DMG/CGB boot ROM: both button groups selected
 	strb_ r0,joy0serial
 	
 	mov r1,#0

@@ -484,6 +484,9 @@ serial_internal:
 	orr r1,r1,#8		@8=Serial
 	strb_ r1,gb_if
 
+	mov r0,#0xFF		@no GB attached: 1s were shifted in
+	strb_ r0,serialdata
+
 	ldrb_ r0,stctrl
 	and r0,r0,#0x7F		@Clear Serial Transfer flag.
 	strb_ r0,stctrl

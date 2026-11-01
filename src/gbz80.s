@@ -2556,11 +2556,13 @@ cpu_reset:
 	@mov r1,#0
 	@IRQ gets disabled by setting cycles to 0
 @	str_ r1,gb_ime		@disable all IRQ
-	strb_ r1,gb_if
 	strb_ r1,gb_ie
+	mov r0,#1
+	strb_ r0,gb_if			@IF=$E1 after the boot ROM (VBlank pending)
 	mov r0,#0xFF
 	strb_ r0,oamdma_reg		@$FF46 reads $FF at power-on
-	str_ r1,dividereg
+	mov r0,#0xAA000000
+	str_ r0,dividereg		@DIV reads $AB at the first instruction
 	str_ r1,timercounter	@reset timers
 	str_ r1,timermodulo	@reset timers
 

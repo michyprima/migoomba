@@ -500,7 +500,7 @@ RECENT_TILENUM_SIZE = 128
  _m_ joy2state,1
  _m_ joy3state,1
  _m_ joy0serial,1
-	_m_ ,1
+ _m_ serialdata,1	@SB ($FF01), zeroed with joy0serial by IO_reset
 	_m_ ,2
 
 			@sgb.s (wram_globals4)
