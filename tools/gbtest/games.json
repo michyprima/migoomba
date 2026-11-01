@@ -2861,49 +2861,49 @@
    "file": "Pocket Family GB 2 (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 329027,
+   "busy_per_frame": 78508,
    "checkpoints": [
     {
      "frame": 300,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "c87a797925a58f438770b8fdae916f6d66ebc387",
      "reference": "c87a797925a58f438770b8fdae916f6d66ebc387",
-     "ref_diff": 14654
+     "ref_diff": 0
     },
     {
      "frame": 600,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 14961
+     "ref_diff": 0
     },
     {
      "frame": 900,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 14961
+     "ref_diff": 0
     },
     {
      "frame": 1200,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 14961
+     "ref_diff": 0
     },
     {
      "frame": 1500,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 14961
+     "ref_diff": 0
     },
     {
      "frame": 1800,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 14961
+     "ref_diff": 0
     },
     {
      "frame": 2400,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
      "reference": "946a574fcd488172f35fc61968fa95ec0ae57cc9",
-     "ref_diff": 14961
+     "ref_diff": 0
     }
    ]
   },
@@ -3626,7 +3626,7 @@
    "file": "Robot Poncots - Sun Version (Japan) (SGB Enhanced) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 327275,
+   "busy_per_frame": 137417,
    "checkpoints": [
     {
      "frame": 300,
@@ -3648,27 +3648,27 @@
     },
     {
      "frame": 1200,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "ccde09b4a0b8c2902cb0e9cce69766e297d66afd",
      "reference": "ccde09b4a0b8c2902cb0e9cce69766e297d66afd",
-     "ref_diff": 13010
+     "ref_diff": 0
     },
     {
      "frame": 1500,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "ccde09b4a0b8c2902cb0e9cce69766e297d66afd",
      "reference": "ccde09b4a0b8c2902cb0e9cce69766e297d66afd",
-     "ref_diff": 13010
+     "ref_diff": 0
     },
     {
      "frame": 1800,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "b8fb364fc80f4205b54f05c13783fccb7dbd9fb8",
      "reference": "b8fb364fc80f4205b54f05c13783fccb7dbd9fb8",
-     "ref_diff": 17367
+     "ref_diff": 0
     },
     {
      "frame": 2400,
-     "goomba": "d043ab242b22e1aadfd02998f9e0cd1a984bffd2",
+     "goomba": "b8fb364fc80f4205b54f05c13783fccb7dbd9fb8",
      "reference": "b8fb364fc80f4205b54f05c13783fccb7dbd9fb8",
-     "ref_diff": 17367
+     "ref_diff": 0
     }
    ]
   },
@@ -4442,7 +4442,7 @@
    "file": "Tomb Raider (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 454753,
+   "busy_per_frame": 454816,
    "checkpoints": [
     {
      "frame": 300,
@@ -4458,9 +4458,9 @@
     },
     {
      "frame": 900,
-     "goomba": "1233e4f45a81254d70739cc06edb4794f9b4c26e",
+     "goomba": "4ef72562928d7ece79665d0719912ad0eb374cd3",
      "reference": "4ef72562928d7ece79665d0719912ad0eb374cd3",
-     "ref_diff": 52
+     "ref_diff": 0
     },
     {
      "frame": 1200,

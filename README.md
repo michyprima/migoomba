@@ -28,6 +28,9 @@ real hardware (EZ-Flash Omega Definitive Edition) are still to come.
 - Reads with cart RAM disabled return $FF; unused I/O bits read as 1; CGB-only registers read $FF in
   DMG mode; $FF46 returns the last value written.
 - **OAM DMA** from echo RAM; OAM reads after a frame no longer return stale data.
+- **HuC-3** (Robot Poncots, Pocket Family GB 2): the clock controller behind $A000 is emulated, and
+  the cart's RAM is battery-backed RAM again (cart types $FC-$FF read their flags from past the end
+  of a table): Robot Poncots no longer stops after the Hudson logo.
 
 ### Video
 - **Per-line DMG palettes**: games that rewrite BGP mid-frame (V-Rally's race screen, Lemmings 2) get
@@ -85,23 +88,23 @@ Start and A for 20 seconds, screenshots at 7 moments up to Game Boy frame 2400) 
 
 - All 100 boot and run without hangs, on both builds.
 - **Reference**: screenshots that match mGBA's own Game Boy core (on the CGB, SGB or DMG model
-  MiGoomba picks), allowing for different colours: **365/700 for Jagoomba Color, 401/700 for
-  MiGoomba**. 14 games improve, none get worse, 16 match at every checkpoint. Input timing differs by
+  MiGoomba picks), allowing for different colours: **365/700 for Jagoomba Color, 413/700 for
+  MiGoomba**. 16 games improve, none get worse, 19 match at every checkpoint. Input timing differs by
   a frame or so between the two emulators, and SGB games differ wherever borders and palettes do, so a
   low number is a lead to look at rather than a failure (Adventures of Lolo plays fine but differs in
   its SGB colours).
 - **GBA load**: emulation time per Game Boy frame as a share of a real GBA's frame time. Above 100%
   the game runs slower than full speed: Alfred's Adventure, Alone in the Dark (just), Harry Potter,
-  Perfect Dark, Pocket Family GB 2, Robot Poncots, SWIV and Tomb Raider.
+  Perfect Dark, SWIV and Tomb Raider.
 
-Games that improved: Turok 3 (1 -> 7 of 7 checkpoints), Alone in the Dark (5 -> 7), Tomb Raider
-(2 -> 6), Suzuki Alstare Extreme Racing (1 -> 5), Inspector Gadget (2 -> 5), Medarot 5 (3 -> 6),
+Games that improved: Turok 3 (1 -> 7 of 7 checkpoints), Pocket Family GB 2 (0 -> 7), Robot Poncots
+(3 -> 7, it stopped after the Hudson logo), Alone in the Dark (5 -> 7), Tomb Raider (2 -> 7), Suzuki Alstare Extreme Racing (1 -> 5), Inspector Gadget (2 -> 5), Medarot 5 (3 -> 6),
 Bomberman Selection (0 -> 3), Rayman 2 (0 -> 3), Carmageddon (2 -> 4), Driver (4 -> 6), and one more
 checkpoint each for Cannon Fodder, Donkey Kong Country, Gradius: The Interstellar Assault and Robin
 Hood.
 
-Known issues: no tilt input for Korokoro Kirby (MBC7) and no infrared for Pocket Family GB 2 and
-Chee-Chai Alien; 3-D Ultra Pinball and The Smurfs' Nightmare differ from the reference at every
+Known issues: no tilt input for Korokoro Kirby (MBC7) and no infrared (Robot Poncots' GB KISS,
+Pocket Family GB 2, Chee-Chai Alien); the HuC-3 clock is not kept across power-offs; 3-D Ultra Pinball and The Smurfs' Nightmare differ from the reference at every
 checkpoint and have not been looked into yet.
 
 <details>
@@ -165,7 +168,7 @@ checkpoint and have not been looked into yet.
 | Parodius (Europe) | DMG | 2/7 | 2/7 | 43% |
 | Perfect Dark (USA) | CGB | 3/7 | 3/7 | 165% |
 | Pinball Fantasies (USA) | DMG | 6/7 | 6/7 | 26% |
-| Pocket Family GB 2 (Japan) | CGB | 0/7 | 0/7 | 117% |
+| Pocket Family GB 2 (Japan) | CGB | 0/7 | 7/7 | 28% |
 | Pocket Music (Europe) (En,Fr,De,Es,It) | CGB | 5/7 | 5/7 | 61% |
 | Pokemon - Gold Version (USA, Europe) (SGB Enhanced) (GB Compatible) | CGB | 6/7 | 6/7 | 48% |
 | Pokemon Card GB 2 - GR Dan Sanjou! (Japan) | CGB | 6/7 | 6/7 | 46% |
@@ -180,7 +183,7 @@ checkpoint and have not been looked into yet.
 | Resident Evil Gaiden (Europe) (En,Fr,De,Es,It) | CGB | 7/7 | 7/7 | 48% |
 | Road Rash (USA) | DMG | 2/7 | 2/7 | 23% |
 | Robin Hood (Europe) (En,Fr,De,Es,It,Nl) | CGB | 6/7 | 7/7 | 33% |
-| Robot Poncots - Sun Version (Japan) (SGB Enhanced) (GB Compatible) | CGB | 3/7 | 3/7 | 117% |
+| Robot Poncots - Sun Version (Japan) (SGB Enhanced) (GB Compatible) | CGB | 3/7 | 7/7 | 49% |
 | Sakura Taisen GB 2 - Thunderbolt Sakusen (Japan) | CGB | 3/7 | 3/7 | 36% |
 | Sensible Soccer - European Champions (Europe) | DMG | 3/7 | 3/7 | 22% |
 | Shantae (USA) | CGB | 3/7 | 3/7 | 79% |
@@ -196,7 +199,7 @@ checkpoint and have not been looked into yet.
 | Test Drive 2001 (USA) | CGB | 4/7 | 4/7 | 68% |
 | Tintin in Tibet (Europe) (SGB Enhanced) | SGB | 0/7 | 0/7 | 35% |
 | Toki Tori (USA, Europe) (En,Ja,Fr,De,Es) | CGB | 5/7 | 5/7 | 27% |
-| Tomb Raider (USA) | CGB | 2/7 | 6/7 | 162% |
+| Tomb Raider (USA) | CGB | 2/7 | 7/7 | 162% |
 | Top Gear Pocket (USA) | CGB | 4/7 | 4/7 | 73% |
 | Trip World (Europe) | DMG | 3/7 | 3/7 | 19% |
 | Turok 3 - Shadow of Oblivion (USA) | CGB | 1/7 | 7/7 | 84% |
