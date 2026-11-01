@@ -53,6 +53,14 @@ class Harness:
         extra = " %d %d %x" % cond if cond else ""
         return self.cmd("until %x %d%s" % (addr, maxframes, extra))[0] == "hit"
     def regs(self): return [int(x, 16) for x in self.cmd("regs")[0].split()]
+    def stepall(self, on=True): self.cmd("stepall %d" % (1 if on else 0))
+
+    def stackstats(self):
+        """(lowest user/system SP, lowest IRQ SP) seen while stepping since the last call.
+        PC and LR at the lowest user SP are kept in self.deepest."""
+        usr, irq, pc, lr = (int(x, 16) for x in self.cmd("stackstats")[0].split())
+        self.deepest = (pc, lr)
+        return usr, irq
 
     def close(self):
         try:

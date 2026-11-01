@@ -66,8 +66,10 @@ def build_rom(path, logo_source):
 class Session:
     """One power-on of the GBA with the given battery save."""
 
-    def __init__(self, gba, elf, sav):
+    def __init__(self, gba, elf, sav, stepall=False):
         self.h = Harness(gba, save=sav)
+        if stepall:
+            self.h.stepall()
         self.g = Goomba(self.h, symbols(elf))
         self.g.boot()
 

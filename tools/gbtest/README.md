@@ -50,6 +50,20 @@ Builds a small MBC2 + battery ROM that keeps a counter in cart RAM, then runs it
 cycles (each harness run is one power-on; the GBA battery save is kept between runs) and around Goomba's
 quick save / quick load hotkeys (R+Select / R+Start). `gbaharness ROM.gba SAVE.sav` keeps the save file.
 
+## Stack headroom (run after any change that adds IWRAM code or data)
+
+    python3 tools/gbtest/stackcheck.py --emu jagoombacolor.gba --elf jagoombacolor.elf \
+        --roms tools/gbtest/roms --out tools/gbtest/out/stack --game path/to/game.gbc
+
+IWRAM is full. In normal play the user stack already runs about 160 bytes past the end of .bss,
+into the end of CHR_DECODE (the tile decode table): the VBlank handler runs in system mode on top of
+the emulation loop's stack. A canary above the table makes the next VBlank rebuild it, so damage is
+usually transient. Every byte added to IWRAM moves the table deeper into the stack's reach; 24 bytes
+were enough to break cpu_instrs. The check steps every instruction of real workloads (cpu_instrs, quick
+save/load, any --game), reports the deepest stack and where it happened, and fails if the overlap
+exceeds --max-overlap (default 168 bytes, the level on 2026-11-01) or reaches the palettes below the
+table.
+
 ## Profiling
 
 Exact cycle profile (every ARM instruction stepped and timed):

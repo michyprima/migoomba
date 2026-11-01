@@ -13,6 +13,9 @@
  *   step N              execute N ARM instructions
  *   stepframes N        like frames, but stepped so idle time is accounted (see stats)
  *   stats               "total idle" GBA cycles over stepped execution since last stats; resets
+ *   stepall 0|1         make "frames" step instructions too (so stack tracking covers everything)
+ *   stackstats          lowest SP in user/system mode, lowest SP in IRQ mode, and PC/LR at the lowest
+ *                       user SP, while stepping; resets
  *   regs                r0-r15 and cpsr
  *   quit
  */
@@ -124,10 +127,25 @@ static void hadd(uint32_t pc, uint64_t cyc) {
 /* Any single step longer than this is the CPU halted (IntrWait/VBlankIntrWait/HALTCNT), i.e. idle. */
 #define IDLE_STEP_CYCLES 1000
 static uint64_t statTotal, statIdle;
+/* lowest SP seen in user/system mode and in IRQ mode while stepping */
+static uint32_t minSpUsr = 0xFFFFFFFF, minSpIrq = 0xFFFFFFFF, minSpUsrPc, minSpUsrLr;
+static int stepAll;
 
 static uint64_t stepOne(struct mCore* core, struct GBA* gba) {
 	uint64_t t0 = mTimingGlobalTime(&gba->timing);
 	core->step(core);
+	uint32_t sp = gba->cpu->gprs[ARM_SP];
+	if (gba->cpu->cpsr.priv == MODE_IRQ) {
+		if (sp < minSpIrq) {
+			minSpIrq = sp;
+		}
+	} else if (gba->cpu->cpsr.priv == MODE_SYSTEM || gba->cpu->cpsr.priv == MODE_USER) {
+		if (sp < minSpUsr) {
+			minSpUsr = sp;
+			minSpUsrPc = _ARMPCAddress(gba->cpu);
+			minSpUsrLr = gba->cpu->gprs[ARM_LR];
+		}
+	}
 	uint64_t d = mTimingGlobalTime(&gba->timing) - t0;
 	statTotal += d;
 	if (d > IDLE_STEP_CYCLES) {
@@ -188,8 +206,15 @@ int main(int argc, char** argv) {
 		int n = sscanf(line, "%31s %lx %899s", cmd, &a, arg2);
 		if (!strcmp(cmd, "frames")) {
 			a = strtoul(line + 7, NULL, 10);
-			for (unsigned long i = 0; i < a; ++i) {
-				core->runFrame(core);
+			if (stepAll) {
+				uint32_t end = core->frameCounter(core) + a;
+				while (core->frameCounter(core) < end) {
+					stepOne(core, gba);
+				}
+			} else {
+				for (unsigned long i = 0; i < a; ++i) {
+					core->runFrame(core);
+				}
 			}
 		} else if (!strcmp(cmd, "cycles")) {
 			printf("%llu\n", (unsigned long long) mTimingGlobalTime(&gba->timing));
@@ -249,6 +274,11 @@ int main(int argc, char** argv) {
 		} else if (!strcmp(cmd, "stats")) {
 			printf("%llu %llu\n", (unsigned long long) statTotal, (unsigned long long) statIdle);
 			statTotal = statIdle = 0;
+		} else if (!strcmp(cmd, "stepall") && n >= 2) {
+			stepAll = a != 0;
+		} else if (!strcmp(cmd, "stackstats")) {
+			printf("%08x %08x %08x %08x\n", minSpUsr, minSpIrq, minSpUsrPc, minSpUsrLr);
+			minSpUsr = minSpIrq = 0xFFFFFFFF;
 		} else if (!strcmp(cmd, "regs")) {
 			for (int i = 0; i < 16; ++i) {
 				printf("%08x ", gba->cpu->gprs[i]);
