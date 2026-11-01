@@ -1267,7 +1267,63 @@ _FF04W:@		DIV - Divider Register
 @----------------------------------------------------------------------------
 _FF05W:@		TIMA - Timer counter
 @----------------------------------------------------------------------------
-	strb_ r0,timercounter+3
+	mov r0,r0,lsl#24
+	b tima_set
+
+@While the timer runs, timercounter is TIMA<<24 plus the ticks still to come on this line
+@less half a line, so checkTimerIRQ (once per line) raises the IRQ at the line start
+@nearest the overflow. Stopped, it is TIMA<<24.
+	.macro tima_offset	@in: r1=TAC. out: r2 = (ticks still to come on this line - half
+	@a line)<<24, signed; r0,r1=?
+	ands r1,r1,#3
+	moveq r1,#4
+	rsb r1,r1,#9
+	mov r1,r1,lsl#1			@tick shift, as in checkTimerIRQ
+	ldr_ r2,cyclesperscanline
+	ldr_ r0,timercyclesperscanline
+	cmp r0,r2
+	addne r1,r1,#1			@double speed timers with a single speed CPU
+	bic r0,cycles,#CYC_MASK
+	cmp r0,#0
+	movlt r0,#0
+	sub r2,r0,r2,lsr#1
+	mov r2,r2,lsl r1
+	.endm
+
+tima_set:	@in: r0 = TIMA<<24 (and fraction of a tick). r0-r2=?
+	ldrb_ r1,timerctrl
+	tst r1,#4
+	beq 2f
+	str r0,[sp,#-4]!
+	tima_offset
+	ldr r0,[sp],#4
+	cmp r2,#0
+	blt 0f
+	adds r0,r0,r2
+	bcs 1f				@overflows before the middle of this line: now
+2:	str_ r0,timercounter
+	mov pc,lr
+0:	adds r0,r0,r2
+	movcc r0,#0			@would start below 0: up to half a line late
+	str_ r0,timercounter
+	mov pc,lr
+1:	ldrb_ r1,timermodulo
+	add r0,r0,r1,lsl#24
+	str_ r0,timercounter
+	ldrb_ r0,gb_if
+	orr r0,r0,#0x04		@4=Timer
+	strb_ r0,gb_if
+	b_long immediate_check_irq
+
+tima_now:	@out: r0 = TIMA<<24 (and fraction of a tick). r1,r2=?
+	ldrb_ r1,timerctrl
+	tst r1,#4
+	beq 0f
+	tima_offset
+	ldr_ r0,timercounter
+	sub r0,r0,r2
+	mov pc,lr
+0:	ldr_ r0,timercounter
 	mov pc,lr
 @----------------------------------------------------------------------------
 _FF06W:@		TMA - Timer Modulo
@@ -1277,8 +1333,11 @@ _FF06W:@		TMA - Timer Modulo
 @----------------------------------------------------------------------------
 _FF07W:@		TAC - Timer Control
 @----------------------------------------------------------------------------
-	strb_ r0,timerctrl
-	mov pc,lr
+	stmfd sp!,{r0,lr}
+	bl tima_now			@TIMA under the old setting...
+	ldmfd sp!,{r1,lr}
+	strb_ r1,timerctrl
+	b tima_set			@...kept under the new one
 @----------------------------------------------------------------------------
 _FF0FW:
 @----------------------------------------------------------------------------
@@ -1320,8 +1379,10 @@ _FF04R:@		DIV - Divider Register
 @----------------------------------------------------------------------------
 _FF05R:@		TIMA - Timer counter
 @----------------------------------------------------------------------------
-	ldrb_ r0,timercounter+3
-	mov pc,lr
+	str lr,[sp,#-4]!
+	bl tima_now
+	mov r0,r0,lsr#24
+	ldr pc,[sp],#4
 @----------------------------------------------------------------------------
 _FF06R:@		TMA - Timer Modulo
 @----------------------------------------------------------------------------

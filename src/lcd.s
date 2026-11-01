@@ -297,6 +297,7 @@ GFX_init:	@(called from main.c) only need to call once
 @	strh r0,[r1,#REG_DM1CNT_L]
 
 	bx addy
+	.ltorg
 build_chr_decode:
 	mov r1,#0xffffff00			@build chr decode tbl
 	ldr r2,=CHR_DECODE

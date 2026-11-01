@@ -426,14 +426,16 @@ checkTimerIRQ:
 	moveq r1,#4
 	mov r0,#18
 	sub r1,r0,r1,lsl#1
+	@timercounter is TIMA<<24 half a line ahead (_FF05W), so the IRQ comes at the line
+	@start nearest the overflow
 	ldr_ r0,timercounter
 	adds r0,r0,r2,lsl r1
 	bcc noTimerIRQ
-	ldrb_ r0,gb_if
-	orr r0,r0,#0x04		@4=Timer
-	strb_ r0,gb_if
-	ldrb_ r0,timermodulo
-	mov r0,r0,lsl#24
+	ldrb_ r1,gb_if
+	orr r1,r1,#0x04		@4=Timer
+	strb_ r1,gb_if
+	ldrb_ r1,timermodulo
+	add r0,r0,r1,lsl#24	@keep the ticks past the overflow
 noTimerIRQ:
 	str_ r0,timercounter
 noTimer:
