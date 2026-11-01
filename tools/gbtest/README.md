@@ -84,6 +84,11 @@ $8000-$FFFF while the game runs, on 64KB GBA SRAM when everything else fits belo
 spare); the menu packs it and gives the whole SRAM back until the game resumes. Otherwise (32KB GBA
 SRAM, or too many saves) 32KB cart RAM is only saved when the menu opens.
 
+`tools/goombasave.py` moves a game's cart RAM between Goomba's GBA save and a plain Game Boy save
+(cartridge dumps, EverDrive GB, emulators); `goombasave_test.py` checks it with Goomba itself:
+
+    python3 tools/gbtest/goombasave_test.py --emu jagoombacolor.gba --elf jagoombacolor.elf --out tools/gbtest/out/gsave
+
 ## Stack headroom (run after any change that adds IWRAM code or data)
 
     python3 tools/gbtest/stackcheck.py --emu jagoombacolor.gba --elf jagoombacolor.elf \

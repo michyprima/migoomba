@@ -28,3 +28,10 @@ Thanks to:
 - Nuvie for the code that saves the desired Game Boy type per game.
 - Radimerry for the MGS:Ghost Babel elevator fix, Faceball menu fix, and SMLDX SRAM fix.
 - Therealteamplayer for the default-to-grayscale code for GB games if no SGB palette is found.
+
+Moving saves: tools/goombasave.py converts a game's save between Goomba's GBA save file and the plain Game
+Boy save used by real cartridges (via a cart dumper), the EverDrive GB and Game Boy emulators:
+  python3 tools/goombasave.py list   GOOMBA.sav [GAME.gbc ...]
+  python3 tools/goombasave.py export GOOMBA.sav GAME.gbc GAME.sav
+  python3 tools/goombasave.py import GOOMBA.sav GAME.gbc GAME.sav [--delete-states]
+It needs the game's ROM to find its save, and keeps GOOMBA.sav.bak when importing.
