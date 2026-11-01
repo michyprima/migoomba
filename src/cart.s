@@ -325,8 +325,10 @@ loadcart: @called from C:  r0=rom number, r1=emuflags
 @	bl mapBIOS_		;01=BIOS
 
 	ldrb r0,[r3,#0x147]	@get mbc#
-	cmp r0,#0xFF		@HuC-1
-	moveq r0,#3
+	cmp r0,#0xFC		@Pocket Camera, TAMA5, HuC-3, HuC-1: RAM + battery
+	movhs r0,#3
+	cmp r0,#0x23		@other types past the table: none
+	movhi r0,#0
 	adr r1,mbcflagstbl
 	ldrb r0,[r1,r0]		@get mbc flags.
 	

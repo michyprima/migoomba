@@ -418,7 +418,7 @@ HUC1map0:
 @----------------------------------------------------------------------------
 huc3init:
 @----------------------------------------------------------------------------
-	.word RamEnable,map4567_,MBC5RAMB,void
+	.word huc3mode,map4567_,MBC5RAMB,void
 
 	ldr r0,=empty_W					@ Disable RAM = $00
 	str_ r0,writemem_tbl+40
@@ -426,7 +426,43 @@ huc3init:
 	ldr r0,=empty_R					@ disabled RAM reads as $FF
 	str_ r0,readmem_tbl_-40
 	str_ r0,readmem_tbl_-44
+	mov r0,#0
+	strb_ r0,mapperdata+5			@HuC-3 mode
+	stmfd sp!,{r3,lr}
+	blx_long huc3_reset
+	ldmfd sp!,{r3,lr}
+	mov pc,lr
 
+huc3mode:	@$0000-$1FFF: $0A cart RAM, $00 cart RAM read-only, $0B-$0D the clock port (huc3.c)
+	strb_ r0,mapperdata+5
+	cmp r0,#0x0A
+	beq RamEnable
+	ldr r1,=empty_W
+	ldr r2,=empty_R
+	cmp r0,#0x00
+	ldreq r2,=mem_RA0
+	sub r0,r0,#0x0B
+	cmp r0,#2
+	ldrls r1,=huc3_W
+	ldrls r2,=huc3_R
+	str_ r1,writemem_tbl+40
+	str_ r1,writemem_tbl+44
+	str_ r2,readmem_tbl_-40
+	str_ r2,readmem_tbl_-44
+	mov pc,lr
+
+huc3_W:	@$A000-$BFFF write in modes $0B-$0D
+	stmfd sp!,{r3,addy,lr}
+	ldrb_ r1,mapperdata+5
+	blx_long huc3_write
+	ldmfd sp!,{r3,addy,lr}
+	mov pc,lr
+
+huc3_R:	@$A000-$BFFF read in modes $0B-$0D
+	stmfd sp!,{r3,addy,lr}
+	ldrb_ r0,mapperdata+5
+	blx_long huc3_read
+	ldmfd sp!,{r3,addy,lr}
 	mov pc,lr
 
 @----------------------------------------------------------------------------
