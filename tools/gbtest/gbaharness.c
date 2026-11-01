@@ -34,6 +34,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "pngwrite.h"
 
 static void quietLog(struct mLogger* logger, int category, enum mLogLevel level, const char* format, va_list args) {
 	(void) logger;
@@ -60,53 +61,6 @@ static struct mLogger logger = { .log = quietLog };
 #define W 240
 #define H 160
 static color_t video[W * H];
-
-static void put32(FILE* f, uint32_t v) {
-	uint8_t b[4] = { v >> 24, v >> 16, v >> 8, v };
-	fwrite(b, 1, 4, f);
-}
-
-static void chunk(FILE* f, const char* type, const uint8_t* data, uint32_t len) {
-	put32(f, len);
-	fwrite(type, 1, 4, f);
-	fwrite(data, 1, len, f);
-	uint32_t crc = crc32(0, (const uint8_t*) type, 4);
-	crc = crc32(crc, data, len);
-	put32(f, crc);
-}
-
-static int writePNG(const char* path) {
-	size_t rawLen = H * (1 + W * 3);
-	uint8_t* raw = malloc(rawLen);
-	uint8_t* p = raw;
-	for (int y = 0; y < H; ++y) {
-		*p++ = 0;
-		for (int x = 0; x < W; ++x) {
-			uint32_t c = video[y * W + x]; /* XBGR8 */
-			*p++ = c;
-			*p++ = c >> 8;
-			*p++ = c >> 16;
-		}
-	}
-	uLongf zLen = compressBound(rawLen);
-	uint8_t* z = malloc(zLen);
-	compress(z, &zLen, raw, rawLen);
-	FILE* f = fopen(path, "wb");
-	if (!f) {
-		free(raw);
-		free(z);
-		return 0;
-	}
-	fwrite("\x89PNG\r\n\x1a\n", 1, 8, f);
-	uint8_t ihdr[13] = { 0, 0, 0, W, 0, 0, 0, H, 8, 2, 0, 0, 0 };
-	chunk(f, "IHDR", ihdr, 13);
-	chunk(f, "IDAT", z, zLen);
-	chunk(f, "IEND", NULL, 0);
-	fclose(f);
-	free(raw);
-	free(z);
-	return 1;
-}
 
 /* open-addressing PC -> (cycles, count) */
 #define HBITS 20
@@ -238,7 +192,7 @@ int main(int argc, char** argv) {
 			}
 		} else if (!strcmp(cmd, "shot")) {
 			char path[900];
-			if (sscanf(line, "%*s %899s", path) == 1 && !writePNG(path)) {
+			if (sscanf(line, "%*s %899s", path) == 1 && !writePNG(path, (const uint32_t*) video, W, H, W)) {
 				printf("error\n");
 			}
 		} else if (!strcmp(cmd, "profile")) {
