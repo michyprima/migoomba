@@ -55,14 +55,14 @@ quick save / quick load hotkeys (R+Select / R+Start). `gbaharness ROM.gba SAVE.s
     python3 tools/gbtest/stackcheck.py --emu jagoombacolor.gba --elf jagoombacolor.elf \
         --roms tools/gbtest/roms --out tools/gbtest/out/stack --game path/to/game.gbc
 
-IWRAM is full. In normal play the user stack already runs about 160 bytes past the end of .bss,
-into the end of CHR_DECODE (the tile decode table): the VBlank handler runs in system mode on top of
-the emulation loop's stack. A canary above the table makes the next VBlank rebuild it, so damage is
-usually transient. Every byte added to IWRAM moves the table deeper into the stack's reach; 24 bytes
-were enough to break cpu_instrs. The check steps every instruction of real workloads (cpu_instrs, quick
-save/load, any --game), reports the deepest stack and where it happened, and fails if the overlap
-exceeds --max-overlap (default 168 bytes, the level on 2026-11-01) or reaches the palettes below the
-table.
+IWRAM is nearly full and .bss ends just below the user stack. The deepest stack in normal play is the
+VBlank handler, which runs in system mode on top of the emulation loop's stack (about 300 bytes).
+Below .bss's end sits CHR_DECODE, the tile decode table; a stack that reaches it makes tiles decode
+wrongly until a canary triggers a rebuild. Until 2026-11-01 the stack overran it by up to 168 bytes
+(24 more bytes of IWRAM broke cpu_instrs); moving rarely-run code to ROM fixed that, leaving 80 bytes
+spare. The check steps every instruction of real workloads (cpu_instrs, quick save/load, any --game),
+reports the deepest stack and where it happened, and fails with less than --min-spare bytes (32).
+Keep code that runs at most a few times per frame in .text (ROM) rather than IWRAM.
 
 ## Profiling
 

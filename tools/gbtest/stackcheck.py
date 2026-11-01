@@ -1,18 +1,18 @@
-"""Check how far Goomba's user stack runs into the data below it.
+"""Check how close Goomba's user stack comes to the data below it.
 
-IWRAM is full: .bss ends 144 bytes below the user stack top, and in normal play the stack already goes
-deeper than that. The VBlank handler (display_frame -> transfer_palette_) runs in system mode on top
-of the emulation loop's stack and reaches about 300 bytes, overwriting the end of CHR_DECODE (the
-tile decode table). A canary (CANARY2) above the table makes the next VBlank rebuild it, so the damage
-is transient, but entries below the canary can be hit without the canary changing.
+IWRAM is nearly full and .bss ends just below the user stack. In normal play the stack is deepest in
+the VBlank handler (display_frame -> transfer_palette_), which runs in system mode on top of the
+emulation loop's stack: about 300 bytes. Below .bss's end sits CHR_DECODE (the tile decode table); if
+the stack reaches it, tiles decode wrongly until a canary (CANARY2) triggers a rebuild. Until
+2026-11-01 the stack overran it by up to 168 bytes, and 24 more bytes of IWRAM broke cpu_instrs.
 
-Any byte added to IWRAM moves the table up and deepens the overlap: one such change (+24 bytes) broke
-cpu_instrs. This runs real workloads with every instruction stepped and reports the lowest SP.
+Every byte added to IWRAM moves .bss's end up, so run this after any change that adds IWRAM code or
+data. It steps every instruction of real workloads and reports the lowest SP and where it happened.
 
 usage: stackcheck.py --emu jagoombacolor.gba --elf jagoombacolor.elf --roms ROMS --out DIR
-                     [--game GAME ...] [--max-overlap BYTES]
-Exit status 1 if the stack runs more than --max-overlap bytes (default 168, the 2026-11-01 level) past
-the end of .bss, or reaches below CHR_DECODE into the palettes, or the IRQ stack leaves its region.
+                     [--game GAME ...] [--min-spare BYTES]
+Exit status 1 if the user stack comes within --min-spare bytes (default 32) of the end of .bss, or
+the IRQ stack leaves its region.
 """
 import argparse, bisect, os, subprocess, sys
 
@@ -82,7 +82,7 @@ def main():
     ap.add_argument("--roms", required=True)
     ap.add_argument("--out", required=True)
     ap.add_argument("--game", action="append", default=[])
-    ap.add_argument("--max-overlap", type=int, default=168)
+    ap.add_argument("--min-spare", type=int, default=32)
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     sy = symbols(a.elf)
@@ -101,20 +101,20 @@ def main():
     for name, fn in workloads:
         usr, irq, (pc, lr) = fn()
         worst_usr, worst_irq = min(worst_usr, usr), min(worst_irq, irq)
-        print("  %-28s user stack %3d bytes deep, %3d past .bss end, %2d CHR_DECODE entries exposed"
-              " | IRQ stack %2d deep" % (name, sp_usr - usr, max(0, bss_end - usr),
+        print("  %-28s user stack %3d bytes deep, %4d above .bss end, %2d CHR_DECODE entries exposed"
+              " | IRQ stack %2d deep" % (name, sp_usr - usr, usr - bss_end,
                                         max(0, (chr_end - usr + 3) // 4), sp_irq - irq))
         print("  %-28s deepest at %s (lr %s)" % ("", sym(pc), sym(lr)))
-    overlap = bss_end - worst_usr
+    spare = worst_usr - bss_end
     problems = []
-    if overlap > a.max_overlap:
-        problems.append("user stack %d bytes past .bss end (allowed %d)" % (overlap, a.max_overlap))
-    if worst_usr < chr_start:
-        problems.append("user stack reaches below CHR_DECODE (palettes)")
+    if spare < a.min_spare:
+        problems.append("user stack comes within %d bytes of .bss (need %d)" % (spare, a.min_spare))
+    if worst_usr < chr_end:
+        problems.append("user stack overwrites CHR_DECODE")
     if worst_irq < sp_usr:
         problems.append("IRQ stack runs into the user stack")
-    print("%s: user stack worst case %d bytes past .bss end (allowed %d), IRQ stack %d bytes to spare%s" % (
-        "FAIL" if problems else "OK", overlap, a.max_overlap, worst_irq - sp_usr,
+    print("%s: user stack worst case %d bytes above .bss end (need %d), IRQ stack %d bytes to spare%s" % (
+        "FAIL" if problems else "OK", spare, a.min_spare, worst_irq - sp_usr,
         "".join("\n  - " + p for p in problems)))
     ok = not problems
     sys.exit(0 if ok else 1)
