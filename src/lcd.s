@@ -2760,7 +2760,38 @@ FF46_W:@		sprite DMA transfer
 	ldr_ r0,gb_oam_buffer_writing
 after_upload_sprites_early:
 	mov r2,#160		@number of sprites on the GB
-	b memcpy32
+	stmfd sp!,{r0,r3,r4,lr}
+	bl memcpy32
+	ldr r1,[sp]
+	@most sprites starting in one 8-line band (Y 1-159), for mode3_sprites
+	mov r0,#0
+	sub sp,sp,#20			@20 band counts
+	str r0,[sp]
+	str r0,[sp,#4]
+	str r0,[sp,#8]
+	str r0,[sp,#12]
+	str r0,[sp,#16]
+	mov r2,#40
+0:	ldrb r3,[r1],#4
+	sub r3,r3,#1
+	cmp r3,#159
+	bhs 1f
+	mov r3,r3,lsr#3
+	ldrb r4,[sp,r3]
+	add r4,r4,#1
+	strb r4,[sp,r3]
+	cmp r4,r0
+	movhi r0,r4
+1:	subs r2,r2,#1
+	bne 0b
+	add sp,sp,#24
+	ldmfd sp!,{r3,r4,lr}
+	ldr r1,mode3_count
+	cmp r0,r1
+	bxeq lr
+	str r0,mode3_count
+	b_long mode3_sprites
+mode3_count:	.word 0		@most sprites in a band at the last OAM DMA (0 after updatespeed)
 
 .pushsection .text
 upload_sprites_early:
@@ -2782,6 +2813,33 @@ upload_sprites_early:
 	ldmfd sp!,{r0,r1,r12,lr}
 	b_long after_upload_sprites_early
 .popsection
+
+	.pushsection .text
+mode3_sprites:	@sprites make mode 3 longer (about 6 dots each, up to 10 a line). Approximated
+	@for all lines from the busiest 8-line band at the last OAM DMA: STAT reads see mode 0
+	@later. Turok 3 compares STAT samples taken with and without sprites (an emulator
+	@check). in: r0=sprites in that band. r0-r2=?
+	cmp r0,#10
+	movhi r0,#10
+	add r0,r0,r0,lsl#1
+	mov r0,r0,lsr#1			@imm8 steps (4 dots single speed, 2 double) the thresholds move
+	ldr r2,=FF41_modifydata
+	ldr_ r1,cyclesperscanline
+	cmp r1,#SINGLE_SPEED
+	movne r0,r0,lsl#1
+	ldreq r1,[r2]			@cmp cycles,#204*CYCLE
+	ldrne r1,[r2,#8]
+	sub r1,r1,r0
+	addeq r2,r2,#40			@subs r2,cycles,#204*CYCLE
+	addne r2,r2,#44
+	ldr r2,[r2]
+	sub r2,r2,r0
+	ldr r0,=FF41_modify1
+	str r1,[r0]
+	ldr r0,=FF41_hack_setmode0
+	str r2,[r0]
+	bx lr
+	.popsection
 
 
 display_sprites:

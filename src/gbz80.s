@@ -2365,6 +2365,9 @@ speedswitch:
 	eors r0,r0,#0x80
 	strb_ r0,doublespeed
 updatespeed:
+	ldr r12,=mode3_count		@the base thresholds below are for no sprites
+	mov r0,#0
+	str r0,[r12]
 	@set single speed
 	mov r0,#SINGLE_SPEED
 	str_ r0,timercyclesperscanline
