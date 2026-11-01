@@ -47,6 +47,8 @@ void timermode(void);
 void go_multiboot(void);
 void changeautoborder(void);
 void changelcdhack(void);
+void ewramset(void);
+extern u8 fast_ewram;
 void changedmamode(void);
 
 #if SPEEDHACKS_OLD

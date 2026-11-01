@@ -107,7 +107,7 @@ const fptr fnlist4[]={
 #if SPEEDHACKS_OLD
 autodetect_speedhack,
 #endif
-timermode,changelcdhack}; //,changedmamode};
+timermode,changelcdhack,ewramset}; //,changedmamode};
 
 const fptr *const fnlistX[]={fnlist1,multifnlist,fnlist2,fnlist3,fnlist4};
 const fptr drawuiX[]={drawui1,drawui1,drawui2,drawui3,drawui4};
@@ -425,6 +425,7 @@ char *const paltxt[]=
 char *const gbtxt[]={"GB","Prefer SGB over GBC","Prefer GBC over SGB","GBC+SGB"};
 char *const clocktxt[]={"Full","Half speed"};
 char *const lcdhacktxt[]={"OFF","Low","Medium","High"};
+char *const ewramtxt[]={"Normal","Fast"};
 //char *const dmamodetxt[]={"Buffered", "Direct to VRAM", "WayForward"};
 
 #define EMUNAME "MiGoomba"
@@ -520,6 +521,7 @@ void drawui4()
 #endif
 	print_2("Double Speed: ",clocktxt[doubletimer==1]);
 	print_2("LCD scanline hack: ", lcdhacktxt[g_lcdhack]);
+	print_2("EWRAM (not Micro/DS): ", ewramtxt[fast_ewram]);
     // Maybe we should add an option here for our HDMA experiment
 //	print_2("DMA Mode: ", dmamodetxt[_dmamode]);
 }
@@ -799,6 +801,14 @@ void timermode()
 void changeautoborder()
 {
 	auto_border=!auto_border;
+}
+//EWRAM with 1 wait state instead of 2: a few % faster (Goomba keeps its per-line buffers there),
+//but the GBA Micro and the DS crash with it. Not saved, so a power cycle always undoes it.
+u8 fast_ewram=0;
+void ewramset()
+{
+	fast_ewram=!fast_ewram;
+	REG_WRWAITCTL=fast_ewram?0x0E000020:0x0D000020;
 }
 void changelcdhack()
 {
