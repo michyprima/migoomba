@@ -10,8 +10,16 @@ Each game runs the same input script in both emulators and is captured at the sa
     (a regression, or an intended change to accept with --record). A game whose GB frames stop
     advancing is HANG.
   - reference (gbref, mGBA's GB core on the same model; AGB when Goomba identifies as a GBA): informational. "match" counts checkpoints where
-    Goomba's screen equals the reference up to recolouring (Goomba uses its own palettes); input timing
+    Goomba's screen equals the reference up to recolouring (Goomba uses its own palettes), not counting
+    screens of one or two colours (a blank screen matching a blank screen says nothing); input timing
     differs by a frame or so between the two, so a mismatch is a lead to look at, not a failure.
+  - STUCK: Goomba's screen is the same at the last four checkpoints while the reference's changes and
+    differs from it (the game went on in the reference but not in Goomba, without stopping: a HANG
+    would catch that).
+  - CART: the cart RAM and battery Goomba sets up don't match the ROM header's cartridge type, or the
+    type is unknown.
+  STUCK and CART are reported on top of the baseline comparison and fail the run like HANG and CHANGED,
+  unless the game's database entry explains them in "known" ({"STUCK": "why", ...}): then KNOWN.
 
 usage: gametests.py --emu migoomba.gba --elf migoomba.elf --out DIR
                     [--games DIR] [--db games.json] [--filter REGEX] [--record] [--jobs N]
@@ -24,6 +32,45 @@ from harness import Harness, Goomba, symbols, HERE
 from pngdec import decode
 
 GB_X, GB_Y = 40, 8          # where Goomba draws the 160x144 GB screen in the 240x160 frame
+MBC_RAM, MBC_SAV = 0x01, 0x02   # Goomba's cartflags (equates.h)
+# cartridge type (header $147) -> (name, cart RAM, battery), from Pan Docs; MBC2's RAM is built in
+CART_TYPES = {
+    0x00: ("ROM", 0, 0), 0x01: ("MBC1", 0, 0), 0x02: ("MBC1+RAM", 1, 0), 0x03: ("MBC1+RAM+BATTERY", 1, 1),
+    0x05: ("MBC2", 1, 0), 0x06: ("MBC2+BATTERY", 1, 1), 0x08: ("ROM+RAM", 1, 0), 0x09: ("ROM+RAM+BATTERY", 1, 1),
+    0x0B: ("MMM01", 0, 0), 0x0C: ("MMM01+RAM", 1, 0), 0x0D: ("MMM01+RAM+BATTERY", 1, 1),
+    0x0F: ("MBC3+TIMER+BATTERY", 0, 0), 0x10: ("MBC3+TIMER+RAM+BATTERY", 1, 1), 0x11: ("MBC3", 0, 0),
+    0x12: ("MBC3+RAM", 1, 0), 0x13: ("MBC3+RAM+BATTERY", 1, 1), 0x19: ("MBC5", 0, 0), 0x1A: ("MBC5+RAM", 1, 0),
+    0x1B: ("MBC5+RAM+BATTERY", 1, 1), 0x1C: ("MBC5+RUMBLE", 0, 0), 0x1D: ("MBC5+RUMBLE+RAM", 1, 0),
+    0x1E: ("MBC5+RUMBLE+RAM+BATTERY", 1, 1), 0x20: ("MBC6", 1, 1), 0x22: ("MBC7+SENSOR+RUMBLE+RAM+BATTERY", 1, 1),
+    0xFC: ("POCKET CAMERA", 1, 1), 0xFD: ("BANDAI TAMA5", 1, 1), 0xFE: ("HuC3", 1, 1), 0xFF: ("HuC1+RAM+BATTERY", 1, 1),
+}
+
+
+def ref_matches(checkpoints):
+    """Checkpoints where Goomba equals the reference, blank screens (1-2 colours) not counted."""
+    return sum(1 for c in checkpoints if c["ref_diff"] == 0 and c.get("colours", 3) > 2)
+
+
+def stuck(checkpoints):
+    late = checkpoints[3:]
+    return (len(late) > 1 and len({c["goomba"] for c in late}) == 1 and len({c["reference"] for c in late}) > 1
+            and any(c["ref_diff"] for c in late))
+
+
+def cart_problem(res):
+    """None, or why the cart RAM/battery Goomba set up doesn't fit the header's cartridge type."""
+    t, flags = res.get("cart_type"), res.get("cart_flags")
+    if t is None or flags is None:
+        return None
+    if t not in CART_TYPES:
+        return "unknown cartridge type $%02X" % t
+    name, ram, battery = CART_TYPES[t]
+    want = (MBC_RAM if ram else 0) | (MBC_SAV if ram and battery else 0)
+    if flags & (MBC_RAM | MBC_SAV) != want:
+        return "%s ($%02X): cart RAM %s, battery %s expected, Goomba set up RAM %s, battery %s" % (
+            name, t, "yes" if ram else "no", "yes" if ram and battery else "no",
+            "yes" if flags & MBC_RAM else "no", "yes" if flags & MBC_SAV else "no")
+    return None
 KEYS = {"A": 0x01, "B": 0x02, "SELECT": 0x04, "START": 0x08}
 
 # Generic script: let the intro play, then alternate Start and A to get through title screens and menus,
@@ -165,6 +212,7 @@ def run_game(rom, sha, entry, emu, elf, out, cache):
             res["checkpoints"].append(dict(frame=f, goomba_frame=g.gb_frame(), goomba=screen_hash(gs),
                                            reference=screen_hash(rs), ref_diff=recolour_diff(rs, gs),
                                            colours=len({p for row in gs for p in row})))
+        res.update(cart_type=open(rom, "rb").read(0x148)[0x147], cart_flags=h.read(syms["g_cartflags"], 1)[0])
         total, idle = h.stats()
         frames = g.gb_frame() - f0
         res.update(model=ref_model, gb_frames=frames,
@@ -186,6 +234,11 @@ def judge(res, entry):
     if not entry:
         return "NEW", ["not in the database (add with --record)"]
     notes = []
+    problem = cart_problem(res)
+    if problem:
+        notes.append(problem)
+    if stuck(res["checkpoints"]):
+        notes.append("screen frozen from GB frame %d while the reference goes on" % res["checkpoints"][3]["frame"])
     old = {c["frame"]: c for c in entry.get("checkpoints", [])}
     changed = [c["frame"] for c in res["checkpoints"] if old.get(c["frame"], {}).get("goomba") != c["goomba"]]
     if entry.get("model") != res.get("model"):
@@ -195,15 +248,22 @@ def judge(res, entry):
     refchg = [c["frame"] for c in res["checkpoints"] if old.get(c["frame"], {}).get("reference") != c["reference"]]
     if refchg:
         notes.append("reference changed at %s (gbref/script changed?)" % ", ".join(map(str, refchg)))
-    om = sum(1 for c in entry.get("checkpoints", []) if c["ref_diff"] == 0)
-    nm = sum(1 for c in res["checkpoints"] if c["ref_diff"] == 0)
+    om = ref_matches(entry.get("checkpoints", []))
+    nm = ref_matches(res["checkpoints"])
     if nm != om:
         notes.append("reference matches %d -> %d" % (om, nm))
     if entry.get("busy_per_frame") and res.get("busy_per_frame"):
         d = 100.0 * (res["busy_per_frame"] - entry["busy_per_frame"]) / entry["busy_per_frame"]
         if abs(d) >= 0.5:
             notes.append("busy cycles %+.1f%%" % d)
-    return ("CHANGED" if changed or notes and notes[0].startswith("model") else "PASS"), notes
+    known = entry.get("known", {})
+    for status, found in (("CART", problem), ("STUCK", stuck(res["checkpoints"]))):
+        if found and status in known:
+            notes.append("known: " + known[status])
+            return ("CHANGED" if changed else "KNOWN"), notes
+        if found:
+            return status, notes
+    return ("CHANGED" if changed or any(n.startswith("model") for n in notes) else "PASS"), notes
 
 
 def main():
@@ -249,7 +309,7 @@ def main():
         counts[status] = counts.get(status, 0) + 1
         cps = r["checkpoints"]
         print("%-8s %-44s %-4s %8s %6s  %s" % (status, r["title"][:44], r.get("model") or "-",
-              r.get("busy_per_frame") or "-", "%d/%d" % (sum(c["ref_diff"] == 0 for c in cps), len(cps)),
+              r.get("busy_per_frame") or "-", "%d/%d" % (ref_matches(cps), len(cps)),
               "; ".join(notes)))
     print("  " + "  ".join("%s=%d" % kv for kv in sorted(counts.items())))
     for t in missing:
@@ -263,15 +323,16 @@ def main():
                 continue
             old = db["games"].get(r["sha1"], {})
             db["games"][r["sha1"]] = dict(title=old.get("title") or r["title"], file=old.get("file") or r["file"],
+                                          **({"known": old["known"]} if "known" in old else {}),
                                           script=r["script"], model=r["model"], busy_per_frame=r["busy_per_frame"],
-                                          checkpoints=[{k: c[k] for k in ("frame", "goomba", "reference", "ref_diff")}
+                                          checkpoints=[{k: c[k] for k in ("frame", "goomba", "reference", "ref_diff", "colours")}
                                                        for c in r["checkpoints"]])
         db["games"] = dict(sorted(db["games"].items(), key=lambda kv: kv[1]["title"].lower()))
         with open(a.db, "w") as f:
             json.dump(db, f, indent=1)
             f.write("\n")
         print("recorded %s" % a.db)
-    sys.exit(0 if all(r["judged"] in ("PASS",) for r in results) or a.record else 1)
+    sys.exit(0 if all(r["judged"] in ("PASS", "KNOWN") for r in results) or a.record else 1)
 
 
 if __name__ == "__main__":
