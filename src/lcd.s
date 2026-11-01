@@ -4920,10 +4920,14 @@ hbl_next:	@in: r0=line after the one just set, r1=next change line ($FF = none)
 	ldr r3,=vcountfptr
 	str r0,[r3]
 	add r1,r1,#SCREEN_Y_START-1	@VCOUNT interrupt at the start of the GBA line before it
-	mov r0,#0x38
-	orr r0,r0,r1,lsl#8
-	strh r0,[r2,#REG_DISPSTAT]
-	bx lr
+	mov r3,#0x38
+	orr r3,r3,r1,lsl#8
+	strh r3,[r2,#REG_DISPSTAT]
+	ldrh r3,[r2,#REG_VCOUNT]
+	cmp r3,r1
+	bxlo lr
+	bx r0				@that line has begun (a late HBlank interrupt): no VCOUNT
+					@interrupt will come, so run its handler now
 
 cgbp_newline:	@first FF69 write on a scanline, entered by branch from FF69_W and returning
 	@to FF69_W_write. in: r0=value (kept), r2=line, lr=FF69_W's caller (kept)
