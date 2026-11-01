@@ -34,6 +34,8 @@ real hardware (EZ-Flash Omega Definitive Edition) are still to come.
 - **HuC-3** (Robot Poncots, Pocket Family GB 2): the clock controller behind $A000 is emulated, and
   the cart's RAM is battery-backed RAM again (cart types $FC-$FF read their flags from past the end
   of a table): Robot Poncots no longer stops after the Hudson logo.
+- **HuC-1** (Pokemon Card GB): $4000 selects only the cart RAM bank (it used MBC1's handlers, which
+  also switched ROM banks under the game), and $0E at $0000 is the infrared port.
 
 ### Video
 - **Per-line DMG palettes**: games that rewrite BGP mid-frame (V-Rally's race screen, Lemmings 2) get
@@ -78,14 +80,17 @@ fixes applied.
 | AGE | 0/47 | 0/47 |
 | Mealybug Tearoom | 0/35 | 0/35 |
 | cgb-acid2 / dmg-acid2 | 0/2 | 0/2 |
-| **Total** | **114/912** | **193/912** |
+| MBC3 tester (banking, type $11) | 1/1 | 1/1 |
+| rtc3test (MBC3 clock) | 0/3 | 0/3 |
+| **Total** | **115/916** | **194/916** |
 
 Blargg's cpu_instrs passes. Most remaining failures need cycle-exact timing (PPU modes within a
 scanline, the DIV/timer coupling), which Goomba trades for speed.
 
 ### Games
-100 commercial games picked for being hard to emulate, from many regions (USA, Europe, Japan, Korea
-and single-country releases), all run through the same input script (wait for the intro, alternate
+106 commercial games picked for being hard to emulate, from many regions (USA, Europe, Japan, Korea
+and single-country releases) and covering 17 of the 26 cartridge types (one game for each type the
+collections had: no MMM01, MBC2 without battery, MBC3 without RAM, Pocket Camera or TAMA5 game), all run through the same input script (wait for the intro, alternate
 Start and A for 20 seconds, screenshots at 7 moments up to Game Boy frame 2400) by
 `tools/gbtest/gametests.py`. ROMs are not part of the repository; they are identified by hash.
 
@@ -96,8 +101,8 @@ Start and A for 20 seconds, screenshots at 7 moments up to Game Boy frame 2400) 
   alarm: the start-up runs ahead of the reference, so the scripted presses leave Kirby waiting at the
   hub) and Net de Get (MBC6, not supported).
 - **Reference**: screenshots that match mGBA's own Game Boy core (on the CGB, SGB or DMG model
-  MiGoomba picks), allowing for different colours and not counting blank screens: **302/700 for
-  Jagoomba Color, 348/700 for MiGoomba**. 16 games improve and none get worse. Input timing differs
+  MiGoomba picks), allowing for different colours and not counting blank screens: **324/742 for
+  Jagoomba Color, 377/742 for MiGoomba**. 19 games improve and none get worse. Input timing differs
   by a frame or so between the two emulators, and SGB games differ wherever borders and palettes do, so
   a low number is a lead to look at rather than a failure (Adventures of Lolo plays fine but differs
   in its SGB colours).
@@ -105,20 +110,21 @@ Start and A for 20 seconds, screenshots at 7 moments up to Game Boy frame 2400) 
   the game runs slower than full speed: Alfred's Adventure, Alone in the Dark (just), Harry Potter,
   Perfect Dark, SWIV and Tomb Raider.
 
-Games that improved (reference checkpoints): Pocket Family GB 2 (0 -> 7) and Robot Poncots (0 -> 4),
-which stopped after their first screens; Road Rash, which hung when a race started (its screens match
+Games that improved (reference checkpoints): Pocket Family GB 2 (0 -> 7), Robot Poncots (0 -> 4) and
+Pokemon Card GB (0 -> 5), which stopped after their first screens; Road Rash, which hung when a race started (its screens match
 the reference apart from the bottom row); Turok 3 (0 -> 5), Tomb Raider (0 -> 4), Suzuki Alstare
 Extreme Racing (1 -> 5), Inspector Gadget (2 -> 5), Medarot 5 (2 -> 5), Bomberman Selection (0 -> 3),
 Rayman 2 (0 -> 3), Alone in the Dark (5 -> 7), Carmageddon (2 -> 4), Driver (4 -> 6), and one more
-each for Cannon Fodder, Donkey Kong Country, Gradius: The Interstellar Assault and Robin Hood.
+each for Cannon Fodder, Donkey Kong Country, Final Fantasy Adventure, Gradius: The Interstellar
+Assault, Ninja JaJaMaru DX and Robin Hood.
 
 Known issues: Net de Get needs the MBC6 mapper; no tilt input for Korokoro Kirby (MBC7) and no
 infrared (Robot Poncots' GB KISS, Pocket Family GB 2, Chee-Chai Alien); the HuC-3 clock is not kept
-across power-offs; 3-D Ultra Pinball and The Smurfs' Nightmare differ from the reference at every
+across power-offs; the MBC3 clock reads the GBA cart's clock but can't be stopped or set (rtc3test); 3-D Ultra Pinball and The Smurfs' Nightmare differ from the reference at every
 checkpoint and have not been looked into yet.
 
 <details>
-<summary>All 100 games</summary>
+<summary>All 106 games</summary>
 
 | Game | Mode | Reference (Jagoomba Color) | Reference (MiGoomba) | GBA load |
 |---|---|---|---|---|
@@ -148,6 +154,7 @@ checkpoint and have not been looked into yet.
 | F1 Championship Season 2000 (Brazil) (En,Fr,De,Es,It) | CGB | 6/7 | 6/7 | 97% |
 | Faceball 2000 (USA) | DMG | 6/7 | 6/7 | 54% |
 | FIFA 98 - Road to World Cup (Europe) (Rev-A) (SGB Enhanced) | SGB | 0/7 | 0/7 | 25% |
+| Final Fantasy Adventure (USA) | DMG | 5/7 | 6/7 | 31% |
 | Gradius - The Interstellar Assault (USA) | DMG | 2/7 | 3/7 | 40% |
 | Halloween Racer (Europe) | CGB | 2/7 | 2/7 | 69% |
 | Harry Potter and the Sorcerer's Stone (USA) | CGB | 4/7 | 4/7 | 134% |
@@ -174,6 +181,7 @@ checkpoint and have not been looked into yet.
 | Mr. Driller (USA) | CGB | 1/7 | 1/7 | 92% |
 | Mr. Nutz (Europe) | DMG | 1/7 | 1/7 | 31% |
 | Net de Get - Minigame @ 100 (Japan) | CGB | 0/7 | 0/7 | 69% |
+| Ninja JaJaMaru - The Great World Adventure DX (USA, Europe) (Ninja JaJaMaru Retro Collection) (Switch) | CGB | 3/7 | 4/7 | 59% |
 | Oddworld Adventures II (USA, Europe) (En,Fr,De,Es,It) | CGB | 4/7 | 4/7 | 53% |
 | Parodius (Europe) | DMG | 2/7 | 2/7 | 43% |
 | Perfect Dark (USA) | CGB | 3/7 | 3/7 | 165% |
@@ -181,6 +189,7 @@ checkpoint and have not been looked into yet.
 | Pocket Family GB 2 (Japan) | CGB | 0/7 | 7/7 | 28% |
 | Pocket Music (Europe) (En,Fr,De,Es,It) | CGB | 5/7 | 5/7 | 61% |
 | Pokemon - Gold Version (USA, Europe) (SGB Enhanced) (GB Compatible) | CGB | 0/7 | 0/7 | 48% |
+| Pokemon Card GB (Japan) (SGB Enhanced) (GB Compatible) | CGB | 0/7 | 5/7 | 34% |
 | Pokemon Card GB 2 - GR Dan Sanjou! (Japan) | CGB | 6/7 | 6/7 | 46% |
 | Pokemon Crystal Version (USA) (Rev-A) | CGB | 1/7 | 1/7 | 43% |
 | Pokemon Pinball (USA) | CGB | 1/7 | 1/7 | 49% |
@@ -195,6 +204,7 @@ checkpoint and have not been looked into yet.
 | Robin Hood (Europe) (En,Fr,De,Es,It,Nl) | CGB | 6/7 | 7/7 | 33% |
 | Robot Poncots - Sun Version (Japan) (SGB Enhanced) (GB Compatible) | CGB | 0/7 | 4/7 | 49% |
 | Sakura Taisen GB 2 - Thunderbolt Sakusen (Japan) | CGB | 2/7 | 2/7 | 36% |
+| San Francisco Rush - Extreme Racing (USA) (Proto) | CGB | 6/7 | 6/7 | 84% |
 | Sensible Soccer - European Champions (Europe) | DMG | 3/7 | 3/7 | 22% |
 | Shantae (USA) | CGB | 3/7 | 3/7 | 79% |
 | Shin Megami Tensei Devil Children - Shiro no Sho (Japan) | CGB | 4/7 | 4/7 | 62% |
@@ -207,11 +217,13 @@ checkpoint and have not been looked into yet.
 | Suzuki Alstare Extreme Racing (Europe) (En,Fr,De,Es,It,Nl) | CGB | 1/7 | 5/7 | 71% |
 | SWIV (Europe) (En,Fr,De,Es,It) | CGB | 2/7 | 2/7 | 135% |
 | Test Drive 2001 (USA) | CGB | 4/7 | 4/7 | 68% |
+| Tetris (USA) (Rev-A) | DMG | 5/7 | 5/7 | 19% |
 | Tintin in Tibet (Europe) (SGB Enhanced) | SGB | 0/7 | 0/7 | 35% |
 | Toki Tori (USA, Europe) (En,Ja,Fr,De,Es) | CGB | 5/7 | 5/7 | 27% |
 | Tomb Raider (USA) | CGB | 0/7 | 4/7 | 162% |
 | Top Gear Pocket (USA) | CGB | 3/7 | 3/7 | 73% |
 | Trip World (Europe) | DMG | 3/7 | 3/7 | 19% |
+| Trip World DX (USA) (Limited Run Games) | CGB | 3/7 | 3/7 | 24% |
 | Turok 3 - Shadow of Oblivion (USA) | CGB | 0/7 | 5/7 | 84% |
 | V-Rally - Championship Edition (Europe) | DMG | 0/7 | 0/7 | 56% |
 | Vigilante 8 (USA) (Rumble Version) | CGB | 5/7 | 5/7 | 51% |

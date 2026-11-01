@@ -1508,6 +1508,64 @@
     }
    ]
   },
+  "8b93c55ee2660c60cf86dd70058f96ace98782c8": {
+   "title": "Final Fantasy Adventure (USA)",
+   "file": "Final Fantasy Adventure (USA).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 87021,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "a86069ab83520bca45aad26234b559b997ea08db",
+     "reference": "a86069ab83520bca45aad26234b559b997ea08db",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 600,
+     "goomba": "dd50374a7431ffaf1568fd3ef6a63643adaef217",
+     "reference": "dd50374a7431ffaf1568fd3ef6a63643adaef217",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 900,
+     "goomba": "7b2971728cc0694eafa1f1df368772069a84790a",
+     "reference": "7b2971728cc0694eafa1f1df368772069a84790a",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 1200,
+     "goomba": "87db92bbc6f42597723f4d91b9f0402cc2c2bed5",
+     "reference": "87db92bbc6f42597723f4d91b9f0402cc2c2bed5",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 1500,
+     "goomba": "a8ed2ca6dd15efc5661328c522b58005d6ab2a15",
+     "reference": "ac08c173eaa2ebb872ded8f90640fc9660a3e082",
+     "ref_diff": 2384,
+     "colours": 4
+    },
+    {
+     "frame": 1800,
+     "goomba": "6b2af0c41bb12a58c91fc500a446c7a48c1ed959",
+     "reference": "6b2af0c41bb12a58c91fc500a446c7a48c1ed959",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 2400,
+     "goomba": "e3e71087b9b2e678e8b4b5765863cd0db94a7a7c",
+     "reference": "e3e71087b9b2e678e8b4b5765863cd0db94a7a7c",
+     "ref_diff": 0,
+     "colours": 4
+    }
+   ]
+  },
   "7a50fdf0b8ad15556c933df0657fae0a2cd8bc92": {
    "title": "Gradius - The Interstellar Assault (USA)",
    "file": "Gradius - The Interstellar Assault (USA).gb",
@@ -3023,6 +3081,64 @@
     "STUCK": "MBC6 is not supported: the game does not start"
    }
   },
+  "73efaca14c998dd6790e08f2ce2b6f73e7909ce4": {
+   "title": "Ninja JaJaMaru - The Great World Adventure DX (USA, Europe) (Ninja JaJaMaru Retro Collection) (Switch)",
+   "file": "Ninja JaJaMaru - The Great World Adventure DX (USA, Europe) (Ninja JaJaMaru Retro Collection) (Switch).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 166626,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "a037ca7abeed0c3e400f06f191f6a8104fb9c019",
+     "reference": "159ef5e3c51c20913186fc3e3d97ce8a9a9ab8e0",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 600,
+     "goomba": "16d13a207a487de207e03f8e389d8e199026d3b9",
+     "reference": "fc1adf44f3ee757ff5efdf7fca70bb5a40c74070",
+     "ref_diff": 928,
+     "colours": 12
+    },
+    {
+     "frame": 900,
+     "goomba": "f0ef3cb9028984e8e0bd02aff6515a8659a46b35",
+     "reference": "db53899f797801972816ae5b7e08cfdda9219eba",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 1200,
+     "goomba": "6929f56b42ede5cfcc38bfd7f2f6c5d644247f0f",
+     "reference": "06f821e9cdae21da5374187147043907cf10ac17",
+     "ref_diff": 0,
+     "colours": 5
+    },
+    {
+     "frame": 1500,
+     "goomba": "c6e8d2e99136d5ebd838a5ae1194f1fdce5f8861",
+     "reference": "c6e8d2e99136d5ebd838a5ae1194f1fdce5f8861",
+     "ref_diff": 0,
+     "colours": 23
+    },
+    {
+     "frame": 1800,
+     "goomba": "d5f3b46ebe5a0bc5b3e8db80ca38222a8be874f5",
+     "reference": "c6e8d2e99136d5ebd838a5ae1194f1fdce5f8861",
+     "ref_diff": 174,
+     "colours": 23
+    },
+    {
+     "frame": 2400,
+     "goomba": "d5f3b46ebe5a0bc5b3e8db80ca38222a8be874f5",
+     "reference": "c6e8d2e99136d5ebd838a5ae1194f1fdce5f8861",
+     "ref_diff": 174,
+     "colours": 23
+    }
+   ]
+  },
   "a35ccdf0789ce84df3c12cfe7c4b9b98af08ca9a": {
    "title": "Oddworld Adventures II (USA, Europe) (En,Fr,De,Es,It)",
    "file": "Oddworld Adventures II (USA, Europe) (En,Fr,De,Es,It).gbc",
@@ -3426,6 +3542,64 @@
      "reference": "e41428d969a87f7707473e1071b04527c9248047",
      "ref_diff": 0,
      "colours": 2
+    }
+   ]
+  },
+  "2287627c5b4d56bd9a01aab83408c301b9cf1a6c": {
+   "title": "Pokemon Card GB (Japan) (SGB Enhanced) (GB Compatible)",
+   "file": "Pokemon Card GB (Japan) (SGB Enhanced) (GB Compatible).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 95534,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "ae2d038e8e2ac6ae0df0d232c7e657de98e044ac",
+     "reference": "a014dea9073faad2fc035065c5cc0ada203ce4c7",
+     "ref_diff": 346,
+     "colours": 9
+    },
+    {
+     "frame": 600,
+     "goomba": "b661be264464f1e05cd49103461ebf8d94d3bbf4",
+     "reference": "b661be264464f1e05cd49103461ebf8d94d3bbf4",
+     "ref_diff": 0,
+     "colours": 7
+    },
+    {
+     "frame": 900,
+     "goomba": "09deee8fef2940399bbc8cd46536d64626c518b2",
+     "reference": "3eea01b10a42daa6781b4407efa225f71ebc42a9",
+     "ref_diff": 20,
+     "colours": 7
+    },
+    {
+     "frame": 1200,
+     "goomba": "3be38af70a9ed62450396088dc640c9dfa35e244",
+     "reference": "3be38af70a9ed62450396088dc640c9dfa35e244",
+     "ref_diff": 0,
+     "colours": 7
+    },
+    {
+     "frame": 1500,
+     "goomba": "78d76c1065d8bb6f2f3ada5291e19f503143ebb2",
+     "reference": "78d76c1065d8bb6f2f3ada5291e19f503143ebb2",
+     "ref_diff": 0,
+     "colours": 7
+    },
+    {
+     "frame": 1800,
+     "goomba": "6941f4ac23a3baef6e9d08521997a3760b42fbe1",
+     "reference": "6941f4ac23a3baef6e9d08521997a3760b42fbe1",
+     "ref_diff": 0,
+     "colours": 7
+    },
+    {
+     "frame": 2400,
+     "goomba": "6941f4ac23a3baef6e9d08521997a3760b42fbe1",
+     "reference": "6941f4ac23a3baef6e9d08521997a3760b42fbe1",
+     "ref_diff": 0,
+     "colours": 7
     }
    ]
   },
@@ -4241,6 +4415,64 @@
     }
    ]
   },
+  "4d48a6cd886543bae555d0dc4b8012e13c7cdb55": {
+   "title": "San Francisco Rush - Extreme Racing (USA) (Proto)",
+   "file": "San Francisco Rush - Extreme Racing (USA) (Proto).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 235151,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "61fa85165c9d09cb1bc4131a2105319e5fa5f7d9",
+     "reference": "61fa85165c9d09cb1bc4131a2105319e5fa5f7d9",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 600,
+     "goomba": "9edc52c0caee63030012c23318bafc542bc8b8ce",
+     "reference": "9edc52c0caee63030012c23318bafc542bc8b8ce",
+     "ref_diff": 0,
+     "colours": 20
+    },
+    {
+     "frame": 900,
+     "goomba": "026178a7399ef32d76f7d8df810852ff9efd14dc",
+     "reference": "026178a7399ef32d76f7d8df810852ff9efd14dc",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 1200,
+     "goomba": "0b0a544a4e7f897ed1319471f94d60282e2ea359",
+     "reference": "41e7cf3a8c8132b2f4dd7d4cd34201a1c80c77d0",
+     "ref_diff": 277,
+     "colours": 14
+    },
+    {
+     "frame": 1500,
+     "goomba": "b44ad773545281e592b9dbcf01c855ab4fdccaf1",
+     "reference": "b44ad773545281e592b9dbcf01c855ab4fdccaf1",
+     "ref_diff": 0,
+     "colours": 11
+    },
+    {
+     "frame": 1800,
+     "goomba": "b44ad773545281e592b9dbcf01c855ab4fdccaf1",
+     "reference": "b44ad773545281e592b9dbcf01c855ab4fdccaf1",
+     "ref_diff": 0,
+     "colours": 11
+    },
+    {
+     "frame": 2400,
+     "goomba": "b44ad773545281e592b9dbcf01c855ab4fdccaf1",
+     "reference": "b44ad773545281e592b9dbcf01c855ab4fdccaf1",
+     "ref_diff": 0,
+     "colours": 11
+    }
+   ]
+  },
   "eb9f0c6d3c137be7991e9d28fe48d5026beb2f35": {
    "title": "Sensible Soccer - European Champions (Europe)",
    "file": "Sensible Soccer - European Champions (Europe).gb",
@@ -4937,6 +5169,64 @@
     }
    ]
   },
+  "74591cc9501af93873f9a5d3eb12da12c0723bbc": {
+   "title": "Tetris (USA) (Rev-A)",
+   "file": "Tetris (USA) (Rev-A).gb",
+   "script": "start-a",
+   "model": "DMG",
+   "busy_per_frame": 53060,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "843b7466997888cfc79a513da4582018e21822bf",
+     "reference": "843b7466997888cfc79a513da4582018e21822bf",
+     "ref_diff": 0,
+     "colours": 2
+    },
+    {
+     "frame": 600,
+     "goomba": "1d844f767fb561c06a49e947b35942bc2a90f5f9",
+     "reference": "0cfa5dac53de6575a5a436146ab1a9bc012a2ea8",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 900,
+     "goomba": "f7399b10fc64b0ecfdf80dca8155d37d738660f7",
+     "reference": "55440eb1e649a0e95c93ae97c2a088e16a1f66ac",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 1200,
+     "goomba": "2e40ef1f7183507021a4c52ccf4736a3979c55bc",
+     "reference": "1ffe98098050abcdefb76ea8aa11959997e9ee28",
+     "ref_diff": 592,
+     "colours": 4
+    },
+    {
+     "frame": 1500,
+     "goomba": "f7932dbee16dceae19e2c1a2180a89a5e4fb3dd6",
+     "reference": "3abb631df6eab6a412e9bb020924c4f4cf17ba7b",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 1800,
+     "goomba": "f7932dbee16dceae19e2c1a2180a89a5e4fb3dd6",
+     "reference": "3abb631df6eab6a412e9bb020924c4f4cf17ba7b",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 2400,
+     "goomba": "f7932dbee16dceae19e2c1a2180a89a5e4fb3dd6",
+     "reference": "3abb631df6eab6a412e9bb020924c4f4cf17ba7b",
+     "ref_diff": 0,
+     "colours": 4
+    }
+   ]
+  },
   "8d8978fbd5a5634e2cce940122039d575e7b3646": {
    "title": "Tintin in Tibet (Europe) (SGB Enhanced)",
    "file": "Tintin in Tibet (Europe) (SGB Enhanced).gb",
@@ -5224,6 +5514,64 @@
      "reference": "247fff9c12bfa88616ca7c2dcd7c72c6558c6b74",
      "ref_diff": 3913,
      "colours": 4
+    }
+   ]
+  },
+  "6871dd15e2081432ab4c7727f88491f7bbd95099": {
+   "title": "Trip World DX (USA) (Limited Run Games)",
+   "file": "Trip World DX (USA) (Limited Run Games).gbc",
+   "script": "start-a",
+   "model": "CGB",
+   "busy_per_frame": 67043,
+   "checkpoints": [
+    {
+     "frame": 300,
+     "goomba": "60a6cfe505a717a26fdb5110868ee57f80dc7452",
+     "reference": "7f8d5a35570adc39c5c7c268ef44aeee8a854612",
+     "ref_diff": 12180,
+     "colours": 8
+    },
+    {
+     "frame": 600,
+     "goomba": "e8cb3e09e4ff4a6b6d5067166a5b7e80f3fa1580",
+     "reference": "e8cb3e09e4ff4a6b6d5067166a5b7e80f3fa1580",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 900,
+     "goomba": "3c3597c8846905de4e6d28c9a7724403375afa7a",
+     "reference": "3c3597c8846905de4e6d28c9a7724403375afa7a",
+     "ref_diff": 0,
+     "colours": 30
+    },
+    {
+     "frame": 1200,
+     "goomba": "a81b882b8f8da746139bb1e32055f1b82f630556",
+     "reference": "a81b882b8f8da746139bb1e32055f1b82f630556",
+     "ref_diff": 0,
+     "colours": 4
+    },
+    {
+     "frame": 1500,
+     "goomba": "2c1a5d64e00b0266bae29d45357f5229b464156c",
+     "reference": "3b28a063d324c675deb4c834f044a98b0e5e3c0c",
+     "ref_diff": 1841,
+     "colours": 28
+    },
+    {
+     "frame": 1800,
+     "goomba": "2c1a5d64e00b0266bae29d45357f5229b464156c",
+     "reference": "3b28a063d324c675deb4c834f044a98b0e5e3c0c",
+     "ref_diff": 1841,
+     "colours": 28
+    },
+    {
+     "frame": 2400,
+     "goomba": "2c1a5d64e00b0266bae29d45357f5229b464156c",
+     "reference": "3b28a063d324c675deb4c834f044a98b0e5e3c0c",
+     "ref_diff": 1841,
+     "colours": 28
     }
    ]
   },
