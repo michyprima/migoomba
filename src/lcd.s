@@ -2715,6 +2715,8 @@ FF46_W:@		sprite DMA transfer
 @----------------------------------------------------------------------------
 	strb_ r0,oamdma_reg		@reads of $FF46 return the last value written
 @	and r0,r0,#0xff		;not needed?
+	cmp r0,#0xE0			@$E000-$FFFF sources read WRAM through the echo,
+	subhs r0,r0,#0x20		@not HRAM/IO as memmap_tbl maps them for the CPU
 	and r1,r0,#0xF0
 	adr_ r2,memmap_tbl
 	ldr r1,[r2,r1,lsr#2]	@in: addy,r1=addy&0xE000 (for rom_R)
@@ -3221,19 +3223,22 @@ newframe_vblank:	@called at line 144	(??? safe to use)
 
 	@swap gb oam buffer if not dirty
 	ldrb_ r0,gboamdirty
-	movs r0,r0
+	movs r0,r0,lsl#25 @ignore bit 7 (writing buffer is stale)
 	beq gb_oam_is_clean
-	cmp r0,#2 @use copy instead of buffer swap?
+	cmp r0,#2<<25 @use copy instead of buffer swap?
 	beq 0f
-	cmp r0,#3 @Late sprite DMA, want to make put the ALT buffer on the screen
+	cmp r0,#3<<25 @Late sprite DMA, want to make put the ALT buffer on the screen
 	beq 1f
-	
+
 
 	ldr_ r0,gb_oam_buffer_writing
 	ldr_ r1,gb_oam_buffer_screen
 	str_ r1,gb_oam_buffer_writing
 	str_ r0,gb_oam_buffer_screen
-	b 2f
+	@writing now holds the previous frame's OAM: OAM_R reads the screen buffer
+	@and OAM_W refreshes writing first, until the next DMA
+	mov r0,#0x80
+	b 3f
 1:
 	ldr_ r0,gb_oam_buffer_alt
 	ldr_ r1,gb_oam_buffer_screen
@@ -3243,8 +3248,9 @@ newframe_vblank:	@called at line 144	(??? safe to use)
 0:
 	bl_long copyoam
 2:
-	
+
 	mov r0,#0
+3:
 	strb_ r0,gboamdirty
 gb_oam_is_clean:
 @	bl_long copy_gbc_palette
@@ -4808,14 +4814,14 @@ copyoam:
 	ldmfd sp!,{r0,r1,r2,addy,pc}
 
 OAM_R:
-	cmp addy,#0xFE00
-	bmi echo_R
-	ldr_ r1,gb_oam_buffer_writing
-	ldrb r0,[r1,r2]
-	mov pc,lr
+	ldr pc,=OAM_R_rom		@in ROM: games rarely read OAM or echo RAM
 OAM_W:
 	cmp addy,#0xFE00
 	bmi echo_W
+	ldrb_ r1,gboamdirty
+	tst r1,#0x80
+	ldrne pc,=oam_refresh_W	@writing buffer is stale: refresh it first
+OAM_W_fresh:
 	mov r1,#2
 	strb_ r1,gboamdirty
 	ldr_ r1,gb_oam_buffer_writing
@@ -4823,6 +4829,29 @@ OAM_W:
 	cmp r2,#0xA0
 	strltb r0,[r1,r2]
 	mov pc,lr
+	.ltorg
+
+.pushsection .text
+OAM_R_rom:
+	cmp addy,#0xFE00
+	ldrmi pc,=echo_R
+	ldrb_ r1,gboamdirty
+	tst r1,#0x80			@after a buffer swap the latest OAM is on screen
+	ldreq_ r1,gb_oam_buffer_writing
+	ldrne_ r1,gb_oam_buffer_screen
+	ldrb r0,[r1,r2]
+	mov pc,lr
+
+oam_refresh_W:
+	stmfd sp!,{r0-r3,addy,lr}
+	ldr_ r0,gb_oam_buffer_writing
+	ldr_ r1,gb_oam_buffer_screen
+	mov r2,#160
+	bl_long memcpy32
+	ldmfd sp!,{r0-r3,addy,lr}
+	ldr pc,=OAM_W_fresh		@sets gboamdirty to 2, which clears the stale bit
+	.ltorg
+.popsection
 
 
 @----------------------------------------------------------------------------
