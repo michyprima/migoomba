@@ -193,6 +193,12 @@ RECENT_TILENUM_SIZE = 128
  ewram_canary_1 = Next - 4
  Next = ewram_canary_1
 
+@per-line palette state (lcd.s: bgp_state, cgbp_state). Below the canary, where save code
+@may run over it: only display data, cleared by perline_reset (cleanup_ewram, GFX_reset).
+ PERLINE_STATE_SIZE = 0x5500
+ perline_state = Next - PERLINE_STATE_SIZE
+ Next = perline_state
+
 	.if SPEEDHACKS_OLD
  SPEEDHACK_FIND_JR_Z_BUF		= Next - 64
  SPEEDHACK_FIND_JR_NZ_BUF	= SPEEDHACK_FIND_JR_Z_BUF-64

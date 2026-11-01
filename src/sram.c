@@ -1613,6 +1613,9 @@ fail:  //does not happen for now
 
 void cleanup_ewram()
 {
+	//save code may have used the EWRAM below the canary, where the per-line palette state is
+	bgp_reset();
+
 	//check EWRAM canaries and rebuild tables
 	if (ewram_canary_1 != 0xDEADBEEF)
 	{

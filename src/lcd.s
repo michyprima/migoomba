@@ -82,6 +82,7 @@
 	@IMPORT StartRumbleComs
  .endif
  	global_func update_ui_border_masks
+ 	global_func bgp_reset
  	
  	global_func lcdstat
  	global_func FF41_modify1
@@ -2919,6 +2920,10 @@ vcountinterrupt:
 do_gba_hdma:
 	mov r12,globalptr
 	ldr globalptr,=GLOBAL_PTR_BASE
+	mov r1,#REG_BASE		@stop the DMAs (end_gba_hdma normally has) so the
+	strh r1,[r1,#REG_DM0CNT_H]	@starts below always latch the new sources
+	strh r1,[r1,#REG_DM1CNT_H]
+	strh r1,[r1,#REG_DM2CNT_H]
 	ldr r0,=REG_BASE+REG_DM0SAD
 	ldr_ r1,bigbufferbase2
 @	add r1,r1,#24  ;because first scanline was already displayed
@@ -2937,7 +2942,7 @@ do_gba_hdma:
 	ldr r3,=0xA2600001
 	stmia r0!,{r1-r3}
 
-	adr r0,end_gba_hdma
+	ldr r0,=end_gba_hdma
 	ldr r1,=vcountfptr
 	str r0,[r1]
 
@@ -2974,6 +2979,10 @@ do_gba_hdma:
 	mov globalptr,r12
 	bx lr
 	
+	.ltorg
+	.popsection
+
+	.pushsection .text	@once a frame: kept out of .vram1, which is full
 end_gba_hdma:
 	mov r2,#REG_BASE
 	strh r2,[r2,#REG_DM0CNT_H]	@DMA stop
@@ -4566,7 +4575,18 @@ FF47_W_:
  CP_BUFSIZE	= CP_PALS + 144*64
  CP_SIZE	= CP_BUFS + 2*CP_BUFSIZE
 
-bgp_reset:	@called with CPU reset: per-line palettes off
+bgp_reset:	@CPU reset, and from C (cleanup_ewram) after save code used the EWRAM where this
+	@state lives: per-line palettes off. r0-r2=?
+	mov r0,#REG_BASE
+	ldrb r1,[r0,#REG_IE]
+	bic r1,r1,#2
+	strb r1,[r0,#REG_IE]
+	ldr r0,=io_write_tbl		@a reused frame left FF69 unhooked: hook it again
+	ldr r1,[r0,#0x69*4]
+	ldr r2,=FF69_W_write
+	cmp r1,r2
+	ldreq r1,=FF69_W
+	streq r1,[r0,#0x69*4]
 	ldr r0,=bgp_state
 	mov r1,#0
 	str r1,[r0]
@@ -4586,10 +4606,6 @@ bgp_reset:	@called with CPU reset: per-line palettes off
 	ldr r0,=cgbp_scan
 	mov r1,#0xFF
 	strb r1,[r0]
-	mov r0,#REG_BASE
-	ldrb r1,[r0,#REG_IE]
-	bic r1,r1,#2
-	strb r1,[r0,#REG_IE]
 	bx lr
 
 bgp_frame_end:	@called at line 144 after the line buffers are swapped
@@ -4843,11 +4859,14 @@ cgbp_line7:	@do_gba_hdma: per-line palettes for this frame? in: r2=REG_BASE (kep
 	.ltorg
 	.popsection
 
-	.pushsection .sbss,"aw",%nobits
-	.align 2
-bgp_state: .skip BGP_SIZE
-cgbp_state: .skip CP_SIZE
-	.popsection
+ bgp_state = perline_state	@fixed EWRAM block (equates.h), cleared by bgp_reset
+ cgbp_state = perline_state + BGP_SIZE
+	.if BGP_SIZE + CP_SIZE > PERLINE_STATE_SIZE
+	.error "per-line palette state does not fit PERLINE_STATE_SIZE"
+	.endif
+	.if perline_state & 3
+	.error "perline_state must be word aligned"
+	.endif
 
 	.pushsection .vram1, "ax", %progbits
 bgp_record:	@in: r0=new BGP (kept). out: r1,r2,addy=?
