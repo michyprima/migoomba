@@ -598,9 +598,13 @@ doIRQ:
 	mov gb_pc,r2			@get IRQ vector
 
 	push16_novram					@save PC
+	cmp gb_sp,#0xFFFE0000		@SP was $0000/$0001: the push wrote IE ($FFFF)
+	ldrhs pc,=ie_push
+doIRQ_pushed:
 	encodePC_afterpush16
 
 	fetch 24
+	.ltorg
 
 .pushsection .text
 _irqGBZ80_:
@@ -617,6 +621,36 @@ _irqGBZ80_:
 	and r1,r1,#0x1f			@unknown IRQ?
 	mov r2,#0x40
 	b_long doIRQ
+
+ie_push:	@in: gb_pc=vector, gb_sp=new SP, addy=memmap base for $Fxxx, r0=PC high byte
+	add r1,addy,#0xFF00
+	ldrb r1,[r1,#0xFF]		@the pushed byte now in $FFFF
+	strb_ r1,gb_ie
+	cmp gb_sp,#0xFFFF0000
+	beq 2f				@only the low byte hit IE: the interrupt was already chosen
+	@the high byte is pushed before the vector is chosen: pick again with the new IE
+	sub r2,gb_pc,#0x40
+	mov r2,r2,lsr#3
+	mov r0,#1
+	mov r0,r0,lsl r2		@bit of the interrupt being dispatched
+	ldrb_ r2,gb_if
+	orr r2,r2,r0			@IF as it was before acknowledging
+	and r0,r2,r1
+	ands r0,r0,#0x1F
+	moveq gb_pc,#0			@nothing enabled any more: jump to $0000, IF untouched
+	beq 1f
+	mov gb_pc,#0x40
+0:	movs r0,r0,lsr#1		@lowest pending bit = highest priority
+	addcc gb_pc,gb_pc,#8
+	bcc 0b
+	sub r0,gb_pc,#0x40
+	mov r0,r0,lsr#3
+	mov r1,#1
+	bic r2,r2,r1,lsl r0		@acknowledge the new choice
+1:	strb_ r2,gb_if
+2:	adr_ r2,memmap_tbl
+	ldr pc,=doIRQ_pushed
+	.ltorg
 .popsection
 
 
