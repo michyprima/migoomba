@@ -364,11 +364,13 @@ GFX_reset:	@called with CPU reset
 	mov r2,#48
 	bl memset32_
 
-	@clear dirty map words
+	@whole map dirty: its colour 0 and priority layers need entries even where the GB map stays 0
+	mvn r1,#0
 	ldr r0,=dirty_map_words
 	mov r2,#64
 	bl memset32_
-	
+	mov r1,#0
+
 	@clear all VRAM packets
 	ldr r0,=vram_packets_incoming
 	mov r2,#128
