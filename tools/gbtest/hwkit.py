@@ -229,19 +229,21 @@ def write_checklist(out, built, comp, tests):
     w("| 5.4 | Pokemon Crystal walking, Mario Land 2 | full speed | |\n")
     w("## 6. Stability\n")
     w("| # | Check | Expected | Result |\n|---|---|---|---|")
-    w("| 6.1 | 20 minutes of Shantae or Zelda DX | no crash, no garbage | |")
+    w("| 6.1 | 20 minutes of Shantae or Zelda DX, playing (5 minutes without input puts the GBA to sleep: "
+      "screen and sound off until Start+Select; the menu's Autosleep sets 10/30 min or off) | no crash, no garbage | |")
     w("| 6.2 | Quick save / load in Turok 3 during a picture | picture right after loading | |\n")
-    w("## 7. Test ROMs\n")
-    w("Each compilation's menu lists \"NN NAME\". Mooneye: a pass shows the assertions OK and no \"Test failed\"; "
-      "Blargg prints its results. Expected is mGBA's result with this build; mark the ones that differ on hardware.\n")
-    for rom, entries in tests.items():
-        w("### %s (%d tests, %d pass in mGBA)\n" % (rom, len(entries), sum(st == "PASS" for _, _, st in entries)))
-        w("| NN | Test | mGBA | Hardware |\n|---|---|---|---|")
-        for i, name, st in entries:
-            w("| %02d | %s | %s | |" % (i, name.split("/", 1)[1], st))
-        w("")
-    w("### 34_mbc3_tester.gba\n")
-    w("Compare with `expected/34_mbc3_tester_hardware.png` (the test's own picture from real hardware). | |\n")
+    w("## 7. Test ROMs (spot checks)\n")
+    w("The core gives the same results on any GBA, so mGBA's results (`expected/tests.json`) stand for the rest. "
+      "Each compilation's menu lists \"NN NAME\"; Mooneye shows its assertions and no \"Test failed\", Blargg prints "
+      "its results.\n")
+    w("| # | Check | Expected | Result |\n|---|---|---|---|")
+    picks = [(rom, i, name, st) for rom, entries in tests.items() for i, name, st in entries
+             if name.endswith(("cpu_instrs.gb", "mbc1/rom_16Mb.gb", "mbc5/rom_64Mb.gb", "mbc2/ram.gb", "/intr_timing.gb"))
+             and "wilbertpol" not in rom]
+    for n, (rom, i, name, st) in enumerate(picks, 1):
+        w("| 7.%d | `%s`, %02d %s | %s | |" % (n, rom, i, name.split("/", 1)[1], st))
+    w("| 7.%d | `34_mbc3_tester.gba` | like `expected/34_mbc3_tester_hardware.png` (the test's picture from real hardware) | |\n"
+      % (len(picks) + 1))
     open(os.path.join(out, "CHECKLIST.md"), "w").write("\n".join(L) + "\n")
 
 
