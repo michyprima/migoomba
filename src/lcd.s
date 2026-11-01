@@ -227,6 +227,7 @@ move_ui_asm:
 	str_ r0,_ui_border_request
 	ldmfd sp!,{globalptr}
 	bx lr
+	.ltorg
 
 GFX_init_irq:
 	@install IRQ handler
@@ -254,6 +255,7 @@ GFX_init_irq:
 	strh r0,[r2,#8]		@master irq enable
 
 	bx lr
+	.ltorg
 
 @----------------------------------------------------------------------------
 GFX_init:	@(called from main.c) only need to call once
@@ -2943,7 +2945,16 @@ do_gba_hdma:
 	strh r0,[r2,#REG_DISPSTAT]
 
 	str lr,[sp,#-4]!
-	bl bgp_line7			@per-line BG palette for this frame?
+	ldr r0,=bgp_state		@per-line BG palettes for this frame (or the last one)?
+	ldr r1,[r0,#BGP_DISPLAY]
+	ldr r0,[r0,#BGP_SHOW]
+	orrs r0,r0,r1
+	blne_long bgp_line7
+	ldr r0,=cgbp_state
+	ldr r1,[r0,#CP_DISPLAY]
+	ldr r0,[r0,#CP_SHOW]
+	orrs r0,r0,r1
+	blne_long cgbp_line7
 	ldr lr,[sp],#4
 
 	ldr_ r0,_ui_border_screen
@@ -3202,7 +3213,24 @@ newframe_vblank:	@called at line 144	(??? safe to use)
 	str_ r1,dispcntbase
 	str_ r0,dispcntbase2
 
-	bl bgp_frame_end		@per-line BG palette for the frame just finished
+	@per-line BG palettes for the frame just finished; most frames have nothing to do
+	ldr r12,=bgp_state
+	ldrb_ r0,bgpalette
+	strb r0,[r12,#BGP_CUR]
+	ldrb r0,[r12,#BGP_MID]
+	ldr r1,[r12,#BGP_DISPLAY]
+	orrs r0,r0,r1
+	blne_long bgp_frame_end
+	ldr r12,=cgbp_state
+	ldrb r0,[r12,#CP_MID]
+	ldrb r1,[r12,#CP_SKIP]
+	orr r0,r0,r1
+	ldr r1,[r12,#CP_DISPLAY]
+	orrs r0,r0,r1
+	ldreq r1,=cgbp_scan
+	moveq r0,#0xFF
+	streqb r0,[r1]			@the next FF69 write starts a new line
+	blne_long cgbp_frame_end
 
 	@@advance 
 	@ldr_ r0,bg_cache_cursor
@@ -4486,7 +4514,7 @@ FF47_W_:
 	b_long dopalette
 
 @----------------------------------------------------------------------------
-@Per-line BG palette (DMG mode). Some games (V-Rally, Lemmings 2) change BGP while
+@Per-line BG palettes. DMG: some games (V-Rally, Lemmings 2) change BGP while
 @lines are being drawn, but Goomba draws a frame with one palette. bgp_record notes
 @which GB lines use which BGP and the lines where it changes. At the end of such a
 @frame bgp_frame_end hands the line list to the display: bgp_line7 (from do_gba_hdma)
@@ -4494,7 +4522,17 @@ FF47_W_:
 @enables the HBlank interrupt, and hblank_palette writes the changed line's colours
 @(from a table of all 256 BGP values) just before the line is drawn, staying on while
 @consecutive lines change and re-arming VCOUNT for the next change otherwise.
-@Frames without mid-frame BGP changes cost nothing.
+@CGB: hi-colour games (Rainbow Islands, Tomb Raider, Turok 3) rewrite the BG palettes
+@(FF69) on many lines. The first FF69 write on a new scanline calls cgbp_newline, which
+@closes the current entry with a 64-byte snapshot of the BG palettes and opens one at
+@that line; the display writes each entry's 8 palettes (cgbp_put) at its first line
+@through the same VCOUNT/HBlank chain. Gamma is not applied to these lines.
+@To keep this cheap: a line whose palettes equal the line above is merged into it, each
+@entry writes only the palettes that changed, and after a recorded frame the next one
+@reuses its table with FF69 writes going straight to FF69_W_write (hi-colour screens
+@are mostly static; palette animation on them updates at 30Hz, and leaving hi-colour
+@shows the old palettes for one frame).
+@Frames without mid-frame palette changes cost nothing.
 @----------------------------------------------------------------------------
  BGP_CUR	= 0		@BGP as of the last recorded write
  BGP_LAST	= 1		@lines before this one are recorded for this frame
@@ -4512,108 +4550,45 @@ FF47_W_:
  BGP_COLTAB	= BGP_LINES + 2*BGP_BUF	@BGP -> 4 colours (8 bytes each)
  BGP_SIZE	= BGP_COLTAB + 256*8
 
+ CP_LAST	= 0		@lines before this one are recorded for this frame
+ CP_MID		= 1		@BG palettes changed mid-frame
+ CP_WHICH	= 2		@buffer being recorded (0/1)
+ CP_N		= 3		@open entry
+ CP_SHOW	= 4		@buffer of the frame on screen
+ CP_DISPLAY	= 8		@buffer for the next frame shown, 0 = one palette set
+ CP_NEXT	= 12		@HBlank handler: start line of the current entry
+ CP_PAL		= 16		@HBlank handler: its palettes
+ CP_SKIP	= 20		@this frame reuses the last recorded table
+ CP_BUFS	= 24		@2 buffers: entry start lines (148, $FF-terminated), which palettes
+ CP_MASKS	= 148		@each entry changes (148 bytes), 144 x 64-byte palettes
+ CP_PALS	= 296
+ CP_BUFSIZE	= CP_PALS + 144*64
+ CP_SIZE	= CP_BUFS + 2*CP_BUFSIZE
+
 bgp_reset:	@called with CPU reset: per-line palettes off
 	ldr r0,=bgp_state
 	mov r1,#0
 	str r1,[r0]
+	str r1,[r0,#BGP_SHOW]
 	str r1,[r0,#BGP_DISPLAY]
 	str r1,[r0,#BGP_TABVALID]
 	str r1,[r0,#BGP_NCHG]
+	ldr r0,=cgbp_state
+	str r1,[r0]
+	strb r1,[r0,#CP_SKIP]
+	str r1,[r0,#CP_SHOW]
+	str r1,[r0,#CP_DISPLAY]
+	strb r1,[r0,#CP_BUFS]		@entry 0 starts at line 0
+	ldr r2,=CP_BUFSIZE
+	add r2,r2,#CP_BUFS
+	strb r1,[r0,r2]
+	ldr r0,=cgbp_scan
+	mov r1,#0xFF
+	strb r1,[r0]
 	mov r0,#REG_BASE
 	ldrb r1,[r0,#REG_IE]
 	bic r1,r1,#2
 	strb r1,[r0,#REG_IE]
-	bx lr
-	.ltorg
-	.popsection
-
-	.pushsection .sbss,"aw",%nobits
-	.align 2
-bgp_state: .skip BGP_SIZE
-	.popsection
-
-	.pushsection .vram1, "ax", %progbits
-bgp_record:	@in: r0=new BGP (kept). out: r1,r2,addy=?
-	stmfd sp!,{r3,r4,lr}
-	ldr addy,=bgp_state
-	ldrb r1,[addy,#BGP_CUR]
-	cmp r1,r0
-	beq 9f
-	strb r0,[addy,#BGP_CUR]
-	@the line the new value starts on, as tobuffer counts it (vblank = line 0)
-	ldr r3,=lcdstat
-	ldrb r3,[r3]
-	tst r3,#0x01
-	bne 9f
-	ldrb_ r2,scanline
-	ldr_ r3,scanline_oam_position
-	cmp cycles,r3
-	addmi r2,r2,#1
-	cmp r2,#144
-	bge 9f
-	ldrb r3,[addy,#BGP_LAST]
-	cmp r2,r3
-	ble 9f
-	strb r2,[addy,#BGP_LAST]
-	mov lr,#1
-	strb lr,[addy,#BGP_MID]
-	ldrb lr,[addy,#BGP_NCHG]
-	add r4,lr,#1
-	strb r4,[addy,#BGP_NCHG]
-	ldrb r4,[addy,#BGP_WHICH]
-	add addy,addy,#BGP_LINES
-	cmp r4,#0
-	addne addy,addy,#BGP_BUF	@this frame's line buffer
-	add r4,addy,#144
-	strb r2,[r4,lr]			@list the change line
-0:	strb r1,[addy,r3]		@lines up to here used the old value
-	add r3,r3,#1
-	cmp r3,r2
-	blt 0b
-9:	ldmfd sp!,{r3,r4,pc}
-
-hblank_palette:	@IRQ mode, IRQs off, r0-r3,r12 free; returns to the BIOS
-	ldr r12,=bgp_state
-	ldr r3,[r12,#BGP_CP]
-	ldrb r0,[r3],#1			@GB line about to be drawn
-	str r3,[r12,#BGP_CP]
-	ldr r1,[r12,#BGP_SHOW]
-	ldrb r1,[r1,r0]
-	add r12,r12,#BGP_COLTAB
-	add r12,r12,r1,lsl#3
-	ldmia r12,{r1,r2}
-	mov r12,#PALETTE_BASE
-	add r12,r12,#0x100
-	stmia r12,{r1,r2}		@BG palette 8, colours 0-3
-	strh r1,[r12,#-0x10]		@colour 0 copy used by the colour-0 tiles
-	ldrb r1,[r3]			@next change line
-	add r0,r0,#1
-	cmp r1,r0
-	bxeq lr				@the next line changes too: stay on
-	mov r2,#REG_BASE
-	ldrb r0,[r2,#REG_IE]
-	bic r0,r0,#2
-	strb r0,[r2,#REG_IE]
-	cmp r1,#0xFF
-	ldreq r0,=end_gba_hdma		@no more changes: back to the line 151 interrupt
-	moveq r1,#144
-	ldrne r0,=bgp_vcount
-	ldr r3,=vcountfptr
-	str r0,[r3]
-	add r1,r1,#SCREEN_Y_START-1	@VCOUNT interrupt at the start of the GBA line before it
-	mov r0,#0x38
-	orr r0,r0,r1,lsl#8
-	strh r0,[r2,#REG_DISPSTAT]
-	bx lr
-
-bgp_vcount:	@VCOUNT interrupt on the GBA line before a change: HBlank interrupt on
-	mov r2,#REG_BASE
-	add r0,r2,#REG_IE
-	mov r1,#2
-	strh r1,[r0,#2]			@drop HBlank requests from earlier lines
-	ldrb r1,[r0]
-	orr r1,r1,#2
-	strb r1,[r0]
 	bx lr
 
 bgp_frame_end:	@called at line 144 after the line buffers are swapped
@@ -4741,6 +4716,275 @@ bgp_line7:	@do_gba_hdma: per-line palettes for this frame? in: r2=REG_BASE (kept
 	orr r0,r0,r3,lsl#8
 	strh r0,[r2,#REG_DISPSTAT]
 	bx lr
+
+bgp_vcount:	@VCOUNT interrupt on the GBA line before a change: HBlank interrupt on
+	mov r2,#REG_BASE
+	add r0,r2,#REG_IE
+	mov r1,#2
+	strh r1,[r0,#2]			@drop HBlank requests from earlier lines
+	ldrb r1,[r0]
+	orr r1,r1,#2
+	strb r1,[r0]
+	bx lr
+
+	.macro cgbp_close	@close the open entry: in r4=buffer, r3=entry. out r3=next entry
+	@(r3+1, or r3 when its palettes equal the entry above and it is merged), r1,r5-r9,lr=?
+	add r5,r4,#CP_PALS
+	add r5,r5,r3,lsl#6
+	ldr lr,=gbc_palette
+	mov r1,#0
+	.irp p,0,1,2,3,4,5,6,7
+	ldmia lr!,{r6,r7}
+	ldr r8,[r5,#-64]		@the entry above
+	ldr r9,[r5,#-60]
+	cmp r6,r8
+	cmpeq r7,r9
+	orrne r1,r1,#1<<\p
+	stmia r5!,{r6,r7}
+	.endr
+	cmp r3,#0
+	moveq r1,#0xFF			@entry 0: all palettes
+	movs r1,r1
+	addne r5,r4,#CP_MASKS
+	strneb r1,[r5,r3]
+	addne r3,r3,#1
+	.endm
+
+cgbp_frame_end:	@called at line 144 after the line buffers are swapped
+	ldr r12,=cgbp_state
+	ldr r0,=cgbp_scan
+	mov r1,#0xFF
+	strb r1,[r0]			@the next write starts a new line
+	mov r0,#0
+	ldrb r2,[r12,#CP_SKIP]
+	cmp r2,#0
+	beq 1f
+	@a reused frame (FF69 writes went straight to FF69_W_write): keep showing the
+	@last recorded table and record the next frame
+	strb r0,[r12,#CP_SKIP]
+	ldr r1,=io_write_tbl
+	ldr r2,=FF69_W
+	str r2,[r1,#0x69*4]
+	bx lr
+1:	ldrb r1,[r12,#CP_MID]
+	ldrb_ r2,lcdctrl0frame
+	tst r2,#0x80
+	moveq r1,#0			@LCD off: nothing to show
+	strb r0,[r12,#CP_LAST]
+	strb r0,[r12,#CP_MID]
+	cmp r1,#0
+	streq r0,[r12,#CP_DISPLAY]	@usual case: one palette set all frame
+	streqb r0,[r12,#CP_N]
+	bxeq lr
+	stmfd sp!,{r4-r9,lr}
+	ldrb r1,[r12,#CP_WHICH]
+	add r4,r12,#CP_BUFS
+	ldr r5,=CP_BUFSIZE
+	cmp r1,#0
+	addne r4,r4,r5			@this frame's buffer
+	ldrb r3,[r12,#CP_N]
+	cgbp_close
+	mov r0,#0
+	strb r0,[r12,#CP_N]
+	mov r1,#1			@the next frame reuses this result, without the FF69 hook
+	strb r1,[r12,#CP_SKIP]
+	ldr r1,=io_write_tbl
+	ldr r2,=FF69_W_write
+	str r2,[r1,#0x69*4]
+	cmp r3,#1
+	strle r0,[r12,#CP_DISPLAY]	@every change merged away: one palette set
+	ldmlefd sp!,{r4-r9,pc}
+	mov r0,#0xFF
+	strb r0,[r4,r3]			@end of the start list
+	str r4,[r12,#CP_DISPLAY]
+	ldrb r1,[r12,#CP_WHICH]		@the frame after next records in the other buffer
+	eor r1,r1,#1
+	strb r1,[r12,#CP_WHICH]
+	add r4,r12,#CP_BUFS
+	ldr r5,=CP_BUFSIZE
+	cmp r1,#0
+	addne r4,r4,r5
+	mov r0,#0
+	strb r0,[r4]			@entry 0 starts at line 0
+	ldmfd sp!,{r4-r9,pc}
+
+cgbp_line7:	@do_gba_hdma: per-line palettes for this frame? in: r2=REG_BASE (kept), r12 kept
+	ldr r0,=cgbp_state
+	ldr r1,[r0,#CP_DISPLAY]
+	str r1,[r0,#CP_SHOW]
+	cmp r1,#0
+	bxeq lr
+	stmfd sp!,{r2,r12,lr}
+	add r3,r1,#CP_PALS
+	ldrb r12,[r1,#CP_MASKS]
+	add r1,r1,#1
+	str r1,[r0,#CP_NEXT]		@entry 1's start line
+	bl_long cgbp_put		@entry 0: lines from 0
+	ldr r0,=cgbp_state
+	str r3,[r0,#CP_PAL]
+	ldr r1,[r0,#CP_NEXT]
+	ldrb r3,[r1]			@first change line
+	ldmfd sp!,{r2,r12,lr}
+	cmp r3,#0xFF
+	bxeq lr
+	ldr r0,=bgp_vcount
+	ldr r1,=vcountfptr
+	str r0,[r1]
+	add r3,r3,#SCREEN_Y_START-1
+	mov r0,#0x38
+	orr r0,r0,r3,lsl#8
+	strh r0,[r2,#REG_DISPSTAT]
+	bx lr
+
+	.ltorg
+	.popsection
+
+	.pushsection .sbss,"aw",%nobits
+	.align 2
+bgp_state: .skip BGP_SIZE
+cgbp_state: .skip CP_SIZE
+	.popsection
+
+	.pushsection .vram1, "ax", %progbits
+bgp_record:	@in: r0=new BGP (kept). out: r1,r2,addy=?
+	stmfd sp!,{r3,r4,lr}
+	ldr addy,=bgp_state
+	ldrb r1,[addy,#BGP_CUR]
+	cmp r1,r0
+	beq 9f
+	strb r0,[addy,#BGP_CUR]
+	@the line the new value starts on, as tobuffer counts it (vblank = line 0)
+	ldr r3,=lcdstat
+	ldrb r3,[r3]
+	tst r3,#0x01
+	bne 9f
+	ldrb_ r2,scanline
+	ldr_ r3,scanline_oam_position
+	cmp cycles,r3
+	addmi r2,r2,#1
+	cmp r2,#144
+	bge 9f
+	ldrb r3,[addy,#BGP_LAST]
+	cmp r2,r3
+	ble 9f
+	strb r2,[addy,#BGP_LAST]
+	mov lr,#1
+	strb lr,[addy,#BGP_MID]
+	ldrb lr,[addy,#BGP_NCHG]
+	add r4,lr,#1
+	strb r4,[addy,#BGP_NCHG]
+	ldrb r4,[addy,#BGP_WHICH]
+	add addy,addy,#BGP_LINES
+	cmp r4,#0
+	addne addy,addy,#BGP_BUF	@this frame's line buffer
+	add r4,addy,#144
+	strb r2,[r4,lr]			@list the change line
+0:	strb r1,[addy,r3]		@lines up to here used the old value
+	add r3,r3,#1
+	cmp r3,r2
+	blt 0b
+9:	ldmfd sp!,{r3,r4,pc}
+
+hblank_palette:	@IRQ mode, IRQs off, r0-r3,r12 free; returns to the BIOS
+	ldr r12,=cgbp_state
+	ldr r0,[r12,#CP_SHOW]
+	cmp r0,#0
+	bne cgbp_hblank
+	ldr r12,=bgp_state
+	ldr r3,[r12,#BGP_CP]
+	ldrb r0,[r3],#1			@GB line about to be drawn
+	str r3,[r12,#BGP_CP]
+	ldr r1,[r12,#BGP_SHOW]
+	ldrb r1,[r1,r0]
+	add r12,r12,#BGP_COLTAB
+	add r12,r12,r1,lsl#3
+	ldmia r12,{r1,r2}
+	mov r12,#PALETTE_BASE
+	add r12,r12,#0x100
+	stmia r12,{r1,r2}		@BG palette 8, colours 0-3
+	strh r1,[r12,#-0x10]		@colour 0 copy used by the colour-0 tiles
+	ldrb r1,[r3]			@next change line
+	add r0,r0,#1
+hbl_next:	@in: r0=line after the one just set, r1=next change line ($FF = none)
+	cmp r1,r0
+	bxeq lr				@the next line changes too: stay on
+	mov r2,#REG_BASE
+	ldrb r0,[r2,#REG_IE]
+	bic r0,r0,#2
+	strb r0,[r2,#REG_IE]
+	cmp r1,#0xFF
+	ldreq r0,=end_gba_hdma		@no more changes: back to the line 151 interrupt
+	moveq r1,#144
+	ldrne r0,=bgp_vcount
+	ldr r3,=vcountfptr
+	str r0,[r3]
+	add r1,r1,#SCREEN_Y_START-1	@VCOUNT interrupt at the start of the GBA line before it
+	mov r0,#0x38
+	orr r0,r0,r1,lsl#8
+	strh r0,[r2,#REG_DISPSTAT]
+	bx lr
+
+cgbp_newline:	@first FF69 write on a scanline, entered by branch from FF69_W and returning
+	@to FF69_W_write. in: r0=value (kept), r2=line, lr=FF69_W's caller (kept)
+	stmfd sp!,{r3-r9,lr}
+	ldr r1,=cgbp_scan
+	strb r2,[r1]
+	@r2 = the line the write takes effect on, as tobuffer counts it (vblank = line 0)
+	ldr r1,=lcdstat
+	ldrb r1,[r1]
+	tst r1,#0x01
+	bne 9f
+	cmp r2,#144
+	bge 9f
+	ldr addy,=cgbp_state
+	ldrb r3,[addy,#CP_LAST]
+	cmp r2,r3
+	ble 9f
+	strb r2,[addy,#CP_LAST]
+	mov r1,#1
+	strb r1,[addy,#CP_MID]
+	ldrb r1,[addy,#CP_WHICH]
+	add r4,addy,#CP_BUFS
+	cmp r1,#0
+	ldrne r5,=CP_BUFSIZE
+	addne r4,r4,r5			@this frame's buffer
+	ldrb r3,[addy,#CP_N]
+	cgbp_close			@palettes before this write
+	strb r3,[addy,#CP_N]
+	strb r2,[r4,r3]			@the open entry starts on this line
+9:	ldmfd sp!,{r3-r9,lr}
+	ldr pc,=FF69_W_write
+
+cgbp_hblank:	@IRQ mode, r12=cgbp_state: write the entry starting on the next line
+	stmfd sp!,{r4,lr}
+	ldr r4,[r12,#CP_NEXT]
+	ldr r3,[r12,#CP_PAL]
+	ldrb r12,[r4,#CP_MASKS]
+	bl cgbp_put
+	ldr r12,=cgbp_state
+	str r3,[r12,#CP_PAL]
+	ldrb r0,[r4],#1			@this entry's start line
+	str r4,[r12,#CP_NEXT]
+	ldrb r1,[r4]			@the next entry's
+	add r0,r0,#1
+	ldmfd sp!,{r4,lr}
+	b hbl_next
+
+cgbp_put:	@in: r3=64 bytes of CGB BG palettes, r12=which of them to write. out: those
+	@GBA BG palettes (8-15, colours 0-3, and their colour-0 copies) set, r3+=64, r0-r2=?
+	mov r2,#PALETTE_BASE
+	add r2,r2,#0x100
+	.irp k,0,1,2,3,4,5,6,7
+	tst r12,#1<<\k
+	ldrne r0,[r3,#8*\k]
+	ldrne r1,[r3,#8*\k+4]
+	strne r0,[r2,#32*\k]
+	strne r1,[r2,#32*\k+4]
+	strneh r0,[r2,#-16+2*\k]
+	.endr
+	add r3,r3,#64
+	bx lr
+
 	.ltorg
 	.popsection
 dopalette:
@@ -4999,6 +5243,14 @@ vram_W2:
 @----------------------------------------------------------------------------
 
 FF69_W:	@BCPD - BG Color Palette Data
+	ldrb_ r2,scanline
+	ldr_ r1,scanline_oam_position
+	cmp cycles,r1
+	addmi r2,r2,#1			@in HBlank: the write is for the next line
+	ldrb r1,cgbp_scan
+	cmp r1,r2
+	ldrne pc,=cgbp_newline		@first write for this line: per-line palettes (comes back)
+FF69_W_write:
 	ldrb_ r1,BCPS_index
 	and r2,r1,#0x3F
 	ldr addy,=gbc_palette
@@ -5011,6 +5263,8 @@ FF69_W:	@BCPD - BG Color Palette Data
     
 	strneb_ r1,BCPS_index
 	bx lr
+cgbp_scan: .byte 0xFF		@line (scanline, +1 in HBlank) of the last FF69 write
+	.align 2
 @FF69_W	;BCPD - BG Color Palette Data
 @	ldrb r1,BCPS_index
 @	and r2,r1,#0x3F

@@ -56,7 +56,7 @@
    "file": "Alone in the Dark - The New Nightmare (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 249621,
+   "busy_per_frame": 269441,
    "checkpoints": [
     {
      "frame": 300,
@@ -90,15 +90,15 @@
     },
     {
      "frame": 1800,
-     "goomba": "fef00c812f3a03deac0d0acc7970eb6f6db1d1bd",
+     "goomba": "e36856467dc556d0af2dfcccc65bc525569d3640",
      "reference": "67f5748b3c46bde8611d096baea1b1507141eeaf",
-     "ref_diff": 22250
+     "ref_diff": 18486
     },
     {
      "frame": 2400,
-     "goomba": "fef00c812f3a03deac0d0acc7970eb6f6db1d1bd",
+     "goomba": "f60ec5925abfbeb8db26afb2a029c9b1e3f74a32",
      "reference": "67f5748b3c46bde8611d096baea1b1507141eeaf",
-     "ref_diff": 22250
+     "ref_diff": 18344
     }
    ]
   },
@@ -311,13 +311,13 @@
    "file": "Cannon Fodder (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 183741,
+   "busy_per_frame": 194405,
    "checkpoints": [
     {
      "frame": 300,
-     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
+     "goomba": "d6f7ae3ded68b325ada5ca7ef74f5bab951fe91d",
      "reference": "d6f7ae3ded68b325ada5ca7ef74f5bab951fe91d",
-     "ref_diff": 427
+     "ref_diff": 0
     },
     {
      "frame": 600,
@@ -413,7 +413,7 @@
    "file": "Donkey Kong Country (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 156191,
+   "busy_per_frame": 161761,
    "checkpoints": [
     {
      "frame": 300,
@@ -429,21 +429,21 @@
     },
     {
      "frame": 900,
-     "goomba": "2ad7109afa2f66b07a28901da41c736f27fa9563",
+     "goomba": "6160cd193791f64767068038f4dac6503b782fbf",
      "reference": "213b9be6b429e0d04fad3b5b9c9268feaca2515c",
-     "ref_diff": 9321
+     "ref_diff": 8904
     },
     {
      "frame": 1200,
-     "goomba": "c81a54791039663d5022f381dcb53b29a0d77854",
+     "goomba": "7e2894fdbca626b6be2d0a18918ca0516b5bef9f",
      "reference": "7e2894fdbca626b6be2d0a18918ca0516b5bef9f",
-     "ref_diff": 8185
+     "ref_diff": 0
     },
     {
      "frame": 1500,
-     "goomba": "8c0987caa9c961c195ae8d4540810cd5da34e059",
+     "goomba": "5750298f1c2b04c95d0cd3fc96f2ce99a401a4dc",
      "reference": "81d33255f601bf9cb3d0534e7f030ddd2566a41f",
-     "ref_diff": 12119
+     "ref_diff": 3553
     },
     {
      "frame": 1800,
@@ -719,7 +719,7 @@
    "file": "Halloween Racer (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 176567,
+   "busy_per_frame": 194959,
    "checkpoints": [
     {
      "frame": 300,
@@ -735,9 +735,9 @@
     },
     {
      "frame": 900,
-     "goomba": "1040a5269665e1655bc01c9ffdb302134d0dbd58",
+     "goomba": "50b533c8df0249532bb88d39cf2b8534b287a955",
      "reference": "5723557f3f0730e7742a4224668f59afde1578cc",
-     "ref_diff": 4153
+     "ref_diff": 15602
     },
     {
      "frame": 1200,
@@ -747,21 +747,21 @@
     },
     {
      "frame": 1500,
-     "goomba": "134e4748d2f529e6027405f221d41fcc843ea892",
+     "goomba": "3936f13766f623ec217da28b888a744a5370394e",
      "reference": "eb78acb53f33aec5836d583c0138854de3294511",
-     "ref_diff": 13070
+     "ref_diff": 3512
     },
     {
      "frame": 1800,
-     "goomba": "be3fedb8b4800f2f1c49a0c21e143b83529a27bd",
+     "goomba": "f0c89cf3c3b3ffed27ad11d6981a3ec6b7934a08",
      "reference": "f461635bf3dc81bc6d5de7edd62c8532583fa0bf",
-     "ref_diff": 13147
+     "ref_diff": 3527
     },
     {
      "frame": 2400,
-     "goomba": "1b4e757472e3b71c46e585809deab065d6d3d245",
+     "goomba": "737eb59926f1a5ff2cd59bcd607a5a4568963261",
      "reference": "95bdec9c47df22d18d569546a0fb03556aed10b5",
-     "ref_diff": 12891
+     "ref_diff": 3180
     }
    ]
   },
@@ -770,7 +770,7 @@
    "file": "Harry Potter and the Sorcerer's Stone (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 361542,
+   "busy_per_frame": 362552,
    "checkpoints": [
     {
      "frame": 300,
@@ -798,9 +798,9 @@
     },
     {
      "frame": 1500,
-     "goomba": "d1adfdc9bce071b17b8f1c19e9b21e87b9994786",
+     "goomba": "66b8a147471b7bd51f5218bdd4346931195b0de4",
      "reference": "cedcf549f879e9ccdcbe59a271a005b4c323114d",
-     "ref_diff": 11537
+     "ref_diff": 6352
     },
     {
      "frame": 1800,
@@ -1586,7 +1586,7 @@
    "file": "Perfect Dark (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 464885,
+   "busy_per_frame": 465610,
    "checkpoints": [
     {
      "frame": 300,
@@ -1614,7 +1614,7 @@
     },
     {
      "frame": 1500,
-     "goomba": "1addbe1db4ff3e25345d86d128cf76f6416588f6",
+     "goomba": "f991c7b212e89323f72e641ae1fdd2ed339ec48c",
      "reference": "64773bc1a8b0725372002115decbc637a33e9b5c",
      "ref_diff": 0
     },
@@ -1994,7 +1994,7 @@
    "file": "Rainbow Islands (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 100408,
+   "busy_per_frame": 107739,
    "checkpoints": [
     {
      "frame": 300,
@@ -2010,15 +2010,15 @@
     },
     {
      "frame": 900,
-     "goomba": "98ec9a48ee936c0e3d9ee2e8eb096e174f94e6ab",
+     "goomba": "3eff90bdeccb93ce5ffe56a09d20ab0ad15ee6b2",
      "reference": "d9a389ccf451acd007786fec758d1c9b5a72aa59",
-     "ref_diff": 17128
+     "ref_diff": 5830
     },
     {
      "frame": 1200,
-     "goomba": "c6fdbc0b31afe8a00f9436d910ad615f6a8b95b5",
+     "goomba": "cb51260476489e491c96fe0d16a80a05ca53e0b7",
      "reference": "edb6e29c96a6738fbbf7932fc0b50c1f8bbee18c",
-     "ref_diff": 17156
+     "ref_diff": 4812
     },
     {
      "frame": 1500,
@@ -2096,7 +2096,7 @@
    "file": "Robin Hood (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 91719,
+   "busy_per_frame": 93103,
    "checkpoints": [
     {
      "frame": 300,
@@ -2124,9 +2124,9 @@
     },
     {
      "frame": 1500,
-     "goomba": "d32fcbfee48793636988b50bb603786f53835c22",
+     "goomba": "ef73d7d492ab0d3b5d3d1d58a6d8f38508876543",
      "reference": "8e8661f88ee255ad0293b28362d0943ab38041be",
-     "ref_diff": 13146
+     "ref_diff": 0
     },
     {
      "frame": 1800,
@@ -2504,7 +2504,7 @@
    "file": "SWIV (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 377880,
+   "busy_per_frame": 377940,
    "checkpoints": [
     {
      "frame": 300,
@@ -2538,15 +2538,15 @@
     },
     {
      "frame": 1800,
-     "goomba": "4f90b2679d2dbbd8e89f54f608e058be9610c13d",
+     "goomba": "4819276b07b95430dcbb0bb1fc5e9961f02a0529",
      "reference": "056993870e59254db98daec30062a349020ab15d",
-     "ref_diff": 43
+     "ref_diff": 17620
     },
     {
      "frame": 2400,
-     "goomba": "ae13db3e365a3af70db2df970f3ac39178daa7ce",
+     "goomba": "7e7bfc3695543ce92d0fc23dc3fee2a201b0233e",
      "reference": "d85271bfe317f717e3066a70ba776d77384834a3",
-     "ref_diff": 580
+     "ref_diff": 18119
     }
    ]
   },
@@ -2606,31 +2606,31 @@
    "file": "Tomb Raider (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 356687,
+   "busy_per_frame": 454753,
    "checkpoints": [
     {
      "frame": 300,
-     "goomba": "5556e2653e8c9f1c1d28ab8a6b7b6c9036f3b06a",
+     "goomba": "b6b0e3e4dc3a159694036ba68882978896ee19c8",
      "reference": "b6b0e3e4dc3a159694036ba68882978896ee19c8",
-     "ref_diff": 22709
+     "ref_diff": 0
     },
     {
      "frame": 600,
-     "goomba": "6b59039f918b57996069927578815069f72aec2a",
+     "goomba": "d0b85e21e869bb0897590f1e35f6dd76eaee12f0",
      "reference": "d0b85e21e869bb0897590f1e35f6dd76eaee12f0",
-     "ref_diff": 22494
+     "ref_diff": 0
     },
     {
      "frame": 900,
-     "goomba": "1aeb8688f1fc0cee966a047bfbf78b1fab753c72",
+     "goomba": "1233e4f45a81254d70739cc06edb4794f9b4c26e",
      "reference": "4ef72562928d7ece79665d0719912ad0eb374cd3",
-     "ref_diff": 22771
+     "ref_diff": 52
     },
     {
      "frame": 1200,
-     "goomba": "72e1e0ee2c8b2b5562ccd1a240d0839bb8bb4c52",
+     "goomba": "2a62b858498800b1666c2b9a17ccdbedba331b31",
      "reference": "2a62b858498800b1666c2b9a17ccdbedba331b31",
-     "ref_diff": 22681
+     "ref_diff": 0
     },
     {
      "frame": 1500,
@@ -2640,9 +2640,9 @@
     },
     {
      "frame": 1800,
-     "goomba": "a19e84b88366ca321d692008a2fffe96b49d1b76",
+     "goomba": "8ba55d40a1cd6ed1997a1b44300d3fcc0ed953f3",
      "reference": "8ba55d40a1cd6ed1997a1b44300d3fcc0ed953f3",
-     "ref_diff": 20002
+     "ref_diff": 0
     },
     {
      "frame": 2400,
@@ -2657,7 +2657,7 @@
    "file": "Top Gear Pocket (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 194427,
+   "busy_per_frame": 202435,
    "checkpoints": [
     {
      "frame": 300,
@@ -2685,21 +2685,21 @@
     },
     {
      "frame": 1500,
-     "goomba": "68e6fb2408d265ff68724bd233d5fdae6fb776b6",
+     "goomba": "248c59924761624db354582f17449d72a07b76fa",
      "reference": "3cf5db952b8e4347741313a5bf153649b3bf7f3b",
-     "ref_diff": 1985
+     "ref_diff": 2619
     },
     {
      "frame": 1800,
-     "goomba": "5d1a14027d09e26a3d8a611389524804b73b0686",
+     "goomba": "95cb57ca6d509035cd101a6b9653d4c9b3d0189e",
      "reference": "9cd414dbee4dd8da2613e16cc32c185ee4ac142f",
-     "ref_diff": 1960
+     "ref_diff": 2696
     },
     {
      "frame": 2400,
-     "goomba": "1685b081990ba432abc574474cbe01cc58f8496e",
+     "goomba": "46a402e142e28f403abfacc4cd7f3971a8b2db0a",
      "reference": "982be28074992ffb78fe0dbd2a7e35f5e18fd4af",
-     "ref_diff": 2087
+     "ref_diff": 2650
     }
    ]
   },
@@ -2759,7 +2759,7 @@
    "file": "Turok 3 - Shadow of Oblivion (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 178236,
+   "busy_per_frame": 232274,
    "checkpoints": [
     {
      "frame": 300,
@@ -2781,9 +2781,9 @@
     },
     {
      "frame": 1200,
-     "goomba": "294c076636d429b78233ae3fcd43311eb94b470b",
+     "goomba": "6546b75a8e26cdc7f171824c161306bd416a34b4",
      "reference": "61c4d6f4ae79990ed6b5d329e73d2218af6df6a7",
-     "ref_diff": 15680
+     "ref_diff": 17887
     },
     {
      "frame": 1500,
@@ -2793,15 +2793,15 @@
     },
     {
      "frame": 1800,
-     "goomba": "87d4cbfa4f26e5acb60043db4889ee4426b7fa0e",
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "7f90bc847b448924b96219365942c266b424966e",
-     "ref_diff": 16022
+     "ref_diff": 12828
     },
     {
      "frame": 2400,
-     "goomba": "2b931eccdafd0b2015db8ef223c02a7d025cdbea",
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "3c1cd04e79a76ce05fc3f00973c79e8555fd6fef",
-     "ref_diff": 16771
+     "ref_diff": 13584
     }
    ]
   },
@@ -3014,7 +3014,7 @@
    "file": "Worms Armageddon (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 104211,
+   "busy_per_frame": 119688,
    "checkpoints": [
     {
      "frame": 300,
@@ -3030,15 +3030,15 @@
     },
     {
      "frame": 900,
-     "goomba": "e24cffdaa60204c4df42b713d5dd1e909f083b2a",
+     "goomba": "943cff8a26a7d8e2137b7a41c498daeb952eee86",
      "reference": "aa4d1c605bf49154ad51737275f473c6719a7edd",
-     "ref_diff": 19547
+     "ref_diff": 478
     },
     {
      "frame": 1200,
-     "goomba": "33cad6734fbabded8115fbf1a7f81f4000853c02",
+     "goomba": "c9a3861227a26e7fa5876996acc1fee1ad7342f3",
      "reference": "e97e1de3e88bd2bb1e9cf72701bdf8d7a623199c",
-     "ref_diff": 14874
+     "ref_diff": 21303
     },
     {
      "frame": 1500,
