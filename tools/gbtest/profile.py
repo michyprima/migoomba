@@ -10,6 +10,7 @@ from harness import Harness, Goomba, symbols, NM
 
 OBJDUMP = NM.replace("-nm", "-objdump")
 IDLE_PER_EXEC = 1000   # an instruction averaging more than this per execution is a halt/IntrWait
+IDLE_PC = 0xFFFFFFFE   # gbaharness records time spent halted under this PC
 
 
 def code_symbols(elf):
@@ -50,8 +51,8 @@ def main():
     for l in open(hist):
         pc, cyc, cnt = l.split()
         pcs[int(pc, 16)] = (int(cyc), int(cnt))
-    idle = sum(c for c, n in pcs.values() if c / n > IDLE_PER_EXEC)
-    busy_pcs = {pc: v for pc, v in pcs.items() if v[0] / v[1] <= IDLE_PER_EXEC}
+    idle = sum(c for pc, (c, n) in pcs.items() if pc == IDLE_PC or c / n > IDLE_PER_EXEC)
+    busy_pcs = {pc: v for pc, v in pcs.items() if pc != IDLE_PC and v[0] / v[1] <= IDLE_PER_EXEC}
     busy = sum(c for c, _ in busy_pcs.values())
 
     syms = code_symbols(a.elf)

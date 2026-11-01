@@ -30,8 +30,8 @@ Screenshots are compared "up to recolouring": Goomba uses its own palettes, so a
 reference colour maps to exactly one output colour and vice versa. The GB screen sits at (40,8) in
 Goomba's 240x160 frame. Gambatte's suite is not wired up yet (needs its hex-digit patterns).
 
-Each result records `gba_cycles` (busy cycles: steps longer than 1000 cycles count as idle halt/vblank
-waits) and `gb_frames`. Runs are deterministic for a given build.
+Each result records `gba_cycles` (busy cycles: time with the CPU halted in IntrWait/Halt counts as idle, as
+do single steps longer than 1000 cycles) and `gb_frames`. Runs are deterministic for a given build.
 
 Compare two runs (status changes, busy cycles per GB frame):
 

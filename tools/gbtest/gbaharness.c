@@ -82,8 +82,13 @@ static void hadd(uint32_t pc, uint64_t cyc) {
 	hcnt[i] += 1;
 }
 
-/* Any single step longer than this is the CPU halted (IntrWait/VBlankIntrWait/HALTCNT), i.e. idle. */
+/* Idle = steps taken while the CPU is halted (IntrWait/VBlankIntrWait/HALTCNT). Steps longer than this
+ * also count, as before. Halted steps are short when interrupts come every scanline (HBlank IRQs), so
+ * the halted flag is what matters. */
 #define IDLE_STEP_CYCLES 1000
+/* profile: PC under which halted time is recorded */
+#define IDLE_PC 0xFFFFFFFEu
+static int lastStepHalted;
 static uint64_t statTotal, statIdle;
 /* lowest SP seen in user/system mode and in IRQ mode while stepping */
 static uint32_t minSpUsr = 0xFFFFFFFF, minSpIrq = 0xFFFFFFFF, minSpUsrPc, minSpUsrLr;
@@ -91,6 +96,7 @@ static int stepAll;
 
 static uint64_t stepOne(struct mCore* core, struct GBA* gba) {
 	uint64_t t0 = mTimingGlobalTime(&gba->timing);
+	lastStepHalted = gba->cpu->halted;
 	core->step(core);
 	uint32_t sp = gba->cpu->gprs[ARM_SP];
 	if (gba->cpu->cpsr.priv == MODE_IRQ) {
@@ -106,7 +112,7 @@ static uint64_t stepOne(struct mCore* core, struct GBA* gba) {
 	}
 	uint64_t d = mTimingGlobalTime(&gba->timing) - t0;
 	statTotal += d;
-	if (d > IDLE_STEP_CYCLES) {
+	if (lastStepHalted || d > IDLE_STEP_CYCLES) {
 		statIdle += d;
 	}
 	return d;
@@ -120,7 +126,8 @@ static void profile(struct mCore* core, struct GBA* gba, int frames, const char*
 	uint64_t start = mTimingGlobalTime(&gba->timing);
 	while (core->frameCounter(core) < end) {
 		uint32_t pc = _ARMPCAddress(gba->cpu);
-		hadd(pc, stepOne(core, gba));
+		uint64_t d = stepOne(core, gba);
+		hadd(lastStepHalted ? IDLE_PC : pc, d);
 	}
 	FILE* f = fopen(path, "w");
 	for (uint32_t i = 0; i < (1u << HBITS); ++i) {
