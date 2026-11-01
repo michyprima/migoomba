@@ -1310,7 +1310,7 @@ void setup_sram_after_loadstate() {
 			backup_gb_sram(0);
 		}
 		
-		if (g_sramsize < 3)
+		if (g_sramsize != 3 && g_sramsize != 4)	//8KB or less, including MBC2 (5)
 		{
 			//For 8KB size or less:
 			bytecopy(MEM_SRAM+save_start,XGB_SRAM,0x2000);		//copy gb sram to real sram
@@ -1322,7 +1322,7 @@ void setup_sram_after_loadstate() {
 		i=findstate(chk,SRAMSAVE,(stateheader**)&cfg);	//does packed SRAM for this rom exist?
 		if(i<0)						//if not, create it
 			save_new_sram(XGB_SRAM);
-		if (g_sramsize < 3)
+		if (g_sramsize != 3 && g_sramsize != 4)	//8KB or less, including MBC2 (5)
 		{
 			//For 8KB size or less:
 			register_sram_owner();//register new sram owner

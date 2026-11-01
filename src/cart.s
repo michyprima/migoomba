@@ -258,7 +258,7 @@ loadcart: @called from C:  r0=rom number, r1=emuflags
 	moveq r0,#5 @invalid value used just for mbc2
 	
 	ldrneb r0,[r3,#0x149]	@get ram size.
-	strneb_ r0,sramsize
+	strb_ r0,sramsize		@(5 for mbc2, which the save code sizes as 512 bytes)
 	
 	adr r1,rammasktbl
 	ldr r0,[r1,r0,lsl#2]
