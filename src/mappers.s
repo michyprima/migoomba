@@ -56,6 +56,7 @@ mbc0init:
 @3	rom/ram bankswitch mode (0 for rom, 1 for ram)
 @4	sram bank
 @5	2 bits for either rom bank or sram bank
+@6	1 on MBC1M multicarts: BANK2 is wired to bank bits 4-5 and BANK1 uses only 4 bits
 
 @----------------------------------------------------------------------------
 mbc1init:
@@ -69,7 +70,47 @@ mbc1init:
 	str_ r0,readmem_tbl_-40
 	str_ r0,readmem_tbl_-44
 
+	@MBC1M multicart: an 8Mbit ROM whose bank $10 starts with the Nintendo logo again.
+	@Its handlers live here in ROM rather than IWRAM, which has no room to spare.
+	ldr r1,=INSTANT_PAGES
+	ldr r0,[r1]			@bank 0
+	ldrb r2,[r0,#0x148]
+	cmp r2,#5
+	bne 0f
+	ldr r1,[r1,#0x10*4]		@bank $10
+	ldr r2,[r0,#0x104]
+	ldr r3,[r1,#0x104]
+	cmp r2,r3
+	ldreq r2,[r0,#0x110]
+	ldreq r3,[r1,#0x110]
+	cmpeq r2,r3
+	ldreq r2,[r0,#0x120]
+	ldreq r3,[r1,#0x120]
+	cmpeq r2,r3
+	bne 0f
+	mov r2,#1
+	strb_ r2,mapperdata+6
+	ldr r0,=MBC1Mmap0
+	str_ r0,writemem_tbl+8		@$2000-$3FFF
+	str_ r0,writemem_tbl+12
+0:
 	mov pc,lr
+@----------------------------------------------------------------------------
+MBC1Mmap0:	@MBC1M BANK1 write
+@----------------------------------------------------------------------------
+	ands r0,r0,#0x1f
+	moveq r0,#1
+	strb_ r0,mapperdata
+@----------------------------------------------------------------------------
+MBC1Mmap4567:	@MBC1M $4000-$7FFF bank: BANK1 bits 0-3, BANK2 as bits 4-5
+@----------------------------------------------------------------------------
+	ldrb_ r0,mapperdata
+	cmp r0,#0
+	moveq r0,#1			@BANK1 not written yet
+	and r0,r0,#0x0F
+	ldrb_ r1,mapperdata+1
+	orr r0,r0,r1,lsl#4
+	b_long map4567_
 	
 	.popsection
 @----------------------------------------------------------------------------
@@ -101,9 +142,19 @@ MBC1mode:
 	moveq r1,#0
 	strb_ r1,mapperdata+4		@mode 1: BANK2 also selects the RAM bank...
 	str lr,[sp,#-4]!
-	mov r0,r1,lsl#5
+	ldrb_ r2,mapperdata+6
+	cmp r2,#0
+	moveq r0,r1,lsl#5
+	movne r0,r1,lsl#4		@MBC1M
 	bl map0123_			@...and the $0000-$3FFF bank (masked to 0 on carts up to 512kB)
 
+	ldrb_ r2,mapperdata+6
+	cmp r2,#0
+	beq 1f
+	bl MBC1Mmap4567			@(clobbers flags)
+	ldr lr,[sp],#4
+	b RamSelect
+1:
 	ldrb_ r0,mapperdata
 	ldrb_ r1,mapperdata+1
 	orr r0,r0,r1,lsl#5
