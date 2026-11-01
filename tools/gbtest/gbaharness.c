@@ -16,6 +16,8 @@
  *   stepall 0|1         make "frames" step instructions too (so stack tracking covers everything)
  *   stackstats          lowest SP in user/system mode, lowest SP in IRQ mode, and PC/LR at the lowest
  *                       user SP, while stepping; resets
+ *   trace ADDR MAXFRAMES  step until the executing PC == ADDR; print the last 64 instructions
+ *                       before it (pc, cpsr, r0-r3, r9, sp, lr), then "hit" or "timeout"
  *   regs                r0-r15 and cpsr
  *   quit
  */
@@ -279,6 +281,36 @@ int main(int argc, char** argv) {
 		} else if (!strcmp(cmd, "stackstats")) {
 			printf("%08x %08x %08x %08x\n", minSpUsr, minSpIrq, minSpUsrPc, minSpUsrLr);
 			minSpUsr = minSpIrq = 0xFFFFFFFF;
+		} else if (!strcmp(cmd, "trace") && n >= 3) {
+			/* step until PC == ADDR, then print the last TRACE_LEN instructions before it */
+			enum { TRACE_LEN = 64 };
+			static uint32_t tr[TRACE_LEN][9];
+			unsigned long pos = 0;
+			uint32_t end = core->frameCounter(core) + strtoul(arg2, NULL, 10);
+			int hit = 0;
+			while (core->frameCounter(core) < end) {
+				uint32_t pc = _ARMPCAddress(gba->cpu);
+				if (pc == a) {
+					hit = 1;
+					break;
+				}
+				uint32_t* e = tr[pos++ % TRACE_LEN];
+				e[0] = pc;
+				e[1] = gba->cpu->cpsr.packed;
+				for (int i = 0; i < 4; ++i) {
+					e[2 + i] = gba->cpu->gprs[i];
+				}
+				e[6] = gba->cpu->gprs[9];
+				e[7] = gba->cpu->gprs[ARM_SP];
+				e[8] = gba->cpu->gprs[ARM_LR];
+				stepOne(core, gba);
+			}
+			for (unsigned long i = pos > TRACE_LEN ? pos - TRACE_LEN : 0; i < pos; ++i) {
+				uint32_t* e = tr[i % TRACE_LEN];
+				printf("pc=%08x cpsr=%08x r0=%08x r1=%08x r2=%08x r3=%08x r9=%08x sp=%08x lr=%08x\n",
+				       e[0], e[1], e[2], e[3], e[4], e[5], e[6], e[7], e[8]);
+			}
+			printf(hit ? "hit\n" : "timeout\n");
 		} else if (!strcmp(cmd, "regs")) {
 			for (int i = 0; i < 16; ++i) {
 				printf("%08x ", gba->cpu->gprs[i]);
