@@ -3371,7 +3371,7 @@
    "file": "Rainbow Islands (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 107739,
+   "busy_per_frame": 107831,
    "checkpoints": [
     {
      "frame": 300,
@@ -3393,9 +3393,9 @@
     },
     {
      "frame": 1200,
-     "goomba": "cb51260476489e491c96fe0d16a80a05ca53e0b7",
+     "goomba": "1c837d88c1f5e9d0413c8160a8ea5c0e943503e4",
      "reference": "edb6e29c96a6738fbbf7932fc0b50c1f8bbee18c",
-     "ref_diff": 4812
+     "ref_diff": 4758
     },
     {
      "frame": 1500,
@@ -4238,7 +4238,7 @@
    "file": "SWIV (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 377940,
+   "busy_per_frame": 378108,
    "checkpoints": [
     {
      "frame": 300,
@@ -4272,9 +4272,9 @@
     },
     {
      "frame": 1800,
-     "goomba": "4819276b07b95430dcbb0bb1fc5e9961f02a0529",
+     "goomba": "4f90b2679d2dbbd8e89f54f608e058be9610c13d",
      "reference": "056993870e59254db98daec30062a349020ab15d",
-     "ref_diff": 17620
+     "ref_diff": 43
     },
     {
      "frame": 2400,
@@ -4493,7 +4493,7 @@
    "file": "Top Gear Pocket (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 205001,
+   "busy_per_frame": 205172,
    "checkpoints": [
     {
      "frame": 300,
@@ -4527,9 +4527,9 @@
     },
     {
      "frame": 1800,
-     "goomba": "acb42916492e6d3e3d8bfcf40b3ebb846193f402",
+     "goomba": "6e0d961c14940d67e771cb46784dfb1bc70c70e1",
      "reference": "9cd414dbee4dd8da2613e16cc32c185ee4ac142f",
-     "ref_diff": 2534
+     "ref_diff": 2666
     },
     {
      "frame": 2400,
