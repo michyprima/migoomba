@@ -233,7 +233,7 @@ void ui()
 	{
 		get_saved_sram();
 	}
-#ifndef EZFLASH_OMEGA_BUILD
+#if !defined(EZFLASH_OMEGA_BUILD) || EZFLASH_DE_BUILD
 	writeconfig();			//save any changes
 #endif
 #endif
@@ -653,7 +653,7 @@ void restart()
 void exit_()
 {
 #if CARTSRAM
-#ifndef EZFLASH_OMEGA_BUILD
+#if !defined(EZFLASH_OMEGA_BUILD) || EZFLASH_DE_BUILD
 	writeconfig();					//save any changes
 #endif
 #endif
