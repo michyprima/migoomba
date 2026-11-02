@@ -3,4 +3,5 @@ SymbolTable.txt
 *.gba
 *.elf
 build
+build_*
 hwtest/

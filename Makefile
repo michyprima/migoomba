@@ -1,4 +1,4 @@
-MAKEFILE	:=	makefile
+MAKEFILE	:=	Makefile
 
 #---------------------------------------------------------------------------------
 # Clear the implicit built in rules
@@ -44,9 +44,10 @@ include $(DEVKITARM)/gba_rules
 # BUILD is the directory where object files & intermediate files will be placed
 # SOURCES is a list of directories containing source code
 # INCLUDES is a list of directories containing extra header files
+# VARIANT selects a flash cart build: ezo (EZ-Flash Omega), ezode (Omega Definitive Edition)
 #---------------------------------------------------------------------------------
-TARGET		:=	migoomba
-BUILD		:=	build
+TARGET		:=	migoomba$(if $(VARIANT),_$(VARIANT))
+BUILD		:=	build$(if $(VARIANT),_$(VARIANT))
 SOURCES		:=	src
 INCLUDES	:=
 
@@ -69,6 +70,17 @@ CXXFLAGS := $(CFLAGS) \
 
 ASFLAGS	:=	$(ARCH)
 LDFLAGS	=	-g $(ARCH) -Wl,-Map,$(notdir $@).map
+
+ifeq ($(VARIANT),ezo)
+VARIANTDEFS	:=	-DEZFLASH_OMEGA_BUILD
+else ifeq ($(VARIANT),ezode)
+VARIANTDEFS	:=	-DEZFLASH_OMEGA_BUILD -DEZFLASH_DE_BUILD=1
+else ifneq ($(VARIANT),)
+$(error Unknown VARIANT "$(VARIANT)": use ezo or ezode)
+endif
+
+CFLAGS	+=	$(VARIANTDEFS)
+ASFLAGS	+=	$(VARIANTDEFS)
 
 #---------------------------------------------------------------------------------
 # path to tools - this can be deleted if you set the path in windows

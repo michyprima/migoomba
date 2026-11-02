@@ -2317,6 +2317,9 @@ _add_ui_border_4:
 	bx lr
 	.popsection
 
+ .if EZFLASH_DE_BUILD
+	.pushsection .text	@IWRAM is full: this makes room for the Omega DE rumble code in mappers.s
+ .endif
 update_ui_border_masks:
 	ldr_ r1,_ui_border_request
 	str_ r1,_ui_border_buffer
@@ -2376,6 +2379,10 @@ update_ui_border_masks_2:
 	str_ r0,ui_border_scroll2
 
 	bx lr
+ .if EZFLASH_DE_BUILD
+	.ltorg
+	.popsection
+ .endif
 
 
 display_frame:	@called at vblank

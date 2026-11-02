@@ -38,8 +38,10 @@
 #define PERF_PROFILE 0	//debug: TM1 IRQ samples the interrupted PC into perf_samples (ring buffer)
 #define PERF_PROFILE_PERIOD 4099	//GBA cycles between samples
 #define PERF_COUNTER 0	//debug: TM2+TM3 count GBA cycles, latched into perf_cycles every GB frame
-//#define EZFLASH_OMEGA_BUILD
+//EZFLASH_OMEGA_BUILD and EZFLASH_DE_BUILD are set by make VARIANT=ezo or VARIANT=ezode
+#ifndef EZFLASH_DE_BUILD
 #define EZFLASH_DE_BUILD 0
+#endif
 
 #ifdef _MB_VERSION
 	#define RTCSUPPORT 0
