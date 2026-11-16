@@ -42,6 +42,10 @@
 #ifndef EZFLASH_DE_BUILD
 #define EZFLASH_DE_BUILD 0
 #endif
+//NOODSU_BUILD is set by make VARIANT=noodsu, for the NooDS U emulator, which builds it in
+#ifndef NOODSU_BUILD
+#define NOODSU_BUILD 0
+#endif
 
 #ifdef _MB_VERSION
 	#define RTCSUPPORT 0

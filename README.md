@@ -269,18 +269,20 @@ not a crash: Start+Select wakes the GBA, and the menu sets 10 or 30 minutes or o
 - Run `make` in this directory. It produces `migoomba.gba` (the emulator) and `migoomba.elf` (the same
   with debug symbols).
 
-There are two builds for EZ-Flash Omega carts, each with its own output file and build directory:
+There are two builds for EZ-Flash Omega carts and one for the NooDS U emulator, each with its own output file and build
+directory:
 
 | Command | Output | For | Differences |
 |---|---|---|---|
 | `make` | `migoomba.gba` | any cart | |
 | `make VARIANT=ezo` | `migoomba_ezo.gba` | EZ-Flash Omega | assumes the cart has a clock instead of detecting it; settings aren't written to the save when leaving the menu |
 | `make VARIANT=ezode` | `migoomba_ezode.gba` | EZ-Flash Omega Definitive Edition | assumes the cart has a clock; rumble games also drive the cart's rumble |
+| `make VARIANT=noodsu` | `migoomba_noodsu.gba` | [NooDS U](https://github.com/michyprima/NooDSU), which builds it in | rumble games also drive GPIO pin 3, as GBA rumble carts do, which NooDS U rumbles with |
 
 The hardware checks in this README used the regular build on an Omega Definitive Edition, where it works
 fine: that cart only needs `ezode` for rumble. The two Omega builds have only been run in mGBA.
 
-`.github/workflows/build.yml` builds all three on every push to master and publishes them as a release
+`.github/workflows/build.yml` builds the regular and Omega builds on every push to master and publishes them as a release
 when a `v*` tag is pushed.
 
 ### Making a playable ROM

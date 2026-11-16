@@ -44,7 +44,7 @@ include $(DEVKITARM)/gba_rules
 # BUILD is the directory where object files & intermediate files will be placed
 # SOURCES is a list of directories containing source code
 # INCLUDES is a list of directories containing extra header files
-# VARIANT selects a flash cart build: ezo (EZ-Flash Omega), ezode (Omega Definitive Edition)
+# VARIANT selects a flash cart build: ezo (EZ-Flash Omega), ezode (Omega Definitive Edition), or noodsu (NooDS U)
 #---------------------------------------------------------------------------------
 TARGET		:=	migoomba$(if $(VARIANT),_$(VARIANT))
 BUILD		:=	build$(if $(VARIANT),_$(VARIANT))
@@ -75,8 +75,10 @@ ifeq ($(VARIANT),ezo)
 VARIANTDEFS	:=	-DEZFLASH_OMEGA_BUILD
 else ifeq ($(VARIANT),ezode)
 VARIANTDEFS	:=	-DEZFLASH_OMEGA_BUILD -DEZFLASH_DE_BUILD=1
+else ifeq ($(VARIANT),noodsu)
+VARIANTDEFS	:=	-DNOODSU_BUILD=1
 else ifneq ($(VARIANT),)
-$(error Unknown VARIANT "$(VARIANT)": use ezo or ezode)
+$(error Unknown VARIANT "$(VARIANT)": use ezo, ezode or noodsu)
 endif
 
 CFLAGS	+=	$(VARIANTDEFS)

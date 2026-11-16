@@ -22,6 +22,19 @@
 	global_func huc3init
 	global_func RamSelect
 	.pushsection .text	@cart RAM enable is rare: kept out of IWRAM, which is full
+ .if RUMBLE && NOODSU_BUILD
+@----------------------------------------------------------------------------
+RumbleGpio:	@r0=MBC5 rumble bit: rumble carts drive GPIO pin 3 with it, as GBA rumble carts do, which NooDS U rumbles with
+@----------------------------------------------------------------------------
+	ldrb_ r1,cartflags
+	tst r1,#MBC_RUM
+	beq RamSelect
+	ldr r1,=0x080000c4
+	mov r2,#8
+	strh r2,[r1,#2]			@pin 3 output first, as reading the clock changes the directions
+	strh r0,[r1]			@pin 3 = motor, the clock's pins low (idle)
+	b RamSelect
+ .endif
 @----------------------------------------------------------------------------
 RamSelect:
 @----------------------------------------------------------------------------
@@ -362,7 +375,11 @@ no_Rumble:
 	@--
  .endif
  .endif
+ .if RUMBLE && NOODSU_BUILD
+	b_long RumbleGpio
+ .else
 	b_long RamSelect
+ .endif
 
 	.pushsection .text
 @----------------------------------------------------------------------------
