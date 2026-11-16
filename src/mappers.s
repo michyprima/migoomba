@@ -22,9 +22,9 @@
 	global_func huc3init
 	global_func RamSelect
 	.pushsection .text	@cart RAM enable is rare: kept out of IWRAM, which is full
- .if RUMBLE && NOODSU_BUILD
+ .if RUMBLE && MAELLE_BUILD
 @----------------------------------------------------------------------------
-RumbleGpio:	@r0=MBC5 rumble bit: rumble carts drive GPIO pin 3 with it, as GBA rumble carts do, which NooDS U rumbles with
+RumbleGpio:	@r0=MBC5 rumble bit: rumble carts drive GPIO pin 3 with it, as GBA rumble carts do, which Maelle rumbles with
 @----------------------------------------------------------------------------
 	ldrb_ r1,cartflags
 	tst r1,#MBC_RUM
@@ -375,7 +375,7 @@ no_Rumble:
 	@--
  .endif
  .endif
- .if RUMBLE && NOODSU_BUILD
+ .if RUMBLE && MAELLE_BUILD
 	b_long RumbleGpio
  .else
 	b_long RamSelect

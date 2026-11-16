@@ -269,7 +269,7 @@ not a crash: Start+Select wakes the GBA, and the menu sets 10 or 30 minutes or o
 - Run `make` in this directory. It produces `migoomba.gba` (the emulator) and `migoomba.elf` (the same
   with debug symbols).
 
-There are two builds for EZ-Flash Omega carts and one for the NooDS U emulator, each with its own output file and build
+There are two builds for EZ-Flash Omega carts and one for the Maelle emulator, each with its own output file and build
 directory:
 
 | Command | Output | For | Differences |
@@ -277,7 +277,7 @@ directory:
 | `make` | `migoomba.gba` | any cart | |
 | `make VARIANT=ezo` | `migoomba_ezo.gba` | EZ-Flash Omega | assumes the cart has a clock instead of detecting it; settings aren't written to the save when leaving the menu |
 | `make VARIANT=ezode` | `migoomba_ezode.gba` | EZ-Flash Omega Definitive Edition | assumes the cart has a clock; rumble games also drive the cart's rumble |
-| `make VARIANT=noodsu` | `migoomba_noodsu.gba` | [NooDS U](https://github.com/michyprima/NooDSU), which builds it in | rumble games also drive GPIO pin 3, as GBA rumble carts do, which NooDS U rumbles with |
+| `make VARIANT=maelle` | `migoomba_maelle.gba` | [Maelle](https://github.com/michyprima/Maelle), which builds it in | rumble games also drive GPIO pin 3, as GBA rumble carts do, which Maelle rumbles with |
 
 The hardware checks in this README used the regular build on an Omega Definitive Edition, where it works
 fine: that cart only needs `ezode` for rumble. The two Omega builds have only been run in mGBA.
