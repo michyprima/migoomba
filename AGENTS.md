@@ -72,7 +72,7 @@ cycle cost per game.
 
 - Commercial ROMs and game screenshots are never committed or published (no artifacts with game
   images); keep comparison pages local. Scratch files go in the session scratchpad.
-- Branch: stay on the current working branch (`fix/jr-wrap`); don't create branches or push unless asked.
+- Branch: work on `master`; don't create branches or push unless asked.
 - Commit tooling (tools/gbtest) separately from emulator fixes, one fix per commit, each commit building.
   Messages: a short subject, then what was wrong (with the game/test that shows it), what changed, and
   the measured cost and test changes. Re-record `games.json` in its own commit.
