@@ -69,7 +69,7 @@ CXXFLAGS := $(CFLAGS) \
  			-fno-rtti -fno-exceptions
 
 ASFLAGS	:=	$(ARCH)
-LDFLAGS	=	-g $(ARCH) -Wl,-Map,$(notdir $@).map
+LDFLAGS	=	-g $(ARCH) -Wl,-Map,$(notdir $@).map -Wl,--no-warn-rwx-segments
 
 ifeq ($(VARIANT),ezo)
 VARIANTDEFS	:=	-DEZFLASH_OMEGA_BUILD

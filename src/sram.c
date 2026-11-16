@@ -1,6 +1,9 @@
 #include "includes.h"
 
-static const int savestate_size_estimate = 0xC800;
+//findstate() only sets its out-pointer when it returns >=0, and callers check that;
+//initializing the pointers instead changes the generated code
+#pragma GCC diagnostic ignored "-Wmaybe-uninitialized"
+
 void cleanup_ewram();
 int FindStateByIndex(int index, int type, stateheader **stateptr);
 
@@ -1276,7 +1279,7 @@ int get_saved_sram(void)
 	// 1 - successfully loaded
 	// 2 - file not found
 	
-	int i,j;
+	int j;
 	int retval;
 	u32 chk;
 	configdata *cfg;
@@ -1299,7 +1302,7 @@ int get_saved_sram(void)
 			backup_gb_sram(0);	//pack a live 32KB cart RAM before anything replaces it
 		}
 		chk=checksum_this();
-		i=findstate(0,CONFIGSAVE,(stateheader**)&cfg);	//find config
+		findstate(0,CONFIGSAVE,(stateheader**)&cfg);	//find config
 		j=findstate(chk,SRAMSAVE,&sh);	//see if packed SRAM exists
 		
 		//probably shouldn't do this
@@ -1629,8 +1632,6 @@ int savestate2()
 	
 	if (sramSize > 0)
 	{
-		int sramMaxSize = sramSize + sramSize / 16 + 67;
-		int remainingSpace = 0x10000 - part1_size;
 		lzo_uint compressedSize2;
 		int part2_size;
 

@@ -14,7 +14,6 @@ proxy, so keep cycle-sensitive choices conservative.
 - `src/all.s` #includes every `.s` file into one object, so literal pools are shared per section:
   when `.text` grows you may get "pool needs to be closer"; add a `.ltorg` near the failing line
   (after an unconditional branch/return).
-- The linker's "LOAD segment with RWX permissions" warning is normal.
 
 ## Line endings
 

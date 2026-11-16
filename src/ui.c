@@ -148,7 +148,7 @@ u32 getmenuinput(int menuitems)
 
 void ui()
 {
-	int key,soundvol,tm0cnt,i;
+	int key,soundvol,tm0cnt;
 	int mb=(u32)textstart<0x8000000;
 	int savesuccess=1;
 	int usefade=1;

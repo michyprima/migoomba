@@ -417,7 +417,6 @@ static const u8 *find_hack(const u8 *start_pc, const u8 *branchpc, const u8 *las
 		}
 		
 		int addressOfRead = -1;
-		int addressOfJump = -1;
 		
 		switch (action)
 		{
@@ -433,11 +432,8 @@ static const u8 *find_hack(const u8 *start_pc, const u8 *branchpc, const u8 *las
 				break;
 			case ConditionalBranch:
 			case UnconditionalBranch:
-				addressOfJump = pc + 1 + gets8(pc, 1) - lastbank;
-				break;
 			case ConditionalJump:
 			case UnconditionalJump:
-				addressOfJump = getu16(pc, 1);
 				break;
 			case ConditionalReturn:
 				break;
