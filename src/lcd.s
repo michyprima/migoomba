@@ -270,7 +270,7 @@ GFX_init:	@(called from main.c) only need to call once
 	mov r2,#0x80
 	bl memset32_
 
-	ldr r1,=0x5F405F40
+	ldr r1,=0x5F605F60		@DISPCNT bit 5: see per-line sprites
 	ldr r0,=DISPCNTBUFF			@clear DISPCNT+DMA1BUFF
 	mov r2,#288
 	bl memset32_
@@ -1658,8 +1658,8 @@ canary_value_doesnt_match:
 	strb_ r0,vblank_happened
 	
 	bl display_frame
-		
-	bl display_sprites
+
+	bl_long display_sprites_lines
 	bl consume_recent_tiles
 	bl consume_dirty_tiles
 	bl_long force_ui_at_top
@@ -1804,7 +1804,7 @@ entermode2_:
 	@get LCDC
 	ldrb_ r0,lcdctrl
 	@default dispcnt | enable win 0, win 1, all 4 bg layers
-	ldr r1,=0x5F40 | 0x6F00
+	ldr r1,=0x5F60 | 0x6F00	@bit 5: OAM access in HBlank (per-line sprites)
 	tst r0,#0x02 @sprite enable
 	biceq r1,r1,#0x1000
 	tst r0,#0x80 @screen off?
@@ -1892,7 +1892,7 @@ entermode0_:
 	ldrb_ r0,lcdctrl
 	
 	@default dispcnt, win 1, all 4 bg layers
-	ldr r1,=0x5F40
+	ldr r1,=0x5F60			@bit 5: OAM access in HBlank (per-line sprites)
 	tst r0,#0x02 @sprite enable
 	biceq r1,r1,#0x1000
 	orr r1,r1,r1,lsl#16
@@ -1957,7 +1957,7 @@ entermode1_:
 	ldrb_ r0,lcdctrl
 	
 	@default dispcnt, win 1, all 4 bg layers
-	ldr r1,=0x5F40
+	ldr r1,=0x5F60			@bit 5: OAM access in HBlank (per-line sprites)
 	tst r0,#0x02 @sprite enable
 	biceq r1,r1,#0x1000
 	orr r1,r1,r1,lsl#16
@@ -2196,17 +2196,29 @@ apply16:
 	strneh r1,[r2],#2
 	subne r0,r0,#2
 	
+apply16_sel:
+	mov r0,r0			@b apply16_cpu (APPLY16_CPU) while DMA3 copies per-line
+					@sprites (objl_show)
 	@DMA transfer, possibly plus one extra halfword
-	mov r1,#REG_BASE
-	str addy,[r1,#REG_DM3SAD]
-	add addy,r0,#2  @add extra halfword if final halfword is not word aligned
-	movs addy,addy,lsr#2
-	strne r2,[r1,#REG_DM3DAD]
-	orrne addy,addy,#0x85000000 @enable, fixed src, inc dest
-	strne addy,[r1,#REG_DM3CNT_L]
-	bicne addy,addy,#0xFF000000
+	add r3,r0,#2  @add extra halfword if final halfword is not word aligned
+	movs r3,r3,lsr#2
+	orrne r3,r3,#0x85000000 @enable, fixed src, inc dest
+	movne r1,addy
+	movne addy,#REG_BASE
+	addne addy,addy,#REG_DM3SAD
+	stmneia addy,{r1-r3}		@one store: no interrupt between the registers
 	add r2,r2,r0
 	bx lr
+apply16_cpu:
+	ldr r1,[addy]
+	add r3,r2,r0
+0:	cmp r2,r3
+	strlo r1,[r2],#4
+	blo 0b
+	mov r2,r3
+	bx lr
+ APPLY16_CPU	= 0xEA000000 + ((apply16_cpu - apply16_sel - 8) >> 2)	@b apply16_cpu there
+ APPLY16_DMA	= 0xE1A00000					@mov r0,r0
 
 	.ltorg
 	
@@ -2864,8 +2876,10 @@ OAMfinish:@		transfer OAM from GB to GBA
 @	ldr r0,active_lcdcbuff
 @	ldrb r0,[r0,#71]	;8x16?
 @	ldrb r0,lcdctrl		;8x16?
-	tst r0,#0x04
-	bne dm4
+	ands r6,r0,#0x04		@8x16: tall shape, even tiles
+	movne r6,#0x8000
+	mvneq r7,#0
+	mvnne r7,#1
 dm11:
 	ldr r3,[addy],#4
 	ands r0,r3,#0xff
@@ -2881,6 +2895,7 @@ dm11:
 	orr r0,r0,r1,lsl#8
 	and r1,r3,#0x60000000	@flip
 	orr r0,r0,r1,lsr#1
+	orr r0,r0,r6
 	str r0,[r2],#4		@store OBJ Atr 0,1
 
 @  Bit7   OBJ-to-BG Priority (0=OBJ Above BG, 1=OBJ Behind BG color 1-3)
@@ -2913,6 +2928,7 @@ dm11:
 	@tile
 	and r0,r3,#0x00FF0000
 	orr r1,r1,r0,lsr#16
+	and r1,r1,r7
 	.if OBJ_BASE == 0x14000	
 	add r1,r1,#512
 	.endif
@@ -2926,57 +2942,6 @@ dm10:
 	str r0,[r2],#8
 	b dm9
 
-
-dm4:	@- - - - - - - - - - - - -8x16
-
-dm12:
-	ldr r3,[addy],#4
-	ands r0,r3,#0xff
-	beq dm13		@skip if sprite Y=0
-	cmp r0,#159
-	bhi dm13		@skip if sprite Y>159
-
-	add r0,r0,#(-16+SCREEN_Y_START)
-	and r0,r0,#0xff
-
-	and r1,r3,#0xff00
-	add r1,r1,#(SCREEN_X_START-8)*256	@adjusted x
-	orr r0,r0,r1,lsl#8
-	and r1,r3,#0x60000000	@flip
-	orr r0,r0,r1,lsr#1
-	orr r0,r0,#0x8000	@8x16
-	str r0,[r2],#4		@store OBJ Atr 0,1
-
-	mov r1,#PRIORITY
-	tst r3,#0x80000000	@priority
-	orrne r1,r1,#PRIORITY>>1
-	cmp r5,#0
-	@gbc vram bank
-	andne r0,r3,#0x08000000
-	orrne r1,r1,r0,lsr#19
-	@gbc color
-	andne r0,r3,#0x07000000
-	orrne r1,r1,r0,lsr#12
-	@gb color
-	andeq r0,r3,#0x10000000
-	orreq r1,r1,r0,lsr#16
-	@tile
-	and r0,r3,#0x00FF0000
-	orr r1,r1,r0,lsr#16
-	bic r1,r1,#0x0001
-	.if OBJ_BASE == 0x14000	
-	add r1,r1,#512
-	.endif
-
-	strh r1,[r2],#4		@store OBJ Atr 2
-dm14:
-	cmp addy,r9
-	bne dm12
-	bx lr
-dm13:
-	mov r0,#0x2a0		@double, y=160
-	str r0,[r2],#8
-	b dm14
 
 
 
@@ -3056,7 +3021,7 @@ end_gba_hdma:
 	strh r2,[r2,#REG_DM0CNT_H]	@DMA stop
 	strh r2,[r2,#REG_DM1CNT_H]
 	strh r2,[r2,#REG_DM2CNT_H]
-@	strh r2,[r2,#REG_DM3CNT_H]
+	strh r2,[r2,#REG_DM3CNT_H]	@per-line sprites (objl_show), if on
 
 	ldr r0,=vbldummy
 	ldr r1,=vcountfptr
@@ -4706,6 +4671,32 @@ bgp_reset:	@CPU reset, and from C (cleanup_ewram) after save code used the EWRAM
 	ldr r2,=CP_BUFSIZE
 	add r2,r2,#CP_BUFS
 	strb r1,[r0,r2]
+	ldr r0,=objl_state		@per-line sprites: learning, nothing to show, DMA3 is
+	strb r1,[r0,#OL_MODE]		@apply16's
+	strb r1,[r0,#OL_DONE]
+	strb r1,[r0,#OL_READY]
+	strb r1,[r0,#OL_SHOW]
+	strb r1,[r0,#OL_HDMA]
+	mov r2,#REG_BASE
+	strh r1,[r2,#REG_DM3CNT_H]
+	ldr r2,=apply16_sel
+	ldr r3,=APPLY16_DMA
+	str r3,[r2]
+	mvn r2,#0
+	str r2,[r0,#OL_LEARNF]
+	ldr r0,=objl_learning
+	ldr r2,=OBJL_LEARN_ON
+	str r2,[r0]
+	ldr r0,=objl_src
+	mov r2,#0
+	str r2,[r0]
+	ldr r0,=_scanlinehook		@stop tracking (C callers: no globalptr)
+	ldr r1,[r0]
+	ldr r2,=objl_scanline
+	cmp r1,r2
+	ldreq r1,=default_scanlinehook
+	streq r1,[r0]
+	mov r1,#0
 	ldr r0,=cgbp_scan
 	mov r1,#0xFF
 	strb r1,[r0]
@@ -4962,10 +4953,456 @@ cgbp_line7:	@do_gba_hdma: per-line palettes for this frame? in: r2=REG_BASE (kep
 	.ltorg
 	.popsection
 
+@----------------------------------------------------------------------------
+@Per-line sprites. Some screens move sprites between lines: Polished Crystal's music
+@player sets sprites 0-2 to Y=LY+17 every line, so each line shows row 0 of the note
+@tile at that line's X (falling note bars). Goomba shows one OAM a frame, which then
+@has them off screen. Writes to OAM while lines are drawn are too many (about 670 a frame
+@there) to log from ROM, so: the first frame with such writes only notes which sprites
+@they touch (objl_learn_W). If that is at most 3 consecutive sprites, a scanline hook
+@(objl_scanline, IWRAM) copies the OAM words of 3 sprites from there at the start of
+@every line, and at line 144 objl_convert turns them into GBA OAM entries for every line.
+@While the display shows such a table, DMA3 copies each line's 3 entries to OAM in
+@HBlank, so the GBA changes those sprites between lines as the GB did. Only every other
+@frame is sampled and converted (each table shows for 2 frames): converting all 144 lines
+@costs about 22K cycles, too much to do every frame.
+@DMA3 is otherwise apply16's: while OL_HDMA is set apply16 fills by CPU (apply16_sel). It
+@is set a frame before DMA3 is first armed, so an apply16 DMA set up before it cannot be
+@overwritten.
+@DISPCNT always has bit 5 (OAM access in HBlank), which lowers the OBJ cycles per line
+@from 1210 to 954; Goomba's sprites (40, 8 pixels wide) need far fewer.
+@The GBA draws sprites a line ahead: entries written in HBlank of line y show on line
+@y+OBJL_K: 2 on a GBA (checked with tools/gbtest/testroms/objl); mGBA draws a line at
+@its HBlank before the DMA, so 1 there.
+@Tracking stops after 2 frames whose sprites do not change between lines; learning waits
+@OBJL_WAIT frames after a frame that did not start tracking. Frames without OAM writes
+@during lines cost nothing.
+@----------------------------------------------------------------------------
+#ifndef OBJL_LEAD
+#define OBJL_LEAD 2
+#endif
+ OBJL_K		= OBJL_LEAD
+ OL_MODE	= 0		@0 learning, 1 tracking, 2 waiting
+ OL_SKIP	= 1		@the next frame is not sampled (every other frame is)
+ OL_FIRST	= 2		@first of the 3 sprites tracked
+ OL_VALID	= 3		@samples of this frame start at line 0
+ OL_READY	= 4		@table converted for the display: 1 or 2, 0 = none
+ OL_DMIN	= 5		@first and last sprite written in the last complete frame with writes
+ OL_DMAX	= 6
+ OL_DONE	= 7		@1: OL_DMIN/OL_DMAX are set
+ OL_LEARNF	= 8		@frame learning noted writes in, -1 = none
+ OL_LMIN	= 12		@first and last sprite written
+ OL_LMAX	= 13
+ OL_IDLE	= 14		@tracked frames without changes between lines
+ OL_SHOW	= 15		@table the display shows: 1 or 2, 0 = none
+ OL_HDMA	= 16		@1: DMA3 copies the table's entries (from the next frame on, if
+				@just set). apply16 reads it
+ OL_GBC		= 17		@for objl_conv: gbcmode
+ OL_TALL	= 20		@	attribute 0 shape bit (0x8000 for 8x16 sprites)
+ OL_TMASK	= 24		@	tile mask (~1 for 8x16 sprites)
+ OL_REARM	= 28		@frame learning resumes (waiting)
+ OL_SAMP	= 32		@145 lines x 4 words: OAM words of the 3 sprites (line 144: unused)
+ OL_TAB		= OL_SAMP + 145*16	@2 tables of rows of 3 GBA OAM entries (attributes 0-3):
+ TAB_ROW	= 24		@rows 0-7 = GB line 0, row 8+g = line g, row 152 = line 143
+ TAB_SIZE	= 153*TAB_ROW
+ OL_SIZE	= OL_TAB + 2*TAB_SIZE
+ OBJL_WAIT	= 120
+ OBJL_LEARN_ON	= 0xE51FF004	@ldr pc,[pc,#-4]: objl_learning -> objl_learn_W
+ OBJL_LEARN_OFF	= 0xE1A0F00E	@mov pc,lr
+
+	.pushsection .text
+objl_learn_W:	@end of OAM_W while learning: note the sprites written while lines are drawn.
+	@in: r0=value, r2=OAM offset. r1=?
+	ldrb_ r1,scanline
+	cmp r1,#143
+	cmplo r2,#0xA0
+	bxhs lr
+	tst cycles,#CYC_LCD_ENABLED
+	bxeq lr
+	stmfd sp!,{r0,r3}
+	ldr r3,=objl_state
+	ldr_ r0,frame
+	ldr r1,[r3,#OL_LEARNF]
+	cmp r1,r0
+	beq 0f
+	cmn r1,#1			@a new frame: the one with writes before it is complete
+	ldrneb r1,[r3,#OL_LMIN]
+	strneb r1,[r3,#OL_DMIN]
+	ldrneb r1,[r3,#OL_LMAX]
+	strneb r1,[r3,#OL_DMAX]
+	movne r1,#1
+	strneb r1,[r3,#OL_DONE]
+	str r0,[r3,#OL_LEARNF]
+	mov r1,#0xFF
+	strb r1,[r3,#OL_LMIN]
+	mov r1,#0
+	strb r1,[r3,#OL_LMAX]
+0:	mov r0,r2,lsr#2
+	ldrb r1,[r3,#OL_LMIN]
+	cmp r0,r1
+	strlob r0,[r3,#OL_LMIN]
+	ldrb r1,[r3,#OL_LMAX]
+	cmp r0,r1
+	strhib r0,[r3,#OL_LMAX]
+	ldmfd sp!,{r0,r3}
+	bx lr
+
+objl_vblank_line:	@objl_scanline at lines 144 and 145. in: r1=scanline
+	cmp r1,#144
+	bne 1f
+	stmfd sp!,{r3-r9,r11,lr}	@line 144: the frame's samples are complete. Keep
+	bl objl_convert			@this stack short: a vblank interrupt here goes on top
+	ldmfd sp!,{r3-r9,r11,lr}
+	ldr pc,=default_scanlinehook
+1:	@where the next frame's samples come from (the frame end may have swapped buffers)
+	ldr r12,=objl_state
+	ldrb r0,[r12,#OL_SKIP]
+	cmp r0,#0
+	movne r0,#0			@not this one
+	ldrne r1,=objl_src
+	strne r0,[r1]
+	strneb r0,[r12,#OL_VALID]
+	ldrne pc,=default_scanlinehook
+	ldrb_ r0,gboamdirty
+	tst r0,#0x80
+	bne 2f
+	ldr_ r0,gb_oam_buffer_writing
+	ldrb r1,[r12,#OL_FIRST]
+	add r0,r0,r1,lsl#2
+	ldr r1,=objl_src
+	str r0,[r1]
+	mov r0,#1
+	strb r0,[r12,#OL_VALID]
+	ldr pc,=default_scanlinehook
+2:	stmfd sp!,{lr}			@the writing buffer is stale: refresh it, as OAM_W does
+	ldr_ r0,gb_oam_buffer_writing
+	ldr_ r1,gb_oam_buffer_screen
+	mov r2,#160
+	bl_long memcpy32
+	ldmfd sp!,{lr}
+	ldrb_ r0,gboamdirty
+	bic r0,r0,#0x80
+	strb_ r0,gboamdirty
+	b 1b
+
+objl_convert:	@line 144 while tracking: this frame's samples -> a table for the display.
+	@r0-r9,r11,r12 free
+	ldr r9,=objl_state
+	ldrb r0,[r9,#OL_VALID]
+	cmp r0,#0
+	strb r0,[r9,#OL_SKIP]		@sampled this frame: not the next one
+	bxeq lr
+	str lr,[sp,#-4]!
+	ldrb r0,[r9,#OL_SHOW]
+	cmp r0,#1			@write the table not shown
+	moveq r11,#1
+	movne r11,#0
+	ldrb r0,[r9,#OL_READY]
+	sub r0,r0,#1
+	cmp r0,r11
+	moveq r0,#0
+	streqb r0,[r9,#OL_READY]	@(it was ready: not while it changes)
+	add r12,r9,#OL_TAB
+	cmp r11,#0
+	ldrne r0,=TAB_SIZE
+	addne r12,r12,r0
+	ldrb_ r0,gbcmode
+	strb r0,[r9,#OL_GBC]
+	ldrb_ r0,lcdctrl0frame
+	ands r0,r0,#0x04
+	movne r0,#0x8000
+	str r0,[r9,#OL_TALL]
+	mvneq r0,#0
+	mvnne r0,#1
+	str r0,[r9,#OL_TMASK]
+	mov r8,#0			@nonzero: a sprite changes between lines
+	.irp k,0,1,2
+	add r0,r9,#OL_SAMP+\k*4
+	add r5,r0,#144*16
+	add r1,r12,#8*TAB_ROW+\k*8
+	ldr r3,=objl_column
+	mov lr,pc
+	bx r3
+	.endr
+	add r0,r12,#8*TAB_ROW		@rows 0-7: line 0, row 152: line 143
+	ldmia r0,{r1-r6}
+	mov r0,r12
+	.rept 8
+	stmia r0!,{r1-r6}
+	.endr
+	ldr r0,=151*TAB_ROW
+	add r0,r12,r0
+	ldmia r0!,{r1-r6}
+	stmia r0,{r1-r6}
+	add r0,r11,#1
+	strb r0,[r9,#OL_READY]
+	cmp r8,#0
+	movne r0,#0
+	strneb r0,[r9,#OL_IDLE]
+	ldrne pc,[sp],#4
+	ldrb r0,[r9,#OL_IDLE]		@no changes between lines: stop tracking after 2 such
+	add r0,r0,#1			@frames
+	strb r0,[r9,#OL_IDLE]
+	cmp r0,#2
+	ldrlo pc,[sp],#4
+	ldr_ r0,frame
+	bl objl_wait
+	ldr r0,=default_scanlinehook
+	str_ r0,scanlinehook
+	ldr pc,[sp],#4
+
+	.thumb
+	.thumb_func
+objl_column:	@Thumb (ROM fetches are 16 bits): one sprite's entries for lines 0-143. in:
+	@r0=its line 0 sample (16 bytes a line), r1=its entry in row 8 (TAB_ROW a row),
+	@r5=r0+144*16. out: r8=nonzero if the sprite changes between lines. r0-r7=?
+	push {lr}
+	ldr r6,[r0]
+	mov r2,r6
+	bl objl_conv			@line 0
+	stmia r1!,{r3,r4}
+	add r1,#TAB_ROW-8
+	add r0,#16
+	ldr r7,=objl_fast		@the others (IWRAM)
+	bl 0f
+	pop {r0}
+	bx r0
+0:	bx r7
+
+	.thumb_func
+objl_conv:	@Thumb: the GBA OAM entry of a GB OAM word, as display_sprites makes it.
+	@in: r6=word, r2=the line above's word, r3,r4=its entry (objl_fast; objl_column:
+	@r2=r6). out: r3=attributes 0-1, r4=attribute 2 (attribute 3: 0). r7=?
+	push {r0-r2,lr}
+	mov r0,r6			@only Y and X differ from the line above, which was shown
+	eor r0,r2			@and still is: move that entry
+	lsr r0,r0,#16
+	bne 0f
+	cmp r2,r6
+	beq 0f
+	lsl r0,r3,#22
+	lsr r0,r0,#22			@its Y (attribute 0 bits 0-9: shown, not near the top)
+	cmp r0,#151
+	bhi 0f
+	lsl r1,r6,#24
+	lsr r1,r1,#24
+	sub r1,#16-SCREEN_Y_START	@new Y
+	cmp r1,#151
+	bhi 0f
+	sub r3,r0
+	add r3,r1
+	lsr r0,r3,#16
+	lsl r0,r0,#23
+	lsr r0,r0,#7			@its X (attribute 1 bits 0-8)
+	sub r3,r0
+	lsl r0,r6,#16
+	lsr r0,r0,#24
+	add r0,#SCREEN_X_START-8	@new X
+	lsl r0,r0,#16
+	add r3,r0
+	pop {r0-r2,pc}
+0:	lsl r0,r6,#24
+	lsr r0,r0,#24			@Y
+	beq 9f
+	cmp r0,#159
+	bhi 9f
+	sub r0,#16-SCREEN_Y_START
+	lsl r0,r0,#24
+	lsr r0,r0,#24
+	lsl r1,r6,#16
+	lsr r1,r1,#24			@X
+	add r1,#SCREEN_X_START-8
+	lsl r1,r1,#16
+	orr r0,r1
+	lsr r1,r6,#29			@flips: attribute 1 bits 12-13
+	lsl r1,r1,#30
+	lsr r1,r1,#2
+	orr r0,r1
+	ldr r7,=objl_state
+	ldr r1,[r7,#OL_TALL]
+	orr r0,r1
+	mov r3,r0
+	lsl r1,r6,#8
+	lsr r1,r1,#24			@tile
+	ldr r2,[r7,#OL_TMASK]
+	and r1,r2
+	ldr r2,=512+PRIORITY
+	add r1,r2
+	lsr r2,r6,#31			@behind BG colours 1-3
+	lsl r2,r2,#10
+	orr r1,r2
+	ldrb r2,[r7,#OL_GBC]
+	cmp r2,#0
+	beq 1f
+	lsl r2,r6,#4
+	lsr r2,r2,#31
+	lsl r2,r2,#8			@VRAM bank
+	orr r1,r2
+	lsl r2,r6,#5
+	lsr r2,r2,#29
+	lsl r2,r2,#12			@palette
+	orr r1,r2
+	mov r4,r1
+	pop {r0-r2,pc}
+1:	lsl r2,r6,#3
+	lsr r2,r2,#31
+	lsl r2,r2,#12			@OBP1
+	orr r1,r2
+	mov r4,r1
+	pop {r0-r2,pc}
+9:	ldr r3,=0x2a0			@hidden, as display_sprites does it
+	mov r4,#0
+	pop {r0-r2,pc}
+	.align 2
+	.ltorg
+	.arm
+
+objl_wait:	@stop learning or tracking for a while. in: r0=frame, r9=objl_state
+	add r0,r0,#OBJL_WAIT
+	str r0,[r9,#OL_REARM]
+	mov r0,#2
+	strb r0,[r9,#OL_MODE]
+	mov r0,#0
+	strb r0,[r9,#OL_READY]
+	ldr r0,=OBJL_LEARN_OFF
+	ldr r1,=objl_learning
+	str r0,[r1]
+	bx lr
+
+display_sprites_lines:	@vblank: GB sprites, then the per-line ones of the frame on screen
+	stmfd sp!,{lr}
+	bl_long display_sprites
+	ldr r9,=objl_state
+	ldrb r0,[r9,#OL_MODE]
+	cmp r0,#1
+	beq objl_show
+	ldr_ r1,frame
+	cmp r0,#0
+	bne 2f
+	ldr r0,[r9,#OL_LEARNF]		@learning: a frame with writes during lines has ended?
+	cmp r0,r1
+	blo 0f
+	ldrb r0,[r9,#OL_DONE]		@or one before the frame still being written (a game
+	cmp r0,#0			@that writes on every line of every frame)
+	bne 5f
+	ldrb r0,[r9,#OL_HDMA]		@no (or none: -1). Usually nothing to stop either
+	cmp r0,#0
+	ldmeqfd sp!,{pc}
+	b objl_show
+0:
+	mvn r0,#0
+	str r0,[r9,#OL_LEARNF]
+	ldrb r2,[r9,#OL_LMIN]
+	ldrb r3,[r9,#OL_LMAX]
+	b 6f
+5:	ldrb r2,[r9,#OL_DMIN]
+	ldrb r3,[r9,#OL_DMAX]
+6:	mov r0,#0
+	strb r0,[r9,#OL_DONE]
+	sub r3,r3,r2
+	cmp r3,#3			@3 sprites at most, and no other scanline hook
+	bhs 1f
+	ldr_ r0,scanlinehook
+	ldr r12,=default_scanlinehook
+	cmp r0,r12
+	beq 3f
+1:	mov r0,r1
+	bl objl_wait
+	b objl_show
+3:	cmp r2,#37
+	movhi r2,#37
+	strb r2,[r9,#OL_FIRST]
+	mov r0,#0
+	strb r0,[r9,#OL_VALID]		@from the next vblank line
+	strb r0,[r9,#OL_SKIP]
+	strb r0,[r9,#OL_IDLE]
+	strb r0,[r9,#OL_READY]
+	strb r0,[r9,#OL_SHOW]
+	ldr r0,=OBJL_LEARN_OFF
+	ldr r1,=objl_learning
+	str r0,[r1]
+	mov r0,#1
+	strb r0,[r9,#OL_MODE]
+	ldr r0,=objl_scanline
+	str_ r0,scanlinehook
+	b objl_show
+2:	ldr r0,[r9,#OL_REARM]		@waiting: learn again after a while
+	cmp r1,r0
+	blo objl_show
+	mov r0,#0
+	strb r0,[r9,#OL_MODE]
+	strb r0,[r9,#OL_DONE]
+	mvn r0,#0
+	str r0,[r9,#OL_LEARNF]
+	ldr r0,=OBJL_LEARN_ON
+	ldr r1,=objl_learning
+	str r0,[r1]
+objl_show:	@the newest table: line 0's entries now, DMA3 the others. r9=objl_state
+	ldrb r0,[r9,#OL_MODE]
+	cmp r0,#1
+	bne objl_off
+	ldrb r0,[r9,#OL_READY]
+	cmp r0,#0
+	strneb r0,[r9,#OL_SHOW]
+	movne r1,#0
+	strneb r1,[r9,#OL_READY]
+	ldrb r0,[r9,#OL_SHOW]
+	cmp r0,#0
+	beq objl_off
+	add r8,r9,#OL_TAB
+	cmp r0,#2
+	ldreq r0,=TAB_SIZE
+	addeq r8,r8,r0
+	ldrb r0,[r9,#OL_FIRST]
+	mov r7,#AGB_OAM
+	add r7,r7,r0,lsl#3
+	add r0,r8,#8*TAB_ROW
+	ldmia r0,{r1-r6}
+	stmia r7,{r1-r6}
+	ldrb r0,[r9,#OL_HDMA]
+	cmp r0,#0
+	bne 1f
+	mov r0,#1			@DMA3 from the next frame on: apply16 stops using it now
+	strb r0,[r9,#OL_HDMA]
+	ldr r0,=APPLY16_CPU
+	ldr r1,=apply16_sel
+	str r0,[r1]
+	ldmfd sp!,{pc}
+1:
+	mov r2,#REG_BASE
+	strh r2,[r2,#REG_DM3CNT_H]	@stopped (end_gba_hdma has), so the start latches
+	ldrh r0,[r2,#REG_VCOUNT]
+	cmp r0,#160			@first HBlank: line 0's, or the next line's if late
+	movhs r0,#0
+	addlo r0,r0,#1
+	add r0,r0,#OBJL_K		@its entries show OBJL_K lines later
+	mov r1,#TAB_ROW
+	mla r6,r0,r1,r8
+	ldr r8,=0xA6600006		@HBlank, repeat, 6 words, destination reloaded
+	add r2,r2,#REG_DM3SAD
+	stmia r2,{r6-r8}
+	ldmfd sp!,{pc}
+objl_off:
+	mov r0,#0
+	strb r0,[r9,#OL_SHOW]
+	ldrb r1,[r9,#OL_HDMA]
+	cmp r1,#0
+	ldmeqfd sp!,{pc}
+	strb r0,[r9,#OL_HDMA]		@DMA3 is apply16's again
+	mov r2,#REG_BASE
+	strh r2,[r2,#REG_DM3CNT_H]
+	ldr r0,=APPLY16_DMA
+	ldr r1,=apply16_sel
+	str r0,[r1]
+	ldmfd sp!,{pc}
+	.ltorg
+	.popsection
+
  bgp_state = perline_state	@fixed EWRAM block (equates.h), cleared by bgp_reset
  cgbp_state = perline_state + BGP_SIZE
-	.if BGP_SIZE + CP_SIZE > PERLINE_STATE_SIZE
-	.error "per-line palette state does not fit PERLINE_STATE_SIZE"
+ objl_state = cgbp_state + CP_SIZE
+	.if BGP_SIZE + CP_SIZE + OL_SIZE > PERLINE_STATE_SIZE
+	.error "per-line palette and sprite state does not fit PERLINE_STATE_SIZE"
 	.endif
 	.if perline_state & 3
 	.error "perline_state must be word aligned"
@@ -5490,7 +5927,62 @@ OAM_W_fresh:
 	@do not write out of bounds
 	cmp r2,#0xA0
 	strltb r0,[r1,r2]
-	mov pc,lr
+objl_learning:
+	mov pc,lr		@while learning per-line sprites: ldr pc,objl_learn_lit (OBJL_LEARN_ON)
+objl_learn_lit:	.word objl_learn_W
+	.if objl_learn_lit - objl_learning - 4
+	.error "OBJL_LEARN_ON loads the word after objl_learning"
+	.endif
+
+objl_scanline:	@scanline hook while tracking per-line sprites: the tracked sprites' OAM
+	@for this line. r0-r2,r12 free
+	ldrb_ r1,scanline
+	cmp r1,#144
+	bhs 0f
+	ldr r12,objl_src
+	cmp r12,#0
+	beq default_scanlinehook	@not sampled (the frame started before tracking)
+	ldr r2,=objl_state+OL_SAMP
+	add r2,r2,r1,lsl#4
+	ldmia r12,{r0,r1,r12}
+	stmia r2,{r0,r1,r12}
+	b default_scanlinehook
+0:	cmp r1,#145
+	ldrls pc,=objl_vblank_line	@lines 144-145 (ROM)
+	b default_scanlinehook
+objl_src:	.word 0			@OAM of the first tracked sprite, 0 = not sampled
+
+	.thumb
+	.thumb_func
+objl_fast:	@Thumb, for objl_column: one sprite's entries for lines 1-143. in: r0=its line 1
+	@sample, r1=its entry in row 9, r2=its line 0 sample, r3,r4=that line's entry, r5=end
+	@of its samples. out: r8=nonzero if it changes between lines. r0-r7=?
+	push {lr}
+0:	ldr r6,[r0]
+	add r0,#16
+	sub r7,r6,r2
+	beq 2f				@as the line above
+	mov r8,r1
+	cmp r7,#1
+	bne 1f
+	lsl r7,r3,#22			@Y one lower, and the entry above was shown and not
+	lsr r7,r7,#22			@near the bottom: that entry one lower
+	cmp r7,#150
+	bhi 1f
+	add r3,#1
+	b 2f
+1:	ldr r7,3f
+	bl 4f				@objl_conv (ROM)
+2:	mov r2,r6
+	stmia r1!,{r3,r4}
+	add r1,#TAB_ROW-8
+	cmp r0,r5
+	blo 0b
+	pop {pc}
+4:	bx r7
+	.align 2
+3:	.word objl_conv
+	.arm
 	.ltorg
 
 .pushsection .text

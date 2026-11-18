@@ -193,9 +193,10 @@ RECENT_TILENUM_SIZE = 128
  ewram_canary_1 = Next - 4
  Next = ewram_canary_1
 
-@per-line palette state (lcd.s: bgp_state, cgbp_state). Below the canary, where save code
-@may run over it: only display data, cleared by perline_reset (cleanup_ewram, GFX_reset).
- PERLINE_STATE_SIZE = 0x5500
+@per-line palette and sprite state (lcd.s: bgp_state, cgbp_state, objl_state). Below the
+@canary, where save code may run over it: only display data, cleared by bgp_reset
+@(cleanup_ewram, GFX_reset).
+ PERLINE_STATE_SIZE = 0x7C00
  perline_state = Next - PERLINE_STATE_SIZE
  Next = perline_state
 
