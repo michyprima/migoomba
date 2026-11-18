@@ -103,6 +103,24 @@ spare. The check steps every instruction of real workloads (cpu_instrs, quick sa
 reports the deepest stack and where it happened, and fails with less than --min-spare bytes (32).
 Keep code that runs at most a few times per frame in .text (ROM) rather than IWRAM.
 
+## Per-line sprite test ROM
+
+`testroms/objl/` holds a Game Boy test ROM for per-line sprites (lcd.s, "Per-line sprites"). It moves
+sprites 0-2 on every line from the STAT HBlank interrupt, as Polished Crystal's music player does, with
+segments placed against solid BG bars, the screen edges and 1-line gaps; `objl4` also writes a 4th
+sprite every line, which must keep per-line sprites off. `build.sh` needs rgbds (`rgbasm`); `check.py`
+runs both ROMs on mGBA's GB core and on each build given, and lists per segment the lines a build
+misses or draws extra:
+
+    tools/gbtest/testroms/objl/build.sh
+    python3 tools/gbtest/testroms/objl/check.py migoomba.gba [other.gba ...]
+
+A normal build is one line off in mGBA: the GBA draws sprites a line ahead, so the per-line DMA copies
+entries 2 lines early (`OBJL_LEAD`), while mGBA reads OAM when it draws the line. To compare in mGBA,
+build a copy with `#define OBJL_LEAD 1` in lcd.s. On hardware, the sprite tile's row 0 is red and its
+other rows blue: a right build shows red bars like a Game Boy, one copying a line too late blue ones,
+and one copying a line too early loses the row-0 columns.
+
 ## Profiling
 
 Exact cycle profile (every ARM instruction stepped and timed):
