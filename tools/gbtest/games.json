@@ -5,7 +5,7 @@
    "file": "3-D Ultra Pinball - Thrillride (USA) (Rumble Version).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 138635,
+   "busy_per_frame": 138858,
    "checkpoints": [
     {
      "frame": 300,
@@ -63,7 +63,7 @@
    "file": "Adventures of Lolo (Europe) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 114383,
+   "busy_per_frame": 114610,
    "checkpoints": [
     {
      "frame": 300,
@@ -121,7 +121,7 @@
    "file": "Alfred's Adventure (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 392379,
+   "busy_per_frame": 392678,
    "checkpoints": [
     {
      "frame": 300,
@@ -179,7 +179,7 @@
    "file": "Alone in the Dark - The New Nightmare (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 281403,
+   "busy_per_frame": 281791,
    "checkpoints": [
     {
      "frame": 300,
@@ -237,7 +237,7 @@
    "file": "Asterix - Search for Dogmatix (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 110014,
+   "busy_per_frame": 110232,
    "checkpoints": [
     {
      "frame": 300,
@@ -295,7 +295,7 @@
    "file": "Baby Felix - Halloween (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 115025,
+   "busy_per_frame": 115259,
    "checkpoints": [
     {
      "frame": 300,
@@ -353,7 +353,7 @@
    "file": "Beatmania GB - Gotcha Mix 2 (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 96072,
+   "busy_per_frame": 96284,
    "checkpoints": [
     {
      "frame": 300,
@@ -411,7 +411,7 @@
    "file": "Beavis and Butt-Head (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 79664,
+   "busy_per_frame": 79881,
    "checkpoints": [
     {
      "frame": 300,
@@ -469,7 +469,7 @@
    "file": "Bionic Commando - Elite Forces (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 178543,
+   "busy_per_frame": 178801,
    "checkpoints": [
     {
      "frame": 300,
@@ -527,7 +527,7 @@
    "file": "Bomberman Selection (Korea).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 81666,
+   "busy_per_frame": 81883,
    "checkpoints": [
     {
      "frame": 300,
@@ -585,7 +585,7 @@
    "file": "Cannon Fodder (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 196024,
+   "busy_per_frame": 196278,
    "checkpoints": [
     {
      "frame": 300,
@@ -643,7 +643,7 @@
    "file": "Carmageddon - Carpocalypse Now (USA, Europe) (En,Fr,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 196828,
+   "busy_per_frame": 197079,
    "checkpoints": [
     {
      "frame": 300,
@@ -701,7 +701,7 @@
    "file": "Chee-Chai Alien (Japan) (Rumble Version).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 93694,
+   "busy_per_frame": 93913,
    "checkpoints": [
     {
      "frame": 300,
@@ -759,7 +759,7 @@
    "file": "Choplifter III (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 77140,
+   "busy_per_frame": 77367,
    "checkpoints": [
     {
      "frame": 300,
@@ -817,7 +817,7 @@
    "file": "Croc 2 (USA, Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 91123,
+   "busy_per_frame": 91357,
    "checkpoints": [
     {
      "frame": 300,
@@ -875,7 +875,7 @@
    "file": "Dance Dance Revolution GB (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 126490,
+   "busy_per_frame": 126729,
    "checkpoints": [
     {
      "frame": 300,
@@ -933,7 +933,7 @@
    "file": "Densha de Go! 2 (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 99194,
+   "busy_per_frame": 99425,
    "checkpoints": [
     {
      "frame": 300,
@@ -991,7 +991,7 @@
    "file": "Donkey Kong Country (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 162964,
+   "busy_per_frame": 163206,
    "checkpoints": [
     {
      "frame": 300,
@@ -1049,7 +1049,7 @@
    "file": "Donkey Kong Land (USA) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 112997,
+   "busy_per_frame": 113218,
    "checkpoints": [
     {
      "frame": 300,
@@ -1107,7 +1107,7 @@
    "file": "Dragon Ball Z - Guerreros de Leyenda (Spain).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 87105,
+   "busy_per_frame": 87324,
    "checkpoints": [
     {
      "frame": 300,
@@ -1165,7 +1165,7 @@
    "file": "Dragon Ball Z - I Leggendari Super Guerrieri (Italy).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 87193,
+   "busy_per_frame": 87411,
    "checkpoints": [
     {
      "frame": 300,
@@ -1223,7 +1223,7 @@
    "file": "Dragon Warrior III (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 145649,
+   "busy_per_frame": 145875,
    "checkpoints": [
     {
      "frame": 300,
@@ -1281,7 +1281,7 @@
    "file": "Driver (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 154659,
+   "busy_per_frame": 154866,
    "checkpoints": [
     {
      "frame": 300,
@@ -1339,7 +1339,7 @@
    "file": "F1 Championship Season 2000 (Brazil) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 281823,
+   "busy_per_frame": 282076,
    "checkpoints": [
     {
      "frame": 300,
@@ -1397,7 +1397,7 @@
    "file": "Faceball 2000 (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 151728,
+   "busy_per_frame": 151947,
    "checkpoints": [
     {
      "frame": 300,
@@ -1455,7 +1455,7 @@
    "file": "FIFA 98 - Road to World Cup (Europe) (Rev-A) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 70396,
+   "busy_per_frame": 70613,
    "checkpoints": [
     {
      "frame": 300,
@@ -1513,7 +1513,7 @@
    "file": "Final Fantasy Adventure (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 87693,
+   "busy_per_frame": 87914,
    "checkpoints": [
     {
      "frame": 300,
@@ -1571,7 +1571,7 @@
    "file": "Gradius - The Interstellar Assault (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 113407,
+   "busy_per_frame": 113625,
    "checkpoints": [
     {
      "frame": 300,
@@ -1629,7 +1629,7 @@
    "file": "Halloween Racer (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 196066,
+   "busy_per_frame": 196310,
    "checkpoints": [
     {
      "frame": 300,
@@ -1661,16 +1661,16 @@
     },
     {
      "frame": 1500,
-     "goomba": "ea7b09aa22d729e5c5d0052a84d3a38444425a76",
+     "goomba": "3936f13766f623ec217da28b888a744a5370394e",
      "reference": "eb78acb53f33aec5836d583c0138854de3294511",
-     "ref_diff": 3506,
+     "ref_diff": 3512,
      "colours": 59
     },
     {
      "frame": 1800,
-     "goomba": "b91c80cc1ee2539ff13aef3139f1dde137526226",
+     "goomba": "f0c89cf3c3b3ffed27ad11d6981a3ec6b7934a08",
      "reference": "f461635bf3dc81bc6d5de7edd62c8532583fa0bf",
-     "ref_diff": 3224,
+     "ref_diff": 3527,
      "colours": 59
     },
     {
@@ -1687,7 +1687,7 @@
    "file": "Harry Potter and the Sorcerer's Stone (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 377288,
+   "busy_per_frame": 377605,
    "checkpoints": [
     {
      "frame": 300,
@@ -1745,7 +1745,7 @@
    "file": "Harvest Moon 3 GBC (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 108793,
+   "busy_per_frame": 109022,
    "checkpoints": [
     {
      "frame": 300,
@@ -1803,7 +1803,7 @@
    "file": "Inspector Gadget - Operation Madkactus (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 168876,
+   "busy_per_frame": 169096,
    "checkpoints": [
     {
      "frame": 300,
@@ -1861,7 +1861,7 @@
    "file": "John Romero's Daikatana (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 136358,
+   "busy_per_frame": 136587,
    "checkpoints": [
     {
      "frame": 300,
@@ -1919,7 +1919,7 @@
    "file": "Keitai Denjuu Telefang - Power Version (Japan) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 88152,
+   "busy_per_frame": 88390,
    "checkpoints": [
     {
      "frame": 300,
@@ -1977,7 +1977,7 @@
    "file": "King of Fighters, The - Heat of Battle (Europe) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 182667,
+   "busy_per_frame": 182888,
    "checkpoints": [
     {
      "frame": 300,
@@ -2038,7 +2038,7 @@
    },
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 104897,
+   "busy_per_frame": 105125,
    "checkpoints": [
     {
      "frame": 300,
@@ -2096,7 +2096,7 @@
    "file": "Konami GB Collection Vol.4 (Europe) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 137968,
+   "busy_per_frame": 138219,
    "checkpoints": [
     {
      "frame": 300,
@@ -2154,7 +2154,7 @@
    "file": "Korokoro Kirby (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 214104,
+   "busy_per_frame": 214408,
    "checkpoints": [
     {
      "frame": 300,
@@ -2212,7 +2212,7 @@
    "file": "Legend of Zelda, The - Link's Awakening DX (USA, Europe) (Rev 2) (SGB Enhanced) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 114155,
+   "busy_per_frame": 114381,
    "checkpoints": [
     {
      "frame": 300,
@@ -2270,7 +2270,7 @@
    "file": "Legend of Zelda, The - Oracle of Ages (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 96999,
+   "busy_per_frame": 97220,
    "checkpoints": [
     {
      "frame": 300,
@@ -2328,7 +2328,7 @@
    "file": "Lemmings 2 - The Tribes (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 114838,
+   "busy_per_frame": 115068,
    "checkpoints": [
     {
      "frame": 300,
@@ -2386,7 +2386,7 @@
    "file": "Lucky Luke - Desperado Train (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 270243,
+   "busy_per_frame": 270555,
    "checkpoints": [
     {
      "frame": 300,
@@ -2444,7 +2444,7 @@
    "file": "Lufia - The Legend Returns (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 186672,
+   "busy_per_frame": 186921,
    "checkpoints": [
     {
      "frame": 300,
@@ -2502,7 +2502,7 @@
    "file": "Magi Nation (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 97459,
+   "busy_per_frame": 97704,
    "checkpoints": [
     {
      "frame": 300,
@@ -2560,7 +2560,7 @@
    "file": "Medarot 5 - Susutake Mura no Tenkousei - Kabuto (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 178372,
+   "busy_per_frame": 178615,
    "checkpoints": [
     {
      "frame": 300,
@@ -2618,7 +2618,7 @@
    "file": "Mega Man Xtreme (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 144762,
+   "busy_per_frame": 145012,
    "checkpoints": [
     {
      "frame": 300,
@@ -2676,7 +2676,7 @@
    "file": "Metal Gear - Ghost Babel (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 143789,
+   "busy_per_frame": 144030,
    "checkpoints": [
     {
      "frame": 300,
@@ -2734,7 +2734,7 @@
    "file": "Metal Gear Solid (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 128724,
+   "busy_per_frame": 128957,
    "checkpoints": [
     {
      "frame": 300,
@@ -2792,7 +2792,7 @@
    "file": "Micro Machines 2 - Turbo Tournament (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 102722,
+   "busy_per_frame": 102973,
    "checkpoints": [
     {
      "frame": 300,
@@ -2850,7 +2850,7 @@
    "file": "Monster Max (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 110327,
+   "busy_per_frame": 110551,
    "checkpoints": [
     {
      "frame": 300,
@@ -2908,7 +2908,7 @@
    "file": "Mr. Driller (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 257996,
+   "busy_per_frame": 258288,
    "checkpoints": [
     {
      "frame": 300,
@@ -2966,7 +2966,7 @@
    "file": "Mr. Nutz (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 87613,
+   "busy_per_frame": 87830,
    "checkpoints": [
     {
      "frame": 300,
@@ -3028,7 +3028,7 @@
    },
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 193538,
+   "busy_per_frame": 193758,
    "checkpoints": [
     {
      "frame": 300,
@@ -3086,7 +3086,7 @@
    "file": "Ninja JaJaMaru - The Great World Adventure DX (USA, Europe) (Ninja JaJaMaru Retro Collection) (Switch).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 166844,
+   "busy_per_frame": 167076,
    "checkpoints": [
     {
      "frame": 300,
@@ -3144,7 +3144,7 @@
    "file": "Oddworld Adventures II (USA, Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 148227,
+   "busy_per_frame": 148473,
    "checkpoints": [
     {
      "frame": 300,
@@ -3202,7 +3202,7 @@
    "file": "Parodius (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 122236,
+   "busy_per_frame": 122452,
    "checkpoints": [
     {
      "frame": 300,
@@ -3260,13 +3260,13 @@
    "file": "Perfect Dark (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 462661,
+   "busy_per_frame": 463598,
    "checkpoints": [
     {
      "frame": 300,
-     "goomba": "038db5384c1afa5db149f78dce08339eecc02a22",
+     "goomba": "95d9cf731e03df152ac198fca76f6f67b6911e08",
      "reference": "ebcfd11567ae59b7867d1770b826e2ea90a5cdf7",
-     "ref_diff": 316,
+     "ref_diff": 14,
      "colours": 7
     },
     {
@@ -3318,7 +3318,7 @@
    "file": "Pinball Fantasies (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 72391,
+   "busy_per_frame": 72607,
    "checkpoints": [
     {
      "frame": 300,
@@ -3376,7 +3376,7 @@
    "file": "Pocket Family GB 2 (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 79083,
+   "busy_per_frame": 79302,
    "checkpoints": [
     {
      "frame": 300,
@@ -3434,7 +3434,7 @@
    "file": "Pocket Music (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 172356,
+   "busy_per_frame": 172606,
    "checkpoints": [
     {
      "frame": 300,
@@ -3492,7 +3492,7 @@
    "file": "Pokemon - Gold Version (USA, Europe) (SGB Enhanced) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 136566,
+   "busy_per_frame": 136798,
    "checkpoints": [
     {
      "frame": 300,
@@ -3550,7 +3550,7 @@
    "file": "Pokemon Card GB (Japan) (SGB Enhanced) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 96122,
+   "busy_per_frame": 96363,
    "checkpoints": [
     {
      "frame": 300,
@@ -3608,7 +3608,7 @@
    "file": "Pokemon Card GB 2 - GR Dan Sanjou! (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 130631,
+   "busy_per_frame": 130868,
    "checkpoints": [
     {
      "frame": 300,
@@ -3666,7 +3666,7 @@
    "file": "Pokemon Crystal Version (USA) (Rev-A).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 122591,
+   "busy_per_frame": 122822,
    "checkpoints": [
     {
      "frame": 300,
@@ -3724,7 +3724,7 @@
    "file": "Pokemon Pinball (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 136948,
+   "busy_per_frame": 137178,
    "checkpoints": [
     {
      "frame": 300,
@@ -3782,7 +3782,7 @@
    "file": "Pokemon Yellow Version - Special Pikachu Edition (USA) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 161166,
+   "busy_per_frame": 161395,
    "checkpoints": [
     {
      "frame": 300,
@@ -3840,7 +3840,7 @@
    "file": "Pop'n TwinBee (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 173558,
+   "busy_per_frame": 173802,
    "checkpoints": [
     {
      "frame": 300,
@@ -3898,7 +3898,7 @@
    "file": "Prince of Persia (USA, Europe) (En,Fr,De,Es,It) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 150326,
+   "busy_per_frame": 150557,
    "checkpoints": [
     {
      "frame": 300,
@@ -3956,7 +3956,7 @@
    "file": "R-Type II (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 130056,
+   "busy_per_frame": 130292,
    "checkpoints": [
     {
      "frame": 300,
@@ -4014,7 +4014,7 @@
    "file": "Rainbow Islands (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 108567,
+   "busy_per_frame": 108779,
    "checkpoints": [
     {
      "frame": 300,
@@ -4072,7 +4072,7 @@
    "file": "Rayman 2 (USA) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 145835,
+   "busy_per_frame": 146068,
    "checkpoints": [
     {
      "frame": 300,
@@ -4130,7 +4130,7 @@
    "file": "Resident Evil Gaiden (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 134136,
+   "busy_per_frame": 134356,
    "checkpoints": [
     {
      "frame": 300,
@@ -4188,7 +4188,7 @@
    "file": "Road Rash (USA).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 156907,
+   "busy_per_frame": 157148,
    "checkpoints": [
     {
      "frame": 300,
@@ -4246,7 +4246,7 @@
    "file": "Robin Hood (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 93806,
+   "busy_per_frame": 94032,
    "checkpoints": [
     {
      "frame": 300,
@@ -4304,7 +4304,7 @@
    "file": "Robot Poncots - Sun Version (Japan) (SGB Enhanced) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 137637,
+   "busy_per_frame": 137888,
    "checkpoints": [
     {
      "frame": 300,
@@ -4362,7 +4362,7 @@
    "file": "Sakura Taisen GB 2 - Thunderbolt Sakusen (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 100917,
+   "busy_per_frame": 101137,
    "checkpoints": [
     {
      "frame": 300,
@@ -4420,7 +4420,7 @@
    "file": "San Francisco Rush - Extreme Racing (USA) (Proto).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 235190,
+   "busy_per_frame": 235524,
    "checkpoints": [
     {
      "frame": 300,
@@ -4478,7 +4478,7 @@
    "file": "Sensible Soccer - European Champions (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 63268,
+   "busy_per_frame": 63491,
    "checkpoints": [
     {
      "frame": 300,
@@ -4536,7 +4536,7 @@
    "file": "Shantae (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 215800,
+   "busy_per_frame": 216031,
    "checkpoints": [
     {
      "frame": 300,
@@ -4594,7 +4594,7 @@
    "file": "Shin Megami Tensei Devil Children - Shiro no Sho (Japan).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 174659,
+   "busy_per_frame": 174935,
    "checkpoints": [
     {
      "frame": 300,
@@ -4652,7 +4652,7 @@
    "file": "Smurfs Nightmare, The (Europe) (En,Fr,De,Es).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 81948,
+   "busy_per_frame": 82162,
    "checkpoints": [
     {
      "frame": 300,
@@ -4710,7 +4710,7 @@
    "file": "Space Station Silicon Valley (Europe).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 92799,
+   "busy_per_frame": 93047,
    "checkpoints": [
     {
      "frame": 300,
@@ -4768,7 +4768,7 @@
    "file": "Star Hawk (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 59792,
+   "busy_per_frame": 60014,
    "checkpoints": [
     {
      "frame": 300,
@@ -4826,7 +4826,7 @@
    "file": "Star Wars Episode I - Racer (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 101425,
+   "busy_per_frame": 101672,
    "checkpoints": [
     {
      "frame": 300,
@@ -4884,7 +4884,7 @@
    "file": "Super Mario Bros. Deluxe (USA) (Rev-B).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 104412,
+   "busy_per_frame": 104634,
    "checkpoints": [
     {
      "frame": 300,
@@ -4942,7 +4942,7 @@
    "file": "Super Mario Land 2 - 6 Golden Coins (USA) (Rev-B).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 88381,
+   "busy_per_frame": 88619,
    "checkpoints": [
     {
      "frame": 300,
@@ -5000,7 +5000,7 @@
    "file": "Suzuki Alstare Extreme Racing (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 200796,
+   "busy_per_frame": 201011,
    "checkpoints": [
     {
      "frame": 300,
@@ -5058,7 +5058,7 @@
    "file": "SWIV (Europe) (En,Fr,De,Es,It).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 337580,
+   "busy_per_frame": 337861,
    "checkpoints": [
     {
      "frame": 300,
@@ -5116,7 +5116,7 @@
    "file": "Test Drive 2001 (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 191132,
+   "busy_per_frame": 191429,
    "checkpoints": [
     {
      "frame": 300,
@@ -5155,9 +5155,9 @@
     },
     {
      "frame": 1800,
-     "goomba": "7ad5aee6d8f32361cd57f51f1337518ca61a1315",
+     "goomba": "f9d132dc838b0c110cfc9c8c86c22fffb5b93b2f",
      "reference": "3a303619670bf56836b8b26c37b6ce2b21677738",
-     "ref_diff": 15,
+     "ref_diff": 14,
      "colours": 17
     },
     {
@@ -5174,7 +5174,7 @@
    "file": "Tetris (USA) (Rev-A).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 53684,
+   "busy_per_frame": 53910,
    "checkpoints": [
     {
      "frame": 300,
@@ -5232,7 +5232,7 @@
    "file": "Tintin in Tibet (Europe) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 97862,
+   "busy_per_frame": 98116,
    "checkpoints": [
     {
      "frame": 300,
@@ -5290,7 +5290,7 @@
    "file": "Toki Tori (USA, Europe) (En,Ja,Fr,De,Es).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 75668,
+   "busy_per_frame": 75888,
    "checkpoints": [
     {
      "frame": 300,
@@ -5348,7 +5348,7 @@
    "file": "Tomb Raider (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 454947,
+   "busy_per_frame": 455405,
    "checkpoints": [
     {
      "frame": 300,
@@ -5406,7 +5406,7 @@
    "file": "Top Gear Pocket (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 205388,
+   "busy_per_frame": 205668,
    "checkpoints": [
     {
      "frame": 300,
@@ -5464,7 +5464,7 @@
    "file": "Trip World (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 52881,
+   "busy_per_frame": 53096,
    "checkpoints": [
     {
      "frame": 300,
@@ -5522,7 +5522,7 @@
    "file": "Trip World DX (USA) (Limited Run Games).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 67972,
+   "busy_per_frame": 68189,
    "checkpoints": [
     {
      "frame": 300,
@@ -5580,7 +5580,7 @@
    "file": "Turok 3 - Shadow of Oblivion (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 235234,
+   "busy_per_frame": 235529,
    "checkpoints": [
     {
      "frame": 300,
@@ -5638,7 +5638,7 @@
    "file": "V-Rally - Championship Edition (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 158291,
+   "busy_per_frame": 158497,
    "checkpoints": [
     {
      "frame": 300,
@@ -5696,7 +5696,7 @@
    "file": "Vigilante 8 (USA) (Rumble Version).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 142140,
+   "busy_per_frame": 142359,
    "checkpoints": [
     {
      "frame": 300,
@@ -5754,7 +5754,7 @@
    "file": "Visiteurs, Les (France) (GB Compatible).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 219887,
+   "busy_per_frame": 220134,
    "checkpoints": [
     {
      "frame": 300,
@@ -5812,7 +5812,7 @@
    "file": "Wario Land 3 (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 112650,
+   "busy_per_frame": 112879,
    "checkpoints": [
     {
      "frame": 300,
@@ -5870,7 +5870,7 @@
    "file": "Wario Land II (USA) (SGB Enhanced).gb",
    "script": "start-a",
    "model": "SGB",
-   "busy_per_frame": 82500,
+   "busy_per_frame": 82723,
    "checkpoints": [
     {
      "frame": 300,
@@ -5928,7 +5928,7 @@
    "file": "Wendy - Der Traum von Arizona (Germany).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 237140,
+   "busy_per_frame": 237418,
    "checkpoints": [
     {
      "frame": 300,
@@ -5986,7 +5986,7 @@
    "file": "Worms (Europe).gb",
    "script": "start-a",
    "model": "DMG",
-   "busy_per_frame": 87903,
+   "busy_per_frame": 88147,
    "checkpoints": [
     {
      "frame": 300,
@@ -6044,7 +6044,7 @@
    "file": "Worms Armageddon (Europe) (En,Fr,De,Es,It,Nl).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 119987,
+   "busy_per_frame": 120204,
    "checkpoints": [
     {
      "frame": 300,
@@ -6102,7 +6102,7 @@
    "file": "Xtreme Sports (USA).gbc",
    "script": "start-a",
    "model": "CGB",
-   "busy_per_frame": 118452,
+   "busy_per_frame": 118718,
    "checkpoints": [
     {
      "frame": 300,
